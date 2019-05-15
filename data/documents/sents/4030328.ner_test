@@ -1,0 +1,155 @@
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["risperidone .", "ketamine"], "o": ["oculomotor performance"]}
+{"i": ["intravenous 100 ng ml \u2212 1 ketamine , 2 mg oral risperidone , 100 ng ml \u2212 1 ketamine plus 2 mg oral risperidone , placebo ).", "placebo - controlled", "smooth pursuit eye movements ( SPEM ), prosaccades"], "o": []}
+{"i": [], "o": ["adverse events ."]}
+{"i": ["Ketamine"], "o": ["velocity gain of SPEM", "PS or AS", "saccadic frequency"]}
+{"i": ["placebo", "risperidone"], "o": ["amplitude gain and peak velocity of PS and AS", "velocities"]}
+{"i": ["ketamine by risperidone"], "o": []}
+{"i": ["ketamine"], "o": ["oculomotor performance deficits"]}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": ["risperidone"], "o": []}
+{"i": [], "o": []}
+{"i": ["amphetamine , phencyclidine or ketamine ."], "o": []}
+{"i": ["Ketamine"], "o": []}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": ["ketamine", "placebo"], "o": ["velocity gain", "saccadic frequency"]}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["National Adult Reading Test ( NART ),"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["Placebo capsule and saline infusion : PLA_SAL", "saline infusion : RIS_SAL Arm 4 : Risperidone capsule", "RIS_KET .", "Placebo capsule and ketamine infusion", "ketamine infusion", "PLA_KET", "Risperidone capsule"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine or saline", "ketamine solution", "risperidone or placebo", "risperidone", "ketamine"], "o": []}
+{"i": [], "o": ["targeted ketamine plasma concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine solution"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Eye movements"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["black dot in the central position of the screen"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["acquisition time"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["saccade"]}
+{"i": [], "o": ["included saccade", "Directional error rate", "percentage of error trials"]}
+{"i": [], "o": ["Latency"]}
+{"i": [], "o": ["Amplitude gain ( percentage )"]}
+{"i": [], "o": ["saccade amplitude"]}
+{"i": [], "o": ["Peak velocity ( degree"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean eye velocity", "velocity gain"]}
+{"i": [], "o": ["Velocity gain scores of segments of pursuit"]}
+{"i": [], "o": ["saccadic frequency"]}
+{"i": [], "o": ["Clinician Administered Dissociative States Scale ( CADSS ),", "Brief Psychiatric Rating Scale Expanded Version"]}
+{"i": [], "o": ["psychotic symptoms", "Launay \u2013 Slade Hallucinations Scale ( LSHS )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Ketamine ( ketamine or saline", "Risperidone ( risperidone or placebo", "ketamine"], "o": ["saccade latency , amplitude gain and peak velocity"]}
+{"i": ["Ketamine ( ketamine or saline infusion ), Risperidone ( risperidone or placebo"], "o": ["AS error rate"]}
+{"i": [], "o": []}
+{"i": ["Ketamine ( ketamine or saline infusion ), Risperidone ( risperidone or placebo"], "o": ["velocity gain and saccadic frequency"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["AS and PS amplitude gain", "SPEM velocity gain"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine by risperidone", "ketamine", "risperidone"], "o": ["AS error rate and correction rate ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["risperidone"], "o": ["amplitude gain"]}
+{"i": [], "o": []}
+{"i": [], "o": ["peak velocities"]}
+{"i": ["Risperidone", "placebo"], "o": ["peak velocity"]}
+{"i": ["risperidone"], "o": ["PS peak velocity", "AS peak velocity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["SPEM velocity gain and saccadic frequency"]}
+{"i": ["ketamine", "placebo"], "o": ["SPEM velocity gain and saccadic frequency"]}
+{"i": ["ketamine", "placebo"], "o": ["saccadic gain and frequency"]}
+{"i": [], "o": ["AS error rate"]}
+{"i": ["ketamine"], "o": ["error rates"]}
+{"i": [], "o": ["saccadic frequencies", "accurate velocity gain performance", "SPEM gain and saccadic frequency"]}
+{"i": [], "o": ["saccadic frequency"]}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": ["ketamine", "placebo"], "o": ["CADSS total scores", "subscales of amnesia , and derealisation"]}
+{"i": ["Ketamine"], "o": ["LSHS total scores"]}
+{"i": ["risperidone"], "o": []}
+{"i": ["placebo / saline vs placebo / ketamine - treated", "placebo / ketamine vs ketamine / risperidone - treated"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["risperidone"], "o": []}
+{"i": ["ketamine"], "o": ["AS error rate", "saccadic frequencies", "latency , gain or velocity .", "SPEM performance"]}
+{"i": ["Risperidone"], "o": ["spatial accuracy .", "saccadic amplitude gain"]}
+{"i": ["placebo", "risperidone"], "o": ["the target"]}
+{"i": ["Risperidone", "ketamine", "risperidone"], "o": ["saccadic peak velocity"]}
+{"i": ["risperidone"], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine"], "o": ["pursuit gain", "saccadic frequency"]}
+{"i": ["ketamine"], "o": []}
+{"i": [], "o": ["SPEM velocity gain", "AS error rates"]}
+{"i": ["ketamine"], "o": ["prepulse inhibition"]}
+{"i": ["ketamine", "oestrogen"], "o": []}
+{"i": ["haloperidol", "LY354740", "Risperidone", "lamotrigene", "clozapine and olanzapine", "risperidone", "ketamine"], "o": []}
+{"i": ["ketamine", "risperidone"], "o": ["performance"]}
+{"i": ["ketamine", "risperidone"], "o": ["AS error rate"]}
+{"i": ["risperidone"], "o": ["smooth pursuit performance"]}
+{"i": ["antipsychotics"], "o": []}
+{"i": [], "o": ["SPEM performance"]}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine"], "o": ["total scores on CADSS"]}
+{"i": ["ketamine"], "o": ["amnesia and derealisation ."]}
+{"i": [], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine", "risperidone"], "o": []}
+{"i": ["risperidone"], "o": []}
+{"i": [], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": [], "o": []}
+{"i": ["Ketamine"], "o": ["AS error rate , latency or amplitude gain"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["plasma levels"]}
+{"i": ["ketamine", "risperidone36"], "o": ["peak plasma concentrations and fatigue ."]}
+{"i": ["risperidone"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["ketamine"], "o": []}
+{"i": ["Risperidone"], "o": []}
+{"i": [], "o": []}

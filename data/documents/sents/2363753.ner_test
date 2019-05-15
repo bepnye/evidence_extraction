@@ -1,0 +1,22 @@
+{"i": ["VIC chemotherapy", "amifostine"], "o": []}
+{"i": [], "o": []}
+{"i": ["amifostine", "high - dose chemotherapy ( HD - VIC ) plus autologous bone marrow transplant ( HDCT )"], "o": ["side effects"]}
+{"i": [], "o": ["in - patient medical costs"]}
+{"i": ["carboplatin and ifosfamide .", "HD - VIC chemotherapy with or without amifostine"], "o": []}
+{"i": [], "o": []}
+{"i": ["carboplatin", "etoposide", "ifosfamide"], "o": []}
+{"i": ["G - CSF"], "o": ["neutropenia"]}
+{"i": [], "o": ["frequency of fever and infections .", "nephrotoxicity , gastrointestinal side effects , haematopoietic recovery ,"]}
+{"i": ["amifostine"], "o": ["median fall of the glomerular filtration rate ( GFR )"]}
+{"i": ["Amifostine"], "o": ["albumine and low molecular weight protein urinary excretion ."]}
+{"i": ["amifostine"], "o": ["Stomatitis grade III / IV"]}
+{"i": ["dexamethasone / trifluorpromazine .", "amifostine"], "o": ["Acute nausea / vomiting"]}
+{"i": [], "o": ["delayed emesis"]}
+{"i": ["amifostine"], "o": ["Engraftment of neutrophil", "and thrombocytes"]}
+{"i": ["amifostine"], "o": ["shortened duration of hospital stay", "number of days with fever"]}
+{"i": ["amifostine"], "o": ["costs for supportive care", "acute toxicity"]}
+{"i": ["amifostine"], "o": ["drug costs", "in - patient treatment costs", "costs"]}
+{"i": ["amifostine", "HD - VIC chemotherapy"], "o": ["organ and haematotoxicity"]}
+{"i": ["amifostine"], "o": ["preservation of GFR"]}
+{"i": ["amifostine"], "o": []}
+{"i": [], "o": []}

@@ -1,0 +1,203 @@
+{"i": ["Intensive Lifestyle Intervention", "High Volume of Physical Activity"], "o": ["Body Composition", "Eating Behavior", "Cardiovascular Disease Risk Factors"]}
+{"i": [], "o": []}
+{"i": ["lifestyle modification program", "physical activity ( PA )"], "o": []}
+{"i": ["intensive lifestyle intervention ( ILI )"], "o": ["Completion rate"]}
+{"i": [], "o": ["fat free mass", "body weight", "fat mass", "visceral fat"]}
+{"i": [], "o": ["weight loss"]}
+{"i": [], "o": ["Systolic BP , glucose , triglycerides , and LDL - C", "HDL - C"]}
+{"i": [], "o": ["reduction in glucose and increase in HDL - C"]}
+{"i": [], "o": ["cognitive restraint", "weight loss", "uncontrolled eating"]}
+{"i": [], "o": ["weight loss", "CVD risk factors , and eating behavior", "fat - free mass"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["comorbidity and mortality ."]}
+{"i": [], "o": ["fat mass ( FM ),", "resting energy expenditure ( REE )"]}
+{"i": ["physical activity ( PA )"], "o": ["morbidity and CVD mortality"]}
+{"i": [], "o": ["body composition ( BC )"]}
+{"i": [], "o": []}
+{"i": [], "o": ["body weight ( BW ),"]}
+{"i": [], "o": ["PA level"]}
+{"i": ["exercise programs"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["inpatient lifestyle interventions"], "o": ["weight loss"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["PA level"]}
+{"i": ["inpatient lifestyle modification program"], "o": ["BC : BW , FM , FFM , and VFA"]}
+{"i": [], "o": ["BC and CVD risk factors", "CVD risk factors"]}
+{"i": ["intensive lifestyle intervention"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["comprehensive inpatient lifestyle intervention ( ILI )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ILI"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ILI"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ILI -"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["completion rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["inpatient intensive lifestyle modification program", "adjusting energy and nutrition intake , and learning coping strategies ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sport activities , games , walking tour"], "o": []}
+{"i": [], "o": []}
+{"i": ["brisk walking )"], "o": []}
+{"i": ["breakfast and lunch", "free options of fruit , vegetables , or yoghurt ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["individual dietary nutritional consultations ."], "o": []}
+{"i": ["instructions and practice in methods for behavior modification and coping strategies ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["total body water and extracellular water"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BMI", "Height"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["lipoprotein ( HDL ) cholesterol", "triglycerides ( TG ), serum glucose , total , low - density lipoprotein ( LDL ),"]}
+{"i": [], "o": ["Blood pressure ( BP :"]}
+{"i": [], "o": ["blood pressure -, lipid -, or glucose - lowering medication"]}
+{"i": [], "o": ["Metabolic syndrome"]}
+{"i": [], "o": ["Waist circumference ( WC )"]}
+{"i": [], "o": ["elevated WC , TG , BP , fasting glucose , and reduced HDL )"]}
+{"i": [], "o": ["BP and fasting glucose"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Three - Factor Eating Questionnaire ( TFEQ - R21"]}
+{"i": [], "o": ["body weight and body shape"]}
+{"i": [], "o": ["restraint , uncontrolled , and emotional eating"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["exercise capacity", "10 - metre shuttle run test", "time spent on a 750 - metre walk / run"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CVD risk factors"]}
+{"i": [], "o": []}
+{"i": [], "o": ["weight", "eating behavior"]}
+{"i": [], "o": []}
+{"i": [], "o": ["weight reduction"]}
+{"i": [], "o": ["BW reduction"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["acute weight loss"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BC variables"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BW reduction"]}
+{"i": [], "o": ["mean ( SD ) percentage weight loss", "VFA and FM"]}
+{"i": [], "o": ["initial weight"]}
+{"i": [], "o": ["BMI"]}
+{"i": [], "o": ["BMI"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CVD risk factors and exercise capacity"]}
+{"i": [], "o": ["prevalence of metabolic syndrome"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["eating behavior"]}
+{"i": [], "o": ["Eating behavior"]}
+{"i": [], "o": ["CR", "UE and EE"]}
+{"i": [], "o": ["weight and eating behaviour"]}
+{"i": [], "o": []}
+{"i": [], "o": ["FM and VFA", "FFM"]}
+{"i": [], "o": ["BC"]}
+{"i": [], "o": ["weight reduction"]}
+{"i": [], "o": ["BW"]}
+{"i": [], "o": []}
+{"i": [], "o": ["FFM"]}
+{"i": [], "o": ["FFM", "weight loss", "minimum amount of PA"]}
+{"i": [], "o": ["amount of PA"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Loss of FFM"]}
+{"i": [], "o": ["total loss of BW and FM"]}
+{"i": [], "o": ["kg FFM"]}
+{"i": [], "o": []}
+{"i": [], "o": ["energy expenditure"]}
+{"i": [], "o": ["FFM .", "Skeletal muscle mass ( SMM )"]}
+{"i": [], "o": ["SMM"]}
+{"i": [], "o": []}
+{"i": ["strength training program"], "o": ["muscle growth"]}
+{"i": [], "o": ["VFA"]}
+{"i": [], "o": ["central obesity"]}
+{"i": [], "o": ["prevalence of metabolic syndrome"]}
+{"i": [], "o": ["diastolic BP and total cholesterol .", "CVD risk factors"]}
+{"i": [], "o": ["level of glucose", "HDL cholesterol"]}
+{"i": [], "o": ["PA energy expenditure", "HDL cholesterol"]}
+{"i": [], "o": []}
+{"i": [], "o": ["CVD risk factors"]}
+{"i": [], "o": ["systolic and diastolic BP"]}
+{"i": [], "o": ["cardiorespiratory fitness"]}
+{"i": [], "o": ["body weight"]}
+{"i": [], "o": []}
+{"i": [], "o": ["cognitive restraint", "weight loss", "uncontrolled eating"]}
+{"i": [], "o": []}
+{"i": [], "o": ["cognitive restraint"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["lifestyle intervention program"], "o": ["weight loss", "health risk", "PA level or energy intake"]}
+{"i": [], "o": ["cardiorespiratory fitness and appetite - related hormones"]}
+{"i": [], "o": ["fitness and eating habits ."]}
+{"i": [], "o": ["BC and CVD risk factors"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean reduction of VFA"]}
+{"i": [], "o": ["weight loss ."]}
+{"i": [], "o": ["cognitive restraint", "weight loss", "uncontrolled eating behavior ."]}

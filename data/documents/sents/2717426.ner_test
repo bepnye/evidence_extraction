@@ -1,0 +1,140 @@
+{"i": ["placebo - controlled", "exogenous glucagon - like peptide - 1"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["exogenous glucagon - like peptide - 1 ( GLP - 1 )"], "o": ["blood glucose"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": ["glycaemic response"]}
+{"i": ["placebo", "GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": ["mixed nutrient liquid"], "o": []}
+{"i": [], "o": ["Blood glucose and plasma GLP - 1 , insulin and glucagon concentrations"]}
+{"i": ["placebo", "GLP - 1"], "o": ["overall glycaemic response", "peak blood glucose"]}
+{"i": ["placebo", "GLP - 1"], "o": ["insulin / glucose ratio", "absolute insulin concentrations ."]}
+{"i": ["placebo", "GLP - 1"], "o": ["plasma glucagon concentrations"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["exogenous glucagon - like peptide - 1 ( GLP - 1 )"], "o": ["blood glucose"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": ["glycaemic response"]}
+{"i": ["placebo", "GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": ["mixed nutrient liquid"], "o": []}
+{"i": [], "o": ["Blood glucose and plasma GLP - 1 , insulin and glucagon concentrations"]}
+{"i": ["placebo", "GLP - 1"], "o": ["overall glycaemic response", "peak blood glucose"]}
+{"i": ["placebo", "GLP - 1"], "o": ["insulin / glucose ratio", "absolute insulin concentrations ."]}
+{"i": ["placebo", "GLP - 1"], "o": ["plasma glucagon concentrations"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["insulin therapy"], "o": ["hypoglycaemia"]}
+{"i": ["enteral feeding", "parenteral nutrition"], "o": ["hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": ["incretin hormone , glucagon - like peptide - 1 ( GLP - 1 ),"], "o": ["blood glucose concentrations"]}
+{"i": [], "o": ["insulin secretion", "glucagon release", "gastric emptying"]}
+{"i": ["GLP - 1"], "o": ["hypoglycaemia"]}
+{"i": ["GLP - 1"], "o": ["glycaemia"]}
+{"i": ["GLP - 1"], "o": ["glycaemic response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous GLP - 1", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Exogenous insulin"], "o": []}
+{"i": [], "o": []}
+{"i": ["synthetic GLP - 1 -( 7 \u2013 36 ) amide"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo", "albumin", "GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": ["Ensure \u00ae"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma insulin , GLP - 1 and glucagon concentrations .", "blood glucose"]}
+{"i": [], "o": ["Blood glucose"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Plasma insulin"]}
+{"i": [], "o": [") concentrations", "glucagon", "Total plasma GLP - 1 ("]}
+{"i": [], "o": []}
+{"i": [], "o": ["Area under the curve ( AUC )"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": [], "o": ["ratios of insulin / glucose"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Serum creatinine", "Plasma albumin"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Blood glucose concentrations"]}
+{"i": ["placebo"], "o": ["baseline blood glucose concentration"]}
+{"i": ["GLP - 1"], "o": ["blood glucose ."]}
+{"i": ["placebo"], "o": ["blood glucose concentration"]}
+{"i": ["GLP - 1"], "o": ["blood glucose"]}
+{"i": ["placebo"], "o": ["overall glycaemic response", "peak blood glucose"]}
+{"i": [], "o": ["Plasma insulin and insulin : glucose ratio"]}
+{"i": [], "o": ["plasma insulin concentration"]}
+{"i": [], "o": ["Plasma insulin"]}
+{"i": ["placebo", "GLP - 1"], "o": []}
+{"i": ["placebo"], "o": ["insulin / glucose ratio", "absolute plasma insulin concentrations"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["Fasting plasma GLP - 1 concentrations"]}
+{"i": ["placebo", "GLP - 1"], "o": ["plasma GLP - 1 concentration"]}
+{"i": ["GLP - 1"], "o": ["steady state concentrations"]}
+{"i": [], "o": ["glucagon concentrations"]}
+{"i": ["placebo"], "o": ["Fasting glucagon concentrations"]}
+{"i": ["placebo"], "o": ["plasma glucagon"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": ["normoglycaemia"]}
+{"i": [], "o": []}
+{"i": ["exogenous GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Ensure \u00ae"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma insulin and glucagon concentrations"]}
+{"i": ["GLP - 1"], "o": ["gastric emptying", "glycaemic excursions"]}
+{"i": ["GLP - 1"], "o": ["glucose lowering"]}
+{"i": [], "o": ["gastric emptying"]}
+{"i": ["GLP - 1"], "o": ["glycaemic"]}
+{"i": ["GLP - 1"], "o": ["gastric emptying"]}
+{"i": ["GLP - 1"], "o": ["nutrient - induced hyperglycaemia"]}
+{"i": [], "o": []}
+{"i": ["GLP - 1"], "o": ["glucose lowering"]}
+{"i": [], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": ["GLP - 1"], "o": ["glucose - lowering effect"]}
+{"i": ["GLP - 1"], "o": ["glycaemic variability"]}
+{"i": [], "o": []}
+{"i": [], "o": ["absolute insulin concentrations", "insulin / glucose ratio and transient suppression of glucagon secretion ."]}
+{"i": [], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": ["blood glucose"]}
+{"i": ["GLP - 1"], "o": ["safety and efficacy"]}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["GLP - 1"], "o": []}
+{"i": ["Exogenous GLP - 1"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["incretin hormones"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

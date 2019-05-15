@@ -1,0 +1,167 @@
+{"i": ["Uracil - Tegafur with Leucovorin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["adjuvant therapy", "uracil - tegafur and leucovorin ( UFT / LV )."], "o": []}
+{"i": ["UFT / LV", "surgery alone"], "o": []}
+{"i": ["UFT / LV", "adjuvant UFT / LV ( UFT"], "o": []}
+{"i": [], "o": ["recurrence - free survival ( RFS )."]}
+{"i": [], "o": ["overall survival ( OS )."]}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["RFS rate"]}
+{"i": ["UFT / LV"], "o": ["median RFS"]}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["hazard ratio for death"]}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": ["adjuvant therapy", "uracil - tegafur and leucovorin ( UFT / LV )."], "o": []}
+{"i": ["UFT / LV", "surgery alone"], "o": []}
+{"i": ["UFT / LV", "adjuvant UFT / LV ( UFT"], "o": []}
+{"i": [], "o": ["recurrence - free survival ( RFS )."]}
+{"i": [], "o": ["overall survival ( OS )."]}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["RFS rate"]}
+{"i": ["UFT / LV"], "o": ["median RFS"]}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["hazard ratio for death"]}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": ["hepatic resection"], "o": []}
+{"i": ["oxaliplatin plus fluoropyrimidine"], "o": []}
+{"i": [], "o": []}
+{"i": ["oxaliplatin with folinic acid and 5 - fluorouracil ( FOLFOX ) or capecitabine ."], "o": []}
+{"i": ["colorectal resection"], "o": []}
+{"i": ["adjuvant chemotherapy ( 5 - fluorouracil with folinic acid )"], "o": ["completion rates"]}
+{"i": [], "o": []}
+{"i": ["tegafur and uracil", "5 - fluorouracil", "Uracil - tegafur ( UFT )"], "o": []}
+{"i": ["Tegafur", "uracil"], "o": []}
+{"i": ["UFT", "oral folinic acid preparation ( leucovorin ; LV )"], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": ["UFT / LV"], "o": ["recurrence"]}
+{"i": ["UFT / LV", "adjuvant chemotherapy"], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["chemotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["plain X - ray or lung computed tomography and intraoperative ultrasonography"], "o": []}
+{"i": ["oral UFT / LV or surgery alone"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": ["enhanced computed tomography", "ultrasonography", "blood sampling"], "o": []}
+{"i": [], "o": ["frequencies of ultrasonography and blood sampling"]}
+{"i": [], "o": ["recurrence - free survival ( RFS )."]}
+{"i": [], "o": ["overall survival ( OS ) and safety ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["Recurrence or death"]}
+{"i": [], "o": ["Recurrence"]}
+{"i": ["UFT / LV treatment"], "o": ["recurrence or another malignancy"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["systemic chemotherapy ."], "o": []}
+{"i": ["UFT / LV"], "o": ["RFS rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["survival curves"]}
+{"i": ["UFT / LV"], "o": ["RFS or OS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["RFS rates"]}
+{"i": [], "o": ["locations and resection rates"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV", "surgery alone"], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["- related death"]}
+{"i": [], "o": ["lymph node status"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["median RFS"]}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["OS rates"]}
+{"i": [], "o": ["median OS"]}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["RFS"]}
+{"i": ["UFT / LV"], "o": ["recurrence ."]}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["remnant liver"]}
+{"i": ["UFT / LV"], "o": ["resection rates for the first recurrence"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hazard ratio"]}
+{"i": ["UFT / LV therapy", "UFT / LV"], "o": ["recurrence"]}
+{"i": ["5 - fluorouracil plus folinic acid"], "o": []}
+{"i": ["UFT / LV", "5 - fluorouracil plus folinic acid"], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": ["UFT / LV"], "o": ["recurrence"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": []}
+{"i": ["oxaliplatin", "5 - fluorouracil plus folinic acid"], "o": []}
+{"i": ["oxaliplatin"], "o": []}
+{"i": ["Perioperative chemotherapy", "perioperative FOLFOX4"], "o": []}
+{"i": ["FOLFOX4"], "o": ["recurrence"]}
+{"i": [], "o": ["OS"]}
+{"i": ["postoperative adjuvant chemotherapy"], "o": []}
+{"i": ["FOLFOX4", "postoperative UFT / LV chemotherapy"], "o": []}
+{"i": ["FOLFOX", "UFT / LV"], "o": ["OS benefit", "RFS benefit"]}
+{"i": ["adjuvant UFT / LV", "perioperative chemotherapy"], "o": ["resection rate"]}
+{"i": ["postoperative chemotherapy", "perioperative chemotherapy", "postoperative UFT / LV", "perioperative"], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["safety", "adherence"]}
+{"i": ["UFT / LV"], "o": ["mortality"]}
+{"i": [], "o": ["grade 3 or 4 adverse events"]}
+{"i": ["chemotherapy"], "o": []}
+{"i": [], "o": ["RFS .", "OS rates"]}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["locations or the treatments of the first recurrences"]}
+{"i": ["UFT / LV"], "o": ["recurrence ."]}
+{"i": ["UFT / LV"], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV"], "o": ["5 - year OS rates"]}
+{"i": [], "o": ["OS"]}
+{"i": [], "o": ["OS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["numbers of deaths"]}
+{"i": [], "o": ["RFS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["lymph node metastasis of the primary disease"]}
+{"i": ["UFT / LV"], "o": ["recurrence"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Capecitabine and S - 1", "oral anticancer medicine"], "o": []}
+{"i": [], "o": []}
+{"i": ["UFT / LV adjuvant chemotherapy"], "o": []}

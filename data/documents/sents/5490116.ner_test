@@ -1,0 +1,99 @@
+{"i": ["Caudal", "Intravenous Dexamethasone"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous versus caudal dexamethasone"], "o": ["analgesic efficacy"]}
+{"i": ["preemptive caudal epidural", "ropivacaine", "injection ropivacaine 0", "injection ropivacaine 0 . 2 % with injection dexamethasone", "intravenous injection dexamethasone"], "o": []}
+{"i": [], "o": ["Time to discharge", "Visual analog scale ( VAS ), heart rate , blood pressures , blood sugar levels , and time to rescue analgesia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean VAS"]}
+{"i": [], "o": ["hemodynamic changes"]}
+{"i": ["dexamethasone"], "o": ["blood glucose levels"]}
+{"i": ["dexamethasone", "caudal ropivacaine"], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous versus caudal dexamethasone"], "o": ["analgesic efficacy"]}
+{"i": ["preemptive caudal epidural", "ropivacaine", "injection ropivacaine 0", "injection ropivacaine 0 . 2 % with injection dexamethasone", "intravenous injection dexamethasone"], "o": []}
+{"i": [], "o": ["Time to discharge", "Visual analog scale ( VAS ), heart rate , blood pressures , blood sugar levels , and time to rescue analgesia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean VAS"]}
+{"i": [], "o": ["hemodynamic changes"]}
+{"i": ["dexamethasone"], "o": ["blood glucose levels"]}
+{"i": ["dexamethasone", "caudal ropivacaine"], "o": []}
+{"i": [], "o": []}
+{"i": ["conventional parenteral"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["pain scores", "postoperative nausea and vomiting ( PONV )", "narcotic requirement"]}
+{"i": [], "o": ["analgesia", "Postoperative pain"]}
+{"i": [], "o": []}
+{"i": ["epidural steroids"], "o": ["length of stay", "pain"]}
+{"i": ["Dexamethasone"], "o": []}
+{"i": [], "o": ["severity of sore throat and hoarseness", "analgesia", "opioid consumption"]}
+{"i": ["dexamethasone"], "o": ["risk of infection or delayed wound healing .", "postoperative pain , postoperative opioid consumption , need for rescue analgesia , postanesthesia care unit stays", "time to first analgesic dose"]}
+{"i": [], "o": []}
+{"i": ["dexamethasone with or without bupivacaine"], "o": ["postoperative pain and morphine consumption ."]}
+{"i": ["dexamethasone"], "o": []}
+{"i": ["intravenous dexamethasone", "caudal steroids"], "o": []}
+{"i": ["dexamethasone"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["electrocardiogram , pulse oximeter , noninvasive blood pressure monitoring"]}
+{"i": ["injection fentanyl", "injection propofol", "tracheal intubation facilitated using injection vecuronium"], "o": []}
+{"i": ["oxygen , air , and isoflurane ."], "o": []}
+{"i": [], "o": []}
+{"i": ["2 ml of intravenous normal saline and 25 ml of 0 . 2 % ropivacaine caudal"], "o": ["HR and mean blood pressure", "age , weight , ASA status , type and duration of surgery and hemodynamic parameters such as heart rate ( HR ), systolic , diastolic , and mean blood pressure"]}
+{"i": ["paracetamol"], "o": ["Glucometric random blood sugar"]}
+{"i": [], "o": ["visual analog scale ( VAS"]}
+{"i": [], "o": []}
+{"i": ["tramadol"], "o": []}
+{"i": [], "o": ["total length of hospital stay"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean HR , systolic , diastolic , and mean blood pressure changes"]}
+{"i": [], "o": ["Glucometric random blood sugar ( GRBS )"]}
+{"i": [], "o": ["GRBS distribution", "VAS scores"]}
+{"i": [], "o": ["visual analog scale distribution", "supplementary analgesia"]}
+{"i": [], "o": ["days to discharge"]}
+{"i": [], "o": ["adverse effects"]}
+{"i": ["caudal dexamethasone", "ropivacaine"], "o": ["analgesic duration"]}
+{"i": [], "o": []}
+{"i": ["Epidural analgesia"], "o": []}
+{"i": [], "o": []}
+{"i": ["bupivacaine and tramadol", "normal saline"], "o": ["VAS scores"]}
+{"i": ["Parenteral dexamethasone"], "o": []}
+{"i": [], "o": ["analgesia"]}
+{"i": ["dexamethasone"], "o": ["analgesic requirement"]}
+{"i": ["Corticosteroids"], "o": []}
+{"i": [], "o": []}
+{"i": ["dexamethasone", "glucocorticoids"], "o": []}
+{"i": [], "o": []}
+{"i": ["epidural steroids"], "o": ["length of stay", "pain"]}
+{"i": [], "o": []}
+{"i": ["dexamethasone"], "o": ["pain and analgesic requirement"]}
+{"i": [], "o": []}
+{"i": ["adcortyl and bupivacaine"], "o": []}
+{"i": ["dexamethasone"], "o": []}
+{"i": [], "o": ["HR or blood pressures .", "hemodynamic"]}
+{"i": [], "o": ["Time to mobilization", "VAS scores", "mobilization"]}
+{"i": [], "o": ["Time for rescue analgesia"]}
+{"i": [], "o": ["time to discharge"]}
+{"i": [], "o": ["delayed wound healing or surgical site infection"]}
+{"i": [], "o": []}
+{"i": ["dexamethasone", "epidural dexamethasone"], "o": ["wound healing and wound infection ."]}
+{"i": [], "o": []}
+{"i": ["dexamethasone"], "o": ["postoperative wound infections", "time to home readiness"]}
+{"i": ["dexamethasone"], "o": ["blood glucose levels"]}
+{"i": [], "o": []}
+{"i": ["dexamethasone", "dexamethasone versus placebo", "antiemetic"], "o": []}
+{"i": [], "o": ["adverse events"]}
+{"i": ["dexamethasone"], "o": []}
+{"i": ["ropivacaine", "epidural dexamethasone"], "o": ["analgesia", "blood sugar levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}

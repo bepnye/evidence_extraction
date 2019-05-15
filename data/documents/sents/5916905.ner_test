@@ -1,0 +1,146 @@
+{"i": ["orange juice consumption"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["orange juice"], "o": ["energy balance or metabolic risk ."]}
+{"i": ["orange juice"], "o": []}
+{"i": [], "o": ["daylong glycaemia , glucose variability and insulin secretion", "Basal and postprandial insulin sensitivity"]}
+{"i": [], "o": ["Body fat mass"]}
+{"i": [], "o": ["postprandial insulin sensitivity", "fat mass"]}
+{"i": [], "o": ["fat mass and gamma - glutamyl transferase ( GGT )", "glucose variability"]}
+{"i": [], "o": ["Daylong glycaemia , insulin secretion , changes in basal insulin sensitivity , and triglycerides"]}
+{"i": ["orange juice"], "o": ["energy balance"]}
+{"i": [], "o": []}
+{"i": [], "o": ["weight gain"]}
+{"i": ["fruit juice", "sugar - sweetened beverages ( SSB ),"], "o": []}
+{"i": [], "o": []}
+{"i": ["orange juice"], "o": []}
+{"i": ["orange juice consumption"], "o": []}
+{"i": [], "o": []}
+{"i": ["energy - dense beverages"], "o": ["food intake"]}
+{"i": [], "o": []}
+{"i": [], "o": ["satiety value"]}
+{"i": ["Fruit juice"], "o": []}
+{"i": ["fruit juices"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose levels"]}
+{"i": [], "o": []}
+{"i": ["sugar - containing drinks"], "o": ["glycemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["meal frequency"]}
+{"i": ["fruit juice"], "o": ["metabolic risk"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["postprandial insulin sensitivity"]}
+{"i": ["orange juice"], "o": ["Matsuda - index"]}
+{"i": ["BM orange juice in - between meals , CGM continuous glucose monitoring , OGTT oral glucose tolerance test , WM orange juice with meals"], "o": []}
+{"i": ["juice with pulp"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Energy requirement", "resting energy expenditure ( REE"]}
+{"i": [], "o": []}
+{"i": [], "o": ["individual amount of orange juice"]}
+{"i": [], "o": ["amount of orange juice per"]}
+{"i": [], "o": []}
+{"i": ["orange juice"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Homeostatic Model Assessment - insulin resistance ( HOMA - IR", "Basal insulin sensitivity"]}
+{"i": [], "o": ["Insulin Sensitivity Index", "Postprandial insulin sensitivity"]}
+{"i": [], "o": ["Interstitial glucose concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Area under the curve ( AUC )"]}
+{"i": [], "o": ["Daylong glucose variability"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["average glycemia", "Fasting fructosamine"]}
+{"i": [], "o": ["Daylong insulin secretion", "urinary C - peptide"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum insulin and urinary C - peptide excretion", "Plasma glucose"]}
+{"i": [], "o": ["Serum gamma - glutamyl transferase ( GGT ), triglycerides ( TG ) and serum fructosamine"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Body composition"]}
+{"i": [], "o": ["percentage fat mass ( FM )", "body density from weight"]}
+{"i": [], "o": ["Minimal detectable change ( MDC ) of FM"]}
+{"i": [], "o": ["Fat mass index ( FMI )"]}
+{"i": [], "o": ["Weight"]}
+{"i": [], "o": []}
+{"i": ["ActivPALTM"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["HOMA - IR , GGT and TG", "\u0394FM and \u0394HOMA - IR"]}
+{"i": [], "o": []}
+{"i": [], "o": ["HOMA - IR and MatsudaISI"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["REE and therefore the intake of orange juice"]}
+{"i": [], "o": ["amount of sugars provided"]}
+{"i": ["orange juice"], "o": []}
+{"i": [], "o": ["Physical activity"]}
+{"i": ["orange juice"], "o": ["energy balance and metabolic risk"]}
+{"i": ["orange juice"], "o": []}
+{"i": ["orange juice"], "o": ["energy balance", "body fat mass"]}
+{"i": ["orange juice consumption"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["100 % orange juice consumption"], "o": ["biomarkers of health", "nutrient adequacy", "diet quality"]}
+{"i": ["SSB"], "o": ["healthy diet42", "physical activity"]}
+{"i": ["orange juice"], "o": ["body weight or insulin sensitivity44"]}
+{"i": ["energy and sugars - matched orange - flavored drink ."], "o": []}
+{"i": ["orange juice"], "o": ["body weight and leptin levels"]}
+{"i": ["nutritional advice"], "o": []}
+{"i": ["orange juice"], "o": []}
+{"i": ["fruit juices", "SSB"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["orange juice"], "o": ["energy balance"]}
+{"i": ["orange juice", "SSB"], "o": []}
+{"i": [], "o": ["body weight"]}
+{"i": ["orange juice"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["orange juice .", "BM - intervention"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["actual gain in FM"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["liver fat", "meal frequency"]}
+{"i": [], "o": ["liver fat , serum GGT"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["BM - intervention", "WM - intervention"], "o": ["incremental glucose area under the curve", "MAGE - Index"]}
+{"i": [], "o": ["postprandial glycemia"]}
+{"i": [], "o": ["fructosamine levels"]}
+{"i": ["regular orange juice intake"], "o": []}
+{"i": ["flavanones", "vitamin C"], "o": ["cardiovascular45"]}
+{"i": ["WM - intervention"], "o": ["glucose variability53"]}
+{"i": [], "o": []}
+{"i": [], "o": ["postprandial insulin sensitivity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["body composition", "MDC of fat mass ."]}
+{"i": [], "o": []}
+{"i": ["ad libitum diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fruit juice", "orange juice", "dietary counselling"], "o": []}
+{"i": [], "o": []}
+{"i": ["SSB consumption"], "o": ["liver fat and insulin resistance ."]}

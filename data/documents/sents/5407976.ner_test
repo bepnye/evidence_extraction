@@ -1,0 +1,513 @@
+{"i": ["carbohydrate"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intensified training"], "o": ["peak aerobic capacity"]}
+{"i": ["ketogenic low carbohydrate ( CHO ), high fat diet ( LCHF )"], "o": []}
+{"i": ["low and high CHO availability ( PCHO", "identical macronutrient intake", "high CHO availability", "fat ) consumed before , during and after training ( HCHO", "isoenergetic diets", "LCHF"], "o": []}
+{"i": [], "o": ["V \u0307 O2 peak during race walking"]}
+{"i": [], "o": ["rates of whole \u2010 body fat oxidation"]}
+{"i": [], "o": ["oxygen ( O2 ) cost of race walking", "O2 uptake"]}
+{"i": ["HCHO", "PCHO"], "o": ["times for 10 km race walk"]}
+{"i": ["topical LCHF diet"], "o": ["V \u0307 O2 peak"]}
+{"i": [], "o": []}
+{"i": ["intensified training"], "o": ["peak aerobic capacity"]}
+{"i": ["ketogenic low carbohydrate ( CHO ), high fat diet ( LCHF )"], "o": []}
+{"i": ["low and high CHO availability ( PCHO", "identical macronutrient intake", "high CHO availability", "fat ) consumed before , during and after training ( HCHO", "isoenergetic diets", "LCHF"], "o": []}
+{"i": [], "o": ["V \u0307 O2 peak during race walking"]}
+{"i": [], "o": ["rates of whole \u2010 body fat oxidation"]}
+{"i": [], "o": ["oxygen ( O2 ) cost of race walking", "O2 uptake"]}
+{"i": ["HCHO", "PCHO"], "o": ["times for 10 km race walk"]}
+{"i": ["topical LCHF diet"], "o": ["V \u0307 O2 peak"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["non \u2010 protein respiratory exchange ratio ( RER )"]}
+{"i": ["CHO"], "o": ["energy yield per litre of oxygen ( O2 )"]}
+{"i": [], "o": ["energy yield"]}
+{"i": ["high CHO diet"], "o": ["fixed , submaximal exercise task"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["low CHO , high fat diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["lipid stores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketogenic", "high fat ( 80 % of energy ) diet"], "o": []}
+{"i": ["energy ) diet", "energy ), high fat", "restricted CHO"], "o": []}
+{"i": [], "o": []}
+{"i": ["high fat diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["low ( er ) CHO diets"], "o": ["fat oxidation"]}
+{"i": ["CHO , moderate protein , high fat", "high fat diet"], "o": []}
+{"i": ["LCHF", "' keto \u2010 diet ',"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["higher CHO diets"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": []}
+{"i": ["LCHF diet"], "o": ["exercise metabolism"]}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["fat utilisation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intensified training"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intensified training programme : high CHO availability ( HCHO ), periodised CHO availability ( PCHO ) and low CHO , high fat ( LCHF ).", "dietary support"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["diet intervention", "High carbohydrate ( HCHO ) Periodised carbohydrate"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intensified training incorporating race walking , resistance training and cross \u2010 training ( running , cycling or swimming )."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["weight of each food item"]}
+{"i": [], "o": []}
+{"i": ["' free foods and drinks ' ( foods with low energy such as fruits and vegetables , tea or coffee , water and artificially sweetened beverages )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dietary"], "o": []}
+{"i": [], "o": ["loss of fat mass"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sports nutrition"], "o": []}
+{"i": ["gym Long *", "training \u2010 diet intervention involving high carbohydrate ( CHO ) availability ( HCHO ), periodised CHO availability ( PCHO ) or low CHO high fat ( LCHF ) diets"], "o": []}
+{"i": ["CHO post CHO", "Fasted training ; CHO post Fasted training + low glycogen", "Fasted training ; CHO post CHO pre + during ; Nil CHO", "Dietary treatment"], "o": []}
+{"i": [], "o": []}
+{"i": ["Easy / nil Dietary treatment", "Fasted training + low glycogen"], "o": []}
+{"i": ["Compulsory key training"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Walking economy"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["ratings of perceived exertion"]}
+{"i": [], "o": ["Heart rate ( HR )"]}
+{"i": [], "o": []}
+{"i": [], "o": ["RER and O2 uptake"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Treadmill speed"]}
+{"i": [], "o": ["treadmill gradient"]}
+{"i": [], "o": ["HR measurements and capillary blood samples"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Capillary blood samples"]}
+{"i": ["pre \u2010 race ( morning ) meal", "habitual pre \u2010 race diet"], "o": []}
+{"i": ["performance supplements"], "o": []}
+{"i": ["caffeine"], "o": []}
+{"i": ["pre \u2010 race meal"], "o": []}
+{"i": [], "o": []}
+{"i": ["25 km walk"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["O2 uptake .", "Expired gas"]}
+{"i": [], "o": ["Capillary blood", "glucose , lactate and ketone concentrations"]}
+{"i": [], "o": ["HR and rating of perceived exertion ( RPE )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["standardised CHO \u2010 rich breakfast"], "o": []}
+{"i": ["LCHF", "isocaloric meal that was high fat , low CHO ."], "o": []}
+{"i": [], "o": []}
+{"i": ["sports drink , sports gels and confectionery items"], "o": []}
+{"i": [], "o": []}
+{"i": ["non \u2010 caloric fluid ( water or artificially sweetened drinks ) and fat \u2010 rich snacks ( cheese and cake / cookies made from high fat ingredients )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["ketones", "blood lactate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Respiratory exchange ratio ( RER )"]}
+{"i": [], "o": ["rates of CHO and fat oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF diets"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["fat and CHO oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["diet intervention"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["actual dietary intake"]}
+{"i": [], "o": ["protein"]}
+{"i": ["LCHF", "CHO \u2010 rich diets ( HCHO and PCHO )"], "o": ["CHO", ") intakes", "daily fat"]}
+{"i": ["HCHO", "PCHO"], "o": ["mean daily intake of CHO"]}
+{"i": [], "o": ["body composition"]}
+{"i": [], "o": ["aerobic capacity and walking economy"]}
+{"i": ["training \u2010 diet intervention involving high carbohydrate availability ( HCHO ), periodised CHO availability ( PCHO ) or low CHO high fat ( LCHF ) diets"], "o": []}
+{"i": [], "o": []}
+{}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Daily energy intake"]}
+{}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Carbohydrate ( CHO ) intake"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["training commitment", "perception of effort"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Mean race walking mileage"]}
+{"i": ["LCHF", "PCHO"], "o": []}
+{"i": [], "o": []}
+{"i": ["graded economy and V \u0307 O2 peak test"], "o": []}
+{"i": [], "o": ["pain"]}
+{"i": ["HCHO", "PCHO"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["V \u0307 O2 peak", "HR", "RER", "RPE", "exercise intensities"]}
+{"i": ["diet and training intervention"], "o": ["graded economy test", "maximal aerobic capacity"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Heart rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["high carbohydrate availability ( HCHO ), periodised CHO availability ( PCHO ) and low carbohydrate , high fat"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BM"]}
+{"i": [], "o": ["V \u0307 O2 peak during race walking"]}
+{"i": [], "o": []}
+{"i": [], "o": ["peak aerobic capacity"]}
+{"i": [], "o": ["metabolic cost and perceived effort", "RPE and HR"]}
+{"i": ["LCHF"], "o": ["post \u2010 treatment RER values"]}
+{"i": [], "o": []}
+{"i": [], "o": ["fuel utilisation", "absolute O2 cost of exercise"]}
+{"i": [], "o": ["absolute O2 cost of exercise across the economy test"]}
+{"i": [], "o": ["absolute values of O2 utilisation"]}
+{"i": [], "o": ["RER and HR", "RER", "maximal aerobic capacity"]}
+{"i": [], "o": ["HR"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["relative O2 cost of exercise"]}
+{"i": [], "o": ["V \u0307 O2 peak", "O2 utilisation"]}
+{"i": ["LCHF"], "o": ["fraction of V \u0307 O2 peak used to walk"]}
+{"i": [], "o": ["relative O2 cost of exercise"]}
+{"i": [], "o": [") V \u0307 O2 peak , O2 utilisation at the fourth stage speed"]}
+{"i": [], "o": ["concentrations of metabolites ( glucose , lactate and ketones ) in capillary blood samples"]}
+{"i": [], "o": ["blood glucose concentrations", "Blood glucose concentrations"]}
+{"i": [], "o": ["blood glucose concentrations"]}
+{"i": [], "o": ["exercise intensity", "Blood lactate concentrations"]}
+{"i": [], "o": ["Blood ketone levels"]}
+{"i": ["LCHF"], "o": ["blood ketone concentrations"]}
+{"i": [], "o": ["blood ketone concentrations"]}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": ["Blood ketone concentrations"]}
+{"i": [], "o": ["blood lactate concentrations", "Blood glucose concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": ["soreness or injury"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Race performance"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["finishing times"]}
+{"i": [], "o": ["race times"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["completion times"]}
+{"i": [], "o": ["blood glucose and lactate concentrations"]}
+{"i": [], "o": ["RPE"]}
+{"i": [], "o": ["Blood ketone concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["dehydration", "BM"]}
+{"i": [], "o": ["Overall loss"]}
+{"i": [], "o": ["HR", "CHO", "RER", "RPE", "fat oxidation"]}
+{"i": [], "o": ["O2 utilisation"]}
+{"i": ["diet and training intervention"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Heart rate"]}
+{"i": [], "o": []}
+{"i": ["high carbohydrate availability ( HCHO ), periodised CHO availability ( PCHO ) and low carbohydrate high fat ( LCHF ) dietary treatments ."], "o": []}
+{"i": [], "o": ["LCHF"]}
+{"i": [], "o": ["LCHF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["LCHF"]}
+{"i": [], "o": ["HR"]}
+{"i": [], "o": ["RPE"]}
+{"i": ["LCHF"], "o": ["RER values"]}
+{"i": [], "o": ["O2 utilisation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["diet \u2010 training"], "o": ["maximal aerobic capacity"]}
+{"i": ["LCHF"], "o": ["O2 cost of walking", "maximal aerobic capacity"]}
+{"i": [], "o": ["CHO and fat oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["fat oxidation", "CHO oxidation"]}
+{"i": ["LCHF"], "o": ["CHO oxidation rates", "rates of fat oxidation", "substrate utilisation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose concentrations"]}
+{"i": [], "o": ["blood glucose concentrations"]}
+{"i": [], "o": ["Blood lactate concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Blood ketone concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketogenic low \u2010 CHO , high fat diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["peak aerobic capacity"]}
+{"i": ["LCHF diet"], "o": ["whole \u2010 body fat oxidation"]}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["performance"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["non \u2010 ketogenic high fat diet"], "o": ["fat oxidation"]}
+{"i": [], "o": []}
+{"i": ["ketogenic LCHF diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": ["blood metabolites and substrate utilisation"]}
+{"i": [], "o": ["blood glucose concentrations", "blood ketone ( \u03b2 \u2010 hydroxybutyrate ) concentrations"]}
+{"i": [], "o": ["gas exchange", "CHO utilisation", "whole \u2010 body rates of fat oxidation"]}
+{"i": ["high fat diets"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["fat availability , mobilisation and transport activities"]}
+{"i": [], "o": ["fat oxidation"]}
+{"i": ["energy ), high ( er ) fat", "non \u2010 ketogenic low ( er ) carbohydrate"], "o": ["rates of fat oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["fat oxidation"]}
+{"i": ["ketogenic LCHF diet"], "o": []}
+{"i": ["ketogenic", ") high fat"], "o": ["rates of fat oxidation"]}
+{"i": ["ketogenic LCHF diet"], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["rates of fat oxidation"]}
+{"i": ["LCHF nutrition"], "o": ["peak rates of fat oxidation"]}
+{"i": ["LCHF"], "o": []}
+{"i": ["treadmill running"], "o": ["fat oxidation rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["rates of fat oxidation"]}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["peak fat oxidation rates"]}
+{"i": [], "o": ["substrate utilisation"]}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": ["CHO intake", "rates of fat oxidation", "rates of CHO oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma glucose concentrations", "muscle glycogen stores"]}
+{"i": ["ketogenic low CHO diet"], "o": ["active form of pyruvate dehydrogenase ( PDHa )", "glycogenolysis"]}
+{"i": [], "o": []}
+{"i": [], "o": ["whole \u2010 body metabolism"]}
+{"i": [], "o": ["blood glucose concentrations", "blood lactate concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["high \u2010 CHO diet", "LCHF diet"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose concentrations", "blood glucose utilisation", "glycogen utilisation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["glucose kinetics", "endogenous glucose production"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["CHO utilisation"]}
+{"i": [], "o": ["plasma lactate concentrations", "plasma metabolite concentrations"]}
+{"i": [], "o": ["aerobic capacity"]}
+{"i": ["LCHF"], "o": ["10 km race performance"]}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": ["race performance", "quality of workouts", "perception of effort"]}
+{"i": [], "o": []}
+{"i": [], "o": ["oxidative phosphorylation yield", "ATP yield"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF"], "o": ["oxygen cost of race walking"]}
+{"i": ["LCHF"], "o": ["peak aerobic capacity ."]}
+{"i": [], "o": ["relative oxygen cost of walking"]}
+{"i": ["low \u2010 CHO diet", "high \u2010 CHO"], "o": ["energy expenditure of cycling"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["V \u0307 O2 peak values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["relative economy"]}
+{"i": [], "o": []}
+{"i": [], "o": ["post \u2010 training peak aerobic capacity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean 50 km race pace"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["LCHF diet"], "o": ["fat oxidation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["power output", "heart rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["endurance training"], "o": ["fat utilisation"]}
+{"i": [], "o": ["rates of fat oxidation"]}
+{"i": ["endurance training"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["moderate intensity ' recovery ' work", "training in a fasted state or training with low glycogen"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["carbohydrate"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ketones"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["capacity for fat oxidation", "exercise economy", "aerobic capacity"]}
+{"i": ["diet rich in carbohydrate"], "o": ["race outcomes ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

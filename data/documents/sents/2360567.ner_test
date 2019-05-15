@@ -1,0 +1,145 @@
+{"i": ["interleukin - 2"], "o": []}
+{"i": [], "o": []}
+{"i": ["interleukin - 2 ( IL - 2 )"], "o": []}
+{"i": ["perioperative immunomodulation with IL - 2 ( IL - 2 group ; n = 60 ) and perioperative immunomonitoring without immunomodulation ( control group"], "o": []}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": ["cellular and humoral immunity ( leucocytes , T - cell markers CD3 , CD4 , and CD8 , B - cell marker CD19 , monocyte marker CD14 , natural killer ( NK ) cell markers CD16 , CD56 , and CD57 , activation markers CD6 , CD25 , CD28 , and CD69 , progenitor cell marker CD34 , as well as IL - 2 , IL - 6 , IL - 10 , soluble IL - 2 receptor , IL - 1 receptor antagonist , transforming growth factor - \u03b21 , and vascular endothelial growth factor )"]}
+{"i": [], "o": ["Interleukin - 2 - related toxicity"]}
+{"i": [], "o": ["T - cell markers , activation markers , and NK cell markers", "IL - 6 and IL - 10"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Tumour - specific survival"]}
+{"i": [], "o": ["progression - free survival ."]}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["survival benefit"]}
+{"i": ["immunotherapy"], "o": []}
+{"i": ["immunomodulation with interleukin - 2 ( IL - 2 )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["perioperative immunomodulation with IL - 2 ( IL - 2 group ; n = 60 ) and perioperative immunomonitoring without immunomodulation as a control group ( control"], "o": []}
+{"i": [], "o": []}
+{"i": ["Recombinant human IL - 2 ( Aldesleukin , Chiron"], "o": []}
+{"i": [], "o": ["initial dose", "maintenance"]}
+{"i": ["antipyretic metamizole", "antimemetic metoclopramide"], "o": []}
+{"i": [], "o": ["Interleukin - 2 - related toxicity"]}
+{"i": [], "o": ["Toxicity"]}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["differential blood count , T - cell markers CD3 , CD4 , and CD8 , B - cell marker CD19 , monocyte marker CD14 , natural killer ( NK ) cell markers CD16 , CD56 , and CD57 , activation markers CD6 , CD25 , CD28 , CD69 , and HLA - DR , progenitor cell marker CD34 , and cytokine IL - 1 receptor antagonist ( IL - 1 - RA ), IL - 2 , soluble IL - 2 receptor ( sIL2 - R ), IL - 6 , IL - 10 , transforming growth factor ( TGF )- \u03b21", "cellular and humoral immunity"]}
+{"i": ["fluorescein isothiocyanate"], "o": []}
+{"i": [], "o": ["leucocyte subsets"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["alterations in parameters of cellular and humoral immunity ."]}
+{"i": [], "o": ["toxicity , tumour - specific survival , and time to progression ."]}
+{"i": [], "o": ["Survival curves"]}
+{"i": [], "o": ["survival curves"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["tumour diameter , Thoenes grade , histological subtype , location , operation time , operative technique , or perioperative blood transfusions ."]}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": ["IL - 2 - related toxicity"]}
+{"i": [], "o": ["Toxicity"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["T - cell markers ( CD3 , CD4 , CD8 ), activation markers ( CD6 , CD25 , CD28 , HLA - DR ), B - cell marker ( CD19 ), and NK cell markers ( CD16 , CD56 , CD57 )"]}
+{"i": [], "o": ["Progenitor cell marker CD34"]}
+{"i": [], "o": ["elevated leucocyte and granulocyte but decreased lymphocyte counts , T - cell markers , activation markers , and NK cell markers ."]}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": ["postoperative kinetics of B - cell marker CD19 and progenitor cell marker CD34"]}
+{"i": [], "o": ["Monocyte marker CD14"]}
+{"i": [], "o": ["IL - 2 levels"]}
+{"i": ["Interleukin - 2"], "o": ["soluble IL - 2 receptor , IL - 1 - RA , IL - 6 , and IL - 10 ."]}
+{"i": [], "o": ["postoperative increase of IL - 6 and IL - 10"]}
+{"i": [], "o": ["TGF - \u03b21 and VEGF"]}
+{"i": [], "o": ["cytokines"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["tumour - specific survival"]}
+{"i": [], "o": ["median survival time"]}
+{"i": [], "o": ["progression - free survival rates", "progression - free survival"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Median time to tumour progression"]}
+{"i": ["surgical resection of lung metastases", "IL - 2 group ) IFN - \u03b1 and vinblastine , and one ( IL - 2 group ) local immunotherapy with inhaled IL - 2 .", "IL - 2 group : three ; control group : one ) mistletoe treatment", "immunochemotherapy ( Hanover regimen : IL - 2 , IFN - \u03b1 , 5 - FU ),"], "o": []}
+{"i": [], "o": ["median tumour - specific survival time"]}
+{"i": [], "o": ["Median time to progression"]}
+{"i": [], "o": []}
+{"i": [], "o": ["perioperative immunodysfunction and survival ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["leucocytes , CD3 , CD4 , CD6 , CD8 , CD16 , CD25 , CD28 , CD56 , CD57 , CD69 , IL - 1 - RA , IL - 2 , sIL2 - R , IL - 6 , IL - 10 , TGF - \u03b21 , and VEGF", "ECOG PS , tumour stage , Thoenes grade , histological subtype"]}
+{"i": [], "o": ["ECOG PS , tumour stage , Thoenes grade , and perioperative immunomodulation ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": ["toxicity .", "perioperative immunodysfunction"]}
+{"i": [], "o": ["postoperative nadir of cellular parameters of the immune system"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["IL - 2 - based immunotherapy"], "o": ["numbers of intratumoral lymphocyte subsets ( CD3 , CD8 , CD57 )", "objective response and survival"]}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": ["related toxicity"]}
+{"i": [], "o": ["tolerated ."]}
+{"i": [], "o": ["Frequency and severity of side effects"]}
+{"i": ["IL - 2"], "o": []}
+{"i": ["metamizole and metoclopramide"], "o": ["tolerability ."]}
+{"i": [], "o": ["IL - 2 - related toxicity"]}
+{"i": [], "o": ["elevation of T - cell , NK cell , and activation markers", "leucocytes"]}
+{"i": [], "o": ["perioperative immunomodulation"]}
+{"i": ["adjuvant immunotherapy", "perioperative"], "o": []}
+{"i": [], "o": []}
+{"i": ["Perioperative immunomodulation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["perioperative immunomodulation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": ["immunological parameters"]}
+{"i": [], "o": []}
+{"i": [], "o": ["immunological parameters"]}
+{"i": [], "o": ["Tumour - specific and progression - free survival"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["immunotherapy", "tumour nephrectomy"], "o": ["survival"]}
+{"i": ["systemic immunotherapy", "adjuvant immunotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Tumour - specific survival"]}
+{"i": [], "o": ["tumour recurrence", "died of recurrent disease"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["TGF - \u03b21 and VEGF"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["IL - 2"], "o": []}
+{"i": [], "o": []}

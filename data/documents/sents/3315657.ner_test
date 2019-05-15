@@ -1,0 +1,109 @@
+{"i": ["dexamethasone", "ramosetron"], "o": []}
+{"i": [], "o": []}
+{"i": ["Opioid - based patient controlled analgesia ( PCA )"], "o": []}
+{"i": ["dexamethasone", "ramosetron"], "o": []}
+{"i": ["ramosetron plus dexamethasone", "dexamethasone", "fentanyl - based IV PCA", "ramosetron", "Normal saline"], "o": []}
+{"i": [], "o": ["incidence and severity of PONV , pain score and the amount of rescue antiemetics"]}
+{"i": [], "o": ["number of patients with moderate to severe nausea", "overall incidence of vomiting"]}
+{"i": [], "o": ["Rescue antiemetic"]}
+{"i": ["ramosetron", "dexamethasone"], "o": ["moderate to severe nausea and vomiting"]}
+{"i": ["Opioid - based patient controlled analgesia ( PCA )"], "o": []}
+{"i": ["dexamethasone", "ramosetron"], "o": []}
+{"i": ["ramosetron plus dexamethasone", "dexamethasone", "fentanyl - based IV PCA", "ramosetron", "Normal saline"], "o": []}
+{"i": [], "o": ["incidence and severity of PONV , pain score and the amount of rescue antiemetics"]}
+{"i": [], "o": ["number of patients with moderate to severe nausea", "overall incidence of vomiting"]}
+{"i": [], "o": ["Rescue antiemetic"]}
+{"i": ["ramosetron", "dexamethasone"], "o": ["moderate to severe nausea and vomiting"]}
+{"i": [], "o": []}
+{"i": ["patient controlled analgesia ( PCA )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["pressure on the abdominal contents", "nausea and vomiting"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Five - hydroxytryptamine receptor 3 ( 5 - HT3 ) antagonists"], "o": ["vomiting efficacy"]}
+{"i": ["ondansetron and granisetron"], "o": ["emesis"]}
+{"i": ["Ramosetron", "ondansetron and granisetron"], "o": []}
+{"i": ["ramosetron", "ondansetron"], "o": ["nausea severity"]}
+{"i": ["dexamethasone"], "o": []}
+{"i": ["dexamethasone", "ramosetron"], "o": []}
+{"i": ["ramosetron", "ramosetron and dexamethasone combination therapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["PONV"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PCA"], "o": []}
+{"i": [], "o": ["minimal expected risk for PONV"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ramosetron", "combination of ramosetron and dexamethasone"], "o": []}
+{"i": ["glycopyrrolate", "midazolam"], "o": []}
+{"i": ["dexamethasone", "normal saline"], "o": []}
+{"i": [], "o": []}
+{"i": ["remifentanil", "propofol", "rocuronium ."], "o": []}
+{"i": [], "o": []}
+{"i": ["rocuronium", "sevoflurane", "remifentanil"], "o": []}
+{"i": ["ramosetron", "PCA"], "o": []}
+{"i": ["ramosetron", "ketorolac", "fentanyl"], "o": []}
+{"i": ["IV PCA"], "o": []}
+{"i": ["sevoflurane", "remifentanil"], "o": []}
+{"i": ["remifentanil", "pyridostigmine", "glycopyrrolate"], "o": ["Neuromuscular blockade"]}
+{"i": [], "o": ["incidence and severity of nausea and incidence of vomiting"]}
+{"i": [], "o": ["use of additional antiemetic rescues , pain intensity and medication - associated complications ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Retching"]}
+{"i": [], "o": ["verbal rating scales ( VRS", "intensity of nausea"]}
+{"i": [], "o": ["severity of nausea"]}
+{"i": [], "o": ["Pain intensity scores", "visual analog scale"]}
+{"i": ["Rescue antiemetic therapy ( metoclopromide"], "o": []}
+{"i": ["PCA", "metoclopromide ."], "o": []}
+{"i": ["ketorolac"], "o": []}
+{"i": ["5 - HT3 antagonists"], "o": ["headache , dizziness , drowsiness , constipation , flushing , heat and general weakness"]}
+{"i": ["dexamethasone", "ondansetron"], "o": []}
+{"i": [], "o": ["incidence of PONV"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["lumbar laminectomy"], "o": []}
+{"i": [], "o": ["inadvertent tears of the dura mater ."]}
+{"i": ["PCA pumps"], "o": ["intractable nausea and / or vomiting ."]}
+{"i": [], "o": ["overall incidence of nausea"]}
+{"i": [], "o": ["number of patients with moderate to severe nausea", "highest VRS scores of nausea intensity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["overall incidence of vomiting"]}
+{"i": [], "o": ["Pain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["antiemetics - related adverse events"]}
+{"i": ["dexamethasone"], "o": ["side effects", "risk of infection and wound dehiscence"]}
+{"i": ["ramosetron", "ramosetron plus dexamethasone", "dexamethasone"], "o": ["severe nausea and vomiting", "total PONV"]}
+{"i": [], "o": []}
+{"i": ["5 - HT3 antagonists"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["antinausea efficacy", "antivomiting"]}
+{"i": ["ramosetron", "ondansetron"], "o": ["incidence of PONV"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dexamethasone", "ondansetron , granisetron and dolasetron"], "o": ["PONV"]}
+{"i": ["dexamethasone"], "o": []}
+{"i": ["dexamethasone to 5 -"], "o": ["quality of recovery", "incidence of PONV"]}
+{"i": ["dexamethasone and 5 - HT3 antagonist"], "o": []}
+{"i": ["ondansetron , granisetron and tropisetron", "Ramosetron"], "o": []}
+{"i": ["dexamethasone", "ramosetron"], "o": []}
+{"i": ["ramosetron and dexamethasone", "ramosetron"], "o": ["moderate to severe nausea and vomiting"]}
+{"i": [], "o": ["use of rescue antiemetic agents"]}
+{"i": [], "o": ["moderate to severe nausea", "perception of pain", "incidence of moderate to severe nausea"]}
+{"i": [], "o": ["PONV", "Total incidence of PONV"]}
+{"i": ["dexamethosone"], "o": ["relative risk"]}
+{"i": ["fentanyl"], "o": ["PONV"]}
+{"i": ["fentanyl"], "o": []}
+{"i": [], "o": ["PONV"]}
+{"i": ["propofol"], "o": ["PONV"]}
+{"i": ["dexamethasone", "ondansetron"], "o": ["PONV"]}
+{"i": ["dexamethasone"], "o": ["incidence of wound infection .", "wound healing"]}
+{"i": ["dexamethasone"], "o": []}
+{"i": ["ramosetron and dexamethasone", "ramosetron"], "o": ["moderate to severe nausea and vomiting", "incidence of PONV"]}

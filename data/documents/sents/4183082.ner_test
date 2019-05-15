@@ -1,0 +1,126 @@
+{"i": ["Succinylcholine and Cisatracurium"], "o": ["Sore Throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sore throat"]}
+{"i": [], "o": ["sore throat ."]}
+{"i": ["Cisatracurium .", "Succinylcholine"], "o": ["postoperative sore throat"]}
+{"i": [], "o": []}
+{"i": ["Cistracurium", "Succinylcholine"], "o": []}
+{"i": [], "o": ["Sore throat , muscle ache , hoarseness , dry throat and pain"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sore throat"]}
+{"i": [], "o": ["sore throat ."]}
+{"i": ["Cisatracurium .", "Succinylcholine"], "o": ["postoperative sore throat"]}
+{"i": [], "o": []}
+{"i": ["Cistracurium", "Succinylcholine"], "o": []}
+{"i": [], "o": ["Sore throat , muscle ache , hoarseness , dry throat and pain"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sore throat"]}
+{"i": ["cuffed ETT", "minimizing ETT cuff pressure", "of beclomethasone spray", "mild suctioning of mouth and pharynx", "ETT", "Lidocain gel on ETT", "spraying the endotracheal tube cuff with benzydamine hydrochloride", "withholding extubation until the cuff"], "o": []}
+{"i": ["Succinylcholine"], "o": ["postoperative sore throat"]}
+{"i": [], "o": ["post operative sore throat ."]}
+{"i": ["succinylcholine", "Cisatracurium", "Succinylcholine"], "o": ["hyperkalemia and malignant hyperthermia"]}
+{"i": ["Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": ["Cisatracurium .", "Succinylcholine"], "o": ["postoperative sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Succinylcholine or Cisatracurium ."], "o": []}
+{"i": [], "o": ["Sore throat , muscle ache , hoarseness , dry throat and pain"]}
+{"i": [], "o": ["Presence of sore throat , muscle ache , hoarseness and dry throat"]}
+{"i": [], "o": ["Post - operative sore throat"]}
+{"i": [], "o": ["fasciculation ."]}
+{"i": ["General anesthesia"], "o": []}
+{"i": ["Midazolam", "Fentanyl"], "o": []}
+{"i": ["Thiopental"], "o": []}
+{"i": ["Succinylcholine or 0 . 4 mg / kg Cisatracurium"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["inflated cuffs"]}
+{"i": ["Isofluorane and Atracurium ."], "o": []}
+{"i": ["Fentayl"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Neostigmin", "Atropin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium and Succinylcholine"], "o": ["VAS in postoperative sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium .", "Succinylcholine"], "o": []}
+{"i": [], "o": ["age , sex , and BMI"]}
+{"i": [], "o": ["Duration of surgery"]}
+{"i": [], "o": []}
+{"i": ["Succinylcholine Cisatracurium P Value"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["incidence of sore throat and its variants ( sore throat , dry throat , and hoarseness )"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["Number of patients who developed sore throat"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["Number of patients who developed hoarseness"]}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["Number of patients who experienced dryness of the throat"]}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["Number of patients with VAS > 3"]}
+{"i": ["succinylcholine", "Cisatracurium"], "o": []}
+{"i": [], "o": []}
+{"i": ["Cisatraciruim", "Succinylcholine"], "o": ["fasciculation"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["Muscle ache and fasciculation"]}
+{"i": [], "o": ["incidence of sore throat", "frequency of sore throat"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["muscle ache", "accompanying sore throat"]}
+{"i": ["Cisatracurium"], "o": ["Number of patients with sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sore throat ."]}
+{"i": ["Succinylcholine"], "o": []}
+{"i": ["Succinylcholine"], "o": ["sore throat"]}
+{"i": [], "o": []}
+{"i": ["dilation and curettage", "Succinylcholine"], "o": ["post operative sore throat"]}
+{"i": ["Succinylcholine"], "o": ["sore throat"]}
+{"i": ["Succinylcholine"], "o": ["postoperative sore throat"]}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence or severity of sore throat"]}
+{"i": [], "o": ["sore throat"]}
+{"i": ["Succinylcholine and Cisatracurium"], "o": ["incidence of sore throat"]}
+{"i": ["Succinylcholine and Cisatracurium ."], "o": ["sore throat"]}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["number of patients who developed sore throat"]}
+{"i": [], "o": []}
+{"i": ["Cisatracurium", "Succinylcholine"], "o": ["muscle ache", "accompanying sore throat", "sore throat"]}
+{"i": ["Succinylcholine .", "Cisatracurium"], "o": ["sore throat", "post - operative sore throat"]}
+{"i": [], "o": []}

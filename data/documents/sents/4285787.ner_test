@@ -1,0 +1,143 @@
+{"i": ["Canagliflozin"], "o": []}
+{"i": [], "o": []}
+{"i": ["canagliflozin"], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": []}
+{"i": [], "o": ["percent change in body weight"]}
+{"i": ["Canagliflozin", "canagliflozin", "placebo"], "o": ["urinary glucose excretion", "body weight"]}
+{"i": [], "o": ["Overall adverse event ( AE ) rates"]}
+{"i": ["Canagliflozin"], "o": ["rates of genital mycotic infections"]}
+{"i": [], "o": ["Osmotic diuresis - related AE rates"]}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight"]}
+{"i": ["canagliflozin"], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": []}
+{"i": [], "o": ["percent change in body weight"]}
+{"i": ["Canagliflozin", "canagliflozin", "placebo"], "o": ["urinary glucose excretion", "body weight"]}
+{"i": [], "o": ["Overall adverse event ( AE ) rates"]}
+{"i": ["Canagliflozin"], "o": ["rates of genital mycotic infections"]}
+{"i": [], "o": ["Osmotic diuresis - related AE rates"]}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight"]}
+{"i": ["Canagliflozin"], "o": []}
+{"i": [], "o": ["renal glucose reabsorption", "urinary glucose excretion ( UGE )"]}
+{"i": ["canagliflozin"], "o": ["UGE", "renal threshold for glucose excretion ( RTG )"]}
+{"i": ["canagliflozin"], "o": ["plasma glucose or insulin levels", "body weight", "UGE", "hypoglycemia"]}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["body weight"]}
+{"i": [], "o": ["absolute change in body weight , percent change in body weight , and change in BMI", "waist and hip circumference and waist / hip ratio", "proportion of subjects who lost \u2265 5 % or \u2265 10 % of baseline body weight"]}
+{"i": [], "o": ["fasting plasma glucose ( FPG ), triglycerides , HDL - C , LDL - C , and LDL - C / HDL - C ratio", "systolic and diastolic BP", "UGE / creatinine ratio and RTG", "RTG", "hemoglobin A1c"]}
+{"i": [], "o": ["Impact of Weight on Quality of Life - Lite questionnaire ( IWQOL - Lite )"]}
+{"i": [], "o": ["physical function , self - esteem , sexual life , public distress , and work ),"]}
+{"i": [], "o": ["Body weight"]}
+{"i": [], "o": []}
+{"i": [], "o": ["medical history , physical examinations , vital sign measurements , clinical laboratory tests , 12 - lead electrocardiograms , and urinalysis ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["Adverse events ( AEs"]}
+{"i": [], "o": []}
+{"i": [], "o": ["vaginal swabs for Candida culture and urine samples"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean BMI", "mean body weight"]}
+{"i": [], "o": ["Mean weight loss"]}
+{"i": [], "o": ["impaired fasting glucose", "normal FPG"]}
+{"i": ["canagliflozin", "placebo"], "o": []}
+{"i": ["CANA"], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": ["fasting plasma glucose", "BMI"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["FPG"]}
+{"i": ["canagliflozin", "placebo"], "o": ["percent body weight least squares ( LS"]}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight", "weight loss"]}
+{"i": ["canagliflozin", "placebo"], "o": ["loss in body weight"]}
+{"i": ["canagliflozin", "placebo"], "o": ["loss in body weight"]}
+{"i": [], "o": ["body weight , BMI , and anthropometric measurements ( LOCF"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": ["BMI"]}
+{"i": ["canagliflozin", "placebo"], "o": ["waist circumference and hip circumference"]}
+{"i": ["canagliflozin", "placebo"], "o": ["waist or hip circumference"]}
+{"i": ["canagliflozin", "placebo"], "o": ["mean changes and LS mean differences in waist / hip ratio"]}
+{"i": ["Canagliflozin"], "o": ["UGE / creatinine ratio"]}
+{"i": ["canagliflozin", "placebo"], "o": ["UGE / creatinine ratio"]}
+{"i": ["canagliflozin"], "o": ["mean overnight RTG values"]}
+{"i": ["canagliflozin", "placebo"], "o": ["triglycerides and HDL - C levels ."]}
+{"i": ["canagliflozin", "placebo"], "o": ["LDL - C"]}
+{"i": ["Canagliflozin", "placebo"], "o": ["LDL - C / HDL - C ratio"]}
+{"i": ["canagliflozin", "placebo"], "o": ["glycemic parameters", "FPG and hemoglobin A1c"]}
+{"i": ["canagliflozin", "placebo"], "o": ["elevated FPG"]}
+{"i": ["canagliflozin", "placebo"], "o": ["diastolic BP", "systolic BP"]}
+{"i": ["Canagliflozin", "placebo"], "o": ["pulse rate"]}
+{"i": [], "o": ["weight - related functioning", "IWQOL - Lite total scores"]}
+{"i": [], "o": ["IWQOL - Lite total score"]}
+{"i": ["canagliflozin", "placebo"], "o": ["weight loss", "IWQOL - Lite total scores"]}
+{"i": [], "o": ["AEs"]}
+{"i": ["placebo or canagliflozin", "canagliflozin"], "o": ["incidence of serious AEs"]}
+{"i": ["canagliflozin"], "o": ["anemia secondary to dysfunctional uterine bleeding", "arthralgia and hospitalization due to right hip pain", "cholecystitis"]}
+{"i": [], "o": []}
+{"i": ["canagliflozin"], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": ["incidences of vulvovaginal mycotic infection , nausea , and sinusitis"]}
+{"i": [], "o": []}
+{"i": ["CANA"], "o": ["Urinary tract infection 6", "overall safety"]}
+{"i": [], "o": []}
+{"i": ["PBO", "CANA"], "o": []}
+{"i": ["CANA"], "o": ["candidiasis , vaginal infection , vaginitis bacterial , vulvovaginal mycotic infection , vaginal discharge , and vulvovaginal pruritus"]}
+{"i": [], "o": ["incontinence , micturition urgency , nocturia , pollakiuria , polyuria , stress urinary incontinence", "urge incontinence"]}
+{"i": ["canagliflozin .", "canagliflozin", "placebo"], "o": ["incidence of genital mycotic infections"]}
+{"i": ["canagliflozin"], "o": []}
+{"i": ["canagliflozin"], "o": ["genital mycotic infection ( posthitis", "UTIs"]}
+{"i": [], "o": ["osmotic diuresis - related AEs"]}
+{"i": [], "o": ["AEs", "intravascular volume", "dizziness )"]}
+{"i": [], "o": ["symptomatic hypoglycemia"]}
+{"i": ["canagliflozin"], "o": ["blood glucose", "hypoglycemia episodes"]}
+{"i": ["canagliflozin", "placebo"], "o": ["serum urate concentrations"]}
+{"i": ["canagliflozin", "placebo"], "o": ["hematocrit and hemoglobin"]}
+{"i": ["Canagliflozin", "placebo"], "o": ["estimated glomerular filtration rate ( eGFR )"]}
+{"i": ["Canagliflozin"], "o": ["eGFR"]}
+{"i": ["Canagliflozin", "canagliflozin", "placebo"], "o": ["blood urea nitrogen ( BUN )"]}
+{"i": ["canagliflozin", "placebo"], "o": ["bone resorption", "collagen type - 1 \u03b2 - carboxy - telopeptide ( CTX ),", "bone specific alkaline phosphatase , osteocalcin", "bone formation"]}
+{"i": ["Canagliflozin"], "o": ["glycemic control"]}
+{"i": [], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": ["percent change in body weight"]}
+{"i": ["canagliflozin", "placebo"], "o": ["mean percent body weight and absolute body weight", "body weight"]}
+{"i": [], "o": ["total scores for IWQOL - Lite"]}
+{"i": ["canagliflozin", "placebo"], "o": ["BMI", "hip and waist circumference and waist / hip ratio", "weight reduction"]}
+{"i": ["Canagliflozin", "placebo"], "o": ["glycemic parameters , lipids , or BP"]}
+{"i": ["canagliflozin", "placebo"], "o": ["weight loss"]}
+{"i": ["canagliflozin", "placebo", "metformin"], "o": ["weight loss", "efficacy and safety"]}
+{"i": ["canagliflozin"], "o": []}
+{"i": ["Canagliflozin"], "o": []}
+{"i": ["canagliflozin"], "o": ["UGE"]}
+{"i": [], "o": ["24 - h UGE", "24 - h urinary caloric loss"]}
+{"i": ["canagliflozin"], "o": ["overnight UGE", "total caloric losses", "total daily UGE"]}
+{"i": ["canagliflozin"], "o": ["Weight loss estimates"]}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight"]}
+{"i": ["canagliflozin"], "o": ["UGE", "urinary caloric loss"]}
+{"i": ["canagliflozin"], "o": ["weight loss"]}
+{"i": [], "o": ["body composition"]}
+{"i": ["canagliflozin"], "o": ["body weight reductions"]}
+{"i": ["canagliflozin"], "o": ["weight loss", "UGE ."]}
+{"i": [], "o": []}
+{"i": ["Canagliflozin", "placebo"], "o": ["AEs", "tolerated"]}
+{"i": ["canagliflozin"], "o": ["intravascular volume"]}
+{"i": ["Canagliflozin", "canagliflozin"], "o": ["incidence of genital mycotic infections"]}
+{"i": [], "o": ["UGE", "genital mycotic infections"]}
+{"i": ["canagliflozin", "placebo"], "o": ["AEs", "eGFR .", "serum urate", "BUN", "clinical laboratory parameters", "osmotic diuresis and reduced intravascular volume or symptomatic hypoglycemia"]}
+{"i": ["canagliflozin"], "o": []}
+{"i": [], "o": ["serum urate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["efficacy and safety"]}
+{"i": ["canagliflozin", "placebo"], "o": ["weight loss"]}
+{"i": ["canagliflozin"], "o": ["weight loss nadir", "weight loss"]}
+{"i": ["orlistat", "placebo"], "o": ["weight loss"]}
+{"i": ["lorcaserin", "Placebo"], "o": ["weight reductions"]}
+{"i": ["canagliflozin"], "o": ["weight"]}
+{"i": [], "o": []}
+{"i": ["canagliflozin", "placebo"], "o": ["body weight ."]}

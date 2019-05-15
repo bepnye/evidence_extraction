@@ -1,0 +1,107 @@
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["conventional open surgery", "Laparoscopic surgery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["neuroendocrine and inflammatory responses"]}
+{"i": ["laparoscopic", "abdominal hysterectomy"], "o": []}
+{"i": [], "o": ["Venous blood", "levels of interleukin - 6 ( IL - 6 ), CRP and cortisol"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["inflammatory response", "serum IL - 6 and CRP responses", "hospital stay"]}
+{"i": ["abdominal hysterectomy"], "o": ["CRP concentrations", "peak serum IL - 6", "serum cortisol concentration"]}
+{"i": [], "o": ["response of CRP", "response of interleukin - 6"]}
+{"i": ["open abdominal hysterectomy"], "o": ["endocrine metabolic response"]}
+{"i": ["conventional open surgery", "Laparoscopic surgery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["neuroendocrine and inflammatory responses"]}
+{"i": ["laparoscopic", "abdominal hysterectomy"], "o": []}
+{"i": [], "o": ["Venous blood", "levels of interleukin - 6 ( IL - 6 ), CRP and cortisol"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["inflammatory response", "serum IL - 6 and CRP responses", "hospital stay"]}
+{"i": ["abdominal hysterectomy"], "o": ["CRP concentrations", "peak serum IL - 6", "serum cortisol concentration"]}
+{"i": [], "o": ["response of CRP", "response of interleukin - 6"]}
+{"i": ["open abdominal hysterectomy"], "o": ["endocrine metabolic response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["convalescence and morbidity"]}
+{"i": [], "o": []}
+{"i": ["Laparoscopic surgery"], "o": []}
+{"i": ["conventional open surgery", "laparoscopic surgery"], "o": ["return to normal activity", "postoperative pain", "hospital stay"]}
+{"i": [], "o": ["clinical outcome"]}
+{"i": ["open surgery", "laparoscopy"], "o": ["inflammatory markers IL - 6 and C - reactive protein ( CRP )", "neuroendocrine response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["abdominal hysterectomy or laparoscopic assisted hysterectomy"], "o": []}
+{"i": [], "o": []}
+{"i": ["general anesthesia", "glycopyrrolate"], "o": []}
+{"i": ["IV rocuronium bromide", "propofol", "thiopental sodium"], "o": []}
+{"i": ["sevoflurane"], "o": []}
+{"i": [], "o": ["Venous blood"]}
+{"i": [], "o": ["cortisol and IL - 6 levels"]}
+{"i": [], "o": ["IL - 6"]}
+{"i": [], "o": ["serum cortisol"]}
+{"i": [], "o": []}
+{"i": [], "o": ["C - reactive protein ( CRP )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IL - 6 , CRP and cortisol concentrations"]}
+{"i": [], "o": ["hospital days"]}
+{"i": [], "o": ["IL - 6 and CRP"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["duration of anesthesia", "operation time"]}
+{"i": ["laparoscopy or conventional open surgery"], "o": []}
+{"i": [], "o": ["a blood transfusion"]}
+{"i": ["abdominal hysterectomy", "laparoscopic surgery"], "o": ["mean duration of surgery"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["duration of the postoperative hospital stay"]}
+{"i": [], "o": ["serum IL - 6 level"]}
+{"i": [], "o": ["levels of IL - 6"]}
+{"i": [], "o": ["changes of IL - 6"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["peak IL - 6 concentration", "peak IL - 6 levels"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["IL - 6 level"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CRP level"]}
+{"i": [], "o": ["serum concentration of CRP"]}
+{"i": ["abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["mean CRP concentration", "cytokine and CRP levels"]}
+{"i": [], "o": ["baseline serum cortisol level", "serum cortisol level"]}
+{"i": [], "o": ["serum cortisol level"]}
+{"i": [], "o": ["serum cortisol level"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["open abdominal hysterectomy", "laparoscopic hysterectomy"], "o": ["tissue trauma", "inflammatory response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["serum IL - 6 level"]}
+{"i": [], "o": ["serum IL - 6"]}
+{"i": ["abdominal hysterectomy .", "laparoscopic hysterectomy"], "o": ["serum concentration of IL - 6"]}
+{"i": ["abdominal hysterectomy"], "o": ["tissue injury"]}
+{"i": [], "o": ["IL - 6 response"]}
+{"i": ["laparoscopic surgical technique"], "o": ["inflammatory response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["abdominal hysterectomy"], "o": ["serum IL - 6 and CRP concentrations"]}
+{"i": [], "o": ["extent of surgical trauma"]}
+{"i": ["laparoscopic surgery"], "o": ["operation time"]}
+{"i": [], "o": ["surgery time"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IL - 6 level", "CRP level .", "response of IL - 6", "CRP"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum cortisol levels"]}
+{"i": [], "o": ["serum cortisol level ."]}
+{"i": ["laparoscopic hysterectomy"], "o": ["stress response", "cortisol response"]}
+{"i": [], "o": ["cortisol level", "neuroendocrine response"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum cortisol level"]}
+{"i": ["abdominal hysterectomy .", "laparoscopic hysterectomy"], "o": ["inflammatory response", "classic neuroendocrine response"]}
+{"i": ["Laparoscopic surgery"], "o": []}
+{"i": [], "o": []}

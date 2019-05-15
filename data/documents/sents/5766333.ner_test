@@ -1,0 +1,328 @@
+{"i": ["dexmedetomidine", "propofol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sedation protocol", "propofol ( PF ) and dexmedetomidine ( DEX ) ( Combination group ) and sedation protocol using PF alone ( PF group )"], "o": ["effectiveness and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores", "effectiveness and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["maintenance dose of PF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of rescue PF injections"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence of bradycardia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF and DEX"], "o": ["satisfaction levels"]}
+{"i": [], "o": []}
+{"i": ["sedation protocol", "propofol ( PF ) and dexmedetomidine ( DEX ) ( Combination group ) and sedation protocol using PF alone ( PF group )"], "o": ["effectiveness and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores", "effectiveness and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["maintenance dose of PF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of rescue PF injections"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence of bradycardia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF and DEX"], "o": ["satisfaction levels"]}
+{"i": [], "o": []}
+{"i": ["Endoscopic submucosal dissection ( ESD )"], "o": []}
+{"i": [], "o": ["postoperative loss of function ."]}
+{"i": ["ESD"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol ( PF )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["midazolam ( MDZ )"], "o": ["recovery times", "restlessness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dexmedetomidine ( DEX )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF and DEX"], "o": []}
+{"i": ["conventional sedation", "PF and DEX", "sedation"], "o": ["efficacy and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX", "PF and DEX", "PF"], "o": []}
+{"i": ["PF and DEX", "sedation", "sedation using PF alone"], "o": ["effectiveness and the safety"]}
+{"i": ["sedation protocol using a combination of PF and DEX", "sedation protocol using PF alone ( PF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["supplemental oxygen"], "o": []}
+{"i": ["Local pharyngeal anaesthesia", "topical lidocaine spray"], "o": []}
+{"i": [], "o": []}
+{"i": ["gastric ESD"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["deep sedation", "Modified Observer ' s Assessment of Alertness / Sedation Scale ( MOAA / S"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Modified Observer \u2019 s Assessment of Alertness / Sedation Scale ( MOSS / A )."]}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF ( Diprivan", "PF"], "o": []}
+{"i": ["PF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX", "PF"], "o": []}
+{"i": ["DEX"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF"], "o": []}
+{"i": [], "o": ["MOAA / S scale", "PF infusion rate"]}
+{"i": ["DEX"], "o": ["maintenance infusion rate of"]}
+{"i": [], "o": []}
+{"i": [], "o": ["MOAA / S scale", "consciousness levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["vital signs ( including percutaneous oxygen saturation , systolic blood pressure and pulse rate"]}
+{"i": [], "o": ["en bloc resection rate , complete resection rate , total sedation times , procedural times for resection and procedure - related complications )", "invasion depth of the lesion , the coexistence of an ulcer scar and the resected specimen size )"]}
+{"i": [], "o": ["patient monitoring information", "recovery times"]}
+{"i": [], "o": ["visual analogue scale ( VAS )", "satisfaction", "stability of sedating"]}
+{"i": [], "o": ["hypertension , diabetes mellitus , dyslipidemia , cerebral infarction , ischemic heart disease , pulmonary disease , liver cirrhosis and renal dysfunction"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Renal dysfunction", "estimated glomerular filtration rate ( eGFR )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Procedural times for resection"]}
+{"i": [], "o": ["related complications", "occurrence of bleeding and perforation ."]}
+{"i": [], "o": ["intraoperative bleeding that required a blood transfusion , bleeding symptoms such as haematemesis or melena after returning to the ward", "haemoglobin levels", "Bleeding"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Recovery times"]}
+{"i": [], "o": ["satisfaction score"]}
+{"i": [], "o": ["effectiveness and the safety"]}
+{"i": [], "o": ["number of rescue PF injections \" required to prevent patient body movements and discomfort", "presence or absence of \" restlessness \" defined as severe patient body movements requiring physical restraint", "degree of satisfaction of the sedation providers \" performing the management of sedatives and the sedation level , \" the maintenance dose of PF \" required to maintain proper sedation level"]}
+{"i": [], "o": ["\" hypotension \",", "\" bradycardia \",", "cardiorespiratory instability", "\" hypoxemia \",", "percutaneous oxygen saturation level", "pulse rate", "\" serious adverse events \",", "systolic blood pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["endoscopic"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["clinical patient characteristics , endoscopic findings for gastric neoplasias , ESD outcomes and recovery times ."]}
+{"i": [], "o": ["number of gastric neoplasias invading the submucosa"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores"]}
+{"i": [], "o": ["satisfaction scores", "endoscopists and the sedation providers"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["maintenance dose of PF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of times a rescue PF injection"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["restlessness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Satisfaction scores"]}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{"i": [], "o": ["Satisfaction scores"]}
+{"i": ["DEX , dexmedetomidine hydrochloride ; PF , propofol ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["safety of sedation"]}
+{"i": [], "o": ["minimum percutaneous oxygen saturation level"]}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence of hypoxemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["minimum pulse rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence of bradycardia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ephedrine or atropine ."], "o": ["sedation - related adverse events", "hypoxemia", "cardiovascular depression"]}
+{"i": [], "o": ["intubation or ventilation", "serious adverse events"]}
+{"i": ["sedaton"], "o": []}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{}
+{}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["adverse events", "Bradycardia", "Hypotension"]}
+{"i": ["propofol"], "o": ["PR , Pulse rate ; SpO2 , percutaneous oxygen saturation ; SBP , systolic blood pressure ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sedation", "PF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX", "PF"], "o": ["satisfaction levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["sedation level"]}
+{"i": [], "o": ["number of rescue PF injections", "sedation effectiveness", "presence of restlessness", "maintenance dose of PF"]}
+{"i": [], "o": ["maintenance dose of PF and the number of rescue PF injections"]}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence of restlessness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["oxygen saturation", "desaturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["systolic blood pressure", "hypotension"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["bradycardia"]}
+{"i": ["PF and DEX"], "o": ["incidence of bradycardia"]}
+{"i": ["DEX"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX", "MDZ"], "o": ["bradycardia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX", "PF"], "o": ["bradycardia"]}
+{"i": [], "o": ["cardiovascular suppression"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DEX"], "o": ["bradycardia"]}
+{"i": [], "o": ["minimum values of vital signs"]}
+{"i": [], "o": ["vital signs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["vital signs", "cardiorespiratory events"]}
+{"i": [], "o": ["cardiorespiratory instability"]}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sedation protocol using PF alone"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["maintenance infusion rate of PF"]}
+{"i": ["pentazocine or pethidine hydrochloride"], "o": []}
+{"i": ["DEX", "PF"], "o": ["analgesic property"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["gastroenterologist - directed sedation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ESD", "sedation", "PF and DEX"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF and DEX"], "o": ["effectiveness and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": ["medical cost"]}
+{"i": ["DEX", "PF"], "o": []}
+{"i": ["sedation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PF and DEX"], "o": []}
+{"i": ["PF and DEX"], "o": []}

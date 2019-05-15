@@ -1,0 +1,123 @@
+{"i": ["negative pressure wound therapy", "open bone graft"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["negative pressure wound therapy ( NPWT )", "open bone graft"], "o": []}
+{"i": ["combined NPWT with open bone graft )", "contrast group ( only open bone graft )."], "o": []}
+{"i": [], "o": ["wound condition ; wound healing time , bacterial bioburden , and bony callus"]}
+{"i": [], "o": ["blood vessels and expression of vascular endothelial growth factor ."]}
+{"i": [], "o": ["blood supply", "healing time , healthier wound conditions", "bacterial bioburden , better bony callus"]}
+{"i": ["NPWT combined open bone graft"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["negative pressure wound therapy ( NPWT )", "open bone graft"], "o": []}
+{"i": ["combined NPWT with open bone graft )", "contrast group ( only open bone graft )."], "o": []}
+{"i": [], "o": ["wound condition ; wound healing time , bacterial bioburden , and bony callus"]}
+{"i": [], "o": ["blood vessels and expression of vascular endothelial growth factor ."]}
+{"i": [], "o": ["blood supply", "healing time , healthier wound conditions", "bacterial bioburden , better bony callus"]}
+{"i": ["NPWT combined open bone graft"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["open bone graft surgery"], "o": []}
+{"i": [], "o": []}
+{"i": ["one - stage cancellous bone grafting method2"], "o": []}
+{"i": [], "o": []}
+{"i": ["negative pressure wound therapy ( NPWT )."], "o": []}
+{"i": ["traditional bone graft", "NPWT"], "o": ["edema", "good granulation tissues", "blood supply , decreasing bacterial count"]}
+{"i": ["traditional dressing changes", "NPWT"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["local expression of vascular endothelial growth factor ( VEGF ),"]}
+{"i": [], "o": []}
+{"i": ["1 % pentobarbital sodium"], "o": []}
+{"i": ["NAS solution"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vacuum - sealing drainage ( VSD ) foam ( VSD"], "o": []}
+{"i": [], "o": ["negative pressure"]}
+{"i": ["conventional gauze ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["number of bacteria in each wound"]}
+{"i": [], "o": []}
+{"i": [], "o": ["fracture condition and the healing rate of fracture"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["rabbit antiporcin monoclonal antibody", "fluorescein isothiocyanate or rhodamine - conjugated secondary antibody"], "o": []}
+{"i": ["peroxidase substrate solution"], "o": []}
+{"i": [], "o": ["positively stained micro - bloodvessels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of vessels in a high - power field"]}
+{"i": ["NaCl , 1 % NP40 , 0 . 02 % sodium azide", "protease inhibitor cocktail", "Tris ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Tris - buffered saline containing 0 . 05 % Tween - 20 ( TBST )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["optical densities"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["gauze - covering", "NPWT"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["quality of granulation tissue"]}
+{"i": [], "o": ["wound healing rate", "wound healing time"]}
+{"i": [], "o": ["wound healing rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["S . aureus with density"]}
+{"i": [], "o": []}
+{"i": [], "o": ["bacterial count"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["gauze", "NPWT"], "o": ["number of microvessels"]}
+{"i": [], "o": ["number of microvessels"]}
+{"i": [], "o": []}
+{"i": ["gauze", "NPWT"], "o": ["expression of VEGF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["VEGF"]}
+{"i": [], "o": []}
+{"i": [], "o": ["fracture healing processes"]}
+{"i": [], "o": ["bone callus growth"]}
+{"i": [], "o": ["healing rate of NPWT"]}
+{"i": [], "o": []}
+{"i": ["NPWT combined with open bone graft"], "o": []}
+{"i": [], "o": ["healing time , eliminating bacteria , increasing microvascular vessels", "bone healing ."]}
+{"i": ["open cancellous bone grafting"], "o": []}
+{"i": [], "o": []}
+{"i": ["debridement and conventional gauze dressing", "open bone graft"], "o": []}
+{"i": [], "o": []}
+{"i": ["composite tissue flap transplantation"], "o": []}
+{"i": [], "o": []}
+{"i": ["VSD foam", "NPWT"], "o": ["blood flow", "edema", "wound contraction"]}
+{"i": [], "o": ["Wound healing rate"]}
+{"i": [], "o": []}
+{"i": ["NPWT"], "o": []}
+{"i": ["NPWT"], "o": ["bacterial number", "bacterial number in infected wound"]}
+{"i": ["NPWT"], "o": ["infection"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood flow", "number of microvessels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["expression of VEGF"]}
+{"i": ["gauze", "NPWT"], "o": ["blood flows", "VEGF in wound"]}
+{"i": ["NPWT"], "o": ["fracture or bone healing"]}
+{"i": ["recombinant human bone morphogenetic protein 7", "NPWT"], "o": []}
+{"i": ["NPWT"], "o": ["bone healed"]}
+{"i": [], "o": []}
+{"i": [], "o": ["local blood flow", "blood supply", "anti - infection"]}
+{"i": [], "o": ["time needed for bone healing"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

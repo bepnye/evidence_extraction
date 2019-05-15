@@ -1,0 +1,160 @@
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["chemotherapy", "bevacizumab"], "o": ["progression - free survival ( PFS )", "overall survival ( OS )"]}
+{"i": [], "o": []}
+{"i": ["chemotherapy", "placebo", "bevacizumab"], "o": []}
+{"i": [], "o": ["Plasma"]}
+{"i": ["bevacizumab"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Median baseline plasma Ang - 2 levels"]}
+{"i": ["bevacizumab"], "o": ["plasma Ang - 2"]}
+{"i": [], "o": ["frequency of liver metastasis ( LM )", "plasma Ang - 2"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["chemotherapy", "bevacizumab"], "o": ["progression - free survival ( PFS )", "overall survival ( OS )"]}
+{"i": [], "o": []}
+{"i": ["chemotherapy", "placebo", "bevacizumab"], "o": []}
+{"i": [], "o": ["Plasma"]}
+{"i": ["bevacizumab"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Median baseline plasma Ang - 2 levels"]}
+{"i": ["bevacizumab"], "o": ["plasma Ang - 2"]}
+{"i": [], "o": ["frequency of liver metastasis ( LM )", "plasma Ang - 2"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["incidence and mortality"]}
+{"i": [], "o": ["survival rates"]}
+{"i": [], "o": ["survival rates"]}
+{"i": [], "o": []}
+{"i": ["vascular endothelial growth factor ( VEGF ) targeting antibody bevacizumab with cisplatin plus fluoropyrimidine vs placebo plus chemotherapy"], "o": []}
+{"i": ["placebo", "bevacizumab"], "o": ["progression - free survival ( PFS )", "overall response rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["overall survival ( OS )"]}
+{"i": ["bevacizumab"], "o": ["survival benefit"]}
+{"i": ["chemotherapy"], "o": ["median OS"]}
+{"i": [], "o": ["later line chemotherapy exposure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ramucirumab", "placebo", "antiangiogenic therapy"], "o": []}
+{"i": ["ramucirumab", "placebo"], "o": ["Median OS"]}
+{"i": ["chemotherapy", "ramucirumab"], "o": ["survival benefit"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["anti - VEGF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Plasma Ang - 2 levels"]}
+{"i": [], "o": ["Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["cisplatin", "capecitabine", "placebo", "bevacizumab"], "o": []}
+{"i": ["capecitabine .", "fluorouracil"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["OS", "PFS"]}
+{"i": [], "o": ["median biomarker value"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["liver metastasis", "baseline Ang - 2 levels"]}
+{"i": [], "o": ["occurrence of liver metastasis"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["low Ang - 2 levels"]}
+{"i": [], "o": ["frequency of diffuse gastric cancer"]}
+{"i": [], "o": ["frequency of liver metastasis"]}
+{"i": [], "o": ["frequency of patients with \u2a7e 2 metastatic sites", "frequency of bone lesions"]}
+{"i": [], "o": ["plasma Ang - 2"]}
+{"i": [], "o": ["Ang - 2 levels"]}
+{"i": [], "o": ["baseline plasma Ang - 2 levels"]}
+{"i": [], "o": ["baseline plasma Ang - 2 levels"]}
+{"i": [], "o": ["Median OS"]}
+{"i": [], "o": ["baseline Ang - 2 and PFS"]}
+{"i": ["placebo", "bevacizumab"], "o": ["PFS and OS"]}
+{"i": [], "o": ["OS", "Low Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["bevacizumab ."], "o": ["Ang - 2 baseline levels"]}
+{"i": [], "o": ["HR for PFS"]}
+{"i": [], "o": ["HR for OS"]}
+{"i": ["bevacizumab"], "o": ["PFS or OS .", "Ang - 2 levels"]}
+{"i": ["bevacizumab"], "o": []}
+{"i": [], "o": ["PFS and OS"]}
+{"i": ["bevacizumab"], "o": ["VEGF"]}
+{"i": [], "o": ["Baseline plasma Ang - 2 levels"]}
+{"i": [], "o": ["frequency of liver metastasis", "Ang - 2 levels ."]}
+{"i": [], "o": ["frequency of liver metastasis"]}
+{"i": [], "o": ["frequency of liver metastasis"]}
+{"i": [], "o": ["frequency of liver metastasis", "Ang - 2 levels"]}
+{"i": [], "o": ["odds ratio", "baseline plasma Ang - 2"]}
+{"i": [], "o": ["new metastatic lesions in the liver", "liver metastasis"]}
+{"i": [], "o": []}
+{"i": [], "o": ["median Ang - 2 levels"]}
+{"i": ["chemotherapy", "bevacizumab"], "o": ["Ang - 2 levels"]}
+{"i": [], "o": ["liver metastasis", "Ang - 2 levels"]}
+{"i": ["chemotherapy", "bevacizumab"], "o": ["plasma Ang - 2 levels"]}
+{"i": ["bevacizumab"], "o": ["Ang - 2 levels", "plasma Ang - 2"]}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["baseline Ang - 2 levels", "VEGF levels"]}
+{"i": [], "o": ["Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["bevacizumab"], "o": ["VEGF - A levels"]}
+{"i": ["bevacizumab"], "o": ["OS or PFS", "Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma or serum Ang - 2"]}
+{"i": [], "o": ["frequency of liver metastasis", "Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["pretherapeutic Ang - 2 levels", "bone metastasis"]}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma Ang - 2 levels", "Ang - 2 plasma levels"]}
+{"i": [], "o": ["Ang - 2 protein levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Ang - 2 expression"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["circulating Ang - 2 levels"]}
+{"i": [], "o": ["Ang - 2 levels"]}
+{"i": [], "o": ["baseline plasma Ang - 2 levels"]}
+{"i": [], "o": ["Ang - 2 levels"]}
+{"i": ["chemotherapy", "bevacizumab -"], "o": ["Ang - 2 levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Ang - 2"]}
+{"i": [], "o": ["Ang - 2 production ."]}
+{"i": ["trebananib"], "o": ["PFS"]}
+{"i": ["trebananib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["baseline plasma Ang - 2 levels"]}
+{"i": ["becacizumab"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

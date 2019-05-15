@@ -1,0 +1,231 @@
+{"i": ["Vitamin A Supplementation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "vitamin A supplementation"], "o": ["anaemia"]}
+{"i": ["albendazole"], "o": []}
+{"i": [], "o": ["prevalence of anaemia"]}
+{"i": [], "o": ["IDA"]}
+{"i": ["vitamin A", "placebo"], "o": ["reduction in serum ferritin level", "increments in haemoglobin , serum iron and transferrin saturation"]}
+{"i": ["vitamin A", "placebo"], "o": ["prevalence of IDA"]}
+{"i": ["vitamin A supplementation"], "o": ["iron status indices and IDA"]}
+{"i": ["vitamin A supplementation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["prevalence of IDA"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vitamin A capsules and anthelmintic tablets"], "o": []}
+{"i": [], "o": ["anaemia , IDA , VAD and STH"]}
+{"i": [], "o": ["IDA and low serum retinol"]}
+{"i": [], "o": []}
+{"i": ["vitamin A supplementation"], "o": ["iron status indices"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["vitamin A supplement or its identical placebo ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo", "vitamin A - supplemented"], "o": ["prevalence and intensity of parasitic infections"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["faecal and blood"]}
+{"i": ["anthelmintics"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["albendazole tablets"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Vitamin A supplements and placebos", "vitamin A", "peanut oil", "vitamin E"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["freshly fried banana"], "o": []}
+{"i": ["fried bananas"], "o": []}
+{"i": ["Albendazole tablets"], "o": []}
+{"i": ["albendazole"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["albendazole"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Egg counts", "worm burden"]}
+{"i": [], "o": ["intensity of infection"]}
+{"i": [], "o": ["intensity of infections"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Haemoglobin ( Hb ) concentration"]}
+{"i": [], "o": ["Hb concentration"]}
+{"i": [], "o": ["Hb levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Serum ferritin ( SF ) levels"]}
+{"i": [], "o": ["serum iron ( SI ) and TIBC ( total iron - binding capacity )", "percentage transferrin saturation ( TS )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Serum retinol ( SR ) levels"]}
+{"i": [], "o": ["Serum retinol level"]}
+{"i": [], "o": ["C - reactive protein ( CRP ) level"]}
+{"i": [], "o": ["ferritin levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["calories and nutrient intakes"]}
+{"i": [], "o": ["recommended daily intake ( RDA ) for calories , protein"]}
+{"i": ["calories , protein , iron and vitamin A", "preformed vitamin A ( retinol ) and provitamin A ( carotene )."], "o": ["food frequency questionnaire ( FFQ"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["iron status indices and retinol"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["level of iron status indices"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["iron status indices"]}
+{"i": ["vitamin A supplements"], "o": []}
+{"i": [], "o": ["levels of Hb and iron status indices"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["low SF , SI and TS concentrations", "TIBC"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Vitamin A Placebo"], "o": ["ferritin"]}
+{"i": [], "o": ["anaemic"]}
+{"i": [], "o": ["prevalence of IDA"]}
+{"i": [], "o": ["prevalence of anaemia"]}
+{"i": [], "o": ["prevalence of anaemia"]}
+{"i": [], "o": ["SR and iron status indices levels"]}
+{"i": [], "o": ["SR and Hb , SF and TS ."]}
+{"i": [], "o": ["SR with SF"]}
+{"i": [], "o": ["SR and Hb"]}
+{"i": [], "o": []}
+{"i": [], "o": ["SR and SF"]}
+{"i": [], "o": ["serum retinol and iron status indices"]}
+{"i": [], "o": ["serum retinol ; Hb , haemoglobin ; SF , serum ferritin ; TS , transferrin saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["levels of Hb and iron status indices"]}
+{"i": ["vitamin A", "placebo"], "o": ["except TIBC"]}
+{"i": ["vitamin A", "placebo"], "o": ["Hb and iron status indices"]}
+{"i": [], "o": ["Vitamin A Placebo Haemoglobin", "Serum ferritin", "Serum iron"]}
+{"i": ["vitamin A", "placebo"], "o": ["SF levels"]}
+{"i": ["vitamin A", "placebo"], "o": ["mean changes ( reduction ) in TIBC"]}
+{"i": [], "o": ["serum retinol status"]}
+{"i": [], "o": ["IDA", "prevalence of anaemia and IDA"]}
+{"i": ["placebo"], "o": ["prevalence of IDA"]}
+{"i": ["placebo", "vitamin A - supplemented"], "o": ["prevalence of anaemia"]}
+{"i": ["vitamin A supplementation"], "o": ["anaemia and IDA"]}
+{"i": ["Placebo", "Vitamin A"], "o": ["anaemia", "IDA"]}
+{"i": [], "o": ["Hb and iron status indices"]}
+{"i": ["vitamin A supplementation"], "o": ["Hb and SF"]}
+{"i": ["vitamin A supplementation"], "o": []}
+{"i": [], "o": ["SF ."]}
+{"i": ["vitamin A and placebo"], "o": ["SI , TIBC and TS"]}
+{"i": ["vitamin A", "placebo"], "o": ["Hb and SF"]}
+{"i": ["Vitamin A Placebo Vitamin A Placebo"], "o": ["Serum ferritin"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vitamin A", "placebo"], "o": ["SI , TIBC and TS"]}
+{"i": ["Vitamin A Placebo Vitamin A Placebo Vitamin A Placebo"], "o": ["Serum Iron"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["daily nutrient intakes", "intakes of energy , iron and vitamin A"]}
+{"i": [], "o": ["nutrient intakes"]}
+{"i": [], "o": ["intakes"]}
+{"i": [], "o": ["' iron intakes"]}
+{"i": [], "o": ["energy intakes"]}
+{"i": [], "o": ["overall vitamin A intake"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["anaemia and IDA ."]}
+{"i": [], "o": ["prevalence of IDA", "anaemic"]}
+{"i": [], "o": []}
+{"i": [], "o": ["iron deficiency"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vitamin A supplementation"], "o": []}
+{"i": [], "o": ["IDA and vitamin A deficiency ( VAD )"]}
+{"i": ["vitamin A"], "o": []}
+{"i": ["placebo", "vitamin A - supplemented"], "o": ["levels of Hb , SI and TS", "changes in Hb and other iron status indices"]}
+{"i": ["vitamin A", "placebo"], "o": ["levels of SF and TIBC"]}
+{"i": [], "o": []}
+{"i": ["vitamin A - supplemented"], "o": ["Hb concentration"]}
+{"i": ["vitamin A", "albendazole tablets"], "o": []}
+{"i": ["vitamin A supplementation"], "o": ["haemoglobin"]}
+{"i": ["vitamin A"], "o": ["anaemia", "increase in Hb"]}
+{"i": ["vitamin A"], "o": ["mean increments in Hb concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean changes of Hb , SF and TS", "iron status indices"]}
+{"i": ["vitamin A supplementation"], "o": ["Hb concentration"]}
+{"i": ["vitamin A"], "o": []}
+{"i": [], "o": ["prevalence of anaemia"]}
+{"i": ["vitamin A supplements"], "o": []}
+{"i": [], "o": ["iron and vitamin A daily intake"]}
+{"i": ["deworming and vitamin A supplementation"], "o": []}
+{"i": ["placebo", "vitamin A supplements"], "o": ["SF level"]}
+{"i": ["vitamin A"], "o": ["haematopoiesis", "effects of infections"]}
+{"i": ["vitamin A", "placebo"], "o": ["TIBC levels"]}
+{"i": [], "o": ["SF"]}
+{"i": [], "o": ["infection rates", "iron deficiency"]}
+{"i": ["vitamin A supplementation"], "o": ["infection rate", "SF levels ."]}
+{"i": ["iron or daily iron", "vitamin A and iron supplementations"], "o": ["Hb concentration"]}
+{"i": ["vitamin A", "vitamin A supplementations"], "o": ["SF levels"]}
+{"i": ["vitamin A"], "o": ["prevalence of anaemia", "mean haemoglobin level"]}
+{"i": ["vitamin A supplementation"], "o": ["body iron stores", "iron absorption", "production of erythropoietin"]}
+{"i": ["vitamin A and iron supplementations"], "o": []}
+{"i": [], "o": ["prevalence of anaemia and IDA"]}
+{"i": [], "o": ["prevalence of IDA", "Hb concentration and iron status"]}
+{"i": ["vitamin A supplements"], "o": ["proportion of anaemia"]}
+{"i": ["combined vitamin A and iron supplementation"], "o": ["anaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["anaemia and IDA"]}
+{"i": ["vitamin A supplementation"], "o": ["IDA .", "iron status indices"]}
+{"i": ["vitamin A supplementation"], "o": []}

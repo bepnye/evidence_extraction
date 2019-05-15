@@ -1,0 +1,167 @@
+{"i": ["Alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": ["postoperative ileus and length of stay"]}
+{"i": ["cystectomy and urinary diversion"], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["length of stay ( LOS )"]}
+{"i": ["alvimopan"], "o": ["Readmission for ileus"]}
+{"i": ["alvimopan"], "o": ["Costs"]}
+{"i": [], "o": ["hospital stay ."]}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": ["alvimopan"], "o": ["costs"]}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": ["postoperative ileus and length of stay"]}
+{"i": ["cystectomy and urinary diversion"], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["length of stay ( LOS )"]}
+{"i": ["alvimopan"], "o": ["Readmission for ileus"]}
+{"i": ["alvimopan"], "o": ["Costs"]}
+{"i": [], "o": ["hospital stay ."]}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": ["alvimopan"], "o": ["costs"]}
+{"i": ["alvimopan"], "o": []}
+{"i": ["Cystectomy and urinary diversion"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Costs"]}
+{"i": [], "o": []}
+{"i": ["optimized fluid management", "chewing gum", "omission of mechanical bowel prep", "avoidance of nasogastric tube", "early feeding , ambulation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["bowel recovery", "LOS ."]}
+{"i": [], "o": ["Costs"]}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS", "bed turnover"]}
+{"i": [], "o": ["LOS"]}
+{"i": ["Alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": ["length of stay and readmission rates"]}
+{"i": ["alvimopan"], "o": ["length of stay"]}
+{"i": ["alvimopan"], "o": ["cost \u2013 effectiveness"]}
+{"i": ["cystectomy and urinary diversion"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["stroke requiring carotid endarterectomy , ischemic leg requiring embolectomy , laparotomy for small bowel obstruction , laparotomy for delayed rectal injury , status epilepticus , pulmonary hemorrhage )", "laparotomy for dehiscence / evisceration", "Clavien 3b or greater complications ( death", "cardiogenic shock"]}
+{"i": ["neoadjuvant chemotherapy ."], "o": []}
+{"i": ["neoadjuvant chemotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["polyethylene glycol", "clear liquid diet ."], "o": []}
+{"i": ["epidural catheter"], "o": []}
+{"i": ["Radical or supratrigonal cystectomy"], "o": []}
+{"i": ["Cystectomy technique"], "o": []}
+{"i": ["robotic \u2013 assisted technique"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["nasogastric tube"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": ["Alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["flatus", "bowel movement"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Total costs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["pre \u2013 alvimopan", "alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["median number of doses"]}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Neoadjuvant chemotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["disposition of patients from the OR to the intensive care unit"]}
+{"i": ["alvimopan"], "o": ["use of robotic technique"]}
+{"i": [], "o": ["Perioperative characteristics of estimated blood loss and OR time"]}
+{"i": [], "o": ["readmission for ileus"]}
+{"i": ["pre \u2013 alvimopan", "alvimopan"], "o": ["Utilization of total parenteral nutrition"]}
+{"i": ["alvimopan"], "o": ["Time to clear liquid diet"]}
+{"i": ["alvimopan"], "o": ["Time to regular diet"]}
+{"i": ["alvimopan"], "o": ["LOS", "Length of stay"]}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS", "robotic technique , OR time , EBL , ICU disposition , epidural use , and patient controlled analgesia"]}
+{"i": [], "o": ["LOS"]}
+{"i": [], "o": ["magnitude of LOS reduction"]}
+{"i": ["alvimopan Alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": ["Costs"]}
+{"i": ["pre \u2013 alvimopan", "alvimopan"], "o": ["mean cost"]}
+{"i": ["alvimopan"], "o": ["epidural , PCA , indication , robotic technique , OR time , EBL , and ICU disposition", "mean costs"]}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": [], "o": ["LOS"]}
+{"i": ["alvimopan"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS", "GI complications .", "costs"]}
+{"i": [], "o": ["pain , nausea , vomiting , and malnutrition ."]}
+{"i": [], "o": []}
+{"i": ["Chewing gum"], "o": ["LOS", "time to flatus and bowel movement"]}
+{"i": ["Multimodal therapy"], "o": []}
+{"i": ["Alvimopan"], "o": []}
+{"i": ["Cystectomy and urinary diversion"], "o": ["complication"]}
+{"i": [], "o": ["postoperative ileus"]}
+{"i": [], "o": ["ileus"]}
+{"i": ["mechanical bowel preparation"], "o": ["ileus and LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS", "time to flatus and bowel movement", "postoperative ileus"]}
+{"i": ["routine chewing gum"], "o": ["time to flatus and bowel movement"]}
+{"i": [], "o": ["time to flatus", "time to bowel movement"]}
+{"i": [], "o": []}
+{"i": ["traditional management", "epidural analgesia , forced mobilization", "early enteral feeding"], "o": ["first bowel movement"]}
+{"i": ["metoclopramide , ketorolac , chewing gum , and early oral feeding"], "o": []}
+{"i": [], "o": ["LOS .", "time to flatus or bowel movement"]}
+{"i": [], "o": []}
+{"i": ["morphine", "Alvimopan"], "o": ["delayed enteric transit time"]}
+{"i": ["alvimopan"], "o": ["time to discharge order", "time to return bowel function"]}
+{"i": [], "o": []}
+{"i": ["Alvimopan"], "o": []}
+{"i": [], "o": ["LOS"]}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": []}
+{"i": ["alvimopan"], "o": ["cardiac toxicities"]}
+{"i": ["alvimopan"], "o": ["times to discharge order , flatus , bowel movement , clear liquid diet , and regular diet"]}
+{"i": ["nasogastric decompression", "alvimopan"], "o": ["GI recovery"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["rate of postoperative ileus"]}
+{"i": [], "o": []}
+{"i": [], "o": ["incremental cost"]}
+{"i": ["alvimopan"], "o": ["postoperative ileus", "postoperative ileus ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS , time to clear liquid diet , time to regular diet , use of parenteral nutrition , and readmission for ileus ."]}
+{"i": [], "o": ["time to flatus and time to first bowel movement"]}
+{"i": [], "o": ["LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["LOS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Alvimopan"], "o": ["LOS"]}
+{"i": ["alvimopan"], "o": ["LOS"]}
+{"i": [], "o": ["cost of stay"]}
+{"i": [], "o": []}
+{"i": ["Alvimopan"], "o": []}

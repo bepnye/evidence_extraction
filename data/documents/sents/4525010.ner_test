@@ -1,0 +1,71 @@
+{"i": ["Oseltamivir Treatment"], "o": []}
+{"i": [], "o": []}
+{"i": ["oseltamivir"], "o": []}
+{"i": ["Oseltamivir"], "o": ["illness duration , severity , or duration of virus detection ."]}
+{"i": [], "o": []}
+{"i": ["oseltamivir )"], "o": []}
+{"i": ["oseltamivir"], "o": ["illness duration"]}
+{"i": [], "o": []}
+{"i": ["late oseltamivir therapy", "placebo - controlled"], "o": ["duration of influenza symptoms and viral shedding"]}
+{"i": ["antiviral treatment"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["feverishness , chills"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oseltamivir or placebo"], "o": []}
+{"i": ["oseltamivir or identical placebo"], "o": []}
+{"i": ["oseltamivir", "placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["digital oral thermometer"], "o": []}
+{"i": [], "o": ["symptoms of feverishness , cough , fatigue , nasal congestion , wheezing , headache , muscle aches , and sore throat"]}
+{"i": [], "o": ["Symptom scores"]}
+{"i": [], "o": ["Headache , sore throat , and muscle aches"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oseltamivir", "placebo"], "o": ["duration of illness", "viral shedding"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["time to symptom resolution and PCR positivity"]}
+{"i": [], "o": ["Symptom resolution"]}
+{"i": [], "o": ["symptom resolution"]}
+{"i": [], "o": ["Time to resolution"]}
+{"i": [], "o": ["Survival"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["virus detection", "probability of RT - PCR positivity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["probability of PCR positivity"]}
+{"i": [], "o": ["subjective symptom severity"]}
+{"i": [], "o": ["Mean severity score"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Influenza A"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oseltamivir", "placebo ."], "o": []}
+{"i": ["oseltamivir", "placebo ."], "o": []}
+{"i": [], "o": ["Illness Duration"]}
+{"i": [], "o": []}
+{"i": ["oseltamivir"], "o": ["duration or severity of symptoms or RT - PCR - positive results"]}
+{"i": [], "o": []}
+{"i": ["oseltamivir", "placebo", "placebo / oseltamivir"], "o": ["symptom duration", "median days of illness"]}
+{"i": ["oseltamivir"], "o": ["virus detection and isolation"]}
+{"i": ["oseltamivir"], "o": []}
+{"i": [], "o": []}

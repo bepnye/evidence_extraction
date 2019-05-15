@@ -1,0 +1,128 @@
+{"i": ["Propofol , Propofol - Remifentanil", "Propofol - Fentanyl"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["( ERCP )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol", "propofol alone , propofol + remifentanil , and propofol + fentanyl combinations"], "o": ["pain scores"]}
+{"i": [], "o": []}
+{"i": ["sedation / analgesia"], "o": []}
+{"i": ["fentanyl", "remifentanil", "propofol", "+ propofol"], "o": []}
+{"i": [], "o": ["sedation levels", "Ramsey Sedation Scale ( RSS )."]}
+{"i": [], "o": ["Aldrete and Numerical Rating Scale Score ( NRS )"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["practitioner satisfaction", "pain level", "total dose of", "hemodynamic stability", "reliable sedation"]}
+{"i": [], "o": []}
+{"i": ["ERCP ( endoscopic retrograde cholangiopancreatography )"], "o": []}
+{"i": ["Anesthesia support"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["remifentanil or fentanyl", "propofol"], "o": ["anxiety level"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["0 . 9 % saline"], "o": []}
+{"i": ["O2"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["remifentanil"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol", "fentanyl"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["lidocaine", "propofol"], "o": []}
+{"i": ["propofol", "fentanyl ."], "o": ["Ramsey Sedation Scale ( RSS )"]}
+{"i": [], "o": ["systolic arterial pressure ( SAP ), diastolic arterial pressure ( DAP ), mean arterial pressure ( MAP ), heart rate , saturation of peripheral oxygen ( SpO2 ), RSS , and ECG"]}
+{"i": [], "o": ["SpO2 level lower than 95 %, hypocapnia , apnea , nausea and vomiting , hypotension , hypertension , and bradycardia"]}
+{"i": [], "o": ["comfort level"]}
+{"i": [], "o": ["RSS level"]}
+{"i": [], "o": ["total length of stay in the recovery unit", "Aldrete and NRS ( numerical rating scale score )"]}
+{"i": [], "o": ["Aldrete score"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Hemodynamic parameters"]}
+{"i": [], "o": ["hemodynamic measurements"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["saturation levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["diagnosis , ASA , additional disease , and process time"]}
+{"i": [], "o": ["SAP , DAP , MAP , and saturation levels"]}
+{"i": [], "o": ["Ramsey scores"]}
+{"i": ["propofol"], "o": ["doses", "total"]}
+{"i": [], "o": ["pain levels"]}
+{"i": [], "o": ["pain"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["severe pain levels"]}
+{"i": [], "o": ["Extremely severe pain"]}
+{"i": [], "o": ["severe nor extremely severe pain"]}
+{"i": [], "o": ["extremely severe pain"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["midazolam , fentanyl , and / or meperidine", "propofol", "propofol ."], "o": []}
+{"i": ["propofol"], "o": ["total dose of"]}
+{"i": [], "o": ["pain levels"]}
+{"i": [], "o": ["pain level", "no pain"]}
+{"i": ["remifentanil and propofol"], "o": ["mild pain .", "no pain"]}
+{"i": [], "o": ["severe or extremely severe pain ."]}
+{"i": ["propofol and fentanyl"], "o": ["mild pain", "severe pain .", "no pain"]}
+{"i": [], "o": ["extremely severe pain ."]}
+{"i": ["propofol"], "o": ["severe pain"]}
+{"i": ["propofol"], "o": []}
+{"i": ["anesthesia support", "nasal oxygen"], "o": ["oxygen saturation"]}
+{"i": [], "o": ["SpO2"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Conscious sedation", "general anesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["depth of anesthesia", "patient recovery ."]}
+{"i": [], "o": ["modified Aldrete recovery scoring"]}
+{"i": ["sevoflurane", "propofol"], "o": ["cognitive functions"]}
+{"i": [], "o": []}
+{"i": [], "o": ["side effects", "side effect profiles"]}
+{"i": ["propofol"], "o": ["injection pain ."]}
+{"i": ["propofol", "lidocaine or fentanyl"], "o": ["incidence of pain"]}
+{"i": ["lidocaine", "propofol"], "o": []}
+{"i": ["propofol"], "o": ["injection pain"]}
+{"i": ["sedation"], "o": ["nausea and vomiting ."]}
+{"i": [], "o": ["nausea nor vomiting"]}
+{"i": ["propofol"], "o": ["nausea and vomiting"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["nausea nor vomiting ."]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["depth of sedation", "Ramsey Sedation Scale ( RSS )"]}
+{"i": [], "o": ["Ramsey scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["discomfort , and pain levels"]}
+{"i": [], "o": []}
+{"i": ["ERCP procedure"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["satisfaction"]}
+{"i": [], "o": ["gastroenterologist ' s satisfaction"]}
+{"i": [], "o": []}
+{"i": ["ERCP"], "o": []}
+{"i": ["propofol , remifentanil", "alfentanil"], "o": ["patient and endoscopist satisfaction"]}
+{"i": ["propofol"], "o": ["arterial blood pressure ."]}
+{"i": ["propofol"], "o": ["MAP , DAP , and SAP values"]}
+{"i": [], "o": []}
+{"i": ["etomidate and propofol", "propofol"], "o": ["MAP values"]}
+{"i": ["etomidate , propofol , thiopental , etomidate , and midazolam", "etomidate"], "o": ["blood pressure levels"]}
+{"i": ["remifentanil"], "o": ["side effects", "pain level"]}
+{"i": [], "o": []}
+{"i": ["remifentanil + propofol combination", "propofol + fentanyl combination"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol + ketamine combination", "propofol + remifentanil combination"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["practitioner satisfaction", "total dose", "hemodynamic stabilization .", "pain level", "reliable sedation"]}
+{"i": ["remifentanil", "propofol"], "o": ["pain level"]}

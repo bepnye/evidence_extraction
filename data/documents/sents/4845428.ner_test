@@ -1,0 +1,199 @@
+{"i": ["paraspinal mapping"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["MRI + NE", "diffusion tensor imaging ( DTI ) and paraspinal mapping ( PM ) techniques"], "o": []}
+{"i": ["MRI + ( PM or DTI )", "conventional MRI + NE"], "o": []}
+{"i": [], "o": []}
+{"i": ["decompression"], "o": []}
+{"i": [], "o": ["levels of decompression"]}
+{"i": [], "o": ["surgical time , blood loss , and surgical transfusion"]}
+{"i": [], "o": ["visual analog scale back and leg pain ( VAS - BP , VAS - LP ) scores and Oswestry Disability Index ( ODI ) scores"]}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": []}
+{"i": ["PM and DTI"], "o": ["decompression levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["MRI + NE", "diffusion tensor imaging ( DTI ) and paraspinal mapping ( PM ) techniques"], "o": []}
+{"i": ["MRI + ( PM or DTI )", "conventional MRI + NE"], "o": []}
+{"i": [], "o": []}
+{"i": ["decompression"], "o": []}
+{"i": [], "o": ["levels of decompression"]}
+{"i": [], "o": ["surgical time , blood loss , and surgical transfusion"]}
+{"i": [], "o": ["visual analog scale back and leg pain ( VAS - BP , VAS - LP ) scores and Oswestry Disability Index ( ODI ) scores"]}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": []}
+{"i": ["PM and DTI"], "o": ["decompression levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["decompressive laminectomy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Diffusion tensor imaging ( DTI )"], "o": []}
+{"i": [], "o": ["fractional anisotropy ( FA )"]}
+{"i": [], "o": []}
+{"i": ["Paraspinal mapping ( PM )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["DTI parameters ( FA ) or PM scores"]}
+{"i": ["MRI + NE", "DTI and PM"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["physical therapy"], "o": []}
+{"i": [], "o": ["Leg pain"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["decompression"]}
+{"i": [], "o": []}
+{"i": ["DTI and PM examinations"], "o": []}
+{"i": [], "o": []}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["spontaneous activity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["PM scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sagittal T2 - weighted fast spin - echo ( TR", "Sagittal T1 - weighted fast spin - echo sequences"], "o": []}
+{"i": [], "o": ["dural sac cross - sectional area ( DSCSA )"]}
+{"i": [], "o": ["Nerve root compromise"]}
+{"i": [], "o": ["Nerve root compression"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["MRI + NE"], "o": []}
+{"i": [], "o": ["mean cross - sectional area of the dural tube"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["number of levels .", "reference FA values , positive , negative FA values", "positive , negative PM scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["levels of decompression"]}
+{"i": [], "o": []}
+{"i": [], "o": ["positive PM scores , and negative PM scores .", "FA values"]}
+{"i": [], "o": ["positive PM scores", "FA values"]}
+{"i": [], "o": []}
+{"i": [], "o": ["surgical details .", "patient demographics , comorbidities"]}
+{"i": [], "o": []}
+{"i": [], "o": ["surgical time , blood loss , need for transfusion , and postoperative complications ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["Surgical decompression levels"]}
+{"i": [], "o": ["visual analog scale pain scores for both back and leg symptoms ( VAS - BP , VAS - LP )", "Oswestry Disability Index ( ODI ),"]}
+{"i": [], "o": ["pain scores and ODI ."]}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": ["decompression levels", "VAS - BP , VAS - LP , and ODI", "patient demographics , comorbidities , surgical details"]}
+{"i": [], "o": ["decompression levels ; VAS - BP , VAS - LP , and ODI", "patient demographics , comorbidities"]}
+{"i": [], "o": ["demographics , comorbidities , and surgical details"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reference FA values"]}
+{"i": [], "o": ["FA values of positive levels"]}
+{"i": [], "o": ["FA values of negative levels"]}
+{"i": [], "o": ["FA values ."]}
+{"i": [], "o": ["PM scores"]}
+{"i": [], "o": ["PM scores"]}
+{"i": [], "o": ["FA values of positive levels", "FA values"]}
+{"i": [], "o": ["PM scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["presence of spondylolisthesis and scoliosis", "comorbidities", "preoperative ODI , VAS - BP", "VAS - LP scores", "decompression"]}
+{"i": [], "o": ["levels of decompression"]}
+{"i": [], "o": ["functional and pain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["ODI Oswestry Disability Index , VASBP visual analog scale for back pain , VAS - LP visual analog scale for leg pain"]}
+{"i": [], "o": []}
+{"i": ["whole - body MR neurography"], "o": []}
+{"i": [], "o": ["mean ADC"]}
+{"i": [], "o": []}
+{"i": ["T2 - weighted FSE imaging"], "o": ["sensitivity and specificity", "spinal cord abnormalities"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reference FA values"]}
+{"i": [], "o": ["FA values of negative levels"]}
+{"i": [], "o": ["FA values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reference FA value and negative FA value of cauda"]}
+{"i": [], "o": []}
+{"i": [], "o": ["FA value", "FA values of positive levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean FA of the distal lumbar spinal nerve roots", "mean FA of the proximal nerve roots"]}
+{"i": [], "o": ["FA value of cauda equina and / or nerve roots"]}
+{"i": [], "o": ["FA value of lumbar cauda equina and / or nerve roots"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["FA values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["FA values"]}
+{"i": [], "o": ["FA values"]}
+{"i": [], "o": ["PM scores", "negative PM scores"]}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": ["Levels of decompression", "decompression levels of lumbar spinal stenosis"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["FA"]}
+{"i": ["conventional T2 - weighted images", "DTI"], "o": []}
+{"i": ["DTI"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["decompression levels", "surgical blood loss , surgical time , and surgical transfusion"]}
+{"i": [], "o": ["decompression levels", "amount of bleeding , surgical time , and surgical transfusion .", "surgical dissection and complexity of the surgical procedure"]}
+{"i": [], "o": ["complications", "surgical complications", "leg dysesthesia"]}
+{"i": [], "o": ["decompression levels , surgical time , blood loss , and surgical transfusion", "postoperative VAS - BP , VAS - LP , and ODI scores"]}
+{"i": [], "o": ["postoperative VAS - BP , VAS - LP , and ODI scores"]}
+{"i": [], "o": []}
+{"i": ["( DTI or PM ) + MRI"], "o": []}
+{"i": ["MRI + NE", "( DTI or PM ),"], "o": ["decompression levels"]}
+{"i": ["facet joint blocks or zygapophyseal joint blocks .", "discography , discography , temporary external fixation"], "o": []}
+{"i": [], "o": ["accuracy and complications"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DTI"], "o": []}
+{"i": ["MRI + ( PM or DTI )", "MRI + NE"], "o": ["decompression levels of lumbar spinal stenosis"]}
+{"i": ["PM and DTI"], "o": ["decompression levels", "safety and benefits"]}
+{"i": [], "o": []}
+{"i": [], "o": []}

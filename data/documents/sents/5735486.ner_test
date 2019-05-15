@@ -1,0 +1,165 @@
+{"i": ["Flupirtine"], "o": []}
+{"i": [], "o": []}
+{"i": ["Functional endoscopic sinus surgery ( FESS )"], "o": []}
+{"i": ["flupirtine"], "o": []}
+{"i": ["identical - looking placebo", "preoperative flupirtine"], "o": []}
+{"i": ["fentanyl , propofol , and esmolol"], "o": ["Perioperative Nasal bleeding and surgeon ' s satisfaction score during operation ; amount and number of patients receiving", "infusion for analgesia ; maintenance of desired bispectral index ( BIS ) and deliberate hypotension"]}
+{"i": [], "o": ["Postanesthesia Care Unit ( PACU ) and hospital stay , hemodynamic parameters , and side effects"]}
+{"i": ["propofol", "esmolol"], "o": ["maintenance of BIS", "number of patients", "number of patients requiring fentanyl and dosage of the same drug", "duration of controlled hypotension"]}
+{"i": [], "o": ["nasal bleeding and surgeon ' s satisfaction score"]}
+{"i": [], "o": ["side effects .", "Discharge time from PACU and hospital"]}
+{"i": ["Flupirtine"], "o": ["analgesia", "perioperative hemodynamic conditions", "nasal bleeding"]}
+{"i": ["Functional endoscopic sinus surgery ( FESS )"], "o": []}
+{"i": ["flupirtine"], "o": []}
+{"i": ["identical - looking placebo", "preoperative flupirtine"], "o": []}
+{"i": ["fentanyl , propofol , and esmolol"], "o": ["Perioperative Nasal bleeding and surgeon ' s satisfaction score during operation ; amount and number of patients receiving", "infusion for analgesia ; maintenance of desired bispectral index ( BIS ) and deliberate hypotension"]}
+{"i": [], "o": ["Postanesthesia Care Unit ( PACU ) and hospital stay , hemodynamic parameters , and side effects"]}
+{"i": ["propofol", "esmolol"], "o": ["maintenance of BIS", "number of patients", "number of patients requiring fentanyl and dosage of the same drug", "duration of controlled hypotension"]}
+{"i": [], "o": ["nasal bleeding and surgeon ' s satisfaction score"]}
+{"i": [], "o": ["side effects .", "Discharge time from PACU and hospital"]}
+{"i": ["Flupirtine"], "o": ["analgesia", "perioperative hemodynamic conditions", "nasal bleeding"]}
+{"i": [], "o": []}
+{"i": ["Functional endoscopic sinus surgery ( FESS )"], "o": []}
+{"i": [], "o": []}
+{"i": ["FESS"], "o": []}
+{"i": ["FESS"], "o": []}
+{"i": [], "o": []}
+{"i": ["FESS"], "o": ["Perioperative bleeding"]}
+{"i": ["preoperative adrenaline packing , intraoperative adrenaline infiltration , patient ' s head elevation", "hypotensive anesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["perfusion pressure"]}
+{"i": [], "o": []}
+{"i": ["desmopressin", "propofol , sevoflurane , desflurane", "remifentanil", "dexmedetomidine , clonidine", "gabapentin"], "o": []}
+{"i": ["FESS"], "o": ["Perioperative bleeding and postoperative pain"]}
+{"i": ["Flupirtine maleate"], "o": []}
+{"i": ["selective neuronal potassium channel openers ( SNEPCOs )\""], "o": []}
+{"i": ["Flupirtine"], "o": []}
+{"i": [], "o": []}
+{"i": ["flupirtine maleate"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ambulatory FESS"], "o": []}
+{"i": ["oral 100 mg flupirtine ( Retense \u00ae", "single dose oral placebo ( Vitamin B complex ) capsule"], "o": []}
+{"i": ["fentanyl ( Verfen", "paracetamol ( Neomol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["epinephrine - soaked cotton"], "o": []}
+{"i": ["lignocaine hydrochloride + 0 . 01 mg / mL epinephrine ( Xylocaine"], "o": []}
+{"i": ["flupirtine"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ranitidine", "alprazolam"], "o": []}
+{"i": [], "o": ["heart rate ( HR ), systolic blood pressure ( SBP ), diastolic blood pressure ( DBP ), Mean Arterial Pressure ( MAP ), and oxygen saturation ( SpO2 )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["HR , SBP , DBP , MBP , respiratory rate , temperature , and 12 - lead electrocardiography"]}
+{"i": [], "o": []}
+{"i": ["Intravenous ( I . V .)"], "o": []}
+{"i": ["Ringer ' s lactate"], "o": []}
+{"i": ["injection fentanyl", "injection glycopyrrolate"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["atracurium"], "o": []}
+{"i": [], "o": ["Laryngoscopy , intubation , and cuff inflation"]}
+{"i": ["intravenous atracurium", "N2O in O2 and isoflurane"], "o": ["Muscle relaxation"]}
+{"i": ["neostigmine", "glycopyrrolate"], "o": []}
+{"i": [], "o": []}
+{"i": ["mephentermine", "esmolol"], "o": ["peroperative mean arterial pressure ( MAP )"]}
+{"i": [], "o": []}
+{"i": ["atropine"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["fentanyl"], "o": ["hypertension or tachycardia"]}
+{"i": ["esmolol", "Fentanyl"], "o": []}
+{"i": [], "o": ["time for PACU stay ( admission \u2013 discharge from PACU ) and hospital discharge ( eye opening \u2013 discharge from hospital )", "incidence of adverse events"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ondansetron"], "o": ["nausea and vomiting"]}
+{"i": [], "o": ["bleeding and dryness", "surgical site bleeding"]}
+{"i": [], "o": ["Surgeon ' s satisfaction"]}
+{"i": ["Fentanyl and esmolol"], "o": []}
+{"i": [], "o": []}
+{"i": ["Esmolol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol , fentanyl", "esmolol"], "o": ["sedation , hypotension , bradycardia , vomiting , shivering , headache , and number of patients requiring", "hemodynamics"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["flupirtine", "placebo"], "o": []}
+{"i": [], "o": ["body weight , height , ASA status , preoperative hemoglobin , and packed cell volume"]}
+{"i": ["FESS"], "o": []}
+{"i": [], "o": ["Duration of surgery and anesthesia"]}
+{"i": [], "o": ["Controlled hypotension"]}
+{"i": [], "o": ["Post anaesthesia care unit and hospital discharge time"]}
+{"i": ["flupirtine", "fentanyl"], "o": ["mean dose of", "Operation related timings Number of patients", "Indications of functional endoscopic sinus surgery", "Demographic profile", "preoperative hematologic status"]}
+{"i": ["Propofol", "placebo"], "o": ["consumption for BIS maintenance"]}
+{"i": ["esmolol"], "o": ["number of patients treated", "induced hypotension , dose of"]}
+{"i": ["flupirtine"], "o": ["Nasal bleeding score and subsequently surgeon ' s satisfaction score"]}
+{"i": [], "o": ["Side effects"]}
+{"i": [], "o": ["MAP and HR"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Surgical bleeding score and surgeon satisfaction score", "Side effects"]}
+{"i": ["Ambulatory surgery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["nasal bleeding", "postoperative pain"]}
+{"i": [], "o": []}
+{"i": ["Prophylactic analgesia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ibuprofen , diclofenac , and ketorolac", "flupirtine", "codeine , dihydrocodeine , and pentazocine", "dipyrone and paracetamol ( acetaminophen )."], "o": []}
+{"i": ["Flupirtine maleate"], "o": ["gastric absorption"]}
+{"i": [], "o": ["intraoperative fentanyl requirement"]}
+{"i": [], "o": ["side effects", "drowsiness , muscle relaxation , and concentration impairment effects"]}
+{"i": ["flupirtine maleate"], "o": []}
+{"i": ["flupirtine and placebo"], "o": ["recovery profile", "hemodynamics", "visibility of surgical field , satisfaction of the surgeon , postoperative need for analgesia ( fentanyl requirement ),"]}
+{"i": [], "o": ["demographic profile and durations of anesthesia"]}
+{"i": [], "o": ["PACU recovery", "hospital discharge"]}
+{"i": ["placebo - controlled", "flupirtine"], "o": ["sedation"]}
+{"i": [], "o": []}
+{"i": ["flupirtine"], "o": ["sedation"]}
+{"i": [], "o": []}
+{"i": ["flupirtine"], "o": ["sedation score", "awakening"]}
+{"i": ["flupirtine"], "o": ["sedation", "PACU recovery and hospital discharge"]}
+{"i": [], "o": ["duration of controlled hypotension"]}
+{"i": [], "o": []}
+{"i": ["flupirtine -", "diclofenac -"], "o": ["hemodynamics"]}
+{"i": ["esmolol"], "o": ["mean dose of", "number of patients receiving the same"]}
+{"i": ["flupirtine", "placebo"], "o": ["fentanyl requirement", "number and the total dosage"]}
+{"i": ["flupirtine"], "o": ["analgesic consumption as morphine requirement"]}
+{"i": [], "o": []}
+{"i": ["flupirtine", "ibuprofen"], "o": ["requirement for rescue analgesia"]}
+{"i": ["flupirtine", "placebo", "esmolol"], "o": ["number of patients"]}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "flupirtine"], "o": ["DBP and HR", "SBP"]}
+{"i": ["flupirtine"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["sufentanil", "propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol", "magnesium sulfate"], "o": []}
+{"i": ["propofol", "flupirtine"], "o": []}
+{"i": ["flupirtine"], "o": ["intraoperative bleeding", "surgeon ' s satisfaction score"]}
+{"i": ["flupirtine"], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["dexmedetomidine"], "o": ["bleeding", "surgeon ' s satisfaction score .", "visibility"]}
+{"i": [], "o": []}
+{"i": ["nitroglycerine .", "esmolol"], "o": ["bleeding"]}
+{"i": ["flupirtine"], "o": []}
+{"i": [], "o": ["sedation , gastrointestinal upset , headache , disorientation , and hallucinations ."]}
+{"i": [], "o": ["nausea , vomiting , shivering , bradycardia , headache , hypotension , and dry mouth"]}
+{"i": [], "o": ["sedation"]}
+{"i": ["flupirtine"], "o": []}
+{"i": [], "o": ["easily arousable sedation"]}
+{"i": [], "o": []}
+{"i": ["fentanyl"], "o": ["postoperative pain"]}
+{"i": [], "o": ["sedation score , visual analog scale score , and plasma catecholamine or stress hormone concentrations"]}
+{"i": ["flupirtine"], "o": []}
+{"i": [], "o": []}
+{"i": ["flupirtine", "esmolol", "propofol", "Flupirtine", "fentanyl"], "o": []}
+{"i": [], "o": ["analgesic requirement", "surgeon ' s satisfaction score"]}
+{"i": [], "o": []}
+{"i": [], "o": []}

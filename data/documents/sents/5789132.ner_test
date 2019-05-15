@@ -1,0 +1,90 @@
+{"i": ["Insulin Syringe"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dental local anesthesia"], "o": ["pain sensation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["other needle", "conventional syringe or diabetic needle"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sound , eye , motor ( SEM ) score"]}
+{"i": [], "o": []}
+{"i": ["diabetic syringes"], "o": []}
+{"i": ["Insulin Syringe"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dental local anesthesia"], "o": ["pain sensation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["other needle", "conventional syringe or diabetic needle"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["sound , eye , motor ( SEM ) score"]}
+{"i": [], "o": []}
+{"i": ["diabetic syringes"], "o": []}
+{"i": ["Insulin Syringe"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Anesthetic needle injection"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["anxiety level"]}
+{"i": ["26 gauge conventional syringe and 30 gauge insulin syringe", "LA"], "o": ["pain perception"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["pain perception"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["2 % lidocaine and 1 : 100 , 000 epinephrine ."], "o": []}
+{"i": [], "o": []}
+{"i": ["other syringe", "conventional syringe or insulin syringe"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Wong - Bakers faces rating scale ( FRS )", "pain perception"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["insulin syringe", "conventional syringe"], "o": ["mean pain score", "mean pain score using FRS scale"]}
+{"i": [], "o": []}
+{"i": ["LA with insulin syringe", "conventional syringe"], "o": ["mean SEM score"]}
+{"i": [], "o": []}
+{"i": ["insulin syringe", "conventional syringe"], "o": ["mean pain score"]}
+{"i": [], "o": []}
+{"i": ["insulin syringe", "LA conventional"], "o": ["mean SEM scores"]}
+{"i": [], "o": []}
+{"i": ["insulin syringe", "conventional syringe"], "o": ["mean pain score"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean SEM scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["pain score"]}
+{"i": ["conventional syringe"], "o": ["mean SEM score"]}
+{"i": [], "o": ["FRS pain score differences"]}
+{"i": [], "o": ["pain perception"]}
+{"i": [], "o": []}
+{"i": ["insulin syringes"], "o": []}
+{"i": ["infiltration technique", "mandibular infiltration", "block technique", "Infiltration technique", "mandibular block"], "o": []}
+{"i": ["buccal infiltrations .", "inferior dental nerve blocks"], "o": []}
+{"i": [], "o": ["visual analog pain scale"]}
+{"i": ["infiltration injections"], "o": ["appearance of anesthesia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["pain perception"]}
+{"i": [], "o": ["anxiety and fear psychosis", "pain perception"]}
+{"i": ["conventional syringes .", "insulin syringes"], "o": []}
+{"i": ["Insulin syringe"], "o": []}
+{"i": [], "o": []}
+{"i": ["insulin syringe"], "o": []}
+{"i": ["diabetic syringe"], "o": []}
+{"i": ["diabetic syringes"], "o": []}
+{"i": ["toy syringes"], "o": []}

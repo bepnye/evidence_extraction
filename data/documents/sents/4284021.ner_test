@@ -1,0 +1,185 @@
+{"i": ["cholesteryl ester transfer protein inhibitor evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["placebo - controlled", "evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": ["peak plasma concentrations"]}
+{"i": [], "o": ["trough inhibition of cholesteryl ester transfer protein ( CETP ) activity"]}
+{"i": ["placebo", "evacetrapib"], "o": ["apo B", "CETP activity", "LDL - C", "HDL - C", "apo AI"]}
+{"i": [], "o": ["levels of evacetrapib , CETP activity , CETP mass , HDL - C and LDL - C"]}
+{"i": ["Evacetrapib"], "o": ["24 - h ambulatory systolic or diastolic blood pressure ."]}
+{"i": ["Evacetrapib", "evacetrapib"], "o": ["blood pressure", "HDL - C", "LDL - C"]}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["placebo - controlled", "evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": ["peak plasma concentrations"]}
+{"i": [], "o": ["trough inhibition of cholesteryl ester transfer protein ( CETP ) activity"]}
+{"i": ["placebo", "evacetrapib"], "o": ["apo B", "CETP activity", "LDL - C", "HDL - C", "apo AI"]}
+{"i": [], "o": ["levels of evacetrapib , CETP activity , CETP mass , HDL - C and LDL - C"]}
+{"i": ["Evacetrapib"], "o": ["24 - h ambulatory systolic or diastolic blood pressure ."]}
+{"i": ["Evacetrapib", "evacetrapib"], "o": ["blood pressure", "HDL - C", "LDL - C"]}
+{"i": [], "o": []}
+{"i": [], "o": ["high - density lipoprotein - cholesterol ( HDL - C"]}
+{"i": [], "o": ["HDL - C levels"]}
+{"i": [], "o": []}
+{"i": ["niacin", "fibrates", "statins"], "o": ["HDL - C"]}
+{"i": [], "o": ["HDL - C levels"]}
+{"i": ["torcetrapib and dalcetrapib"], "o": []}
+{"i": ["Torcetrapib"], "o": ["blood pressure and aldosterone levels", "mortality and CV events"]}
+{"i": ["Dalcetrapib", "torcetrapib"], "o": ["blood pressure", "overall mineralocorticoid activity"]}
+{"i": ["dalcetrapib", "placebo"], "o": ["diastolic blood pressure or levels of plasma aldosterone , potassium or bicarbonate .", "mean systolic blood pressure"]}
+{"i": ["evacetrapib", "anacetrapib"], "o": ["blood pressure"]}
+{"i": ["anacetrapib"], "o": ["LDL - C and HDL - C", "blood pressure or electrolyte or aldosterone levels"]}
+{"i": ["evacetrapib"], "o": ["HDL - C levels", "CETP activity", "LDL - C", "blood pressure or mineralocorticoid activity ."]}
+{"i": ["evacetrapib"], "o": ["tolerability , pharmacokinetic ( PK ) and pharmacodynamic ( PD )"]}
+{"i": ["placebo - controlled", "evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["supine and standing blood pressure", "systolic blood pressure", "diastolic blood pressure"]}
+{"i": [], "o": ["Body mass index", "fasting triglyceride and cholesterol levels"]}
+{"i": [], "o": []}
+{"i": ["herbal or dietary supplements , grapefruit and grapefruit products"], "o": []}
+{"i": [], "o": []}
+{"i": ["licorice products", "licorice"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo or evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": ["blood pressure", "skin rashes"]}
+{"i": ["placebo or evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["isotope - labelled drug ( evacetrapib \u2013 ( 13CD3 ))"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["interassay accuracy"]}
+{"i": [], "o": ["precision"]}
+{"i": [], "o": []}
+{"i": [], "o": ["maximal concentration ( Cmax ), time to Cmax ( tmax ), area under the concentration - time curve ( AUC ), apparent oral clearance ( CL / F ), apparent distribution volume at steady - state ( Vss / F ) and terminal half - life ( t1"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood samples"]}
+{"i": ["evacetrapib ."], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["serum CETP activity"]}
+{"i": [], "o": ["Serum CETP activity"]}
+{"i": [], "o": ["CETP mass"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Total cholesterol and triglycerides"]}
+{"i": [], "o": ["HDL - C"]}
+{"i": [], "o": ["LDL - C"]}
+{"i": [], "o": ["Apolipoprotein ( apo ) concentrations"]}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": ["CETP activity and lipoproteins"]}
+{"i": [], "o": ["total cholesterol and triglycerides ."]}
+{"i": ["evacetrapib"], "o": ["exposure and HDL or LDL change", "plasma"]}
+{"i": ["evacetrapib"], "o": ["plasma concentration vs time"]}
+{"i": [], "o": ["vital signs , serum and plasma electrolyes , plasma renin activity , aldosterone and plasma and salivary cortisol"]}
+{"i": [], "o": ["blood pressure"]}
+{"i": ["ABPM device"], "o": []}
+{"i": ["evacetrapib or placebo )"], "o": []}
+{"i": [], "o": ["ambulatory blood pressure and pulse"]}
+{"i": [], "o": []}
+{"i": ["placebo and evacetrapib"], "o": ["blood pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["ABPM", "systolic blood pressure ( SBP ) and diastolic blood pressure ( DBP )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean BMI"]}
+{"i": ["evacetrapib"], "o": ["plasma concentration - time"]}
+{"i": ["evacetrapib"], "o": ["Peak plasma concentrations"]}
+{"i": [], "o": ["Steady state"]}
+{"i": ["evacetrapib ."], "o": ["PK parameters"]}
+{"i": [], "o": ["mean terminal half - life"]}
+{"i": ["evacetrapib"], "o": ["Plasma exposure to"]}
+{"i": ["evacetrapib"], "o": ["AUCt , ss", "accumulation ratio"]}
+{"i": ["evacetrapib"], "o": ["apparent steady - state volume of distribution", "Mean apparent oral clearance"]}
+{"i": [], "o": ["evacetrapib"]}
+{"i": ["evacetrapib", "placebo or evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure ."]}
+{"i": [], "o": ["PK samples", "terminal elimination rate"]}
+{"i": [], "o": ["t 1 / 2 , ss and Vss / F"]}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": ["CETP activity"]}
+{"i": ["evacetrapib ."], "o": ["mean CETP activity change"]}
+{"i": [], "o": ["CETP activity"]}
+{"i": [], "o": ["trough inhibition of CETP activity"]}
+{"i": [], "o": []}
+{"i": [], "o": ["CETP activity"]}
+{"i": ["evacetrapib"], "o": ["CETP mass"]}
+{"i": ["evacetrapib"], "o": ["HDL - C", "LDL - C"]}
+{"i": ["placebo", "evacetrapib"], "o": ["LDL", "HDL - C"]}
+{"i": [], "o": ["HDL - C and LDL - C"]}
+{"i": ["placebo", "Placebo"], "o": ["HDL - C", "LDL - C", "pharmacodynamic parameters"]}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": ["HDL - C and LDL - C levels"]}
+{"i": [], "o": ["HDL - C", "LDL - C"]}
+{"i": ["evacetrapib"], "o": ["HDL - C and LDL - C"]}
+{"i": [], "o": ["EAUC50", "LDL - C change", "HDL - C model and LDL - C"]}
+{"i": ["evacetrapib"], "o": ["apo AI , apo AII , apo B , apo E , total cholesterol and triglycerides"]}
+{"i": ["Evacetrapib", "placebo", "evacetrapib"], "o": ["apo B and apo B / AI ratio", "apo AI , apo AII and apo E", "apo B levels", "apo AI , apo AII , and apo E levels"]}
+{"i": ["evacetrapib"], "o": ["apo AI and decreases in apo B and ratio of apo B to apo AI"]}
+{"i": ["evacetrapib ."], "o": ["apo AII and apo E"]}
+{"i": ["evacetrapib", "placebo ."], "o": ["total cholesterol"]}
+{"i": [], "o": ["triglycerides ."]}
+{"i": ["Evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": ["Adverse events ( AEs", "routine serum chemistries ( including liver transaminases , complete blood counts and urinalysis"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": ["rash"]}
+{"i": ["evacetrapib"], "o": ["drug eruption with recurrent fever"]}
+{"i": [], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["ABPM", "evacetrapib"], "o": ["blood pressure"]}
+{"i": ["placebo", "evacetrapib"], "o": ["SBP or DBP"]}
+{"i": [], "o": ["exposure and blood pressure"]}
+{"i": ["placebo", "evacetrapib"], "o": ["plasma potassium , serum sodium , serum bicarbonate plasma renin activity or plasma cortisol or salivary cortisol"]}
+{"i": ["Evacetrapib", "placebo", "evacetrapib", "Placebo"], "o": ["Systolic blood pressure", "24 - h ambulatory blood pressure"]}
+{"i": [], "o": []}
+{"i": ["CETP inhibitor evacetrapib"], "o": ["HDL - C", "LDL - C"]}
+{"i": ["placebo", "evacetrapib"], "o": ["LDL - C", "HDL - C", "CETP activity"]}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["evacetrapib", "anacetrapib"], "o": ["CETP inhibition"]}
+{"i": ["evacetrapib"], "o": ["exposure"]}
+{"i": ["evacetrapib", "anacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["Anacetrapib", "evacetrapib", "anacetrapib"], "o": ["plasma concentrations"]}
+{"i": ["evacetrapib"], "o": ["decreases in HDL - C and LDL - C", "CETP activity"]}
+{"i": ["evacetrapib"], "o": ["HDL - C and LDL - C"]}
+{"i": ["evacetrapib"], "o": ["LDL - C", "HDL - C and LDL - C"]}
+{"i": ["evacetrapib"], "o": ["apo B to apo AI ratio .", "apo AI", "apo B levels"]}
+{"i": [], "o": ["Apo AII and apo E levels"]}
+{"i": [], "o": ["fractional catabolic rate of HDL"]}
+{"i": [], "o": ["apo AI and apo AII"]}
+{"i": [], "o": ["apo E"]}
+{"i": ["evacetrapib", "statin"], "o": []}
+{"i": [], "o": ["liver , kidney or muscle safety"]}
+{"i": ["evacetrapib"], "o": ["QT interval"]}
+{"i": ["evacetrapib"], "o": ["blood pressure ."]}
+{"i": ["placebo", "evacetrapib"], "o": ["24 - h ambulatory systolic or diastolic blood pressure monitoring ."]}
+{"i": ["evacetrapib"], "o": ["aldosterone", "mineralocorticoid levels ."]}
+{"i": ["evacetrapib", "torcetrapib"], "o": ["aldosterone and blood pressure"]}
+{"i": ["evacetrapib", "torcetrapib"], "o": ["aldosterone and cortisol"]}
+{"i": ["evacetrapib"], "o": ["rash"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["rosuvastatin", "evacetrapib"], "o": ["rash"]}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["evacetrapib"], "o": []}
+{"i": ["Evacetrapib", "evacetrapib"], "o": ["CV events"]}
+{"i": ["evacetrapib"], "o": ["HDL - C"]}
+{"i": ["evacetrapib"], "o": ["PK and PD effects"]}
+{"i": ["Evacetrapib"], "o": ["blood pressure and mineralocorticoid levels ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}

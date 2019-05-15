@@ -1,0 +1,133 @@
+{"i": ["antibiotic prophylaxis"], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous antibiotic prophylaxis", "no prophylaxis", "transurethral resection ( TUR )"], "o": []}
+{"i": [], "o": []}
+{"i": ["diagnostic cystoscopy ."], "o": []}
+{"i": ["antibiotic treatment", "not receive antibiotics", "cefoperazone )."], "o": []}
+{"i": [], "o": ["urine analysis and urine cultures"]}
+{"i": [], "o": ["clinical parameters including fever and dysuria"]}
+{"i": [], "o": []}
+{"i": [], "o": ["urine cultures"]}
+{"i": [], "o": ["microbiological and clinical parameters"]}
+{"i": [], "o": []}
+{"i": [], "o": ["absolute risk of infection"]}
+{"i": ["intravenous antibiotic prophylaxis", "no prophylaxis", "transurethral resection ( TUR )"], "o": []}
+{"i": [], "o": []}
+{"i": ["diagnostic cystoscopy ."], "o": []}
+{"i": ["antibiotic treatment", "not receive antibiotics", "cefoperazone )."], "o": []}
+{"i": [], "o": ["urine analysis and urine cultures"]}
+{"i": [], "o": ["clinical parameters including fever and dysuria"]}
+{"i": [], "o": []}
+{"i": [], "o": ["urine cultures"]}
+{"i": [], "o": ["microbiological and clinical parameters"]}
+{"i": [], "o": []}
+{"i": [], "o": ["absolute risk of infection"]}
+{"i": ["cystoscopic examinations"], "o": []}
+{"i": [], "o": []}
+{"i": ["cystoscopy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["urinary tract infections ."]}
+{"i": ["prophylactic antibiotics ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous antibiotic prophylaxis against no prophylaxis"], "o": []}
+{"i": ["diagnostic cystoscopy"], "o": []}
+{"i": ["punch biopsy and transurethral resection ( TUR )"], "o": []}
+{"i": [], "o": []}
+{"i": ["antibiotics"], "o": []}
+{"i": [], "o": []}
+{"i": ["antibiotic prophylaxis ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["occurrence of urinary tract infections and sepsis"]}
+{"i": ["no antibiotic prophylaxis", "intravenous cefoperazone", "cephalosporin"], "o": []}
+{"i": [], "o": ["midstream urinalysis and urine culture"]}
+{"i": [], "o": []}
+{"i": [], "o": ["microorganisms"]}
+{"i": [], "o": ["pyuria"]}
+{"i": [], "o": ["fever , dysuria , and frequency"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sterile 0 . 9 % NaCl solution"], "o": []}
+{"i": ["Activated glutaraldehyde solution"], "o": []}
+{"i": ["chlorhexidene solution ."], "o": []}
+{"i": ["Lidocaine gel"], "o": []}
+{"i": ["general anaesthesia with a laryngeal mask or spinal anaesthesia ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hospitalization"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["cystoscopy"], "o": []}
+{"i": [], "o": []}
+{"i": ["Transurethral resection"], "o": []}
+{"i": [], "o": ["growth of Eschericia coli"]}
+{"i": [], "o": ["pyuria ."]}
+{"i": [], "o": ["pyuria"]}
+{"i": [], "o": []}
+{"i": ["intravesical Bacillus Calmette - Gue \u0301 rin ( BCG ) treatment"], "o": ["pyuria"]}
+{"i": [], "o": ["positive urine culture without pyuria"]}
+{"i": [], "o": ["urine cultures and clinical parameters"]}
+{"i": [], "o": ["post - operative urine cultures"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["complaints of dysuria and frequency"]}
+{"i": [], "o": ["dysuria"]}
+{"i": [], "o": ["fever or any other severe symptom"]}
+{"i": [], "o": ["microbiological and clinical"]}
+{"i": ["punch biopsy"], "o": []}
+{"i": [], "o": ["bladder tumor"]}
+{"i": [], "o": []}
+{"i": ["TUR"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["urine cultures"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["severe infections and sepsis"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["gentamicin"], "o": ["infection rate"]}
+{"i": [], "o": ["rate of infection"]}
+{"i": ["prophylactic antibiotics"], "o": ["symptomatic bacteriuria"]}
+{"i": [], "o": []}
+{"i": [], "o": ["infection"]}
+{"i": [], "o": []}
+{"i": ["cystoscopy", "diagnostic cystoscopy"], "o": []}
+{"i": ["antibiotics"], "o": []}
+{"i": ["prophylaxis", "antibiotic", "placebo"], "o": ["urinary tract infections"]}
+{"i": [], "o": []}
+{"i": ["TUR"], "o": []}
+{"i": [], "o": ["risk of urinary tract infection"]}
+{"i": [], "o": []}
+{"i": ["prophylactic antibiotics"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["bacterial growth", "pyuria"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["absolute risk of bacteriuria"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["antibiotics", "placebo - controlled"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["antibiotic"], "o": ["cost effectiveness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["antibiotics"], "o": []}
+{"i": ["antibiotics"], "o": []}
+{"i": [], "o": []}

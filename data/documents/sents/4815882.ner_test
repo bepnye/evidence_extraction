@@ -1,0 +1,131 @@
+{"i": ["XELIRI / FOLFIRI", "placebo - controlled", "simvastatin"], "o": []}
+{"i": [], "o": []}
+{"i": ["simvastatin", "XELIRI / FOLFIRI chemotherapy"], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["FOLFIRI / XELIRI plus placebo .", "FOLFIRI / XELIRI plus simvastatin"], "o": []}
+{"i": ["FOLFIRI", "irinotecan", "5 - FU", "leucovorin"], "o": []}
+{"i": ["capecitabine", "irinotecan"], "o": []}
+{"i": [], "o": ["progression - free survival ( PFS )."]}
+{"i": [], "o": ["response rate , duration of response , overall survival ( OS ), time to progression , and toxicity ."]}
+{"i": ["simvastatin", "placebo"], "o": []}
+{"i": ["XELIRI / FOLFIRI plus simvastatin", "XELIRI / FOLFIRI plus placebo"], "o": ["median PFS"]}
+{"i": ["simvastatin", "placebo"], "o": ["OS"]}
+{"i": ["simvastatin", "placebo"], "o": ["Grade \u2a7e 3 nausea and anorexia"]}
+{"i": ["simvastatin"], "o": ["PFS"]}
+{"i": ["simvastatin", "XELIRI / FOLFIRI chemotherapy"], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["FOLFIRI / XELIRI plus placebo .", "FOLFIRI / XELIRI plus simvastatin"], "o": []}
+{"i": ["FOLFIRI", "irinotecan", "5 - FU", "leucovorin"], "o": []}
+{"i": ["capecitabine", "irinotecan"], "o": []}
+{"i": [], "o": ["progression - free survival ( PFS )."]}
+{"i": [], "o": ["response rate , duration of response , overall survival ( OS ), time to progression , and toxicity ."]}
+{"i": ["simvastatin", "placebo"], "o": []}
+{"i": ["XELIRI / FOLFIRI plus simvastatin", "XELIRI / FOLFIRI plus placebo"], "o": ["median PFS"]}
+{"i": ["simvastatin", "placebo"], "o": ["OS"]}
+{"i": ["simvastatin", "placebo"], "o": ["Grade \u2a7e 3 nausea and anorexia"]}
+{"i": ["simvastatin"], "o": ["PFS"]}
+{"i": ["Statins"], "o": []}
+{"i": ["Statins"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["statins"], "o": []}
+{"i": ["statins"], "o": []}
+{"i": ["statin"], "o": ["risk of colorectal cancer", "risk reduction of cancer"]}
+{"i": ["statin"], "o": ["all - cause mortality", "colorectal cancer - specific mortality"]}
+{"i": ["Statins"], "o": []}
+{"i": ["simvastatin", "statin"], "o": []}
+{"i": ["simvastatin", "FOLFIRI chemotherapy"], "o": []}
+{"i": ["simvastatin to XELIRI or FOLFIRI chemotherapy"], "o": ["efficacy and safety"]}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["oxaliplatin - containing chemotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["XELIRI / FOLFIRI chemotherapy plus simvastatin or XELIRI / FOLFIRI chemotherapy plus placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["capecitabine", "irinotecan", "chemotherapy", "leucovorin", "5 % dextrose", "250 mg m \u2212 2 irinotecan", "5 - FU"], "o": []}
+{"i": ["chemotherapy"], "o": []}
+{"i": ["simvastatin or placebo"], "o": []}
+{"i": ["Simvastatin and placebo"], "o": []}
+{"i": [], "o": ["disease progression , unacceptable toxicity , or patient refusal ."]}
+{"i": [], "o": ["progression - free survival ( PFS ),"]}
+{"i": [], "o": ["response rate , duration of tumour response , overall survival ( OS ), time to progression ( TTP ), and safety profile ."]}
+{"i": [], "o": ["OS"]}
+{"i": [], "o": ["TTP"]}
+{"i": [], "o": ["Duration of tumour response"]}
+{"i": [], "o": []}
+{"i": [], "o": ["complete blood cell count with differentials , chemistry , creatinine phophokinase ( CPK ) and LDH measurements , lipid profiling", "computed tomography ( CT ) scan of the abdomen and pelvis", "chest X - ray"]}
+{"i": [], "o": ["vital signs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Adverse effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["simvastatin", "placebo"], "o": ["median PFS"]}
+{"i": [], "o": ["objective response rate and patient ' s clinical characteristics"]}
+{"i": [], "o": ["OS , PFS , and TTP , survival functions"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["XELIRI / FOLFIRI", "simvastatin", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["progression events"]}
+{"i": ["simvastatin", "placebo"], "o": ["median PFS"]}
+{"i": ["simvastatin", "placebo"], "o": ["OS and TTP ."]}
+{"i": ["simvastatin", "placebo"], "o": ["median OS"]}
+{"i": ["simvastatin", "placebo"], "o": ["median TTP"]}
+{"i": ["simvastatin", "placebo"], "o": ["DCR ( disease control rate )", "ORR ( overall response rate )"]}
+{"i": [], "o": ["response rate"]}
+{"i": [], "o": []}
+{"i": ["simvastatin", "placebo"], "o": ["incidence of grade \u2a7e 3 adverse events ( AEs )"]}
+{"i": ["simvastatin", "placebo"], "o": ["anaemia", "diarrhoea", "anaemia , nausea , anorexia , and alopecia", "neutropenia"]}
+{"i": ["simvastatin"], "o": ["treatment - related toxicities ."]}
+{"i": ["simvastatin"], "o": ["grade 3 or 4 increase of CPK"]}
+{"i": ["simvastatin"], "o": ["alanine aminotransferase ( ALT", "aspartate aminotransferase ( AST ),", "proportion of patients having any grade of liver enzyme elevation"]}
+{"i": [], "o": ["Abnormal elevations of CPK , ALT , and AST"]}
+{"i": ["simvastatin", "placebo"], "o": []}
+{"i": ["irinotecan , capecitabine , fluorouracil , leucovorin", "simvastatin"], "o": ["delivered relative dose intensities"]}
+{"i": ["simvastatin", "placebo"], "o": []}
+{"i": [], "o": ["survival outcomes"]}
+{"i": [], "o": ["PFS or OS"]}
+{"i": [], "o": []}
+{"i": ["XELIRI \u00b1 simvastatin", "FOLFIRI \u00b1 simvastatin"], "o": ["median PFS"]}
+{"i": ["chemotherapy regimen ( FOLFIRI ),"], "o": ["liver metastasis", "PFS", "presence of cervical lymph node metastasis"]}
+{"i": [], "o": ["median OS"]}
+{"i": ["placebo - controlled", "simvastatin", "cytotoxic chemotherapy", "HMG CoA reductase inhibitor"], "o": []}
+{"i": ["simvastatin plus XELIRI / FOLFIRI", "XELIRI / FOLFIRI chemotherapy"], "o": ["PFS ."]}
+{"i": ["simvastatin", "XELIRI or FOLFIRI chemotherapy"], "o": ["toxicity"]}
+{"i": [], "o": ["median PFS"]}
+{"i": ["irinotecan"], "o": ["PFS"]}
+{"i": ["simvastatin", "placebo"], "o": ["median PFS"]}
+{"i": ["simvastatin", "FOLFIRI", "XELIRI"], "o": ["PFS"]}
+{"i": ["simvastatin", "statins"], "o": ["tumour cell proliferation ."]}
+{"i": ["statin", "statins"], "o": []}
+{"i": ["statins"], "o": []}
+{"i": ["simvastatin", "bevacizumab"], "o": []}
+{"i": ["simvastatin", "cytotoxic chemotherapy , antiangiogenic therapy"], "o": []}
+{"i": ["statins"], "o": []}
+{"i": ["statins"], "o": ["endothelial apoptosis", "pro - angiogenic effects", "endothelial release of vascular endothelial growth factor", "antiangiogenic effects"]}
+{"i": ["chemotherapy", "simvastatin"], "o": ["clinical efficacy and safety"]}
+{"i": ["simvastatin", "XELOX and bevacizumab"], "o": []}
+{"i": ["statin"], "o": []}
+{"i": ["statins"], "o": []}
+{"i": ["statin"], "o": ["prevalence of metastasis"]}
+{"i": ["lovastatin", "5 - fluorouracil or cisplatin"], "o": ["apoptosis"]}
+{"i": ["simvastatin", "conventional FOLFIRI chemotherapy"], "o": ["antitumour activity", "efficacy and toxicity profile"]}
+{"i": ["simvastatin", "placebo"], "o": []}
+{"i": [], "o": ["median PFSs"]}
+{"i": ["simvastatin", "placebo"], "o": ["median PFS"]}
+{"i": ["simvastatin", "placebo"], "o": ["median OS"]}
+{"i": ["chemotherapy with capeciatabine , oxaliplatin , and cetuximab", "statins"], "o": ["PFS"]}
+{"i": ["simvastatin", "cetuximab"], "o": ["antitumour activity"]}
+{"i": ["statins"], "o": []}
+{"i": ["simvastatin", "cytotoxic chemotherapy"], "o": []}
+{"i": ["conventional chemotherapy", "statins"], "o": []}
+{"i": ["XELIRI / FOLFIRI", "simvastatin"], "o": ["PFS"]}
+{"i": ["statins and cytotoxic chemotherapy regimen"], "o": []}

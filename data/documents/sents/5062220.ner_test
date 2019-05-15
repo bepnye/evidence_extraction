@@ -1,0 +1,125 @@
+{"i": ["end - tidal anesthetic gas concentration - guided protocol", "bispectral index"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["bispectral index ( BIS ) monitoring versus standard end - tidal anesthetic gas ( ETAG ) concentration monitoring"], "o": ["tracheal extubation time"]}
+{"i": ["BIS versus ETAG - guided anesthesia"], "o": ["time to tracheal extubation"]}
+{"i": [], "o": []}
+{"i": ["halothane - based general anesthesia", "BIS - guided", "ETAG - guided anesthesia"], "o": []}
+{"i": [], "o": ["Time to tracheal extubation"]}
+{"i": ["ETAG", "BIS"], "o": ["BIS value"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Mean time to tracheal extubation"]}
+{"i": ["BIS - guided anesthesia", "ETAG - guided anesthesia"], "o": ["extubation time"]}
+{"i": ["ETAG monitoring", "BIS monitoring"], "o": ["extubation"]}
+{"i": [], "o": []}
+{"i": ["bispectral index ( BIS ) monitoring versus standard end - tidal anesthetic gas ( ETAG ) concentration monitoring"], "o": ["tracheal extubation time"]}
+{"i": ["BIS versus ETAG - guided anesthesia"], "o": ["time to tracheal extubation"]}
+{"i": [], "o": []}
+{"i": ["halothane - based general anesthesia", "BIS - guided", "ETAG - guided anesthesia"], "o": []}
+{"i": [], "o": ["Time to tracheal extubation"]}
+{"i": ["ETAG", "BIS"], "o": ["BIS value"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Mean time to tracheal extubation"]}
+{"i": ["BIS - guided anesthesia", "ETAG - guided anesthesia"], "o": ["extubation time"]}
+{"i": ["ETAG monitoring", "BIS monitoring"], "o": ["extubation"]}
+{"i": ["halothane"], "o": []}
+{"i": [], "o": ["hepatitis"]}
+{"i": ["halothane"], "o": []}
+{"i": ["halothane ."], "o": []}
+{"i": [], "o": ["Intensive Care Unit ( ICU ) length of stay ( LOS ), hospital LOS"]}
+{"i": [], "o": []}
+{"i": ["Bispectral index ( BIS ) monitoring"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["awareness incidence"]}
+{"i": [], "o": []}
+{"i": ["ETAG monitoring", "BIS"], "o": ["tracheal extubation time"]}
+{"i": ["halothane and nitrous oxide - based anesthesia .", "BIS versus ETAG monitoring"], "o": ["time to tracheal extubation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["based general anesthesia", "halothane ( fluothane", "guided anesthesia", "ETAG", "BIS"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["patient ' s weight , fasting status , consent , and preanesthetic record"]}
+{"i": [], "o": ["body temperature , noninvasive blood pressure , pulse oximetry ( SpO2 ), end - tidal carbon dioxide , heart rate , and electrocardiography"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["nitrous oxide and halothane"], "o": []}
+{"i": [], "o": []}
+{"i": ["Blease Datum L \u00ae series halothane vaporizer ."], "o": []}
+{"i": ["ETAG", "BIS"], "o": []}
+{"i": ["ETAG"], "o": []}
+{"i": [], "o": ["extubation time"]}
+{"i": [], "o": []}
+{"i": ["ETAG"], "o": []}
+{"i": ["intravenous glycopyrrolate", "nalbuphine"], "o": []}
+{"i": ["rocuronium", "propofol"], "o": []}
+{"i": ["rocuronium", "nitrous oxide in oxygen and halothane"], "o": []}
+{"i": ["Halothane", "ETAG", "BIS"], "o": []}
+{"i": [], "o": ["hemodynamic parameters"]}
+{"i": ["neostigmine", "glycopyrrolate"], "o": ["residual neuromuscular blockade"]}
+{"i": [], "o": []}
+{"i": [], "o": ["type and duration of surgery and duration of anesthesia ( time"]}
+{"i": [], "o": ["time between anesthetic discontinuation and tracheal extubation", "tracheal extubation time"]}
+{"i": [], "o": ["intraoperative or immediate postoperative complication"]}
+{"i": ["ETAG", "BIS"], "o": ["time to tracheal extubation"]}
+{"i": ["ETAG", "BIS"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["open cholecystectomy and abdominal hysterectomy ."], "o": []}
+{"i": [], "o": []}
+{"i": ["ETAG", "BIS"], "o": ["mean duration of anesthesia"]}
+{"i": [], "o": ["Mean baseline BIS value"]}
+{"i": [], "o": ["BIS value"]}
+{"i": [], "o": ["mean MAC value"]}
+{"i": [], "o": ["values of BIS and MAC"]}
+{"i": [], "o": ["hemodynamic parameters"]}
+{"i": [], "o": ["duration of surgery and anesthesia and extubation time", "mean time to tracheal extubation"]}
+{"i": ["BIS"], "o": []}
+{"i": [], "o": ["complication"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["halothane"], "o": []}
+{"i": ["BIS - or ETAG - guided titration protocol", "halothane - based general"], "o": ["time to tracheal extubation"]}
+{"i": ["halothane", "ETAG monitoring", "BIS monitoring"], "o": ["mean extubation time"]}
+{"i": [], "o": []}
+{"i": ["sevoflurane"], "o": ["extubation time"]}
+{"i": [], "o": []}
+{"i": ["sevoflurane or desflurane ."], "o": []}
+{"i": ["ETAG"], "o": ["earlier tracheal extubation ."]}
+{"i": ["BIS monitoring"], "o": ["time to extubation , ICU LOS , or hospital LOS ."]}
+{"i": ["desflurane", "BIS guidance", "sevoflurane , isoflurane"], "o": []}
+{"i": ["halothane", "BIS - guided anesthesia"], "o": []}
+{"i": ["halothane"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sevoflurane", "isoflurane"], "o": ["BIS values"]}
+{"i": ["halothane"], "o": []}
+{"i": [], "o": []}
+{"i": ["sevoflurane and halothane"], "o": []}
+{"i": ["sevoflurane", "halothane"], "o": ["BIS values"]}
+{"i": ["sevoflurane", "halothane"], "o": ["mean BIS value"]}
+{"i": ["halothane", "isoflurane"], "o": []}
+{"i": [], "o": ["movement to stimulus"]}
+{"i": [], "o": []}
+{"i": ["halothane", "isoflurane"], "o": ["ratio of MAC - awake to MAC"]}
+{"i": ["Halothane"], "o": []}
+{"i": ["halothane", "isoflurane"], "o": ["BIS valves"]}
+{"i": ["halothane", "isoflurane", "halothane ."], "o": ["BIS values"]}
+{"i": ["halothane", "isoflurane"], "o": ["BIS values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["halothane , isoflurane , sevoflurane , and desflurane"], "o": []}
+{"i": ["halothane"], "o": ["depression of cortical activity"]}
+{"i": ["ETAG", "BIS - guided"], "o": ["extubation time"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["body mass index , blood loss , temperature fluid , and electrolyte balance"]}
+{"i": ["ETAG monitoring", "halothane"], "o": ["extubation"]}
+{"i": ["BIS - based protocol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

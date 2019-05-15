@@ -1,0 +1,4 @@
+green (Collserola Natural Park)	baseline	Heart rate, beats/mind - high frequency power (HF) of the autonomous nervous system, log m/s2c	-1	-1	HF, log m/s2c <TAB> 25 <TAB> -0.32 (-0.58, -0.06) 0.02
+blue (Castelldefels beach)	baseline	Heart rate, beats/mind - ratio between low frequency power (LF) and HF (LF:HF) of the autonomous nervous system, log m/s2c	-1	-1	LF:HF, n.u. <TAB> 22 <TAB> 0.05 (-0.15, 0.25) <TAB> 0.64 <TAB> -0.26 (-0.46, -0.06) <TAB> 0.01
+green (Collserola Natural Park)	baseline	salivary cortisol	-1	-1	Salivary cortisol, log nmol/Lb <TAB> 26 <TAB> -0.21 (-0.34, -0.08) <TAB> <0.01
+green (Collserola Natural Park), blue (Castelldefels beach)	baseline	Total Mood Disturbance(TMD)	-1	-1	TMD, n.u. <TAB> 26 <TAB> -4.78 (-7.77, -1.79) <TAB> <0.01 -4.53 (-7.57, -1.49) <TAB> <0.01

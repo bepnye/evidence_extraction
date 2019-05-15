@@ -1,0 +1,261 @@
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["complementary and alternative medicines ( CAM )"], "o": []}
+{"i": ["polyherbal formulation ( PHF )"], "o": []}
+{"i": ["PHF", "highly active antiretroviral treatment ( HAART )"], "o": []}
+{"i": [], "o": ["Plasma viral RNA , CD4 cell count and blood chemistry"]}
+{"i": ["PHF - to - HAART", "PHF", "HAART"], "o": []}
+{"i": ["HAART"], "o": ["CD4 cell count", "plasma viral load"]}
+{"i": [], "o": ["viral load .", "profile of CD4 cell loss"]}
+{"i": ["PHF", "HAART"], "o": ["occurrence of AIDS - related illnesses"]}
+{"i": ["HAART", "PHF - to - HAART"], "o": ["rates of CD4 count and reduction in viral load"]}
+{"i": [], "o": ["CD4 cell count", "viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["complementary and alternative medicines ( CAM )"], "o": []}
+{"i": ["polyherbal formulation ( PHF )"], "o": []}
+{"i": ["PHF", "highly active antiretroviral treatment ( HAART )"], "o": []}
+{"i": [], "o": ["Plasma viral RNA , CD4 cell count and blood chemistry"]}
+{"i": ["PHF - to - HAART", "PHF", "HAART"], "o": []}
+{"i": ["HAART"], "o": ["CD4 cell count", "plasma viral load"]}
+{"i": [], "o": ["viral load .", "profile of CD4 cell loss"]}
+{"i": ["PHF", "HAART"], "o": ["occurrence of AIDS - related illnesses"]}
+{"i": ["HAART", "PHF - to - HAART"], "o": ["rates of CD4 count and reduction in viral load"]}
+{"i": [], "o": ["CD4 cell count", "viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["highly active anti - retroviral therapy ( HAART )"], "o": []}
+{"i": ["complementary and alternative medicines ( CAM )"], "o": []}
+{"i": ["CAM", "herbal medicines"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Indian polyherbal formulation ( PHF ),"], "o": []}
+{"i": [], "o": ["stabilization of CD4 count and viral load and clinical progression"]}
+{"i": [], "o": []}
+{"i": ["counselling"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["polyherbal formulation ( PHF )", "highly active anti - retroviral therapy ( HAART )"], "o": []}
+{"i": ["PHF", "HAART"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 counts"]}
+{"i": ["HAART .", "HAART"], "o": []}
+{"i": ["HAART"], "o": []}
+{"i": ["HAART"], "o": []}
+{"i": [], "o": ["CD4 cells"]}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 count"]}
+{"i": ["co - trimoxazole"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["stavudine", "lamivudine", "nevirapine"], "o": []}
+{"i": ["nevirapine substituted with efavirenz / indinavir or stavudine replaced by zidovudine"], "o": []}
+{"i": [], "o": []}
+{"i": ["FBP , FTP , FKC , FMC , FCK and FPB ,)", "FAJ , FAD , FAZ , FOT and FSWT"], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": ["polyherbal"], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["adherence"]}
+{"i": [], "o": []}
+{"i": ["HAART"], "o": ["Side effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 counts and viral load values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["acute oral toxicity , sub - acute oral toxicity and sub and chronic oral toxicity"]}
+{"i": [], "o": ["CD4 count", "plasma RNA viral load ."]}
+{"i": [], "o": ["manifestation of AIDS - related clinical symptoms including opportunistic infections and / or death"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mononuclear cells ( PBMC )"]}
+{"i": [], "o": []}
+{"i": [], "o": ["differential blood count , haemoglobin , erythrocyte sedimentation rate ( ESR ), liver enzymes ( ALT , AST ), random blood sugar , urea , and creatinine ."]}
+{"i": [], "o": ["Levels of sodium , potassium , and chloride ions"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 cell count", "CD4 cell counts"]}
+{"i": [], "o": ["CD4 cell count"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Viral loads"]}
+{"i": [], "o": ["Viral loads"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 cell count and viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["extract ( aqueous extract re - dissolved in water and ethyl acetate extract in DMSO )"], "o": ["per cent dead cells", "Viability"]}
+{"i": ["Camptothecin"], "o": []}
+{"i": [], "o": ["Cell proliferation", "live cell counts"]}
+{"i": [], "o": ["Antiviral activity"]}
+{"i": [], "o": ["p24"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["live CD3 + CD4 + events"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Duplicate T - cell counts", "viral load"]}
+{"i": [], "o": ["CD4 count , CD8 count and plasma viral load"]}
+{"i": [], "o": ["CD4 count and plasma viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["of opportunistic infections"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PHF", "HAART"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean CD4 count and viral loads"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["HAART"], "o": ["immunological and virological", "mean CD4 count"]}
+{"i": [], "o": ["mean CD4 count"]}
+{"i": [], "o": []}
+{"i": [], "o": ["viral RNA load"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean baseline value"]}
+{"i": [], "o": ["CD8 count"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean CD4 count"]}
+{"i": [], "o": ["mean CD4 count"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["HAART"], "o": ["CD4 cell reduction"]}
+{"i": [], "o": ["CD4 count"]}
+{"i": [], "o": ["viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": ["CD8 count"]}
+{"i": [], "o": []}
+{"i": [], "o": ["AIDS - defining illnesses"]}
+{"i": [], "o": []}
+{"i": [], "o": ["AIDS - defining or other illnesses ."]}
+{"i": [], "o": ["blood chemistry"]}
+{"i": [], "o": ["adverse events"]}
+{"i": ["HAART"], "o": ["chronic diarrhoea , one event of lymphoma followed by death , skin rash , herpes zoster , pulmonary tuberculosis , extrapulmonary tuberculosis , hodgkins lymphoma and nevirapine - related allergy"]}
+{"i": [], "o": ["Herpes zoster , Pneumocystis carinii pneumonia , oral ulceration , persistent lymphadenopathy , skin lesion , oesophageal carcinoma , and an event of extrapulmonary tuberculosis"]}
+{"i": ["PHF - to - HAART"], "o": ["thrombocytopenia , skin lesion , pulmonary tuberculosis , herpes zoster , cryptococcal meningitis and oral candidiasis"]}
+{"i": ["PHF", "PHF - to - HAART"], "o": ["virological responses"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean CD4 count"]}
+{"i": [], "o": ["CD4 count"]}
+{"i": ["PHF - to - HAART"], "o": ["CD4 count"]}
+{"i": ["PHF - to - HAART"], "o": ["rate of CD4 cell loss"]}
+{"i": ["PHF - to - HAART", "HAART"], "o": ["Immunological and virological responses", "CD4 count"]}
+{"i": ["PHF - to - HAART"], "o": []}
+{"i": [], "o": ["viral load reduction"]}
+{"i": [], "o": ["CD8 count"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["HAART"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 cell count and immunemodulation", "mean CD4 count"]}
+{"i": [], "o": ["viral load", "mean CD4 count"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["number of total CCR7 + cells"]}
+{"i": [], "o": ["central memory"]}
+{"i": [], "o": ["effectors and proliferating cells ."]}
+{"i": [], "o": ["CD4 count", "CD8 cell count"]}
+{"i": [], "o": ["CD4 cells"]}
+{"i": [], "o": ["CD4 count", "clinical profile"]}
+{"i": [], "o": ["CD4 count"]}
+{"i": [], "o": ["mean rate of CD4 cell decrease"]}
+{"i": [], "o": ["mean CD4 cell reduction"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 cell changes"]}
+{"i": [], "o": ["AIDS - related clinical manifestations ."]}
+{"i": [], "o": ["survival rate"]}
+{"i": [], "o": ["median duration of survival", "median survival period"]}
+{"i": [], "o": ["AIDS - related mortality"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["PHF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["co - trimoxazole prophylaxis"], "o": []}
+{"i": ["Cotrimoxazole"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["disease progression"]}
+{"i": [], "o": []}
+{"i": [], "o": ["mean CD4 count"]}
+{"i": [], "o": ["AIDS - related clinical symptoms"]}
+{"i": [], "o": ["CD4 cell reduction", "CD4 count", "CD4 cell loss"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CD4 cell decline"]}
+{"i": [], "o": ["cell decline"]}
+{"i": [], "o": ["CD4 cell loss"]}
+{"i": [], "o": ["median CD4 cell loss"]}
+{"i": [], "o": ["CD4 count"]}
+{"i": [], "o": ["CD4 cells", "rate of cell reduction"]}
+{"i": ["PHF - to - HAART"], "o": ["CD4 cell loss"]}
+{"i": [], "o": ["immune function of the T - cell"]}
+{"i": ["polyherbal"], "o": ["quality of life"]}
+{"i": [], "o": ["immune activation of the T - cell"]}
+{"i": [], "o": ["serum levels of the liver enzymes"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["PHF"], "o": []}

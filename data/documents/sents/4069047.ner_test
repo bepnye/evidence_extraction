@@ -1,0 +1,166 @@
+{"i": ["melatonin", "placebo - controlled"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["prolonged - release melatonin ( PRM )", "acetylcholinesterase inhibitors with or without memantine", "standard therapy"], "o": []}
+{"i": ["PRM or placebo", "placebo", "placebo ."], "o": []}
+{"i": [], "o": ["AD Assessment Scale \u2013 Cognition ( ADAS - Cog ), Instrumental Activities of Daily Living ( IADL ), Mini \u2013 Mental State Examination ( MMSE ), sleep , as assessed by the Pittsburgh Sleep Quality Index ( PSQI ) and a daily sleep diary , and safety parameters"]}
+{"i": ["PRM", "placebo"], "o": ["IADL", "cognitive performance"]}
+{"i": [], "o": ["Mean ADAS - Cog"]}
+{"i": [], "o": ["Sleep efficiency"]}
+{"i": ["PRM", "placebo"], "o": ["MMSE score", "mean IADL", "sleep efficiency"]}
+{"i": [], "o": ["Median ADAS - Cog values"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["adverse event profile", "tolerated"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["prolonged - release melatonin ( PRM )", "acetylcholinesterase inhibitors with or without memantine", "standard therapy"], "o": []}
+{"i": ["PRM or placebo", "placebo", "placebo ."], "o": []}
+{"i": [], "o": ["AD Assessment Scale \u2013 Cognition ( ADAS - Cog ), Instrumental Activities of Daily Living ( IADL ), Mini \u2013 Mental State Examination ( MMSE ), sleep , as assessed by the Pittsburgh Sleep Quality Index ( PSQI ) and a daily sleep diary , and safety parameters"]}
+{"i": ["PRM", "placebo"], "o": ["IADL", "cognitive performance"]}
+{"i": [], "o": ["Mean ADAS - Cog"]}
+{"i": [], "o": ["Sleep efficiency"]}
+{"i": ["PRM", "placebo"], "o": ["MMSE score", "mean IADL", "sleep efficiency"]}
+{"i": [], "o": ["Median ADAS - Cog values"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["adverse event profile", "tolerated"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["memantine", "Acetylcholinesterase inhibitors"], "o": []}
+{"i": [], "o": []}
+{"i": ["melatonin", "placebo - controlled"], "o": []}
+{"i": [], "o": []}
+{"i": ["melatonin"], "o": []}
+{"i": [], "o": []}
+{"i": ["prolonged - release melatonin ( PRM )", "PRM", "melatonin"], "o": []}
+{"i": ["placebo - controlled", "PRM", "placebo", "melatonin", "acetylcholinesterase inhibitors", "memantine"], "o": []}
+{"i": ["outdoor light exposure"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Informed Consent Form ( ICF )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["signed ICF ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["PRM ( Circadin", "placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["spend 2 hours a day in outdoor daylight ."], "o": []}
+{"i": ["acetylcholinesterase inhibitor", "memantine )"], "o": []}
+{"i": ["melatonin", "benzodiazepines"], "o": []}
+{"i": [], "o": ["Instrumental Activities of Daily Living ( IADL ),", "MMSE score35", "AD Assessment Scale \u2013 Cognition ( ADAS - Cog ),"]}
+{"i": [], "o": ["Pittsburgh Sleep Quality Index ( PSQI ) 36 global score"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Caregiver ' s sleep", "patients ' well - being by the World Health Organization ( WHO )- 5 Well - Being Index", "Clinical Global Impression ( CGI ) scale", "Sleep Disorders Inventory ( SDI ).", "vital signs ( heart rate and blood pressure ), physical examination", "behavioral signs and symptoms by the Neuropsychiatric Inventory ( NPI ) scale", "spontaneously reported adverse events ( AEs ) or serious AEs ( SAEs ),"]}
+{"i": ["placebo"], "o": ["cognitive ADAS - Cog"]}
+{"i": ["standard AD therapy", "PRM"], "o": ["cognition"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["demography"]}
+{"i": ["memantine", "placebo"], "o": ["percentage of males"]}
+{"i": [], "o": ["Treatment compliance"]}
+{"i": ["PRM", "placebo"], "o": []}
+{"i": [], "o": ["mean ADAS - Cog score"]}
+{"i": ["PRM", "placebo"], "o": ["Median ADAS - Cog score levels"]}
+{"i": ["placebo"], "o": ["median ADAS - Cog score"]}
+{"i": ["placebo"], "o": ["median ADAS - Cog score"]}
+{"i": ["placebo"], "o": ["MMSE"]}
+{"i": ["placebo"], "o": ["mean decline in MMSE score"]}
+{"i": ["PRM", "placebo"], "o": ["MMSE", "MMSE scores"]}
+{"i": ["PRM", "placebo"], "o": ["self - care and activities of daily living"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["IADL"]}
+{"i": ["placebo"], "o": ["comorbid insomnia", "mean IADL score"]}
+{"i": [], "o": []}
+{"i": [], "o": ["PSQI global score"]}
+{"i": ["placebo"], "o": ["PSQI global score"]}
+{"i": ["placebo"], "o": ["insomnia comorbidity", "sleep efficiency", "PSQI component 4 scores"]}
+{"i": ["PRM", "placebo"], "o": ["sleep efficiency"]}
+{"i": ["placebo"], "o": ["PSQI global scores"]}
+{"i": ["placebo"], "o": ["sleep diary )", "quality of sleep"]}
+{"i": [], "o": []}
+{"i": [], "o": ["quality of sleep"]}
+{"i": [], "o": ["mean change in quality of sleep"]}
+{"i": [], "o": ["NPI severity score"]}
+{"i": [], "o": ["NPI distress score"]}
+{"i": ["placebo"], "o": ["NPI distress scores"]}
+{"i": [], "o": ["NPI distress score", "NPI severity score"]}
+{"i": ["placebo"], "o": ["Sleep"]}
+{"i": [], "o": ["Caregiver distress"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["upper respiratory tract infection", "urinary tract infection", "diarrhea"]}
+{"i": ["placebo"], "o": ["Drug - related AEs"]}
+{"i": [], "o": []}
+{"i": [], "o": ["deaths"]}
+{"i": ["placebo"], "o": ["SAEs"]}
+{"i": ["placebo"], "o": ["SAEs", "severe myocardial infarction", "esophageal stenosis"]}
+{"i": [], "o": ["physical examination , vital signs , or lab parameters"]}
+{"i": ["memantine", "PRM", "placebo"], "o": []}
+{"i": [], "o": ["cognitive functioning and sleep"]}
+{"i": [], "o": []}
+{"i": ["PRM"], "o": ["efficacy and safety"]}
+{"i": ["acetylcholinesterase inhibitors", "memantine"], "o": ["ADAS - Cog", "cognitive state"]}
+{"i": ["placebo"], "o": ["median ADAS - Cog"]}
+{"i": ["placebo"], "o": ["ADAS - Cog score"]}
+{"i": [], "o": ["MMSE and IADL )"]}
+{"i": ["placebo"], "o": ["MMSE", "cognition"]}
+{"i": ["placebo"], "o": []}
+{"i": ["PRM", "placebo"], "o": ["self - care and activities of daily living"]}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": ["median ADAS - Cog scores"]}
+{"i": ["placebo"], "o": ["MMSE scores"]}
+{"i": ["PRM", "placebo"], "o": ["MMSE", "mean IADL score"]}
+{"i": [], "o": ["IADL"]}
+{"i": ["PRM", "placebo"], "o": ["disease progression"]}
+{"i": ["placebo"], "o": ["IADL"]}
+{"i": ["placebo"], "o": []}
+{"i": ["PRM", "placebo"], "o": []}
+{"i": ["placebo"], "o": ["insomnia comorbidity", "PSQI component 4", "sleep efficiency"]}
+{"i": ["placebo"], "o": ["sleep efficiency"]}
+{"i": ["PRM therapy"], "o": []}
+{"i": ["melatonin", "placebo - controlled"], "o": ["sleep efficiency"]}
+{"i": ["melatonin", "placebo"], "o": ["daytime wake , activity levels", "rest \u2013 activity cycle", "ADAS - Cog and ADAS - non - Cog scores"]}
+{"i": ["sustained - release melatonin"], "o": ["caregiver ratings of sleep"]}
+{"i": ["melatonin", "placebo"], "o": ["caregiver ratings of sleep quality", "sleep quality"]}
+{"i": [], "o": []}
+{"i": ["melatonin"], "o": []}
+{"i": ["PRM"], "o": []}
+{"i": [], "o": ["improvement in sleep"]}
+{"i": [], "o": []}
+{"i": ["PRM"], "o": ["cognition"]}
+{"i": [], "o": []}
+{"i": ["PRM", "benzodiazepine"], "o": []}
+{"i": ["PRM"], "o": []}
+{"i": ["placebo"], "o": ["cognitive functioning", "IADL and MMSE", "cognitive parameters"]}
+{"i": [], "o": []}
+{"i": [], "o": ["sleep duration", "sleep quality"]}
+{"i": [], "o": []}
+{"i": [], "o": ["SAEs", "deaths"]}
+{"i": ["memantine", "PRM", "acetylcholinesterase inhibitor"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

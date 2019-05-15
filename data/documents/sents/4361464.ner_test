@@ -1,0 +1,99 @@
+{"i": ["delayed - release dimethyl fumarate"], "o": []}
+{"i": [], "o": []}
+{"i": ["Delayed - release dimethyl fumarate ( DMF )"], "o": []}
+{"i": ["delayed - release DMF"], "o": []}
+{"i": [], "o": []}
+{"i": ["delayed - release DMF", "placebo"], "o": []}
+{"i": ["placebo"], "o": ["annualized relapse rate", "risk of 12 - week confirmed disability progression", "risk of relapse"]}
+{"i": ["placebo", "DMF BID"], "o": ["mean number of new non - enhancing T1 - hypointense lesions", "gadolinium - enhancing lesion activity", "mean number of new or enlarging T2 - hyperintense lesions"]}
+{"i": [], "o": ["Flushing and gastrointestinal events"]}
+{"i": ["DMF", "placebo"], "o": []}
+{"i": ["Delayed - release dimethyl fumarate ( DMF )"], "o": []}
+{"i": ["delayed - release DMF"], "o": []}
+{"i": [], "o": []}
+{"i": ["delayed - release DMF", "placebo"], "o": []}
+{"i": ["placebo"], "o": ["annualized relapse rate", "risk of 12 - week confirmed disability progression", "risk of relapse"]}
+{"i": ["placebo", "DMF BID"], "o": ["mean number of new non - enhancing T1 - hypointense lesions", "gadolinium - enhancing lesion activity", "mean number of new or enlarging T2 - hyperintense lesions"]}
+{"i": [], "o": ["Flushing and gastrointestinal events"]}
+{"i": ["DMF", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["glatiramer acetate ( GA )", "interferon beta", "Delayed - release dimethyl fumarate ( DMF )"], "o": ["number and volume of lesions"]}
+{"i": ["DMF"], "o": ["clinical and magnetic resonance imaging ( MRI ) activity"]}
+{"i": ["DMF"], "o": []}
+{"i": ["delayed - release DMF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["basic safety data ( adverse events", "neuroradiological efficacy"]}
+{"i": [], "o": []}
+{"i": [], "o": ["proportion of patients relapsed"]}
+{"i": [], "o": ["annualized relapse rate ( ARR )"]}
+{"i": [], "o": ["time to 12 - week sustained disability progression , number of Gd + lesions , number of new or enlarging T2 - hyperintense lesions , and number of new T1 - hypointense lesions"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo or delayed - release DMF"], "o": []}
+{"i": ["delayed - release DMF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["MRI lesion count"]}
+{"i": [], "o": ["Annualized relapse rate ( ARR"]}
+{"i": [], "o": []}
+{"i": [], "o": ["patients relapsed"]}
+{"i": [], "o": ["Disability"]}
+{"i": [], "o": ["more Gd + lesions"]}
+{"i": [], "o": ["mean number of new or enlarging T2 - hyperintense lesions"]}
+{"i": [], "o": ["mean number of new non - enhancing T1 - hypointense lesions"]}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean time since diagnosis"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": ["placebo"], "o": ["number of weeks"]}
+{"i": ["DMF"], "o": ["frequency of relapse"]}
+{"i": ["placebo"], "o": ["ARR"]}
+{"i": ["DMF", "placebo ."], "o": ["risk of relapse"]}
+{"i": ["placebo"], "o": ["proportion of patients relapsed"]}
+{"i": ["DMF", "placebo ."], "o": ["12 - week sustained disability progression"]}
+{"i": ["placebo"], "o": ["12 - week disability progression"]}
+{"i": ["DMF"], "o": ["mean number of new non - enhancing T1 - hypointense lesions", "mean number of new or enlarging T2 - hyperintense lesions , odds of having more Gd + lesions"]}
+{"i": ["placebo"], "o": ["mean number of new or enlarging T2 - hyperintense lesions"]}
+{"i": ["placebo"], "o": ["odds of having more Gd + lesions"]}
+{"i": ["placebo"], "o": ["mean number of new non - enhancing T1 - hyperintense lesions"]}
+{"i": ["placebo"], "o": ["adverse events"]}
+{"i": ["DMF", "placebo"], "o": ["flushing , nasopharyngitis , headache , diarrhea , nausea , upper abdominal pain , and abdominal pain", "events"]}
+{"i": ["placebo"], "o": ["incidence of adverse events"]}
+{"i": [], "o": []}
+{"i": [], "o": ["of adverse events"]}
+{"i": ["Placebo"], "o": ["Headache", "Upper respiratory tract infection", "Diarrhea"]}
+{"i": [], "o": []}
+{"i": ["DMF"], "o": []}
+{"i": ["DMF"], "o": []}
+{"i": ["delayed - release DMF", "placebo"], "o": ["ARR , risk of relapse , proportion of patients with 12 - week confirmed disability progression , odds of having more Gd + lesions , mean number of new or enlarging T2 - hyperintense lesions , and mean number of new non - enhancing T1 - hypointense lesions"]}
+{"i": ["delayed - release DMF", "interferons"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["time from symptom onset , time from diagnosis , EDSS score , clinical presentation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["delayed - release DMF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["BID"], "o": ["disability progression"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DMF"], "o": ["safety and tolerability profile"]}
+{"i": ["DMF", "placebo"], "o": ["adverse events", "Flushing , nasopharyngitis , and gastrointestinal events including diarrhea , nausea , and abdominal pain", "incidence of adverse events"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DMF"], "o": []}

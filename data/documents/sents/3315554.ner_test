@@ -1,0 +1,206 @@
+{"i": ["Abacavir or Tenofovir Based Therapy"], "o": ["Bone and Renal Effects"]}
+{"i": [], "o": []}
+{"i": ["tenofovir - based combination anti - retroviral therapy", "abacavir"], "o": ["renal effects"]}
+{"i": ["zidovudine / lamivudine ( AZT / 3TC ) to abacavir / lamivudine ( ABC / 3TC ) or tenofovir / emtricitabine ( TDF / FTC )."], "o": []}
+{"i": [], "o": ["bone mass density ( BMD ) and bone turnover biomarkers ( osteocalcin , osteocalcin , procollagen type 1 N - terminal propeptide ( P1NP ), alkaline phosphatase , type I collagen cross - linked C - telopeptide ( CTx ), and osteoprotegerin )."]}
+{"i": [], "o": ["renal function by estimated creatinine clearance , plasma cystatin C , and urinary levels of creatinine , albumin , cystatin C , and neutrophil gelatinase - associated lipocalin ( NGAL )."]}
+{"i": [], "o": ["BMD and renal and bone biomarkers"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BMD"]}
+{"i": ["TDF / FTC"], "o": ["hip and lumbar spine BMD", "BMD"]}
+{"i": [], "o": ["BMD"]}
+{"i": ["TDF / FTC"], "o": ["BMD .", "bone turnover biomarkers except osteoprotegerin"]}
+{"i": [], "o": ["NGAL", "Renal function parameters"]}
+{"i": ["ABC / 3TC - based", "TDF / FTC - based"], "o": ["bone turnover markers", "BMD"]}
+{"i": [], "o": ["renal function"]}
+{"i": [], "o": []}
+{"i": ["tenofovir - based combination anti - retroviral therapy", "abacavir"], "o": ["renal effects"]}
+{"i": ["zidovudine / lamivudine ( AZT / 3TC ) to abacavir / lamivudine ( ABC / 3TC ) or tenofovir / emtricitabine ( TDF / FTC )."], "o": []}
+{"i": [], "o": ["bone mass density ( BMD ) and bone turnover biomarkers ( osteocalcin , osteocalcin , procollagen type 1 N - terminal propeptide ( P1NP ), alkaline phosphatase , type I collagen cross - linked C - telopeptide ( CTx ), and osteoprotegerin )."]}
+{"i": [], "o": ["renal function by estimated creatinine clearance , plasma cystatin C , and urinary levels of creatinine , albumin , cystatin C , and neutrophil gelatinase - associated lipocalin ( NGAL )."]}
+{"i": [], "o": ["BMD and renal and bone biomarkers"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BMD"]}
+{"i": ["TDF / FTC"], "o": ["hip and lumbar spine BMD", "BMD"]}
+{"i": [], "o": ["BMD"]}
+{"i": ["TDF / FTC"], "o": ["BMD .", "bone turnover biomarkers except osteoprotegerin"]}
+{"i": [], "o": ["NGAL", "Renal function parameters"]}
+{"i": ["ABC / 3TC - based", "TDF / FTC - based"], "o": ["bone turnover markers", "BMD"]}
+{"i": [], "o": ["renal function"]}
+{"i": [], "o": []}
+{"i": ["Highly active anti - retroviral therapy ( HAART )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ABC / 3TC", "TDF / FTC", "tenofovir ( TDF )/ emtricitabine ( FTC ) or abacavir ( ABC )/ lamivudine ( 3TC )"], "o": []}
+{"i": [], "o": ["fractures", "osteopenia and osteoporosis"]}
+{"i": ["HAART"], "o": ["bone mineral density ( BMD )"]}
+{"i": ["ABC / 3TC", "TDF / FTC - based", "TDF / FTC", "ABC / 3TC - based treatment"], "o": ["BMD"]}
+{"i": ["TDF / FTC or ABC / 3TC - based treatment"], "o": ["BMD"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["BMD"]}
+{"i": ["thymidine", "TDF therapy"], "o": ["renal dysfunction", "adverse renal effects"]}
+{"i": ["TDF", "TDF - containing with non - TDF containing HAART - regimes"], "o": ["renal function"]}
+{"i": ["TDF"], "o": []}
+{"i": ["ABC - or TDF - based therapy"], "o": ["markers of proximal tubule dysfunction", "estimated glomerular filtration rate ( GFR )"]}
+{"i": [], "o": []}
+{"i": ["zidovudine ( AZT )/ 3TC to ABC / 3TC or TDF / FTC .", "Zidovudine to Tenofovir or Abacavir"], "o": ["Efficacy and Safety"]}
+{"i": [], "o": []}
+{"i": ["abacavir and tenofovir"], "o": ["renal function and bone mass density"]}
+{"i": [], "o": []}
+{"i": ["AZT", "ABC - or TDF - based therapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["HAART comprising AZT"], "o": []}
+{"i": [], "o": ["renal function assessed by cystatin C ( cysC ), creatinine clearance ( CrCl ) and markers of tubule function ; bone mass density and bone metabolism assessed by DXA and bone turnover markers ; lipodystrophy and body composition assessed by DXA and patient questionnaire", "insulin sensitivity ."]}
+{"i": ["tenofovir and abacavir"], "o": ["renal tubular function", "impaired tubular function"]}
+{"i": ["TDF"], "o": []}
+{"i": [], "o": []}
+{"i": ["TDF", "AZT to ABC"], "o": []}
+{"i": [], "o": []}
+{"i": ["ABC / 3TC", "lamivudine ( 3TC ) or emtricitabine ( FTC )", "TDF / FTC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure , CD4 + cell counts , viral load"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Serum and plasma"]}
+{"i": [], "o": []}
+{"i": [], "o": ["bone formation , osteocalcin ( OC ) and procollagen type 1 N - terminal propeptide ( P1NP ;)"]}
+{"i": [], "o": ["Plasma alkaline phosphatase levels"]}
+{"i": [], "o": ["osteoprotegerin ( OPG", "Plasma levels of type I collagen cross - linked C - telopeptide ( CTx ),"]}
+{"i": [], "o": ["CTx"]}
+{"i": [], "o": ["levels of 25 - OH D2 / D3 vitamin D in serum"]}
+{"i": [], "o": ["interleukin - 6 ( IL - 6 ) and high sensitive C - reactive protein ( hs - CRP )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["creatinine clearance ( eCrCl ).", "plasma creatinine and phosphate levels"]}
+{"i": [], "o": ["Plasma cysC"]}
+{"i": [], "o": ["urinary levels of creatinine , albumin , cysC , and neutrophil gelatinase - associated lipocalin ( NGAL )", "albumin , cysC , and NGAL levels", "urine creatinine concentration"]}
+{"i": [], "o": ["ratio"]}
+{"i": [], "o": ["Plasma and urinary cysC", "plasma cysC"]}
+{"i": [], "o": ["Urinary NGAL concentration"]}
+{"i": [], "o": ["urinary creatinine", "Urinary albumin"]}
+{"i": [], "o": []}
+{"i": [], "o": ["total hip and lumbar spine BMD"]}
+{"i": [], "o": ["levels of bone and renal biomarkers"]}
+{"i": [], "o": []}
+{"i": [], "o": ["bone turnover biomarkers", "BMD"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ABC / 3TC"], "o": []}
+{"i": [], "o": ["allergic skin reaction"]}
+{"i": ["ABC / 3TC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["resolved episode of pyelonephritis"]}
+{"i": [], "o": ["grade 2 adverse advents"]}
+{"i": [], "o": ["grade 3 or 4 adverse advents"]}
+{"i": ["systemic corticosteroids , bisphosphonates , vitamin D , calcium or other therapies"], "o": []}
+{"i": [], "o": ["bone and renal biomarkers"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["inflammatory biomarkers , hs - CRP and IL - 6 .", "Levels of P1NP"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Nevirapine", "Efavirenz", "Zidovudine / lamivudine"], "o": ["CD4 + cell count"]}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma P1NP", "plasma osteocalcin ( IQR", "Mean hip BMD", "Mean lumbar spine BMD"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Mean fasting plasma glucose", "urine NGAL / creatinine", "Mean diastolic blood pressure", "Mean systolic blood pressure ("]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BMD"]}
+{"i": [], "o": ["OPG"]}
+{"i": ["TDF / FTC"], "o": ["hip and lumbar spine BMD", "BMD"]}
+{"i": [], "o": ["mean percentage change", "hip and lumbar spine BMD"]}
+{"i": [], "o": ["mean percentage change in hip and lumbar spine BMD"]}
+{"i": [], "o": ["BMD"]}
+{"i": [], "o": ["BMD"]}
+{"i": [], "o": []}
+{"i": ["TDF / FTC"], "o": ["bone turnover except OPG"]}
+{"i": [], "o": []}
+{"i": [], "o": ["CTx", "P1NP", "osteocalcin", "alkaline phosphatase"]}
+{"i": [], "o": ["P1NP", "alkaline phosphatase"]}
+{"i": ["ABC / 3TC"], "o": ["OPG"]}
+{"i": [], "o": ["BMD loss .", "reduction in BMD", "bone turnover markers"]}
+{"i": [], "o": ["levels of bone turnover markers and change in BMD ."]}
+{"i": [], "o": ["proportion of females", "BMD"]}
+{"i": [], "o": ["eCrCl"]}
+{"i": [], "o": ["plasma levels of cysC"]}
+{"i": [], "o": ["eCrCl nor plasma cysC"]}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma phosphate"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["urinary biomarkers"]}
+{"i": ["TDF / FTC"], "o": ["urinary NGAL / creatinine ratio"]}
+{"i": [], "o": []}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["albumin / creatinine ratio", "urinary cysC / creatinine ratio"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["lumbar spine BMD"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["bone turnover biomarkers"]}
+{"i": [], "o": ["renal function", "eCrCl or plasma cysC", "urinary NGAL / creatinine ratio"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Concurrent inflammation"]}
+{"i": [], "o": []}
+{"i": ["TDF - or ABC - based"], "o": ["BMD"]}
+{"i": ["TDF / FTC"], "o": ["hip and spine T scores", "T scores"]}
+{"i": [], "o": ["T scores"]}
+{"i": ["TDF / FTC"], "o": ["changes in BMD", "BMD"]}
+{"i": [], "o": []}
+{"i": ["TDF"], "o": ["bone loss", "Biomarkers of bone turnover"]}
+{"i": [], "o": ["bone turnover biomarker", "bone turnover"]}
+{"i": [], "o": ["BMD decline", "BMD"]}
+{"i": [], "o": ["Bone turnover markers", "BMD"]}
+{"i": ["ABC - or TDF - based"], "o": ["BMD"]}
+{"i": ["TDF"], "o": ["BMD reductions", "BMD"]}
+{"i": ["TDF"], "o": ["BMD"]}
+{"i": [], "o": ["BMD"]}
+{"i": [], "o": ["loss of BMD", "lumbar spine BMD"]}
+{"i": ["corticosteroid therapy", "TDF - based HIV - treatment"], "o": ["incident fractures"]}
+{"i": [], "o": ["BMD"]}
+{"i": [], "o": ["fracture risk", "BMD"]}
+{"i": ["TDF"], "o": []}
+{"i": ["TDF", "FRAX \u00ae tool"], "o": ["risk of fracture"]}
+{"i": [], "o": ["BMD"]}
+{"i": ["anti - retroviral therapy ( ART )"], "o": ["bone mass density ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["bone turnover markers"]}
+{"i": [], "o": ["Bone turnover markers"]}
+{"i": [], "o": ["rate of bone resorption and formation", "BMD"]}
+{"i": [], "o": ["bone turnover"]}
+{"i": ["TDF / FTC"], "o": ["OC and OPG"]}
+{"i": [], "o": []}
+{"i": [], "o": ["markers of bone turnover"]}
+{"i": [], "o": ["BMD loss"]}
+{"i": [], "o": ["biomarkers of renal dysfunction", "eCrCl or plasma cysC"]}
+{"i": ["TDF / FTC"], "o": ["retinol - binding protein and \u03b2 - 2 microglobulin"]}
+{"i": ["ABC / 3TC", "TDF / FTC"], "o": ["biochemical parameters of renal function", "clinical renal impairment"]}
+{"i": [], "o": ["eGFR , creatinine clearance or other renal endpoints"]}
+{"i": [], "o": []}
+{"i": ["DXA"], "o": ["BMD reductions"]}
+{"i": [], "o": ["eCrCl", "GFR .", "plasma cysC"]}
+{"i": [], "o": []}
+{"i": [], "o": ["eCrCl estimate", "plasma creatinine"]}
+{"i": [], "o": ["cysC based GFR"]}
+{"i": [], "o": ["24 - hour urine collections", "24 - hour excretion of albumin , tubular markers , and the fractional phosphate excretion ."]}
+{"i": [], "o": ["urinary biomarkers"]}
+{"i": [], "o": ["plasma phosphate levels"]}
+{"i": ["HAART"], "o": ["bone and renal function"]}
+{"i": [], "o": []}
+{"i": ["bisphosphonate , vitamin D and calcium"], "o": ["BMD"]}
+{"i": ["TDF / FTC - based", "ABC / 3TC ."], "o": ["hip and lumbar spine BMD", "bone turnover markers"]}
+{"i": [], "o": ["renal function", "NGAL"]}
+{"i": [], "o": []}

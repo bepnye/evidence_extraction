@@ -1,0 +1,114 @@
+{"i": ["riociguat"], "o": []}
+{"i": [], "o": []}
+{"i": ["riociguat"], "o": []}
+{"i": ["riociguat", "placebo ."], "o": []}
+{"i": [], "o": ["Haemodynamic parameters"]}
+{"i": ["Riociguat"], "o": ["pulmonary vascular resistance ( PVR )"]}
+{"i": [], "o": ["Cardiac index"]}
+{"i": [], "o": ["Mean pulmonary artery pressure"]}
+{"i": [], "o": ["6 min walk distance", "PVR", "cardiac index"]}
+{"i": ["Riociguat"], "o": ["haemodynamics"]}
+{"i": [], "o": []}
+{"i": ["riociguat"], "o": []}
+{"i": ["riociguat", "placebo ."], "o": []}
+{"i": [], "o": ["Haemodynamic parameters"]}
+{"i": ["Riociguat"], "o": ["pulmonary vascular resistance ( PVR )"]}
+{"i": [], "o": ["Cardiac index"]}
+{"i": [], "o": ["Mean pulmonary artery pressure"]}
+{"i": [], "o": ["6 min walk distance", "PVR", "cardiac index"]}
+{"i": ["Riociguat"], "o": ["haemodynamics"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Pulmonary endarterectomy ( PEA )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Riociguat"], "o": []}
+{"i": ["riociguat"], "o": ["6 min walk distance ( 6MWD )", "pulmonary vascular resistance ( PVR ), N - terminal prohormone of brain natriuretic peptide ( NT - proBNP ) levels and WHO functional class"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["endothelin receptor antagonist , prostacyclin analogue , phosphodiesterase type 5 inhibitor or NO donor"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["CT pulmonary angiogram ( minimum 64 - slice spiral CT with contrast medium ) supplemented by a VQ scan .", "pulmonary angiogram supplemented by a ventilation - perfusion ( VQ ) scan"], "o": []}
+{"i": [], "o": ["haemodynamic data ( at least mean right atrial pressure ( RAP ), mPAP , PVR , cardiac output and pulmonary artery wedge pressure ( PAWP ))"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["placebo or oral riociguat"], "o": []}
+{"i": ["riociguat"], "o": ["systolic blood pressure ( SBP )"]}
+{"i": ["riociguat"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Haemodynamic parameters"]}
+{"i": [], "o": ["6MWD", "PVR , NT - proBNP and WHO functional class and time to clinical worsening ."]}
+{"i": [], "o": ["haemodynamic parameters , including RAP , PAWP , cardiac output and mixed venous oxygen saturation ( SvO2 )."]}
+{"i": [], "o": ["mean arterial pressure ( MAP ), mPAP , PVR , systemic vascular resistance ( SVR ), pulmonary diastolic pressure gradient ( DPG ) and cardiac index ."]}
+{"i": [], "o": ["Adverse events ( AEs )"]}
+{"i": [], "o": ["haemodynamic parameters , 6MWD and NT - proBNP"]}
+{"i": [], "o": ["6MWD", "haemodynamic parameters"]}
+{"i": [], "o": []}
+{"i": [], "o": ["6MWD and change in PVR and cardiac index"]}
+{"i": [], "o": ["haemodynamic parameters and NT - proBNP"]}
+{"i": [], "o": []}
+{"i": [], "o": ["6MWD"]}
+{"i": [], "o": ["AEs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["6MWD"]}
+{"i": [], "o": ["haemodynamic impairments", "PVR and mPAP", "haemodynamic"]}
+{"i": ["Riociguat", "Placebo"], "o": []}
+{"i": [], "o": ["6MWD , 6 min walk distance ; BMI , body mass index ; CTEPH , chronic thromboembolic pulmonary hypertension ; PEA , pulmonary endarterectomy ; PH , pulmonary hypertension ; WHO FC"]}
+{"i": ["placebo", "Riociguat", "Riociguat Placebo"], "o": ["change from BL in haemodynamic parameters"]}
+{"i": [], "o": ["CTEPH , chronic thromboembolic pulmonary hypertension ; dPAP , diastolic pulmonary artery pressure ; DPG , diastolic pressure gradient ; LS , least - squares ; MAP , mean arterial pressure ; mPAP , mean pulmonary artery pressure ; PAWP , pulmonary artery wedge pressure ; PEA , pulmonary endarterectomy ; PH , pulmonary hypertension ; PVR , pulmonary vascular resistance ; RAP , right atrial pressure ; SvO 2 , mixed venous oxygen saturation ; SVR , systemic vascular resistance ."]}
+{"i": ["riociguat"], "o": []}
+{"i": ["riociguat", "placebo"], "o": ["haemodynamic parameters"]}
+{"i": ["riociguat", "placebo"], "o": ["PVR"]}
+{"i": ["riociguat", "placebo"], "o": ["Cardiac index"]}
+{"i": [], "o": ["cardiac output", "SVR", "dPAP", "DPG", "mPAP", "SvO2", "MAP"]}
+{"i": [], "o": ["RAP and PAWP"]}
+{"i": ["riociguat", "placebo"], "o": ["mean \u00b1 SD SBP", "Mean \u00b1 SD SBP"]}
+{"i": ["riociguat", "placebo"], "o": ["heart rate", "mean \u00b1 SD heart rate"]}
+{"i": ["riociguat", "placebo"], "o": ["Mean \u00b1 SD arterial oxygen saturation"]}
+{"i": ["riociguat"], "o": ["haemodynamic"]}
+{"i": [], "o": ["PVR , mPAP and MAP .", "PVR , SVR , mPAP , cardiac output , cardiac index , SvO2 and MAP"]}
+{"i": ["riociguat", "placebo"], "o": ["Diastolic pulmonary artery pressure"]}
+{"i": ["riociguat"], "o": ["cardiac output", "DPG", "cardiac index", "mPAP", "PVR , cardiac output , cardiac index , mPAP and DPG"]}
+{"i": [], "o": ["PVR , SVR and cardiac index"]}
+{"i": ["placebo", "Riociguat"], "o": ["6MWD"]}
+{"i": [], "o": ["6MWD"]}
+{"i": [], "o": ["6MWD", "PVR", "cardiac index"]}
+{"i": [], "o": ["6MWD and PVR", "6MWD versus cardiac index"]}
+{"i": [], "o": ["6MWD and PVR", "6MWD versus cardiac index"]}
+{"i": [], "o": ["AEs"]}
+{"i": ["riociguat", "placebo"], "o": ["AEs", "AE of catheter - site haemorrhage"]}
+{"i": ["Riociguat", "PEA Riociguat", "Placebo"], "o": ["Headache", "Dyspepsia", "Inoperable Persistent / recurrent PH", "Dizziness"]}
+{"i": ["riociguat"], "o": ["mPAP", "SvO2", "cardiac index"]}
+{"i": [], "o": ["haemodynamic improvements"]}
+{"i": [], "o": ["6MWD", "haemodynamic variables ( PVR and cardiac index )."]}
+{"i": ["riociguat"], "o": ["exercise capacity", "NT - proBNP and WHO functional class"]}
+{"i": [], "o": ["heart rate", "PVR , mPAP , cardiac index and SvO2"]}
+{"i": [], "o": ["PVR and higher 6MWD"]}
+{"i": [], "o": ["6MWD", "PVR , mPAP , cardiac index and SvO2"]}
+{"i": [], "o": ["PVR , mPAP , RAP and cardiac index"]}
+{"i": [], "o": []}
+{"i": ["riociguat"], "o": []}
+{"i": ["riociguat"], "o": []}
+{"i": [], "o": ["6MWD", "PVR , mPAP , SvO2 and cardiac index", "NT - proBNP", "haemodynamic"]}
+{"i": [], "o": []}
+{"i": ["Riociguat"], "o": ["6MWD and PVR"]}
+{"i": [], "o": []}
+{"i": ["PEA"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["CTEPH and persistent / recurrent PH"]}
+{"i": [], "o": []}
+{"i": ["riociguat"], "o": []}
+{"i": [], "o": []}
+{"i": ["riociguat"], "o": ["haemodynamic variables"]}
+{"i": [], "o": ["PVR and cardiac index", "6MWD ."]}
+{"i": ["riociguat"], "o": ["exercise capacity"]}

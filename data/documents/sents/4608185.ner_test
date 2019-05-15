@@ -1,0 +1,156 @@
+{"i": ["ChiRunning"], "o": ["blood pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": ["educational control \u2014 a self - directed running group", "active control \u2014 a trainer - led running group", "intervention \u2014 a trainer - led ChiRunning group"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Systolic and diastolic blood pressure"]}
+{"i": [], "o": ["BMI"]}
+{"i": [], "o": []}
+{"i": [], "o": ["running - related discomfort"]}
+{"i": ["ChiRunning"], "o": ["discomfort", "running"]}
+{"i": ["ChiRunning"], "o": []}
+{"i": ["ChiRunning"], "o": ["BMI", "blood pressure or self reported injury"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": ["educational control \u2014 a self - directed running group", "active control \u2014 a trainer - led running group", "intervention \u2014 a trainer - led ChiRunning group"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Systolic and diastolic blood pressure"]}
+{"i": [], "o": ["BMI"]}
+{"i": [], "o": []}
+{"i": [], "o": ["running - related discomfort"]}
+{"i": ["ChiRunning"], "o": ["discomfort", "running"]}
+{"i": ["ChiRunning"], "o": []}
+{"i": ["ChiRunning"], "o": ["BMI", "blood pressure or self reported injury"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hypertension"]}
+{"i": ["Regular physical activity"], "o": []}
+{"i": [], "o": ["all - cause mortality"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Body mass index ( BMI ) and waist circumference"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": ["Mindfulness and body awareness practices"], "o": []}
+{"i": [], "o": []}
+{"i": ["Mindfulness Based Stress Reduction ( MBSR )", "seated meditation , yoga , and body scan"], "o": []}
+{"i": ["MBSR"], "o": ["blood pressure"]}
+{"i": ["ChiRunning", "MBSR"], "o": []}
+{"i": ["ChiRunning intervention", "control"], "o": []}
+{"i": [], "o": ["meeting recruitment , retention , and adherence goals", "acceptability"]}
+{"i": [], "o": ["blood pressure and BMI", "self - reported incidence of running - related discomfort and injury"]}
+{"i": [], "o": []}
+{"i": ["3 ) educational control \u2014 a self - directed running group", "active control \u2014 a trainer - led running group", "intervention \u2014 a trainer - led ChiRunning group"], "o": []}
+{"i": ["ChiRunning ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": ["diastolic blood pressure ( DBP", "systolic blood pressure ( SBP )"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Dietary Approaches to Stop Hypertension ( DASH ) diet [ 18"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["discomfort or injury experienced"]}
+{"i": ["walk / run approach , alternating intervals of walking and running"], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": ["certified trainer", "ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["individualized coaching feedback"], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning", "book ChiRunning : A Revolutionary Approach to Effortless , Injury - Free Running [ 14 ] and a metronome to wear while running"], "o": []}
+{"i": ["active control , an attention matched , group based training with a running coach", "self - directed control , which provided extensive written materials on starting a running practice ."], "o": []}
+{"i": ["running coach ( certified USA Track and Field and Road Runners Club of America )"], "o": []}
+{"i": ["running - related topic , followed by questions and answers and a group walk / run ."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["printed materials on the same running topics covered in the active control talks ."], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": ["blood pressure and BMI .", "feasibility , acceptability"]}
+{"i": [], "o": ["recruitment , retention , and adherence and acceptability"]}
+{"i": [], "o": []}
+{"i": [], "o": ["runs and time running"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["self - reported running - related discomfort and injury .", "SBP , DBP , and BMI"]}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": ["blood pressure measurements"]}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Weight"]}
+{"i": [], "o": ["Running - related discomfort and injury"]}
+{"i": [], "o": ["running - related discomfort"]}
+{"i": [], "o": ["Self - reported discomfort", "duration or intensity of the run"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Discomfort and injury incidence"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": [") blood pressures"]}
+{"i": [], "o": ["BMI"]}
+{"i": [], "o": ["BMI ."]}
+{"i": [], "o": ["blood pressure"]}
+{"i": [], "o": ["waist circumference", "fitness", "SBP"]}
+{"i": ["ChiRunning"], "o": []}
+{"i": [], "o": ["Injury incidence per 100 h of running"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["self - reported RRD", "injury and discomfort", "average RRI"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["injury rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["ChiRunning"], "o": ["blood pressure or self - reported injury", "BMI ."]}
+{"i": ["ChiRunning"], "o": ["blood pressure"]}

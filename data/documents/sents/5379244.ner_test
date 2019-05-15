@@ -1,0 +1,187 @@
+{"i": ["conventional insulin pump therapy", "closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["hybrid closed - loop insulin delivery"], "o": ["glucose control"]}
+{"i": [], "o": []}
+{"i": ["insulin", "usual pump therapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["prandial insulin delivery"]}
+{"i": [], "o": ["proportion of time when sensor glucose concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["usual pump therapy"], "o": ["proportion of time when sensor glucose concentration"]}
+{"i": ["usual pump therapy"], "o": ["proportion of time spent in hypoglycaemia", "proportion of time with glucose concentration"]}
+{"i": [], "o": ["serious hypoglycaemia or other serious adverse events"]}
+{"i": ["hybrid closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["hybrid closed - loop insulin delivery"], "o": ["glucose control"]}
+{"i": [], "o": []}
+{"i": ["insulin", "usual pump therapy"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["prandial insulin delivery"]}
+{"i": [], "o": ["proportion of time when sensor glucose concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["usual pump therapy"], "o": ["proportion of time when sensor glucose concentration"]}
+{"i": ["usual pump therapy"], "o": ["proportion of time spent in hypoglycaemia", "proportion of time with glucose concentration"]}
+{"i": [], "o": ["serious hypoglycaemia or other serious adverse events"]}
+{"i": ["hybrid closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Intensive insulin therapy", "insulin therapy"], "o": []}
+{"i": ["Closed - loop insulin delivery"], "o": []}
+{"i": ["conventional pump therapy", "threshold suspend technology", "Closed - loop delivery"], "o": ["glycaemic outcomes", "non - severe hypoglycaemic events"]}
+{"i": [], "o": []}
+{"i": ["day - and - night hybrid closed - loop insulin delivery"], "o": ["glucose control"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["usual pump therapy with blinded CGM", "day - and - night closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["real - time CGM device", "study insulin pump and CGM device"], "o": []}
+{"i": [], "o": []}
+{"i": ["usual pump therapy with blinded CGM", "insulin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["rapid - acting insulin analogue"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["model - predictive control algorithm"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["glucose levels ."]}
+{"i": ["carbohydrates"], "o": []}
+{"i": [], "o": ["entered capillary blood glucose readings"]}
+{"i": [], "o": []}
+{"i": [], "o": ["bodyweight and total daily insulin dose"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["calibration check"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["own glucose monitoring devices ( CGM or flash glucose monitoring19 )"], "o": []}
+{"i": ["closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": ["low - glucose alarm"], "o": []}
+{"i": [], "o": ["sensor glucose alarm threshold"]}
+{"i": [], "o": []}
+{"i": [], "o": ["HbA1c and C - peptide"]}
+{"i": [], "o": ["Plasma C - peptide"]}
+{"i": [], "o": ["HbA1c"]}
+{"i": [], "o": ["sensor glucose concentration"]}
+{"i": [], "o": ["hypoglycaemia burden", "proportion of time with sensor glucose concentration above and below target range ; time with glucose concentration", "number of nights and mean duration when sensor glucose", "sensor glucose concentration", "coefficient of variation"]}
+{"i": [], "o": ["coefficient of variation of sensor glucose"]}
+{"i": [], "o": ["sensor glucose concentration ; between - day and between - night coefficient of variation of sensor glucose concentration ; and area under the curve when sensor glucose concentration", "proportion of time with glucose concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose index", "severe hypoglycaemic events , significant ketonaemia", "other adverse and serious adverse events ."]}
+{"i": [], "o": ["frequency and duration of use"]}
+{"i": [], "o": []}
+{"i": [], "o": ["time spent"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Efficacy and safety"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["real - time CGM", "flash glucose monitoring"], "o": []}
+{"i": ["usual pump therapy"], "o": ["proportion of time during the whole study period when sensor glucose concentration"]}
+{"i": [], "o": ["glucose and insulin delivery profiles"]}
+{"i": [], "o": ["proportion of time sensor glucose concentration"]}
+{"i": ["usual pump therapy", "closed - loop insulin delivery"], "o": ["mean glucose concentration"]}
+{"i": [], "o": ["burden of hypoglycaemia", "proportion of time with glucose concentration"]}
+{"i": [], "o": ["number of nights when glucose concentration"]}
+{"i": ["usual pump therapy", "closed - loop insulin delivery"], "o": ["proportion of time with glucose concentration"]}
+{"i": [], "o": ["glycaemic variability", "SD of sensor glucose", "coefficient of variation of sensor glucose"]}
+{"i": [], "o": ["Total daily insulin"]}
+{"i": [], "o": ["glucose control and insulin delivery"]}
+{"i": [], "o": []}
+{"i": ["closed - loop insulin delivery"], "o": ["burden of hypoglycaemia", "mean glucose concentration", "proportion of time with glucose concentration"]}
+{"i": [], "o": ["SD and between - night coefficient of variation of sensor glucose"]}
+{"i": ["closed - loop insulin delivery"], "o": ["time spent with glucose concentration", "burden of hypoglycaemia"]}
+{"i": [], "o": ["SD and between - day coefficient of variation of sensor glucose", "glycaemic variability ."]}
+{"i": [], "o": ["mean absolute relative deviation of sensor glucose"]}
+{"i": [], "o": ["Sensor alarm settings"]}
+{"i": [], "o": ["sensor glucose availability"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["glucose levels"]}
+{"i": [], "o": ["time managing their diabetes"]}
+{"i": [], "o": ["glycaemic control"]}
+{"i": [], "o": ["improved sleep"]}
+{"i": [], "o": ["feeling safe"]}
+{"i": [], "o": ["serious adverse events , episodes of severe hypoglycaemia , or episodes of hyperglycaemia with ketosis"]}
+{"i": [], "o": ["Skin irritations"]}
+{"i": [], "o": ["mild respiratory tract infections"]}
+{"i": [], "o": ["allergic rhinoconjunctivitis", "cystitis"]}
+{"i": [], "o": []}
+{"i": ["hybrid closed - loop insulin delivery"], "o": ["overall glucose control", "hypoglycaemia"]}
+{"i": [], "o": ["glycaemic outcomes", "time spent with glucose concentration in target range", "time with glucose concentration above and below", "mean glucose concentration and glycaemic variability ."]}
+{"i": [], "o": ["time spent in the glucose concentration target range , reduced hypoglycaemia , and decreased glycaemic variability"]}
+{"i": [], "o": ["total insulin delivery ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycaemia parameters .", "mean glucose concentration"]}
+{"i": [], "o": ["time below and above target range", "time with optimum glucose control"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["glucose variability and hypoglycaemia"]}
+{"i": [], "o": ["CGM - derived hypoglycaemia parameters ."]}
+{"i": ["closed - loop insulin delivery versus sensor - augmented pump therapy"], "o": ["hypoglycaemia burden", "proportion of time with glucose concentration"]}
+{"i": [], "o": []}
+{"i": ["usual pump therapy", "closed - loop insulin delivery"], "o": ["time spent with glucose concentration"]}
+{"i": ["sensor - augmented pump therapy"], "o": ["time in target range overnight )"]}
+{"i": ["sensor - augmented pump therapy vs usual pump therapy )."], "o": []}
+{"i": [], "o": []}
+{"i": ["closed - loop insulin delivery"], "o": ["residual risk of complications , hypoglycaemia , and glycaemic variability"]}
+{"i": [], "o": ["quality of life"]}
+{"i": [], "o": ["risk of hypoglycaemia .", "glycaemic control"]}
+{"i": [], "o": []}
+{"i": ["bihormonal ( insulin and glucagon ) closed - loop system", "usual pump therapy"], "o": ["hypoglycaemic burden"]}
+{"i": [], "o": ["mean glucose concentration and risk of hypoglycaemia", "HbA1c"]}
+{"i": [], "o": []}
+{"i": ["bihormonal"], "o": ["hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["time spent on management of diabetes", "glucose concentrations"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["closed - loop insulin delivery"], "o": []}
+{"i": ["remote monitoring or direct supervision"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["closed - loop insulin"], "o": ["glycaemic control"]}
+{"i": ["closed - loop insulin delivery"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

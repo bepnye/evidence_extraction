@@ -1,0 +1,110 @@
+{"i": ["placebo - controlled", "creatine phosphate sodium"], "o": ["recovery quality"]}
+{"i": [], "o": []}
+{"i": ["creatine phosphate sodium"], "o": []}
+{"i": ["placebo - controlled", "transabdominal cholecystectomy"], "o": []}
+{"i": ["0 . 9 % saline", "creatine phosphate sodium", "100 ml 0 . 9 % saline"], "o": []}
+{"i": [], "o": ["BIS values"]}
+{"i": [], "o": ["anaesthesia duration , operation time , waking time , extubation time , consciousness recovery time , time in the postanaesthesia care unit ( PACU ), and the Steward recovery scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS values", "Steward recovery scores", "waking time , extubation time , consciousness recovery time and time in the PACU"]}
+{"i": ["Creatine phosphate sodium"], "o": []}
+{"i": ["creatine phosphate sodium"], "o": []}
+{"i": ["placebo - controlled", "transabdominal cholecystectomy"], "o": []}
+{"i": ["0 . 9 % saline", "creatine phosphate sodium", "100 ml 0 . 9 % saline"], "o": []}
+{"i": [], "o": ["BIS values"]}
+{"i": [], "o": ["anaesthesia duration , operation time , waking time , extubation time , consciousness recovery time , time in the postanaesthesia care unit ( PACU ), and the Steward recovery scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS values", "Steward recovery scores", "waking time , extubation time , consciousness recovery time and time in the PACU"]}
+{"i": ["Creatine phosphate sodium"], "o": []}
+{"i": [], "o": ["Steward recovery score", "blood volume"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["general anaesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": ["volume of 0 . 9 % saline", "1 . 0 g creatine phosphate sodium ( Haikou Qili Pharmaceutical , Hainan , China ) dissolved in 100 ml 0 . 9 % saline", "0 . 9 % saline"], "o": []}
+{"i": ["creatine phosphate sodium or normal saline"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["scopolamine"], "o": ["upper airway secretions"]}
+{"i": ["0 . 9 % saline"], "o": []}
+{"i": [], "o": ["heart rate ( HR ), noninvasive blood pressure measurement"]}
+{"i": [], "o": []}
+{"i": ["Alcohol - soaked cotton balls"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["etomidate"], "o": []}
+{"i": ["cisatracurium", "fentanyl"], "o": []}
+{"i": [], "o": ["Tracheal intubation and mechanical ventilation"]}
+{"i": ["1 . 0 g creatine phosphate sodium dissolved in 100 ml 0 . 9 % saline", "0 . 9 % saline"], "o": []}
+{"i": ["remifentanil", "propofol", "injection pump of cisatracurium"], "o": []}
+{"i": [], "o": ["Haemodynamic stability"]}
+{"i": ["Ephedrine", "urapidil"], "o": []}
+{"i": ["Atropine", "esmolol"], "o": []}
+{"i": ["propofol and remifentanil", "Cisatracurium"], "o": []}
+{"i": ["propofol , remifentanil and cisatracurium"], "o": []}
+{"i": ["cisatracurium ."], "o": []}
+{"i": [], "o": []}
+{"i": ["extubation", "skin closure", "cutting the gallbladder", "suturing the peritoneum", "skin incision", "sputum suction"], "o": []}
+{"i": [], "o": ["duration that patients stayed in the postanaesthesia care unit ( PACU ) and the Steward recovery scores", "time of anaesthesia , operation duration , recovery time ( from drug withdrawal to opening eyes by order ), extubation time ( from drug withdrawal to extubation ), consciousness recovery time ( from drug withdrawal to when the Steward score"]}
+{"i": [], "o": []}
+{"i": [], "o": ["muscle strength recovery"]}
+{"i": [], "o": ["Steward recovery scores", "degree of airway patency", "level of consciousness"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Steward scores", "BIS value"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["general anaesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol , remifentanil and cisatracurium"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "creatine phosphate sodium"], "o": ["bispectral index", "recovery quality"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["general anaesthetic drugs", "placebo - controlled", "creatine phosphate sodium"], "o": ["bispectral index", "recovery quality"]}
+{"i": ["Propofol", "Cisatracurium", "Remifentanil"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS values"]}
+{"i": [], "o": ["BIS value"]}
+{"i": [], "o": ["BIS values"]}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "creatine phosphate sodium"], "o": ["bispectral index value", "recovery quality"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["cutting the gallbladder", "suturing the peritoneum", "skin incision"], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "creatine phosphate sodium"], "o": ["bispectral index value", "recovery quality"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Steward recovery scores"]}
+{"i": [], "o": ["time of waking , extubation , recovery of consciousness and time in the PACU"]}
+{"i": [], "o": []}
+{"i": ["placebo - controlled", "creatine phosphate sodium"], "o": ["recovery quality", "Steward recovery scores", "Recovery time"]}
+{"i": [], "o": ["Time of waking", "Time of extubation", "Time in PACU", "Time of consciousness recovery", "Steward scores after extubation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["cardiovascular profiles"]}
+{"i": [], "o": ["bradycardia or hypotension"]}
+{"i": ["Ephedrine , urapidil , atropine and esmolol"], "o": []}
+{"i": ["general anaesthesia"], "o": ["Steward recovery scores"]}
+{"i": [], "o": []}
+{"i": ["Creatine phosphate sodium", "creatine phosphate sodium"], "o": []}
+{"i": ["saline", "creatine phosphate sodium"], "o": []}
+{"i": ["propofol , fentanyl and cisatracurium"], "o": []}
+{"i": ["cisatracurium", "Propofol", "fentanyl"], "o": []}
+{"i": ["creatine phosphate sodium"], "o": []}
+{"i": [], "o": ["Steward recovery scores"]}
+{"i": [], "o": ["BIS values and Steward recovery scores"]}
+{"i": [], "o": []}
+{"i": ["creatine phosphate sodium"], "o": ["BIS values , time taken to awaken , time to extubation , time taken to recover consciousness and the Steward recovery scores"]}

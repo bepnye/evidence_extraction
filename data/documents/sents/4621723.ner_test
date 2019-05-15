@@ -1,0 +1,95 @@
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": ["OAB symptom scores ( OABSS )"]}
+{"i": [], "o": ["treatment costs and side effects"]}
+{"i": [], "o": ["Average OABSS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["side effects", "discontinuation rate of medication"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine"], "o": ["side effects"]}
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": ["OAB symptom scores ( OABSS )"]}
+{"i": [], "o": ["treatment costs and side effects"]}
+{"i": [], "o": ["Average OABSS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["side effects", "discontinuation rate of medication"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine"], "o": ["side effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["anticholinergics ( solifenacin , tolterodine , fesoterodine , trospium , darifenacin , propantheline ), Ca channel blockers , antidepressants ( duloxetine , imipramine ), \u03b1 - adrenergic receptor antagonists ( doxazosin , prazosin , tamsulosin , terazosin ) \u03b2 - adrenergic receptor agonists ( mirabegron , albuterol , terbutaline ), cyclooxygenase ( COX inhibitors ) ( indomethacin"], "o": []}
+{"i": ["tolterodine", "fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["OAB", "alpha blockers or 5 - alpha reductase inhibitors"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fesoterodine", "solifenacin"], "o": []}
+{"i": [], "o": ["OAB symptom scores ( OABSS )"]}
+{"i": [], "o": ["urgency incontinence", "night frequency", "side - effects", "maximum score for intraday frequency", "rate of discontinuation", "urgency"]}
+{"i": [], "o": ["monthly drug costs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["OABSS values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["OABSS values"]}
+{"i": [], "o": []}
+{"i": [], "o": ["intragroup scores"]}
+{"i": [], "o": ["dry mouth"]}
+{"i": [], "o": ["Constipation"]}
+{"i": [], "o": ["total number of patients with complaints"]}
+{"i": [], "o": ["discontinuation of drugs due to side effects"]}
+{"i": ["solifenacin and fesoterodine"], "o": ["monthly drug costs"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["drug - related side effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oxybutynin , propiverine , tolterodine , trospium chloride , fesoterodine", "solifenacin"], "o": []}
+{"i": ["tolterodine", "fesoterodine"], "o": []}
+{"i": ["tolterodine", "fesoterodine"], "o": ["side effects", "dry mouth and constipation symptoms", "efficacy"]}
+{"i": ["fesoterodine", "tolterodine", "placebo"], "o": []}
+{"i": ["tolterodine", "solifenacin"], "o": ["anticholinergic side effects"]}
+{"i": ["solifenacin"], "o": ["constipation"]}
+{"i": [], "o": ["side effects ."]}
+{"i": ["tolterodine", "oxybutynin", "solifenacin"], "o": ["anticholinergic side effects"]}
+{"i": [], "o": ["dry mouth", "side effects"]}
+{"i": [], "o": []}
+{"i": [], "o": ["OABSS values"]}
+{"i": [], "o": []}
+{"i": [], "o": ["pharmaceutical activity", "OABSS values"]}
+{"i": [], "o": []}
+{"i": [], "o": ["OABSS values"]}
+{"i": [], "o": []}
+{"i": ["fesoterodine"], "o": ["blurred vision", "dryness of the mouth", "dry mouth , constipation"]}
+{"i": ["fesoterodine .", "solifenacin"], "o": ["cost"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["solifenacin and fesoterodine"], "o": ["OABSS values"]}
+{"i": ["fesoterodine"], "o": ["side effects"]}
+{"i": ["solifenacin"], "o": []}
+{"i": ["solifenacin and fesoterodine"], "o": []}

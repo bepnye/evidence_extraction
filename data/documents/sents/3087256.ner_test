@@ -1,0 +1,125 @@
+{"i": ["Lignocaine", "Epidural Neostigmine"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["neostigmine ."], "o": []}
+{"i": [], "o": []}
+{"i": ["lignocaine", "epidural neostigmine"], "o": ["sedation", "analgesic efficacy"]}
+{"i": [], "o": []}
+{"i": ["lignocaine1 % ( 9ml ) with neostigmine 100\u03bcg in saline", "lignocaine 1 % ( 9ml ) with neostigmine", "lignocaine 1 % ( 9ml ) with normal saline"], "o": []}
+{"i": [], "o": []}
+{"i": ["succinylcholine", "propofol", "O2 , N2O", "general anesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": ["Epidural analgesic medication"], "o": []}
+{"i": [], "o": ["Intensity of pain relief on VAS , duration of analgesia , level of sensory block , motor blockade , sedation by sedation score and complications"]}
+{"i": ["neostigmine"], "o": ["duration of analgesia", "sedation"]}
+{"i": [], "o": ["Sensory and motor blockade"]}
+{"i": [], "o": ["respiratory depression , pruritus , bradycardia or hypotension"]}
+{"i": ["neostigmine"], "o": ["nausea / vomiting ."]}
+{"i": ["lignocaine", "epidural neostigmine"], "o": []}
+{"i": [], "o": []}
+{"i": ["neostigmine ."], "o": []}
+{"i": [], "o": []}
+{"i": ["lignocaine", "epidural neostigmine"], "o": ["sedation", "analgesic efficacy"]}
+{"i": [], "o": []}
+{"i": ["lignocaine1 % ( 9ml ) with neostigmine 100\u03bcg in saline", "lignocaine 1 % ( 9ml ) with neostigmine", "lignocaine 1 % ( 9ml ) with normal saline"], "o": []}
+{"i": [], "o": []}
+{"i": ["succinylcholine", "propofol", "O2 , N2O", "general anesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": ["Epidural analgesic medication"], "o": []}
+{"i": [], "o": ["Intensity of pain relief on VAS , duration of analgesia , level of sensory block , motor blockade , sedation by sedation score and complications"]}
+{"i": ["neostigmine"], "o": ["duration of analgesia", "sedation"]}
+{"i": [], "o": ["Sensory and motor blockade"]}
+{"i": [], "o": ["respiratory depression , pruritus , bradycardia or hypotension"]}
+{"i": ["neostigmine"], "o": ["nausea / vomiting ."]}
+{"i": ["lignocaine", "epidural neostigmine"], "o": []}
+{"i": ["general anesthesia", "Epidural anesthesia"], "o": []}
+{"i": [], "o": ["cardiovascular and respiratory complications"]}
+{"i": ["epidural analgesia"], "o": ["hypotension"]}
+{"i": ["clonidine1 , opioids2 \u2013 6and epinephrine 478"], "o": ["analgesia", "morbidity"]}
+{"i": ["cholinesterase inhibitor , neostigmine"], "o": []}
+{"i": ["neostigmine"], "o": []}
+{"i": ["epidural neostigmine with lignocaine"], "o": ["sedation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["lignocaine 1 % 9ml + normal saline ( NS )"], "o": []}
+{"i": ["epidural catheterization", "lignocaine 1 % 9ml + neostigmine"], "o": []}
+{"i": ["lignocaine", "epinephrine"], "o": []}
+{"i": ["intravenously glycopyrrolate", "ondansetrone", "fentanyl"], "o": []}
+{"i": ["succinylcholine", "propofol"], "o": []}
+{"i": ["O2 , N2O , vecuronium"], "o": []}
+{"i": ["neostigmine and glycopyrrolate"], "o": ["residual neuromuscular blockade"]}
+{"i": ["neostigmine in lignocaine", "neostigmine and lignocaine", "Epidural neostigmine solution"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["blood pressure , heart rate , VAS , sensory level and level of motor blockade"]}
+{"i": [], "o": ["VAS , sensory level and level of motor blockade"]}
+{"i": ["Intramuscular diclofenac"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Wound pain"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Vitals"]}
+{"i": [], "o": ["side effects like respiratory depression , hypotension , nausea , vomiting and pruritus ."]}
+{"i": [], "o": ["urinary retention"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["age , height and weight ."]}
+{"i": [], "o": ["duration of analgesia i . e the time ( min ) to first rescue analgesic"]}
+{"i": [], "o": []}
+{"i": ["diclofenac"], "o": ["number of intramuscular", "injections"]}
+{"i": [], "o": ["sensory block", "duration of analgesia Regarding level of sensory blockade", "level of sensory block"]}
+{"i": [], "o": ["motor blockade"]}
+{"i": [], "o": []}
+{"i": [], "o": ["VAS"]}
+{"i": [], "o": ["Pain"]}
+{"i": [], "o": ["sedation score"]}
+{"i": [], "o": ["sedation", "mild sedation"]}
+{"i": [], "o": ["sedation score"]}
+{"i": [], "o": ["fall in blood pressure", "sedation score", "hemodynamic changes"]}
+{"i": [], "o": []}
+{"i": [], "o": ["heart rate"]}
+{"i": [], "o": ["heart rate"]}
+{"i": [], "o": ["heart rate changes"]}
+{"i": [], "o": ["Bradycardia"]}
+{"i": [], "o": ["nausea and / or vomiting ."]}
+{"i": [], "o": ["nausea and / or vomiting ."]}
+{"i": [], "o": ["pruritus or respiratory depression"]}
+{"i": ["Epidural block"], "o": []}
+{"i": [], "o": []}
+{"i": ["clonidine1 , opioids2 \u2013 6 and epinephrine478"], "o": ["duration , intensity of analgesia and reduction in local anesthetic dose ."]}
+{"i": ["epidural neostigmine with lignocaine"], "o": ["analgesic effectiveness"]}
+{"i": [], "o": []}
+{"i": ["lignocaine", "epidural neostigmine"], "o": ["duration of analgesia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["epidural neostigmine", "bupivacaine"], "o": ["duration of analgesia"]}
+{"i": ["neostigmine"], "o": ["analgesia", "Pain intensity"]}
+{"i": ["epidural neostigmine"], "o": ["pain relief"]}
+{"i": ["neostigmine"], "o": ["sensory block"]}
+{"i": ["neostigmine"], "o": ["height of sensory block"]}
+{"i": [], "o": []}
+{"i": ["epidural neostigmine"], "o": ["motor blockade ."]}
+{"i": [], "o": ["Maxi - mum score"]}
+{"i": ["intrathecal neostigmine"], "o": []}
+{"i": ["epidural neostigmine"], "o": ["Post operative sedation"]}
+{"i": ["epidural neostigmine", "neostigmine"], "o": ["sedation"]}
+{"i": [], "o": []}
+{"i": ["neostigmine", "intrathecal fentanyl"], "o": ["mean arterial pressure and heart rate"]}
+{"i": [], "o": ["fall in blood pressure"]}
+{"i": [], "o": ["Fall in heart rate"]}
+{"i": ["atropine"], "o": ["Bradycardia"]}
+{"i": [], "o": ["heart rate"]}
+{"i": ["neostigmine"], "o": []}
+{"i": [], "o": ["pruritus or respiratory depression"]}
+{"i": ["neostigmine"], "o": ["incidence of nausea and vomiting"]}
+{"i": [], "o": []}
+{"i": ["epidural neostigmine"], "o": ["nausea & vomiting"]}
+{"i": ["neostigmine", "epidural lignocaine"], "o": ["duration of analgesia", "sedation"]}
+{"i": ["epidural neostigmine"], "o": []}
+{"i": [], "o": []}

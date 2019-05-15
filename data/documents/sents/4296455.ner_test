@@ -1,0 +1,138 @@
+{"i": ["periodontal surgery with or without oral conscious sedation"], "o": ["oxygen saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oral conscious sedation"], "o": ["oxygen saturation"]}
+{"i": ["diazepam"], "o": ["oxygen saturation levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["preoperative oral sedation ( diazepam ),"], "o": []}
+{"i": [], "o": ["Oxygen saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["oxygen saturation"]}
+{"i": ["Oral conscious sedation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oral conscious sedation"], "o": ["oxygen saturation"]}
+{"i": ["diazepam"], "o": ["oxygen saturation levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["preoperative oral sedation ( diazepam ),"], "o": []}
+{"i": [], "o": ["Oxygen saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["oxygen saturation"]}
+{"i": ["Oral conscious sedation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["periodontal therapy"], "o": ["apprehension and fear of pending appointments"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["dental anxiety scale ( DAS"]}
+{"i": [], "o": []}
+{"i": ["conscious sedation"], "o": []}
+{"i": [], "o": []}
+{"i": ["moderate sedation"], "o": []}
+{"i": ["Conscious sedation"], "o": []}
+{"i": ["intravenous ( IV ) sedation"], "o": []}
+{"i": [], "o": []}
+{"i": ["oral sedation ."], "o": []}
+{"i": [], "o": ["oxygen saturation levels"]}
+{"i": [], "o": []}
+{"i": ["conscious sedation"], "o": []}
+{"i": ["conscious sedation", "diazepam"], "o": []}
+{"i": ["diazepam", "oral conscious sedation"], "o": ["oxygen saturation levels"]}
+{"i": [], "o": []}
+{"i": ["oral diazepam ."], "o": ["oxygen saturation levels"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["complete sedation", "no sedation , some sedation"], "o": []}
+{"i": [], "o": []}
+{"i": ["diazepam"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Anxiety"]}
+{"i": [], "o": ["DAS", "dental fear ."]}
+{"i": [], "o": ["oxygen saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oral diazepam sedation and local anaesthesia .", "Modified widman flap surgery"], "o": []}
+{"i": ["oral placebo and using local anaesthesia"], "o": []}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["diazepam"], "o": []}
+{"i": [], "o": ["Arterial oxygen saturation"]}
+{"i": [], "o": ["arterial saturation"]}
+{"i": [], "o": ["hypoxemic episode"]}
+{"i": [], "o": ["oxygen saturation"]}
+{"i": [], "o": ["Number of times alarms rang"]}
+{"i": [], "o": ["Severities of hypoxic episodes"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Number of times oxygen saturation"]}
+{"i": [], "o": ["alarms"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of pulse oximetry alarms"]}
+{"i": [], "o": ["tendency of hypoxia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["severity of hypoxic episodes"]}
+{"i": [], "o": ["number of hypoxic events"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["dental anxiety"]}
+{"i": [], "o": ["anxious"]}
+{"i": [], "o": []}
+{"i": ["benzodiazepines"], "o": []}
+{"i": [], "o": ["incidence of adverse reaction ."]}
+{"i": [], "o": []}
+{"i": ["intra venous conscious sedation"], "o": ["hypoxia"]}
+{"i": [], "o": ["oxygen saturation"]}
+{"i": [], "o": []}
+{"i": [], "o": ["oxygen saturation levels"]}
+{"i": ["without conscious sedation using oral diazepam"], "o": []}
+{"i": [], "o": ["oxygen desaturation"]}
+{"i": ["oral conscious sedation"], "o": ["desaturations"]}
+{"i": [], "o": ["desaturations"]}
+{"i": [], "o": []}
+{"i": [], "o": ["desaturation values"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["level of anxiety and oxygen desaturation"]}
+{"i": [], "o": ["oxygen desaturation"]}
+{"i": ["diazepam"], "o": ["oxygen saturation levels"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["diazepam"], "o": ["respiratory depression"]}
+{"i": ["placebo"], "o": ["anxiety"]}
+{"i": [], "o": []}
+{"i": [], "o": ["number of pulse oximeter alarms"]}
+{"i": ["nondiazepam", "diazepam"], "o": ["tendency of hypoxia"]}
+{"i": [], "o": ["Hypoxia"]}
+{"i": [], "o": ["hypoxia"]}
+{"i": [], "o": ["hypoxia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoxic events", "number of pulse oxymetry alarms"]}
+{"i": [], "o": ["hypoxic events"]}
+{"i": [], "o": ["severe hypoxia"]}
+{"i": ["oral conscious sedation"], "o": []}
+{"i": ["oral diazepam"], "o": ["Severity of hypoxic episodes", "hypoxia"]}
+{"i": ["oral conscious sedation"], "o": []}
+{"i": ["oral conscious sedation"], "o": ["hypoxia"]}
+{"i": [], "o": []}
+{"i": ["oral conscious sedation"], "o": ["hypoxia"]}

@@ -1,0 +1,192 @@
+{"i": ["Tofacitinib"], "o": []}
+{"i": [], "o": []}
+{"i": ["Tofacitinib"], "o": []}
+{"i": ["tofacitinib"], "o": ["health - related quality of life [ HRQoL"]}
+{"i": ["placebo or tofacitinib"], "o": []}
+{"i": ["placebo , tofacitinib"], "o": []}
+{"i": [], "o": ["Inflammatory Bowel Disease Questionnaire [ IBDQ ] and SF - 36v2 \u00ae Health Survey [ SF - 36v2 ] assessed HRQoL"]}
+{"i": ["tofacitinib", "placebo"], "o": ["Physical and Mental Component Summaries", "IBDQ"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ"]}
+{"i": ["placebo"], "o": ["SF - 36v2 PCS / MCS"]}
+{"i": ["Tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib"], "o": []}
+{"i": ["Tofacitinib"], "o": []}
+{"i": ["tofacitinib"], "o": ["health - related quality of life [ HRQoL"]}
+{"i": ["placebo or tofacitinib"], "o": []}
+{"i": ["placebo , tofacitinib"], "o": []}
+{"i": [], "o": ["Inflammatory Bowel Disease Questionnaire [ IBDQ ] and SF - 36v2 \u00ae Health Survey [ SF - 36v2 ] assessed HRQoL"]}
+{"i": ["tofacitinib", "placebo"], "o": ["Physical and Mental Component Summaries", "IBDQ"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ"]}
+{"i": ["placebo"], "o": ["SF - 36v2 PCS / MCS"]}
+{"i": ["Tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["tofacitinib"], "o": ["disease - specific Inflammatory Bowel Disease Questionnaire [ IBDQ ]", "general Short Form - 36v2 \u00ae Health Survey [ SF -"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ and SF - 36v2 scores"]}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo - controlled"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["corticosteroids , azathioprine , 6 - mercaptopurine , infliximab , or adalimumab ."], "o": []}
+{"i": ["oral 5 - aminosalicylates and oral corticosteroids", "prednisone"], "o": []}
+{"i": ["anti - tumour necrosis factor [ TNF ] therapy", "azathioprine", "6 - mercaptopurine", "methotrexate"], "o": []}
+{"i": ["tofacitinib"], "o": ["rectal bleeding"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["placebo or tofacitinib"], "o": []}
+{"i": ["tofacitinib"], "o": []}
+{"i": ["tofacitinib"], "o": []}
+{"i": ["tofacitinib", "placebo , tofacitinib"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["emotional function", "HRQoL", "bowel symptoms", "social function", "systemic symptoms"]}
+{"i": [], "o": ["IBDQ response", "IBDQ total score"]}
+{"i": [], "o": ["IBDQ"]}
+{"i": [], "o": ["functional health [ physical functioning , role physical , bodily pain , general health , vitality , social functioning , role emotional , and mental health ],"]}
+{"i": [], "o": ["mental component summary [ PCS and MCS ]"]}
+{"i": [], "o": ["HRQoL ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["remission"]}
+{"i": [], "o": ["remission"]}
+{"i": [], "o": ["IBDQ total score and domain scores", "IBDQ remission and IBDQ response", "IBDQ bowel symptom domain"]}
+{"i": ["tofacitinib", "placebo , tofacitinib"], "o": []}
+{"i": ["anti - TNF"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ domain scores", "IBDQ total scores"]}
+{"i": [], "o": ["IBDQ scores", "SF - 36v2 scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ response", "IBDQ remission", "IBDQ total score", "SF - 36v2 PCS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["clinical efficacy endpoints ( remission and mucosal healing", "HRQoL endpoints [ IBDQ total score , IBDQ remission , IBDQ response , and SF - 36v2 PCS and MCS ],"]}
+{"i": [], "o": ["IBDQ remission and IBDQ response"]}
+{"i": [], "o": ["SF - 36v2 PCS and MCS", "IBDQ total score"]}
+{"i": [], "o": ["remission and mucosal healing"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["tofacitinib induction therapy"], "o": []}
+{"i": [], "o": ["HRQoL", "SF - 36v2 scores"]}
+{"i": [], "o": ["SF - 36v2 domain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ total score", "IBDQ"]}
+{"i": ["tofacitinib", "placebo"], "o": ["mean IBDQ total score"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ total score"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ domain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Tofacitinib", "Placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ domain scores"]}
+{"i": ["Tofacitinib", "Placebo"], "o": ["IBDQ domain scores", "Bowel function"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": ["Mean IBDQ total scores"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ total score"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ total scores"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ domain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["IBDQ domain scores"]}
+{"i": ["Tofacitinib", "Placebo"], "o": ["IBDQ domain scores"]}
+{"i": ["placebo"], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ remission and response", "IBDQ remission and IBDQ response"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ bowel symptoms domain"]}
+{"i": ["tofacitinib", "placebo"], "o": ["remission ."]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ response", "IBDQ remission"]}
+{"i": ["tofacitinib", "placebo"], "o": ["IBDQ response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["SF - 36v2 PCS and MCS scores"]}
+{"i": ["tofacitinib", "placebo"], "o": ["SF - 36v2 PCS and MCS", "LS mean improvements"]}
+{"i": [], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": ["LS mean change"]}
+{"i": [], "o": []}
+{"i": [], "o": ["SF - 36v2 domain scores"]}
+{"i": ["Tofacitinib", "Placebo"], "o": ["Physical functioning", "SF - 36v2 domain scores"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": ["Mean SF - 36v2 PCS and MCS", "Sustain"]}
+{"i": ["tofacitinib", "placebo"], "o": ["SF - 36v2 PCS and MCS"]}
+{"i": [], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": ["SF - 36v2 domain scores"]}
+{"i": [], "o": []}
+{"i": [], "o": ["SF - 36v2 domain scores"]}
+{"i": ["Tofacitinib", "Placebo"], "o": ["SF - 36v2 domain scores"]}
+{"i": ["placebo"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["remission and mucosal healing clinical efficacy", "SF - 36v2 PCS and MCS", "HRQoL", "IBDQ total score , IBDQ remission , IBDQ response"]}
+{"i": [], "o": ["remission and mucosal healing clinical efficacy", "HRQoL"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["PCS and MCS scores", "SF - 36v2 domain"]}
+{"i": ["tofacitinib", "placebo"], "o": ["HRQoL", "HRQoL burden"]}
+{"i": [], "o": ["HRQoL", "mean SF - 36v2 domain , PCS and MCS scores , and age -/ gender - matched norms"]}
+{"i": ["tofacitinib"], "o": ["SF - 36v2 scores"]}
+{"i": ["tofacitinib", "placebo"], "o": ["HRQoL", "mean SF - 36v2 scores"]}
+{"i": [], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": ["tofacitinib", "placebo ."], "o": []}
+{"i": [], "o": ["HRQoL"]}
+{"i": ["placebo"], "o": ["Patient SF - 36v2 scores"]}
+{"i": ["tofacitinib"], "o": ["clinical symptoms and endoscopic disease severity"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vedolizumab", "infliximab", "adalimumab37"], "o": []}
+{"i": [], "o": ["HRQoL"]}
+{"i": [], "o": ["SF - 36v2 PCS and MCS scores"]}
+{"i": ["tofacitinib", "placebo"], "o": ["HRQoL", "PCS and MCS scores"]}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["tofacitinib"], "o": []}
+{"i": [], "o": ["SF - 36v2 scores"]}
+{"i": ["tofacitinib", "placebo"], "o": []}
+{"i": [], "o": []}
+{"i": ["tofacitinib"], "o": ["HRQoL"]}
+{"i": ["tofacitinib", "placebo"], "o": ["HRQoL"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

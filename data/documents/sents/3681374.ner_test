@@ -1,0 +1,191 @@
+{"i": ["mechanical insufflation - exsufflation"], "o": []}
+{"i": [], "o": []}
+{"i": ["noninvasive ventilation ( NIV )"], "o": ["re - intubation rates", "ICU length of stay"]}
+{"i": [], "o": []}
+{"i": ["Mechanical insufflation - exsufflation ( MI - E )"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["conventional extubation protocol ( control group ),", "MI - E extubation protocol"], "o": []}
+{"i": ["same postextubation approach plus three daily sessions of mechanical in - exsufflation ( MI - E ).", "standard medical treatment ( SMT ), including NIV"], "o": []}
+{"i": [], "o": ["Reintubation rates , ICU length of stay , and NIV failure rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["MV time"]}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": ["reintubation rate", "time under MV"]}
+{"i": ["NIV"], "o": ["reintubation rates", "NIV failure"]}
+{"i": [], "o": ["Mean ICU length of stay after extubation"]}
+{"i": [], "o": ["total ICU length of stay ."]}
+{"i": ["MI - E"], "o": ["ICU length of stay"]}
+{"i": ["NIV"], "o": []}
+{"i": ["noninvasive ventilation ( NIV )"], "o": ["re - intubation rates", "ICU length of stay"]}
+{"i": [], "o": []}
+{"i": ["Mechanical insufflation - exsufflation ( MI - E )"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["conventional extubation protocol ( control group ),", "MI - E extubation protocol"], "o": []}
+{"i": ["same postextubation approach plus three daily sessions of mechanical in - exsufflation ( MI - E ).", "standard medical treatment ( SMT ), including NIV"], "o": []}
+{"i": [], "o": ["Reintubation rates , ICU length of stay , and NIV failure rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["MV time"]}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": ["reintubation rate", "time under MV"]}
+{"i": ["NIV"], "o": ["reintubation rates", "NIV failure"]}
+{"i": [], "o": ["Mean ICU length of stay after extubation"]}
+{"i": [], "o": ["total ICU length of stay ."]}
+{"i": ["MI - E"], "o": ["ICU length of stay"]}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mortality rate"]}
+{"i": [], "o": []}
+{"i": ["Endotracheal intubation"], "o": []}
+{"i": [], "o": []}
+{"i": ["Deep insufflation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["rapid shallow breathing index", "weaning", "respiratory rate"]}
+{"i": [], "o": ["extubation failure rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["extubation failure", "work of breathing , hypoxemia , respiratory acidosis , retained secretions , and decreased consciousness"]}
+{"i": [], "o": ["expulsion of airway secretions"]}
+{"i": [], "o": []}
+{"i": [], "o": ["survival", "incidence of ventilator - associated pneumonia", "ICU length of stay"]}
+{"i": [], "o": ["NIV failure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Mechanical insufflation - exsufflation ( MI - E )"], "o": []}
+{"i": ["direct tracheal suction"], "o": []}
+{"i": [], "o": ["secretion clearance"]}
+{"i": ["MI - E"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["dopamine"], "o": ["partial pressure of oxygen", "acute respiratory failure , respiratory rate", "rapid shallow breathing index", "ability to stay alert and communicate , core temperature"]}
+{"i": [], "o": ["Discontinuation of mechanical ventilation"]}
+{"i": [], "o": ["SpO2", "variation of heart rate or blood pressure , respiratory distress , agitation , and loss of consciousness", "respiratory rate"]}
+{"i": ["MI - E extubation protocol", "conventional extubation protocol ( control"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["decreasing oxyhemoglobin saturation", "respiratory acidosis", "use of accessory respiratory muscles , increased respiratory rate", "acute respiratory distress / insufficiency"]}
+{"i": ["( postextubation ) standard medical treatment ( SMT ), including NIV", "same postextubation approach plus mechanical in - exsufflation ( MI - E )."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["supplemental oxygen , as needed , respiratory chest physiotherapy , bronchodilators , antibiotics , and any other therapies", "postextubation standard medical therapy"], "o": []}
+{"i": [], "o": ["NIV"]}
+{"i": [], "o": ["SpO2", "heart rate or blood pressure ; dyspnea with respiratory distress ; PaO2", "respiratory rate"]}
+{"i": ["NIV"], "o": []}
+{"i": ["portable pressure - cycled ventilator through an oronasal mask", "Noninvasive ventilation"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["fraction of inspired oxygen and the positive end - expiratory pressure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["noninvasive ventilation"], "o": []}
+{"i": ["MI - E", "Cough Assist"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["standard medical therapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": [], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": [], "o": []}
+{"i": ["SMT and NIV"], "o": ["hypotension", "respiratory distress", "copious secretions", "level of consciousness", "respiratory or cardiac arrest", "systolic blood pressure", "respiratory pauses with loss of consciousness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Reintubation rate"]}
+{"i": [], "o": ["Total ICU length of stay , postextubation ICU length of stay , and NIV failure rate"]}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reintubation rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["decrease reintubation rates", "necessity of mechanical positive - pressure ventilation through orotracheal intubation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["New Simplified Acute Physiology Score"]}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reintubation rates related to NIV failure"]}
+{"i": [], "o": ["reintubation rates , causes of reintubation", "ICU length of stay data"]}
+{"i": [], "o": ["duration of invasive mechanical ventilation and postextubation ICU length of stay", "reintubation rate"]}
+{"i": [], "o": ["total ICU length of stay ."]}
+{"i": ["NIV"], "o": ["period of MV", "Respiratory rate"]}
+{"i": [], "o": ["MV , mechanical ventilation ; NIV", "New Simplified Acute Physiology Score ; COPD"]}
+{"i": [], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["MI - E"], "o": ["NIV failure rates", "reintubation"]}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": ["reintubation rates , duration of invasive mechanical ventilation , and ICU and hospital length of stay ."]}
+{"i": ["SMT", "NIV"], "o": ["survival"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": ["NIV"], "o": ["survival rates"]}
+{"i": ["NIV"], "o": ["respiratory failure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": []}
+{"i": ["MI - E", "NIV"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["reintubation rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["reintubation rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Reintubation rates"]}
+{"i": [], "o": []}
+{"i": ["NIV"], "o": ["failure rate"]}
+{"i": [], "o": ["extubation failure", "length of ICU stay ."]}
+{"i": [], "o": ["\" secretion encumbrance associated with severe hypoxemia"]}
+{"i": ["MI - E"], "o": ["respiratory failure"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Deep - airway - suction suctioning through the tube"], "o": []}
+{"i": ["MI - E ( CoughAssist"], "o": []}
+{"i": ["MI - E"], "o": ["reintubation and NIV failure rates ."]}
+{"i": ["MI - E"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["full - setting noninvasive ventilation ( NIV ) and MI - E"], "o": ["extubation success"]}
+{"i": [], "o": []}
+{"i": [], "o": ["reintubation rate", "hypoxemic respiratory failure", "NIV failure rate"]}
+{"i": ["NIV"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": [], "o": ["ICU and hospital mortality"]}
+{"i": ["MI - E"], "o": ["hospital mortality ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": ["MI - E"], "o": []}
+{"i": [], "o": []}
+{"i": ["Mechanical insufflation - exsufflation ( MI - E )"], "o": []}
+{"i": ["Mechanical insufflation - exsufflation ( MI - E )"], "o": []}
+{"i": [], "o": ["postextubation ICU length of stay"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

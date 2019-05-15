@@ -1,0 +1,75 @@
+{"i": ["N - acetylcysteine , ascorbic acid", "normal saline"], "o": []}
+{"i": [], "o": []}
+{"i": ["N - acetylcysteine ( NAC ), ascorbic acid ( AA ),", "normal saline ( NS )"], "o": []}
+{"i": [], "o": []}
+{"i": ["oral AA", "NS", "oral NAC"], "o": []}
+{"i": [], "o": ["occurrence of CIN", "serum Cr and GFR"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum Cr", "GFR"]}
+{"i": [], "o": []}
+{"i": ["sodium chloride", "NAC"], "o": []}
+{"i": ["N - acetylcysteine ( NAC ), ascorbic acid ( AA ),", "normal saline ( NS )"], "o": []}
+{"i": [], "o": []}
+{"i": ["oral AA", "NS", "oral NAC"], "o": []}
+{"i": [], "o": ["occurrence of CIN", "serum Cr and GFR"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum Cr", "GFR"]}
+{"i": [], "o": []}
+{"i": ["sodium chloride", "NAC"], "o": []}
+{"i": [], "o": []}
+{"i": ["dopamine", "sodium chloride or half saline", "calcium - channel antagonists , atrial natriuretic peptide , adenosine antagonists"], "o": []}
+{"i": ["NAC", "normal saline ( NS )"], "o": []}
+{"i": [], "o": []}
+{"i": ["NAC and AA plus NS with the traditional approach ( NS )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous NS", "oral NAC plus NS", "oral ascorbic acid plus NS"], "o": []}
+{"i": ["NAC", "NS"], "o": []}
+{"i": ["NS"], "o": []}
+{"i": ["NS"], "o": []}
+{"i": [], "o": ["occurrence of CIN and mean of Cr and GFR"]}
+{"i": [], "o": ["serum Cr", "CIN", "GFR"]}
+{"i": [], "o": ["Serum Cr"]}
+{"i": [], "o": ["GFR"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["oral AA plus NS )", "intravenous NS )", "oral NAC plus NS ),"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean age"]}
+{"i": [], "o": []}
+{"i": [], "o": ["serum Cr and GFR"]}
+{"i": [], "o": ["GFR", "amount of serum Cr"]}
+{"i": [], "o": ["serum Cr", "GFR"]}
+{"i": [], "o": []}
+{"i": ["NAC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sodium chloride", "NAC"], "o": []}
+{"i": ["NAC"], "o": []}
+{"i": ["NAC", "NAC plus hydration"], "o": []}
+{"i": ["NAC"], "o": []}
+{"i": [], "o": []}
+{"i": ["NAC plus hydration therapy", "sodium chloride"], "o": []}
+{"i": ["placebo"], "o": ["mean increase in serum Cr level"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NAC and AA )"], "o": []}
+{"i": ["NAC", "placebo", "AA"], "o": []}
+{"i": ["NAC"], "o": ["CIN"]}
+{"i": ["NAC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["NAC", "NS", "AA"], "o": []}
+{"i": ["NAC"], "o": []}
+{"i": [], "o": []}

@@ -1,0 +1,150 @@
+{"i": ["crystalloid"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["colloid ( hydroxyethyl starch 130 / 0 . 4 )", "crystalloid solution ( Hartmann ' s Solution )."], "o": ["post operative nausea and vomiting"]}
+{"i": ["intravenous colloid", "crystalloid"], "o": []}
+{"i": [], "o": ["volume of fluid administered"]}
+{"i": [], "o": ["nausea , vomiting , anti - emetic use , dizziness , sore throat , headache and subjective general well being"]}
+{"i": [], "o": ["Pulmonary function"]}
+{"i": [], "o": ["nausea", "mean nausea score"]}
+{"i": [], "o": ["incidence of vomiting and anti - emetic usage"]}
+{"i": [], "o": ["Sore throat , dizziness , headache and general well being"]}
+{"i": [], "o": ["post - operative FVC and FEV - 1 and PEFR"]}
+{"i": ["colloid", "crystalloid"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["colloid ( hydroxyethyl starch 130 / 0 . 4 )", "crystalloid solution ( Hartmann ' s Solution )."], "o": ["post operative nausea and vomiting"]}
+{"i": ["intravenous colloid", "crystalloid"], "o": []}
+{"i": [], "o": ["volume of fluid administered"]}
+{"i": [], "o": ["nausea , vomiting , anti - emetic use , dizziness , sore throat , headache and subjective general well being"]}
+{"i": [], "o": ["Pulmonary function"]}
+{"i": [], "o": ["nausea", "mean nausea score"]}
+{"i": [], "o": ["incidence of vomiting and anti - emetic usage"]}
+{"i": [], "o": ["Sore throat , dizziness , headache and general well being"]}
+{"i": [], "o": ["post - operative FVC and FEV - 1 and PEFR"]}
+{"i": ["colloid", "crystalloid"], "o": []}
+{"i": [], "o": ["post operative nausea and vomiting ( PONV"]}
+{"i": [], "o": []}
+{"i": ["PONV"], "o": []}
+{"i": ["PONV"], "o": []}
+{"i": [], "o": []}
+{"i": ["anti - emetics"], "o": []}
+{"i": [], "o": []}
+{"i": ["' Rehydration '"], "o": ["PONV"]}
+{"i": ["crystalloid"], "o": ["nausea , vomiting and antiemetic use"]}
+{"i": ["crystalloid"], "o": ["anti - emetic efficacy"]}
+{"i": [], "o": []}
+{"i": ["crystalloid"], "o": []}
+{"i": [], "o": []}
+{"i": ["intravenous colloid", "crystalloid solution", "intravenous colloid solution"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Compound Sodium Lactate", "crystalloid"], "o": []}
+{"i": ["lactate", "Compound Sodium Lactate"], "o": []}
+{"i": ["6 % Hydroxy Ethyl Starch 130 / 0 . 4 in 0 . 9 % saline ( Voluven \u00ae;", "colloid ( CLD )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["general anesthesia ."], "o": []}
+{"i": [], "o": []}
+{"i": ["Propofol", "Atracurium", "fentanyl"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Sevoflurane"], "o": []}
+{"i": ["neostigmine", "glycopyrrolate"], "o": ["Muscle relaxation"]}
+{"i": ["Paracetamol", "rectal Diclofenac"], "o": []}
+{"i": ["Prophylactic anti - emetics"], "o": []}
+{"i": [], "o": []}
+{"i": ["Fentanyl"], "o": []}
+{"i": [], "o": ["pain score"]}
+{"i": ["Pethidine", "simple oral analgesics ( Paracetamol / Codeine"], "o": []}
+{"i": ["ondansetron"], "o": []}
+{"i": ["cyclizine"], "o": []}
+{"i": ["cyclizine , prochlorperazine"], "o": []}
+{"i": ["Diclofenac", "Paracetamol / Codeine"], "o": []}
+{"i": [], "o": ["presence of nausea"]}
+{"i": [], "o": ["standard verbal rating scale", "Nausea"]}
+{"i": [], "o": ["vomiting , rescue antiemetic use , dizziness , sore throat and headache ."]}
+{"i": [], "o": ["Dry retching"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Anti - emetics"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Pulmonary function"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["nausea scores"]}
+{"i": [], "o": ["PONV , fasting duration or anaesthetic technique", "BMI"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["crystalloid"], "o": ["patients experiencing nausea", "mean nausea score"]}
+{"i": [], "o": []}
+{"i": [], "o": ["anti - emetic usage", "incidence of vomiting"]}
+{"i": [], "o": ["Post - operative analgesic use"]}
+{"i": [], "o": ["Sore throat , dizziness , headache and general well being"]}
+{"i": [], "o": ["post - operative FVC and FEV - 1 and PEFR"]}
+{"i": ["Pethidine", "Fentanyl"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["high airway pressures"]}
+{"i": [], "o": ["pulmonary edema"]}
+{"i": [], "o": []}
+{"i": ["crystalloid"], "o": ["nausea and vomiting"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["colloidal solution", "crystalloid"], "o": []}
+{"i": [], "o": ["early nausea"]}
+{"i": [], "o": ["general well being", "nausea"]}
+{"i": [], "o": ["incidence of headache , sore throat and dizziness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["hydroxyethyl starch 130 / 0 . 4 or saline"], "o": ["nausea and vomiting ."]}
+{"i": [], "o": []}
+{"i": ["balanced salt ( HS - NS ) or lactated Ringer ' s solution ( HS - BS ) with lactated Ringer ' s", "6 % hetastarch"], "o": []}
+{"i": ["Ringer ' s lactate"], "o": ["interstitial oedema", "PONV"]}
+{"i": [], "o": ["PONV", "bowel edema ."]}
+{"i": ["crystalloid"], "o": ["tissue edema", "mean volume"]}
+{"i": ["lactated Ringer ' s solution", "sodium chloride"], "o": ["bowel edema", "abdominal discomfort"]}
+{"i": ["hetastarch", "Hartmann ' s solution or 0 . 9 % Sodium Chloride"], "o": ["gastric perfusion", "vomiting"]}
+{"i": ["Ringers lactate or 12 ml . kg - 1 4 . 5 % Hydroxyethyl starch"], "o": ["PONV"]}
+{"i": [], "o": ["PONV ."]}
+{"i": ["Ringers lactate"], "o": ["fluid volumes"]}
+{"i": ["Turkistani"], "o": []}
+{"i": [], "o": ["PONV"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["gut mucosal blood flow"]}
+{"i": [], "o": []}
+{"i": [], "o": ["opioid consumption", "post - operative pain"]}
+{"i": ["hydroxyethyl starch 130 / 0"], "o": []}
+{"i": ["crystalloid"], "o": ["intravascular volume", "mucosal ischemia"]}
+{"i": ["colloid"], "o": ["nauseated"]}
+{"i": [], "o": ["blood viscosity"]}
+{"i": ["fentanyl"], "o": ["nausea"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["pulmonary function"]}
+{"i": [], "o": []}
+{"i": ["prophylactic anti - emetics"], "o": []}
+{"i": ["colloid", "crystalloid"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}

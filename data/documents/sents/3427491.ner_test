@@ -1,0 +1,141 @@
+{"i": ["oxaliplatin plus raltitrexed ( TOMOX )", "oxaliplatin plus 5 - fluorouracil and leucovorin ( FOLFOX4 )"], "o": []}
+{"i": [], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": []}
+{"i": ["chemotherapy", "TOMOX or FOLFOX4 ."], "o": []}
+{"i": ["chemotherapy"], "o": []}
+{"i": [], "o": ["Overall response rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Overall response rate"]}
+{"i": [], "o": ["response duration", "progression - free survival", "overall survival"]}
+{"i": ["FOLFOX4"], "o": ["Grades 3 and 4 neutropenia", "hepatic disorders and asthenia", "leukopenia"]}
+{"i": ["FOLFOX4"], "o": ["- related deaths"]}
+{"i": [], "o": ["body pain and emotional role functioning", "SF - 36", "physical and mental composite scores", "Quality of life"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": []}
+{"i": ["TOMOX", "fluoropyrimidine - based"], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": []}
+{"i": ["chemotherapy", "TOMOX or FOLFOX4 ."], "o": []}
+{"i": ["chemotherapy"], "o": []}
+{"i": [], "o": ["Overall response rate"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Overall response rate"]}
+{"i": [], "o": ["response duration", "progression - free survival", "overall survival"]}
+{"i": ["FOLFOX4"], "o": ["Grades 3 and 4 neutropenia", "hepatic disorders and asthenia", "leukopenia"]}
+{"i": ["FOLFOX4"], "o": ["- related deaths"]}
+{"i": [], "o": ["body pain and emotional role functioning", "SF - 36", "physical and mental composite scores", "Quality of life"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": []}
+{"i": ["TOMOX", "fluoropyrimidine - based"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["best supportive care", "palliative chemotherapy"], "o": ["overall survival ( OS ), progression - free survival ( PFS )", "quality of life ( QoL )"]}
+{"i": ["5 - fluorouracil ( 5 - FU )- based chemotherapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["bimonthly 5 - FU / leucovorin ( LV )", "Oxaliplatin", "5 - FU / LV"], "o": ["response rate ( RR ) and PFS"]}
+{"i": ["chemotherapy", "De Gramont schedule combined with oxaliplatin ( FOLFOX )"], "o": []}
+{"i": ["Raltitrexed ( Tomudex \u00ae)"], "o": []}
+{"i": ["Raltitrexed"], "o": []}
+{"i": ["raltitrexed", "5 - FU"], "o": ["serum terminal half life"]}
+{"i": ["raltitrexed"], "o": []}
+{"i": ["5 - FU or 5 - FU / LV", "raltitrexed"], "o": ["RR or survival outcomes"]}
+{"i": ["5 - FU / LV", "raltitrexed"], "o": ["median OS"]}
+{"i": ["Raltitrexed", "raltitrexed", "5 - FU", "5 - FU / LV"], "o": ["leukopenia and mucositis / stomatitis", "tolerability profile"]}
+{"i": [], "o": []}
+{"i": ["raltitrexed"], "o": ["rate of toxic death"]}
+{"i": [], "o": []}
+{"i": ["raltitrexed and 5 - FU - based chemotherapy"], "o": []}
+{"i": ["raltitrexed"], "o": []}
+{"i": ["oxaliplatin", "raltitrexed"], "o": []}
+{"i": ["oxaliplatin ( TOMOX )", "Raltitrexed"], "o": []}
+{"i": ["raltitrexed", "oxaliplatin", "raltitrexed and oxaliplatin"], "o": []}
+{"i": ["TOMOX"], "o": ["RR , survival and toxicity results"]}
+{"i": ["TOMOX combination"], "o": ["tolerated"]}
+{"i": ["TOMOX", "FOLFOX"], "o": []}
+{"i": [], "o": []}
+{"i": ["chemotherapy", "adjuvant chemotherapy"], "o": []}
+{"i": [], "o": ["complete medical history , physical examination , performance status , complete blood count , serum chemistry , electrocardiogram , and baseline measurement of tumor size based on tomography scans ( CT )."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["FOLFOX4 or TOMOX ."], "o": []}
+{"i": [], "o": []}
+{"i": ["oxaliplatino", "FOLFOX4", "5 - FU", "leucovorin"], "o": []}
+{"i": ["TOMOX", "raltitrexed", "oxaliplatin"], "o": []}
+{"i": [], "o": []}
+{"i": ["oxaliplatin", "raltitrexed"], "o": []}
+{"i": [], "o": ["Tolerability"]}
+{"i": [], "o": ["peripheral neuropathy", "toxicities"]}
+{"i": [], "o": []}
+{"i": ["FOLFOX4", "5 - FU"], "o": ["neutropenia , thrombocytopenia , diarrhea , stomatitis , or other toxicities"]}
+{"i": ["Oxaliplatin"], "o": []}
+{"i": ["TOMOX", "raltitrexed", "oxaliplatin"], "o": []}
+{"i": [], "o": ["diarrhea , or stomatitis G2", "non - hematological toxicities"]}
+{"i": ["Oxaliplatin"], "o": []}
+{"i": [], "o": ["unacceptable toxicity ."]}
+{"i": ["oxaliplatin"], "o": []}
+{"i": ["Prophylactic anti - emetics"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["QoL", "short form - 36 ( SF - 36 ) questionnaire"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["Objective Response Rate ( ORR )."]}
+{"i": [], "o": []}
+{"i": [], "o": ["OS , PFS , response duration , tolerability and QoL ."]}
+{"i": [], "o": ["OS and PFS"]}
+{"i": [], "o": ["Response duration"]}
+{"i": [], "o": []}
+{"i": [], "o": ["ORR"]}
+{"i": [], "o": ["ORR"]}
+{"i": [], "o": ["number of patients required"]}
+{"i": [], "o": []}
+{"i": [], "o": ["OS and PFS"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["prevalence of rectal tumors", "location of primary tumor"]}
+{"i": [], "o": ["PD", "toxicity"]}
+{"i": ["oxaliplatin .", "FOLFOX4", "5 - FU"], "o": ["median relative dose intensity"]}
+{"i": ["TOMOX", "oxaliplatin .", "raltitrexed"], "o": ["median relative dose intensity"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["thrombocytopenia", "Grades 3 \u2013 4 hematologic AEs", "leucopenia", "neutropenia"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["asthenia", "Hepatic disorders"]}
+{"i": ["FOLFOX", "TOMOX"], "o": ["neurotoxicity , incidence of paresthesias grade"]}
+{"i": ["FOLFOX4"], "o": ["serious AEs ( SAEs )."]}
+{"i": [], "o": ["incidence rate of SAEs"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["pancitopenia plus septic shock", "neutropenic sepsis", "- related deaths"]}
+{"i": [], "o": []}
+{"i": [], "o": ["composite physical / mental health measurements", "components of SF - 36"]}
+{"i": [], "o": ["SF - 36 scores"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["mean mental health score", "mean physical health score", "composite physical health and mental health scores"]}
+{"i": [], "o": ["composite scores"]}
+{"i": ["FOLFOX4"], "o": ["bodily pain", "SF - 36", "bodily pain and emotional role functioning scores", "emotional role functioning"]}
+{"i": ["TOMOX"], "o": ["survival", "tolerability", "ORR"]}
+{"i": ["TOMOX"], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": []}
+{"i": ["TOMOX"], "o": []}
+{"i": ["TOMOX"], "o": []}
+{"i": ["FOLFOX4"], "o": []}
+{"i": [], "o": ["PFS"]}
+{"i": [], "o": []}
+{"i": [], "o": ["ORRs"]}
+{"i": [], "o": ["ORR , PFS and OS"]}
+{"i": ["TOMOX"], "o": ["ORRs"]}
+{"i": [], "o": ["median PFS values"]}
+{"i": [], "o": ["median OS"]}
+{"i": ["TOMOX", "oxaliplatin plus", "oxaliplatin plus 5FU / LV"], "o": ["ORR"]}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["tolerated", "safety profiles"]}
+{"i": [], "o": ["incidence of hepatic disorders and asthenia", "incidence of neutropenia and leukopenia grade"]}
+{"i": ["FOLFOX"], "o": ["AEs", "number of treatment - related deaths"]}
+{"i": ["raltitrexed"], "o": []}
+{"i": ["raltitrexed"], "o": ["number of treatment - related deaths ."]}
+{"i": ["5 - FU", "raltitrexed"], "o": []}
+{"i": ["TOMOX", "FOLFOX4", "raltitrexed"], "o": ["safety and tolerability"]}
+{"i": [], "o": []}
+{"i": ["TOMOX", "FOLFOX4"], "o": ["overall response rate"]}
+{"i": [], "o": ["survival"]}
+{"i": ["antibodies cetuximab and panitumumab .", "growth factor antibody bevacizumab"], "o": []}
+{"i": [], "o": []}
+{"i": ["TOMOX"], "o": []}
+{"i": ["TOMOX", "FOLFOX"], "o": ["efficacy and tolerability"]}
+{"i": [], "o": []}
+{"i": [], "o": ["efficacy and safety profile"]}
+{"i": ["TOMOX"], "o": []}

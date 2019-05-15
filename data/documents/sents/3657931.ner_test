@@ -1,0 +1,157 @@
+{"i": ["bispectral index - guided propofol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["hemodynamic effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["hypnosis"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["Total induction dose"]}
+{"i": [], "o": ["value of BIS and hemodynamic parameters ( heart rate , systolic / diastolic blood pressure )"]}
+{"i": [], "o": ["involuntary muscle activity such as jerky movements , dystonic posturing , and opisthotonos"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["dosage"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hemodynamic variables including heart rate , systolic / diastolic blood pressure and BIS"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["hemodynamic effects"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["hypnosis"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["Total induction dose"]}
+{"i": [], "o": ["value of BIS and hemodynamic parameters ( heart rate , systolic / diastolic blood pressure )"]}
+{"i": [], "o": ["involuntary muscle activity such as jerky movements , dystonic posturing , and opisthotonos"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["dosage"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hemodynamic variables including heart rate , systolic / diastolic blood pressure and BIS"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hemodynamic instability , delayed recovery", "other complications .", "incidence of awareness"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["recovery of consciousness ."]}
+{"i": [], "o": []}
+{"i": ["propofol", "BIS - guided propofol induction"], "o": ["depth of anesthesia"]}
+{"i": ["propofol"], "o": ["hemodynamic alterations"]}
+{"i": [], "o": []}
+{"i": ["general anesthesia"], "o": []}
+{"i": [], "o": []}
+{"i": ["diazepam"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["5 - lead electrocardiogram ( ECG ), non - invasive blood pressure ( NIBP ), pulse oximeter , BIS sensor , and BIS monitor A -"]}
+{"i": ["induction of anesthesia", "propofol", "propofol infusion", "anesthesia", "intravenous fentanyl", "intravenous injection of fentanyl"], "o": []}
+{"i": [], "o": ["sustained BIS value", "hypnosis"]}
+{"i": ["66 % nitrous oxide in oxygen", "vecuronium bromide"], "o": ["ease of mask ventilation"]}
+{"i": [], "o": []}
+{"i": ["vecuronium and fentanyl", "66 % nitrous oxide in oxygen , isoflurane"], "o": []}
+{"i": ["glycopyrrolate", "intravenous neostigmine"], "o": ["residual neuromuscular block"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["BIS", "loss of verbal response"]}
+{"i": [], "o": ["BIS and hemodynamic parameters ( heart rate , systolic / diastolic blood pressure )"]}
+{"i": ["propofol"], "o": ["involuntary muscle activity", "jerky movements , dystonic posturing , and opisthotonos"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["mean dose"]}
+{"i": ["propofol"], "o": ["dosage of"]}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": ["dosage"]}
+{"i": ["propofol"], "o": ["mean dose"]}
+{"i": ["propofol"], "o": ["dosage", "dosage of"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["hemodynamic variables including heart rate , systolic / diastolic blood pressure , and BIS"]}
+{"i": [], "o": ["heart rate , blood pressure , and BIS values"]}
+{"i": [], "o": ["BIS value"]}
+{"i": [], "o": ["Involuntary movements"]}
+{"i": [], "o": ["hemodynamic parameters and BIS values"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["incidence of involuntary movements"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["Plasma concentration"]}
+{"i": [], "o": []}
+{"i": [], "o": ["plasma effect site concentration"]}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": ["blood concentration"]}
+{"i": ["propofol"], "o": ["dosage"]}
+{"i": [], "o": ["dosage"]}
+{"i": [], "o": []}
+{"i": ["BIS"], "o": ["dosage"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["BIS value"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["clearance", "volume of distribution", "final concentration"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["mean dose of", "mean dose of induction"]}
+{"i": ["propofol"], "o": ["mean dose of"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS value"]}
+{"i": ["propofol"], "o": ["BIS value"]}
+{"i": ["propofol"], "o": ["verbal command"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": ["BIS value"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["BIS changes", "BIS", "BIS value"]}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS value"]}
+{"i": ["remifentanil", "propofol"], "o": ["BIS"]}
+{"i": [], "o": []}
+{"i": ["propofol", "fentanyl"], "o": []}
+{"i": [], "o": ["BIS and 95 % SEF"]}
+{"i": ["propofol", "fentanyl"], "o": ["BIS and 95 % SEF values"]}
+{"i": ["fentanyl"], "o": ["post intubation BIS ."]}
+{"i": [], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": ["fentanyl"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["BIS"]}
+{"i": ["vecuronium"], "o": []}
+{"i": ["sevoflurane"], "o": ["BIS"]}
+{"i": ["nitrous oxide"], "o": ["BIS"]}
+{"i": ["N2 O / O2"], "o": []}
+{"i": [], "o": ["Involuntary movements"]}
+{"i": [], "o": ["involuntary movements ."]}
+{"i": [], "o": ["BIS values ."]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["thiopentone", "propofol"], "o": ["Involuntary movements"]}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": ["BIS value and hemodynamic parameters"]}
+{"i": ["propofol"], "o": []}
+{"i": ["propofol"], "o": ["Dose requirement of"]}
+{"i": ["propofol"], "o": []}
+{"i": [], "o": []}

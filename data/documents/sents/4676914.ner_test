@@ -1,0 +1,176 @@
+{"i": ["new insulin glargine", "glargine"], "o": []}
+{"i": [], "o": []}
+{"i": ["basal insulin", "Gla - 300 )", "Gla - 100 )", "insulin glargine"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean change in glycated haemoglobin"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": [") or severe hypoglycaemia", "Annualized rates of confirmed"]}
+{"i": [], "o": ["hypoglycaemic event ."]}
+{"i": [], "o": ["Severe hypoglycaemia"]}
+{"i": [], "o": ["Weight gain"]}
+{"i": [], "o": ["adverse events .", "tolerated"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": ["basal insulin", "Gla - 300 )", "Gla - 100 )", "insulin glargine"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["mean change in glycated haemoglobin"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": [") or severe hypoglycaemia", "Annualized rates of confirmed"]}
+{"i": [], "o": ["hypoglycaemic event ."]}
+{"i": [], "o": ["Severe hypoglycaemia"]}
+{"i": [], "o": ["Weight gain"]}
+{"i": [], "o": ["adverse events .", "tolerated"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": [], "o": []}
+{"i": ["insulin therapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["insulin therapy"], "o": []}
+{"i": ["premixed insulin", "basal insulin therapy"], "o": []}
+{"i": [], "o": []}
+{"i": ["glucagon -"], "o": []}
+{"i": ["basal insulin"], "o": []}
+{"i": ["new insulin glargine"], "o": []}
+{"i": ["Gla - 100 )", "Gla - 300 with insulin glargine"], "o": ["efficacy and safety"]}
+{"i": ["basal insulin", "basal and mealtime insulin"], "o": []}
+{"i": ["insulin - nai \u0308 ve", "oral antihyperglycaemic drugs"], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["hypoglycaemia", "glycaemic control"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": ["Gla - 300"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["glycaemic control , hypoglycaemia and body weight"]}
+{"i": [], "o": []}
+{"i": ["basal insulin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Gla - 100 or neutral protamine Hagedorn ( NPH ) insulin", "prandial insulin therapy", "metformin"], "o": []}
+{"i": ["Gla - 100 or NPH insulin", "basal insulin treatment"], "o": []}
+{"i": ["oral antihyperglycaemic drugs"], "o": []}
+{"i": [], "o": []}
+{"i": ["modified Tactipen \u00ae injector in EDITION 3 ) or Gla - 100 [ Lantus \u00ae ( Sanofi ) using a SoloSTAR \u00ae pen ].", "Gla - 300 ( Sanofi", "modified SoloSTAR \u00ae pen - injector"], "o": []}
+{"i": ["SoloSTAR \u00ae"], "o": []}
+{"i": ["modified Tactipen \u00ae", "modified SoloSTAR \u00ae pen"], "o": []}
+{"i": [], "o": ["self - monitored plasma glucose ( SMPG"]}
+{"i": [], "o": ["average pre - injection SMPG", "laboratory - measured fasting plasma glucose", "HbA1c"]}
+{"i": [], "o": ["cumulative mean number of hypoglycaemic events", "one nocturnal", ") hypoglycaemic event or hypoglycaemic event"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycaemic outcomes"]}
+{"i": [], "o": ["insulin dose , variability of pre - injection SMPG , change in body weight and adverse events ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["insulin dose", "HbA1c"]}
+{"i": [], "o": ["Insulin dose"]}
+{"i": [], "o": ["\u2265 1 hypoglycaemic event"]}
+{"i": [], "o": ["annualized rate of hypoglycaemia"]}
+{"i": [], "o": ["mean number of hypoglycaemic events"]}
+{"i": [], "o": ["annualized rates of hypoglycaemia"]}
+{"i": [], "o": ["Body weight"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": ["Gla - 300 and Gla - 100"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["HbA1c level"]}
+{"i": [], "o": []}
+{"i": [], "o": ["change in HbA1c"]}
+{"i": [], "o": ["target HbA1c", "HbA1c target"]}
+{"i": [], "o": ["Laboratory - measured fasting plasma glucose"]}
+{"i": [], "o": []}
+{"i": [], "o": ["pre - injection SMPG"]}
+{"i": [], "o": []}
+{"i": [], "o": ["pre - injection SMPG"]}
+{"i": ["Gla - 300"], "o": []}
+{"i": [], "o": ["glycaemic control"]}
+{"i": ["Gla - 300"], "o": ["cumulative number of confirmed", "severe hypoglycaemic events"]}
+{"i": [], "o": ["annualized rate", "or severe hypoglycaemia"]}
+{"i": ["Gla - 300"], "o": ["cumulative mean number of nocturnal confirmed", "or severe hypoglycaemic events"]}
+{"i": [], "o": ["annualized rates of nocturnal events"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["annualized rate"]}
+{"i": [], "o": ["severe hypoglycaemic events"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["rate of hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300"], "o": ["or severe hypoglycaemic event", "\u2265 1 confirmed"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["severe hypoglycaemic event"]}
+{"i": [], "o": ["severe hypoglycaemic events"]}
+{"i": [], "o": ["severe hypoglycaemia"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["annualized rate", "symptomatic hypoglycaemic events"]}
+{"i": [], "o": ["symptomatic hypoglycaemic event"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["symptomatic hypoglycaemia"]}
+{"i": [], "o": ["Severe hypoglycaemia"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["\u2265 1 event"]}
+{"i": [], "o": ["Basal insulin dose"]}
+{"i": ["Gla - 300"], "o": ["mean ( standard deviation ) basal insulin dose"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["weight gain"]}
+{"i": [], "o": ["weight gain"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Treatment - emergent adverse events ( TEAEs )"]}
+{"i": [], "o": ["infections and infestations , nervous system disorders , gastrointestinal disorders , musculoskeletal and connective tissue disorders , and general disorders and administration site conditions ."]}
+{"i": ["Gla - 300"], "o": ["Injection site reactions"]}
+{"i": [], "o": ["Serious TEAEs"]}
+{"i": [], "o": ["death ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["Anti - insulin antibody findings"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["glycaemic control"]}
+{"i": ["Gla - 300"], "o": ["hypoglycaemic events", "weight gain"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["risk of hypoglycaemia", "glycaemic control"]}
+{"i": ["Gla - 300"], "o": ["rate of confirmed", "or severe hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycaemic event"]}
+{"i": ["Gla - 300"], "o": ["annualized rate of confirmed or severe hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["1 hypoglycaemic event"]}
+{"i": [], "o": ["annualized rate"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300"], "o": ["hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": ["Gla - 300"], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["severe hypoglycaemic events"]}
+{"i": ["Gla - 300"], "o": []}
+{"i": [], "o": []}
+{"i": ["Gla - 300"], "o": ["hypoglycaemia"]}
+{"i": ["Gla - 300", "Gla - 100 7"], "o": ["pharmacokinetic and"]}
+{"i": [], "o": []}
+{"i": [], "o": ["blood glucose control"]}
+{"i": [], "o": ["Severe hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": ["Gla - 100"], "o": ["rate of hypoglycaemia"]}
+{"i": ["Gla - 100", "insulin degludec"], "o": ["rate ratios of confirmed hypoglycaemia"]}
+{"i": [], "o": ["hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycaemia"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Basal insulin dose"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["basal insulin dose"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300 and Gla - 100"], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["residence time"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["bioavailability"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["hypoglycaemia .", "glycaemic control"]}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["hypoglycaemia", "weight gain"]}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Gla - 300", "Gla - 100"], "o": ["hypoglycaemia", "glycaemic control"]}

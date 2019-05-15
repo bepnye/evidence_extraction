@@ -1,0 +1,174 @@
+{"i": ["Closed - Loop Control"], "o": []}
+{"i": [], "o": []}
+{"i": ["wireless artificial pancreas system ( the Diabetes Assistant [ DiAs ] running the Unified Safety System )"], "o": []}
+{"i": [], "o": []}
+{"i": ["sensor - augmented pump ( SAP ) period", "24 / 7 CLC at home .", "overnight - only CLC"], "o": []}
+{"i": [], "o": ["Glucose control"]}
+{"i": [], "o": ["glucose variability", "time in target", "hypoglycemia", "Glycemic control parameters"]}
+{"i": [], "o": ["day / night combined"]}
+{"i": ["CLC"], "o": []}
+{"i": [], "o": ["time in range", "time in range overnight", "hypoglycemia"]}
+{"i": ["CLC"], "o": ["hypoglycemia protection"]}
+{"i": ["wireless artificial pancreas system ( the Diabetes Assistant [ DiAs ] running the Unified Safety System )"], "o": []}
+{"i": [], "o": []}
+{"i": ["sensor - augmented pump ( SAP ) period", "24 / 7 CLC at home .", "overnight - only CLC"], "o": []}
+{"i": [], "o": ["Glucose control"]}
+{"i": [], "o": ["glucose variability", "time in target", "hypoglycemia", "Glycemic control parameters"]}
+{"i": [], "o": ["day / night combined"]}
+{"i": ["CLC"], "o": []}
+{"i": [], "o": ["time in range", "time in range overnight", "hypoglycemia"]}
+{"i": ["CLC"], "o": ["hypoglycemia protection"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Diabetes Assistant ( DiAs )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["closed - loop algorithms ( the Unified Safety System [ USS ], developed at UVA , and the Modular Model Predictive Control"], "o": []}
+{"i": ["CLC"], "o": []}
+{"i": ["DiAs \u2013 USS Virginia"], "o": []}
+{"i": ["DiAs \u2013 USS Virginia AP system"], "o": ["safety and efficacy"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["modular CLC algorithm running on DiAs", "DiAs , a smart - phone medical platform ; 2 ) Dexcom G4 Platinum connected to DiAs via continuous glucose monitor ( CGM ) receiver and USB - Bluetooth relay hardware ( SmartLoop", "Roche Accu - Chek insulin pump connected to DiAs via wireless Bluetooth", "remote monitoring server connected to DiAs via 3G or local Wi - Fi network"], "o": []}
+{"i": ["DiAs"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["treat with carbohydrate or corrective insulin"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["CGM"], "o": []}
+{"i": ["overnight - only CLC system", "CLC system", "sensor - augmented pump ( SAP ) therapy"], "o": []}
+{"i": ["DiAs system in OL control ( OLC )"], "o": []}
+{"i": ["DiAs"], "o": []}
+{"i": [], "o": []}
+{"i": ["DiAs in 24 / 7 CLC", "DiAs in overnight - only CLC", "24 / 7 CLC", "overnight - only CLC"], "o": []}
+{"i": ["CLC"], "o": []}
+{"i": ["CLC"], "o": []}
+{"i": [], "o": ["hyperglycemia resulting in ketoacidosis", "untoward medical occurrence or unexpected occurrence", "severe hypoglycemia"]}
+{"i": [], "o": ["CGM sensor glucose percent time"]}
+{"i": [], "o": ["percent time"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Downloaded CGM readings"]}
+{"i": [], "o": []}
+{"i": ["overnight - only CLC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Nighttime", "sensor glucose metrics"]}
+{"i": [], "o": ["Median time < 70 mg"]}
+{"i": [], "o": ["median time in target", "median time", "mean glucose"]}
+{"i": [], "o": ["median coefficient of variation"]}
+{"i": [], "o": ["Sensor glucose metrics"]}
+{"i": [], "o": ["Median time < 70 mg"]}
+{"i": [], "o": ["median time > 180", "median time in target 70 \u2013 180 mg", "median coefficient of variation"]}
+{"i": [], "o": ["Mean glucose"]}
+{"i": [], "o": ["Daytime hypoglycemia , time in range , hyperglycemia , and coefficient of variation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["24 / 7 CLC", "overnight - only CLC"], "o": []}
+{"i": [], "o": ["nighttime sensor glucose metrics"]}
+{"i": [], "o": ["Nighttime median time"]}
+{"i": [], "o": ["median time in target", "median time", "mean glucose"]}
+{"i": [], "o": ["median coefficient of variation"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["overall daytime and nighttime"]}
+{"i": [], "o": ["median improvements"]}
+{"i": [], "o": ["daytime median time"]}
+{"i": [], "o": []}
+{"i": [], "o": ["median time > 180 mg / dL", "Daytime mean glucose ; median time in target"]}
+{"i": [], "o": ["median total delivered insulin"]}
+{"i": [], "o": ["median total delivered insulin"]}
+{"i": [], "o": []}
+{"i": [], "o": ["severe hypoglycemia , diabetic ketoacidosis , or other serious adverse events"]}
+{"i": [], "o": []}
+{"i": ["DiAs \u2013 USS Virginia"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["glucose control"]}
+{"i": [], "o": ["time in range", "hypoglycemia ."]}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycemia .", "hyperglycemia"]}
+{"i": ["CLC", "overnight - only CLC"], "o": []}
+{"i": ["24 / 7 CLC", "SAP"], "o": ["glucose time"]}
+{"i": ["CLC"], "o": ["overall glycemia"]}
+{"i": [], "o": ["hepatic glucose output", "fasting glucose value"]}
+{"i": ["DiAs", "SAP"], "o": []}
+{"i": ["DiAs"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DiAs \u2013 USS Virginia", "Accu - Chek Spirit Combo plus Dexcom G4 Platinum ( without DiAs ) for OLC"], "o": []}
+{"i": ["SAP"], "o": ["daytime and 24 - h glucose control"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["CLC"], "o": []}
+{"i": ["CLC"], "o": ["glucose levels"]}
+{"i": [], "o": []}
+{"i": [], "o": ["average daytime glucose levels", "insulin levels"]}
+{"i": ["SAP", "CLC"], "o": ["time in range", "time in hypoglycemia"]}
+{"i": [], "o": []}
+{"i": ["single - hormone CLC , bihormonal CLC , and conventional insulin pump therapy ( i . e ., OLC )", "Bihormonal 24 / 7 CLC"], "o": []}
+{"i": ["single - hormone CLC", "Bihormonal CLC"], "o": ["time in euglycemia", "time spent in hypoglycemia"]}
+{"i": [], "o": []}
+{"i": ["SAP or CLC insulin delivery"], "o": []}
+{"i": [], "o": ["percentage of time with glucose in the target range"]}
+{"i": [], "o": ["time spent below target"]}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycemia"]}
+{"i": ["CLC"], "o": ["hypoglycemia"]}
+{"i": [], "o": ["hypoglycemia protection"]}
+{"i": [], "o": ["Hyperglycemia defined as time spent"]}
+{"i": [], "o": ["daytime hyperglycemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["work and school schedules , children , travel , and a variety of meal and exercise schedules ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["CLC"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["Baseline A1C"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["hypoglycemia"]}
+{"i": ["CLC"], "o": ["hypoglycemia"]}
+{"i": [], "o": ["hypoglycemia .", "A1C"]}
+{"i": [], "o": []}
+{"i": ["DiAs \u2013 USS Virginia"], "o": ["self - monitoring of blood glucose ( SMBG )"]}
+{"i": [], "o": ["postprandial insulin correction dosing"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["24 / 7 CLC .", "SAP", "overnight - only CLC"], "o": []}
+{"i": [], "o": ["safety and efficacy"]}
+{"i": [], "o": []}
+{"i": [], "o": ["time in range", "hypoglycemia"]}
+{"i": [], "o": []}
+{"i": [], "o": []}

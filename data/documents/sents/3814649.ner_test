@@ -1,0 +1,159 @@
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["cryoprotectants", "sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": ["VS1 for 5 min followed by VS2 ( 15 % EG + 15 % DMSO + 17 . 1 % sucrose + 20", "VS1", "Control group : no treatment", "vitrification solution 1 ( VS1 ) containing 7 . 5 % ethylene glycol [ EG ] + 7 . 5 % dimethyl sulfoxide [ DMSO ] + 20 % calf serum [ CS ] in TCM - 199", "VS1 + VS2"], "o": []}
+{"i": ["warming solution"], "o": []}
+{"i": [], "o": ["maturation , in vitro fertilization and in vitro"]}
+{"i": [], "o": ["Cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage and blastocyst rates"]}
+{"i": ["sucrose"], "o": ["cleavage and blastocyst rates"]}
+{"i": [], "o": ["cleavage rate and early embryo development"]}
+{"i": ["cryoprotectants", "sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": ["VS1 for 5 min followed by VS2 ( 15 % EG + 15 % DMSO + 17 . 1 % sucrose + 20", "VS1", "Control group : no treatment", "vitrification solution 1 ( VS1 ) containing 7 . 5 % ethylene glycol [ EG ] + 7 . 5 % dimethyl sulfoxide [ DMSO ] + 20 % calf serum [ CS ] in TCM - 199", "VS1 + VS2"], "o": []}
+{"i": ["warming solution"], "o": []}
+{"i": [], "o": ["maturation , in vitro fertilization and in vitro"]}
+{"i": [], "o": ["Cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage and blastocyst rates"]}
+{"i": ["sucrose"], "o": ["cleavage and blastocyst rates"]}
+{"i": [], "o": ["cleavage rate and early embryo development"]}
+{"i": [], "o": []}
+{"i": ["Oocyte cryopreservation"], "o": []}
+{"i": ["Slow freezing and vitrification"], "o": []}
+{"i": [], "o": ["intracellular salt concentrations"]}
+{"i": [], "o": []}
+{"i": ["Vitrification"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vitrification"], "o": ["embryo developmental competence", "blastocyst production rates", "nuclear maturation , cleavage and blastocyst development"]}
+{"i": [], "o": []}
+{"i": [], "o": ["intracellular ice formation"]}
+{"i": ["Ethylene glycol , propylene glycol , glycerol and dimethyl sulfoxide [ 17 ]"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["developmental competence"]}
+{"i": [], "o": ["cleavage rate"]}
+{"i": [], "o": ["Warming time"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sucrose"], "o": ["cleavage and blastocyst production rates", "cleavage and embryonic developmental rates"]}
+{"i": ["vitrification solutions"], "o": ["cleavage and subsequent embryo development"]}
+{"i": [], "o": []}
+{"i": ["Dulbecco ' s phosphate buffered saline ( DPBS ), newborn calf serum ( CS ), TCM - 199 and MEM non - essential amino acids"], "o": []}
+{"i": ["Lutropin - V ( LH ) and Folltropin - V ( FSH )"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["DPBS"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["TCM - 199 + 7 . 5 % ethylene glycol ( EG ; v / v ) + 7 . 5 % dimethyl sulfoxide ( DMSO"], "o": []}
+{"i": [], "o": []}
+{"i": ["sucrose", "warming solution [ TCM - 199 + 20 % CS"], "o": []}
+{"i": ["DPBS"], "o": []}
+{"i": [], "o": []}
+{"i": ["gentamicin", "FSH", "LH", "TCM - 199 supplemented with 5 % CS"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["BO supplemented with 10 % bovine serum albumin ( BSA"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["CR1aa [ 5 % CS , 2 % BME essential amino acids ( v / v ), 1 % MEM nonessential amino acids ( v / v ), 1 % L - glutamic acid ( v / v ), 0 . 3 % BSA and 0 . 05 \u03bcg / ml gentamicin sulfate ]."], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage ( 2 \u2013 8 cells ) rate"]}
+{"i": [], "o": ["blastocyst ( containing inner cell mass , trophoblast and blastocoel ) rate"]}
+{"i": [], "o": ["cleavage and blastocyst rates"]}
+{"i": ["Control group - COCs were held in DPBS supplemented with 5 % CS ; 2 ) VS1 group - COCs were exposed to VS1 for 5 min and then placed in DPBS supplemented with 5 % CS ; 3 ) VS1 + VS2 group - COCs were exposed to VS1"], "o": []}
+{"i": ["IVM , IVF and IVC"], "o": []}
+{"i": [], "o": ["Cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": ["warming solution containing 17 . 1 % sucrose ("], "o": []}
+{"i": ["IVM , IVF and IVC ."], "o": []}
+{"i": [], "o": ["Cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage and blastocyst rates ."]}
+{"i": ["Control , VS1 , VS1 + VS2 and Vitrification"], "o": ["cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": [], "o": ["Replicate number", "binomial response"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["vitrification solutions"], "o": []}
+{"i": [], "o": ["cleavage rate of oocytes"]}
+{"i": [], "o": ["blastocyst rate (%"]}
+{"i": ["cryoprotectant exposure", "vitrification"], "o": ["Cleavage rate", "cleavage of", "embryo development", "Blastocyst rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage and blastocyst rates"]}
+{"i": [], "o": ["cleavage or subsequent embryo development ."]}
+{"i": [], "o": ["cleavage rate or blastocyst rate ."]}
+{"i": [], "o": ["cleavage and blastocyst rates (%"]}
+{"i": [], "o": ["Cleavage rate", "cleavage of bovine oocytes and subsequent embryo development", "Blastocyst rate"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage or blastocyst development"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["Ethylene glycol ( EG ) and DMSO"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["heat transfer", "cooling rate"]}
+{"i": [], "o": ["cleavage and blastocyst production rates ."]}
+{"i": ["sucrose"], "o": ["cleavage and blastocyst production"]}
+{"i": [], "o": ["cleavage rates and blastocyst rates"]}
+{"i": [], "o": ["cleavage rates", "blastocyst rates"]}
+{"i": ["sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": ["VS1 + VS2"], "o": ["cleavage and blastocyst production rates"]}
+{"i": ["DMSO and EG"], "o": []}
+{"i": [], "o": []}
+{"i": ["DMSO"], "o": ["survival rates of oocytes ."]}
+{"i": ["DMSO", "EG"], "o": ["developmental competence"]}
+{"i": ["DMSO", "glycerol and propanediol", "ethylene glycol and sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["embryo development ."]}
+{"i": [], "o": []}
+{"i": ["sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cell swelling ."]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": ["sucrose"], "o": []}
+{"i": ["sucrose"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["survival , cleavage and blastocyst production rates"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cleavage and blastocyst production rates"]}
+{"i": [], "o": ["cleavage and blastocyst rates"]}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": ["cytotoxic effect", "osmotic stress", "blastocyst production rates"]}
+{"i": [], "o": ["cleavage and blastocyst production rates ."]}
+{"i": [], "o": ["cleavage and embryo development rates"]}
+{"i": ["Ethylene glycol ; DMSO : Dimethyl sulfoxide"], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
+{"i": [], "o": []}
