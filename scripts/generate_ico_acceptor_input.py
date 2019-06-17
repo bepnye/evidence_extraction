@@ -1,4 +1,4 @@
-import sys, os, json
+import sys, os, json, random
 from itertools import product, combinations
 
 import numpy as np
@@ -43,6 +43,7 @@ def generate_sents(output_name, group = 'dev'):
 
         if n_i >= 2:
           i_pairs = combinations(ner['i'], 2)
+          i_pairs = [(i, c) for i, c in i_pairs if i != c]
           if n_o >= 1:
             for (i, c), o in product(i_pairs, ner['o']):
               sample_none.write(utils.joinstr([pmid, sent_idx, frame_idx, i, c, o, s]))
@@ -76,6 +77,7 @@ def generate_sents(output_name, group = 'dev'):
         else: # n_i == 0
           if n_o >= 1:
             ic_pairs = combinations(all_ner['i'], 2)
+            ic_pairs = [(i, c) for i, c in ic_pairs if i != c]
             for o in ner['o']:
               for i, c in ic_pairs:
                 sample_ic.write(utils.joinstr([pmid, sent_idx, frame_idx, i, c, o, s]))
@@ -85,5 +87,47 @@ def generate_sents(output_name, group = 'dev'):
           else: # n_o == 0
             pass # too hard! punt!
 
+def frame_repr(f):
+  return '\t'.join([f.label, f.i, f.c, f.o, f.evidence])
+
+def sample_ev(frame, data):
+  neg_spans = [f.evidence for f in data['frames'] if not utils.frame_overlap(frame, f)]
+  if not neg_spans:
+    neg_spans = [s.s for s in data['sents'] if not utils.overlap(s.i, s.f, frame.ev_i, frame.ev_f)]
+  return frame._replace(evidence = random.sample(neg_spans, 1)[0], label = -1)
+
+
+def generate_ev_training(output_name, \
+    group = 'dev', ner_name = 'test', \
+    sample_func = sample_ev):
+
+  outdir = '{}/ico_acceptor/{}/'.format(utils.DATA_DIR, output_name)
+  try:
+    os.mkdir(outdir)
+  except OSError:
+    print('Target dir: {} already exists'.format(outdir))
+
+  sent_dir = '{}/documents/sents/'.format(utils.DATA_DIR)
+  frame_dir = '{}/documents/frames/'.format(utils.DATA_DIR)
+  pmids = utils.group_ids(group)
+  
+  lines = []
+
+  for pmid in pmids:
+
+    sents = utils.read_sents('{}/{}.sents'.format(sent_dir, pmid))
+    frames = utils.read_frames('{}/{}.frames'.format(frame_dir, pmid))
+
+    for frame in frames:
+      lines.append(frame_repr(frame))
+      lines.append(frame_repr(sample_func(frame, {'sents': sents, 'frames': frames})))
+
+  fout = open('{}/ico_acceptor/{}/{}.tsv'.format(utils.DATA_DIR, output_name, group), 'w')
+  fout.write('\n'.join(lines))
+
+def generate_ev_testing(output_name):
+  pass
+
+
 if __name__ == '__main__':
-  generate_sents(*sys.argv[1:])
+  generate_ev_training(*sys.argv[1:])

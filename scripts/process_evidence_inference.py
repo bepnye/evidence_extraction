@@ -1,7 +1,6 @@
-import sys, random
+import sys, random, os
 from collections import namedtuple, defaultdict
 import numpy as np
-from nltk.tokenize import sent_tokenize
 import matplotlib.pyplot as plt
 from imp import reload
 from Levenshtein import distance as string_distance
@@ -10,8 +9,6 @@ sys.path.append('/home/ben/Desktop/evidence-inference/evidence_inference/preproc
 import ico_reader
 reload(ico_reader)
 import utils
-
-DATA_DIR = '../data/'
 
 def sample_evs(data):
   ss = []
@@ -62,60 +59,89 @@ def read_data(docs = None):
 
   matches = defaultdict(int)
   for group, pmcids in group_pmcids.items():
-    with open('%s.tsv' %group, 'w') as fout:
-      for pmcid in pmcids:
+    for pmcid in pmcids:
 
-        doc = docs[int(pmcid)]
-        new_doc = {}
-        text = ico_reader.pre.extract_raw_text(doc['article'])
-        sents = utils.span_sent_tokenize(text)
+      doc = docs[int(pmcid)]
+      new_doc = {}
+      text = ico_reader.pre.extract_raw_text(doc['article'])
+      title = doc['article'].get_title()
+      sents = utils.sent_tokenize(text)
 
-        new_doc['text'] = text
-        new_doc['sents'] = sents
-        new_doc['frames'] = []
+      new_doc['text'] = text
+      new_doc['title'] = title
+      new_doc['sents'] = sents
+      new_doc['frames'] = []
 
-        for pid, p in doc['prompts'].items():
+      for pid, p in doc['prompts'].items():
 
+        evs = set()
+        label = p['Annotations'][0]['Label']
+
+        for a in p['Annotations']:
+          assert a['Label'] == label
+          i = a['Evidence Start']
+          f = a['Evidence End']
+          ev = a['Annotations']
+          ev, i, f = fix_offsets(ev, i, f, text)
+          ev_tuple = (ev, i, f)
+          evs.add(ev_tuple)
+
+        for ev_tuple in evs:
           frame = {}
           frame['i'] = p['Intervention']
           frame['c'] = p['Comparator']
           frame['o'] = p['Outcome']
-          frame['anns'] = []
+          frame['label'] = utils.LABEL_TO_ID[label]
 
-          for a in p['Annotations']:
-            ann = {}
-            i = a['Evidence Start']
-            f = a['Evidence End']
-            ev = a['Annotations']
-            ev, i, f = fix_offsets(ev, i, f, text)
-            sent_mask = find_overlaps((i, f, ev), sents)
-            ann['label'] = utils.LABEL_TO_ID[a['Label']]
-            ann['evidence'] = ev
-            ann['text_index_i'] = i
-            ann['text_index_f'] = f
-            ann['sent_indices'] = [i for i,m in enumerate(sent_mask) if m]
-            frame['anns'].append(ann)
+          ev, i, f = ev_tuple
+          sent_mask = find_overlaps((i, f, ev), sents)
+          frame['evidence'] = ev
+          frame['ev_i'] = i
+          frame['ev_f'] = f
+          frame['sent_indices'] = [i for i,m in enumerate(sent_mask) if m]
           new_doc['frames'].append(frame)
 
-        data[pmcid] = new_doc
+      data[pmcid] = new_doc
 
   return data
 
 def write_data(data):
-  DATA_DIR = 'data/ev-inf/'
+
+  for outtype in ['txt', 'sents', 'frames', 'tokens', 'titles']:
+    outdir = '{}/documents/{}/'.format(utils.DATA_DIR, outtype)
+    if not os.path.isdir(outdir):
+      os.system('mkdir -p {}'.format(outdir))
+
   for pmid, doc in data.items():
-    with open('{}/{}.txt'.format(DATA_DIR, pmid), 'w') as fout:
+
+    with open('{}/documents/txt/{}.txt'.format(utils.DATA_DIR, pmid), 'w') as fout:
       fout.write(doc['text'])
-    with open('{}/{}.sents'.format(DATA_DIR, pmid), 'w') as fout:
-      lines = []
-      for i,s in enumerate(doc['sents']):
-        lines.append('{}\t{}'.format(i, s))
+
+    with open('{}/documents/titles/{}.title'.format(utils.DATA_DIR, pmid), 'w') as fout:
+      fout.write(doc['title'])
+
+    with open('{}/documents/sents/{}.sents'.format(utils.DATA_DIR, pmid), 'w') as fout:
+      lines = [utils.clean_str(s) for i,f,s in doc['sents']]
       fout.write('\n'.join(lines))
-    f_cols = 'i c o label evidence text_index_i text_index_f sent_indices'.split()
-    with open('{}/{}.frames'.format(DATA_DIR, pmid), 'w') as fout:
-      lines = []
-      for f in doc['frames']:
-        lines.append('\t'.join([str(f[col]) for col in f_cols]))
+
+    with open('{}/documents/sents/{}.txt_idxs'.format(utils.DATA_DIR, pmid), 'w') as fout:
+      lines = [str(i)+'\t'+str(f) for i,f,s in doc['sents']]
+      fout.write('\n'.join(lines))
+
+    token_lines = { ext: [] for ext in ['tokens', 'sent_idxs', 'txt_idxs'] }
+    for idx, (sent_i, sent_f, s) in enumerate(doc['sents']):
+      tokens = utils.word_tokenize(s)
+      for t_i, t_f, t in tokens:
+        token_lines['tokens'].append(utils.clean_str(t))
+        token_lines['sent_idxs'].append(str(idx))
+        token_lines['txt_idxs'].append('{}\t{}'.format(sent_i + t_i, sent_i + t_f))
+    for ext, lines in token_lines.items():
+      with open('{}/documents/tokens/{}.{}'.format(utils.DATA_DIR, pmid, ext), 'w') as fout:
+        fout.write('\n'.join(lines))
+
+
+    with open('{}/documents/frames/{}.frames'.format(utils.DATA_DIR, pmid), 'w') as fout:
+      lines = ['\t'.join(map(lambda col: utils.clean_str(f[col]), utils.frame_cols)) for f in doc['frames']]
       fout.write('\n'.join(lines))
 
 def write_pmcid_splits(data):
@@ -128,5 +154,10 @@ def write_pmcid_splits(data):
   for group, pmids in group_pmids.items():
     valid_pmids = [p for p in pmids if int(p) in data]
     print('{:03} pmids, {:03} with data for {}'.format(len(pmids), len(valid_pmids), group))
-    with open('{}/{}_ids.txt'.format(DATA_DIR, group), 'w') as fout:
+    with open('{}/{}_ids.txt'.format(utils.DATA_DIR, group), 'w') as fout:
       fout.write('\n'.join([str(x) for x in valid_pmids]))
+
+if __name__ == '__main__':
+  data = read_data()
+  write_data(data)
+  write_pmcid_splits(data)
