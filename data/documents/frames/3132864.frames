@@ -1,3 +1,0 @@
-VALIDATION GROUP the sensitivity, specificity, PPV, NPV were 95%, 44%, 22%, and 98%	DERIVATION GROUP sensitivity, specificity, PPV, NPV were 95%, 42%, 25%, and 98% 	discriminative formula	14721	14802	Thus, both in our derivation and validation groups, our formula had a NPV of 98%.
-derivation group	validation group	discriminative formula	14721	14802	Thus, both in our derivation and validation groups, our formula had a NPV of 98%.
-formula	Glady's algorithm	diagnose restriction	17351	17497	Using Glady's algorithm we would avoid about the same number of tests (39%) but would only diagnose 136 of the 154 (89%) patients with restriction
