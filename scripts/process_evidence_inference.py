@@ -6,8 +6,7 @@ from imp import reload
 from Levenshtein import distance as string_distance
 
 sys.path.append('/home/ben/Desktop/evidence-inference/evidence_inference/preprocess/')
-import ico_reader
-reload(ico_reader)
+import preprocessor
 import utils
 
 def sample_evs(data):
@@ -41,15 +40,67 @@ def fix_offsets(ev, i, f, text):
 
   return ev, i, f
 
+def read_and_preprocess_data(abst_only = False):
+    print('Reading prompts and annotations')
+    prompts = [r for _,r in preprocessor.read_prompts().iterrows()]
+    annos = [a for _,a in preprocessor.read_annotations().iterrows()]
+
+    docs = {}
+    print('Reading articles')
+    for prompt in prompts:
+        pmcid = prompt['PMCID']
+        if pmcid not in docs:
+            docs[pmcid] = { 'article': preprocessor.get_article(pmcid),
+                            'pmcid': pmcid,
+                            'prompts': {}, }
+        prompt['Annotations'] = []
+        docs[pmcid]['prompts'][prompt['PromptID']] = prompt
+
+    print('Processing annotations')
+    for anno in annos:
+        ev = anno['Annotations']
+        if ev and type(ev) == str:
+            doc = docs[anno['PMCID']]
+            prompt = doc['prompts'][anno['PromptID']]
+            prompt['Annotations'].append(anno)
+
+    pmcids_docs = list(docs.items())
+    for pmcid, doc in pmcids_docs:
+        for pid, prompt in list(doc['prompts'].items()):
+            if not prompt['Annotations']:
+                del doc['prompts'][pid]
+        if not doc['prompts']:
+            del docs[pmcid]
+    
+    n_prompts = sum([len(d['prompts']) for d in docs.values()])
+    print('Retained {}/{} prompts with nonzero annotations'.format(n_prompts, len(prompts)))
+    print('Retained {}/{} docs with nonzero prompts'.format(len(docs), len(pmcids_docs)))
+    
+
+    if abst_only:
+        pmcids_docs = list(docs.items())
+        for pmcid, doc in pmcids_docs:
+            for pid, prompt in list(doc['prompts'].items()):
+                if not all([anno['In Abstract'] for anno in prompt['Annotations']]):
+                    del doc['prompts'][pid]
+            if not doc['prompts']:
+                del docs[pmcid]
+
+        n_prompts = sum([len(d['prompts']) for d in docs.values()])
+        print('Retained {}/{} prompts with all annotations in abstract'.format(n_prompts, len(prompts)))
+        print('Retained {}/{} docs with nonzero prompts'.format(len(docs), len(pmcids_docs)))
+
+    return docs
+
 
 def read_data(docs = None):
 
-  docs = docs or ico_reader.read_data(abst_only = False)
+  docs = docs or read_and_preprocess_data(abst_only = False)
 
   group_pmcids = { \
-          'train': ico_reader.pre.train_document_ids(),
-          'test':  ico_reader.pre.test_document_ids(),
-          'dev':   ico_reader.pre.validation_document_ids(), }
+          'train': preprocessor.train_document_ids(),
+          'test':  preprocessor.test_document_ids(),
+          'dev':   preprocessor.validation_document_ids(), }
   for group, pmcids in group_pmcids.items():
       valid_pmcids = [p for p in pmcids if p in docs]
       print('{:03} pmcids, {:03} with data for {}'.format(len(pmcids), len(valid_pmcids), group))
@@ -63,7 +114,7 @@ def read_data(docs = None):
 
       doc = docs[int(pmcid)]
       new_doc = {}
-      text = ico_reader.pre.extract_raw_text(doc['article'])
+      text = preprossor.extract_raw_text(doc['article'])
       title = doc['article'].get_title()
       sents = utils.sent_tokenize(text)
 
@@ -146,9 +197,9 @@ def write_data(data):
 
 def write_pmcid_splits(data):
   group_pmids = { \
-          'test':  ico_reader.pre.test_document_ids(),
-          'train': ico_reader.pre.train_document_ids(),
-          'dev':   ico_reader.pre.validation_document_ids(), }
+          'test':  preprocessor.test_document_ids(),
+          'train': preprocessor.train_document_ids(),
+          'dev':   preprocessor.validation_document_ids(), }
   
   print('Cleaning PMCID splits')
   for group, pmids in group_pmids.items():
