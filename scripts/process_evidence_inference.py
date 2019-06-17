@@ -1,11 +1,12 @@
 import sys, random, os
 from collections import namedtuple, defaultdict
 import numpy as np
-import matplotlib.pyplot as plt
 from imp import reload
 from Levenshtein import distance as string_distance
 
-sys.path.append('/home/ben/Desktop/evidence-inference/evidence_inference/preprocess/')
+sys.path.append('..')
+import config
+sys.path.append(os.path.join(config.EV_INF_DIR, 'evidence_inference', 'preprocess'))
 import preprocessor
 import utils
 
@@ -40,7 +41,7 @@ def fix_offsets(ev, i, f, text):
 
   return ev, i, f
 
-def read_and_preprocess_data(abst_only = False):
+def read_and_preprocess_docs(abst_only = False):
     print('Reading prompts and annotations')
     prompts = [r for _,r in preprocessor.read_prompts().iterrows()]
     annos = [a for _,a in preprocessor.read_annotations().iterrows()]
@@ -93,9 +94,9 @@ def read_and_preprocess_data(abst_only = False):
     return docs
 
 
-def read_data(docs = None):
+def process_docs(docs = None):
 
-  docs = docs or read_and_preprocess_data(abst_only = False)
+  docs = docs or read_and_preprocess_docs(abst_only = False)
 
   group_pmcids = { \
           'train': preprocessor.train_document_ids(),
@@ -114,7 +115,7 @@ def read_data(docs = None):
 
       doc = docs[int(pmcid)]
       new_doc = {}
-      text = preprossor.extract_raw_text(doc['article'])
+      text = preprocessor.extract_raw_text(doc['article'])
       title = doc['article'].get_title()
       sents = utils.sent_tokenize(text)
 
@@ -209,6 +210,6 @@ def write_pmcid_splits(data):
       fout.write('\n'.join([str(x) for x in valid_pmids]))
 
 if __name__ == '__main__':
-  data = read_data()
+  data = process_docs()
   write_data(data)
   write_pmcid_splits(data)

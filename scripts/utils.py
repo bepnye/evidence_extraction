@@ -77,7 +77,7 @@ def condense_labels(labels, neg_class = '0'):
     i += length
   return spans
 
-def span_tokenize(txt, tokenize):
+def span_tokenize(txt, tokenize, verbose = False):
   chunks = tokenize(txt)
   spans = []
   i = 0
@@ -90,7 +90,7 @@ def span_tokenize(txt, tokenize):
     if (txt[i:f] == chunk):
       spans.append((i,f,chunk))
       i = f
-    else:
+    elif verbose:
       print('Unable to find token:', i, f, chunk, txt[i:f])
   return spans
 

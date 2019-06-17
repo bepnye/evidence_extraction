@@ -1,11 +1,11 @@
 import sys, os, json
 import utils
 
-def generate_ev_trinary(output_name = 'ev_trinary', group = 'dev'):
+def generate_ev_trinary(group = 'dev', output_name = 'ev_trinary'):
 
   outdir = '{}/sent_classifier/{}/'.format(utils.DATA_DIR, output_name)
   try:
-    os.mkdir(outdir)
+    os.system('mkdir -p {}'.format(outdir))
   except OSError:
     print('Target dir: {} already exists'.format(outdir))
     input('Proceeding with generation...')
@@ -24,10 +24,10 @@ def generate_ev_trinary(output_name = 'ev_trinary', group = 'dev'):
         fout.write('\t'.join(map(str, [f.label, f.i, f.c, f.o, f.evidence])) + '\n')
 
 
-def generate_ev_binary(output_name = 'ev_binary', group = 'dev'):
+def generate_ev_binary(group = 'dev', output_name = 'ev_binary'):
   outdir = '{}/sent_classifier/{}/'.format(utils.DATA_DIR, output_name)
   try:
-    os.mkdir(outdir)
+    os.system('mkdir -p {}'.format(outdir))
   except OSError:
     print('Target dir: {} already exists'.format(outdir))
     input('Proceeding with generation...')
@@ -68,4 +68,6 @@ def generate_ev_binary(output_name = 'ev_binary', group = 'dev'):
 
 
 if __name__ == '__main__':
-  generate_ev_binary(*sys.argv[1:])
+  for group in ['train', 'dev']:
+    generate_ev_trinary(group)
+    generate_ev_binary(group)
