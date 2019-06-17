@@ -18,7 +18,7 @@ To run a given task, you must:
 For example, learn to identify evidence-bearing sentences, you would need to run the following:
 
 ```
-cd scripts
+cd scripts/
 python process_evidence_inference
 python generate_sentence_classifier_input
 cd ../models/sentence_classifier/
