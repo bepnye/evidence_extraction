@@ -1,4 +1,4 @@
-import sys, random, os
+import sys, random, os, csv
 from collections import namedtuple, defaultdict, Counter
 import numpy as np
 from imp import reload
@@ -24,81 +24,153 @@ def find_overlaps(ev, spans):
   overlaps = [utils.overlap(ev[0], ev[1], s[0], s[1]) for s in spans]
   return overlaps
 
+FIXES = { 'unchanged': 0, 'wiggled': 0, 'uncorrupted': 0, '???': 0 }
 def fix_offsets(ev, i, f, text):
   if ev == text[i:f]:
+    FIXES['unchanged'] += 1
     return ev, i, f
 
   search_range = 10
   if ev in text[i-search_range:f+search_range]:
     i = text.index(ev, i-search_range)
     f = i + len(ev)
+    FIXES['wiggled'] += 1
     return ev, i, f
 
-  span = text[i:f]
-  if string_distance(ev.strip(' '), span.strip(' ')) <= 3:
-    ev = span.strip(' ')
-    i = text.index(ev, i-search_range)
-    f = i + len(ev)
-    return ev, i, f
+  min_dist = max(3, len(ev)*0.05)
+  min_span = ''
+  min_i = 0
+  min_f = 0
+  for i_offset in range(-search_range, search_range):
+    for f_offset in range(-search_range, search_range):
+      span = text[i + i_offset:f + f_offset]
+      dist = string_distance(ev.strip(' '), span.strip(' '))
+      if dist <= min_dist:
+        min_dist = dist
+        min_span = span
+        min_i = i+i_offset
+        min_f = f+f_offset
+  if min_span:
+    FIXES['uncorrupted'] += 1
+    return min_span, min_i, min_f
 
   i = -1
   f = -1
+  FIXES['???'] += 1
   return ev, i, f
 
-def read_and_preprocess_docs(abst_only = False):
-    print('Reading prompts and annotations')
-    prompts = [r for _,r in preprocessor.read_prompts().iterrows()]
-    annos = [a for _,a in preprocessor.read_annotations().iterrows()]
+def check_offsets(docs = None):
+  anns = preprocessor.read_annotations().to_dict('records')
+  if not docs:
+    pmcids = list(preprocessor.train_document_ids()) + \
+             list(preprocessor.test_document_ids()) + \
+             list(preprocessor.validation_document_ids())
+    docs = { pmcid: {'txt': preprocessor.extract_raw_text(preprocessor.get_article(pmcid))}  for pmcid in pmcids }
 
-    docs = {}
-    print('Reading articles')
-    for prompt in prompts:
-        pmcid = prompt['PMCID']
-        if pmcid not in docs:
-            docs[pmcid] = { 'txt': preprocessor.extract_raw_text(preprocessor.get_article(pmcid)),
-                            'pmcid': pmcid,
-                            'prompts': {}, }
-        prompt['anns'] = []
-        docs[pmcid]['prompts'][prompt['PromptID']] = prompt
+  for idx, a in enumerate(anns):
+    if idx % int(len(anns)/100) == 0:
+      print('{}/{}'.format(idx, len(anns)))
+    if a['PMCID'] in docs:
+      ev = a['Annotations']
+      if ev and type(ev) == str:
+        ev, i, f = fix_offsets(ev, a['Evidence Start'], a['Evidence End'], docs[a['PMCID']]['txt'])
+        a['ev'] = ev
+        a['i'] = i
+        a['f'] = f
+  print(FIXES.items())
+  return anns
 
-    print('Processing annotations')
-    for anno in annos:
-        ev = anno['Annotations']
-        if ev and type(ev) == str:
-            doc = docs[anno['PMCID']]
-            prompt = doc['prompts'][anno['PromptID']]
-            ev, i, f = anno['Annotations'], anno['Evidence Start'], anno['Evidence End']
-            ev, i, f = fix_offsets(ev, i, f, doc['txt'])
-            if i >= 0:
-              prompt['anns'].append((ev, i, f))
+def read_docs(abst_only = False):
+  print('Reading prompts and annotations')
+  prompts = preprocessor.read_prompts().to_dict('records')
+  annotations = preprocessor.read_annotations().to_dict('records')
 
-    pmcids_docs = list(docs.items())
-    for pmcid, doc in pmcids_docs:
-        for pid, prompt in list(doc['prompts'].items()):
-            if not prompt['anns']:
-                del doc['prompts'][pid]
-        if not doc['prompts']:
-            del docs[pmcid]
-    
-    n_prompts = sum([len(d['prompts']) for d in docs.values()])
-    print('Retained {}/{} prompts with nonzero annotations'.format(n_prompts, len(prompts)))
-    print('Retained {}/{} docs with nonzero prompts'.format(len(docs), len(pmcids_docs)))
-    
-    return docs
+  def init_doc(pmcid):
+    doc = { 'pmcid': pmcid, 'prompts': {} }
+    article = preprocessor.get_article(pmcid)
+    doc['title'] = article.get_title()
+    if (abst_only):
+      doc['txt'] = preprocessor.extract_raw_abstract(article)
+      doc['offset'] = len("TITLE:\n" + doc['title'] + "\n\n")
+    else:
+      doc['txt'] = preprocessor.extract_raw_text(article)
+      doc['offset'] = 0
+    return doc
+
+  docs = {}
+  print('Reading articles')
+  for prompt in prompts:
+    pmcid = prompt['PMCID']
+    if pmcid not in docs:
+      docs[pmcid] = init_doc(pmcid)
+
+    prompt['anns'] = []
+    docs[pmcid]['prompts'][prompt['PromptID']] = prompt
+
+  n_anns = 0
+  bad_offsets = []
+  print('Processing annotations')
+  for ann in annotations:
+    if not abst_only or ann['In Abstract']:
+      ev = ann['Annotations']
+      if ev and type(ev) == str:
+        doc = docs[ann['PMCID']]
+        prompt = doc['prompts'][ann['PromptID']]
+        ev = ann['Annotations']
+        i = ann['Evidence Start'] - doc['offset']
+        f = ann['Evidence End'] - doc['offset']
+
+        ev, i, f = fix_offsets(ev, i, f, doc['txt'])
+        if i >= 0:
+          ann['i'] = i
+          ann['f'] = f
+          ann['ev'] = ev
+          prompt['anns'].append(ann)
+          n_anns += 1
+        else:
+          bad_offsets.append((ev, doc['txt'][ann['Evidence Start']:ann['Evidence End']]))
+
+  pmcids_docs = list(docs.items())
+  for pmcid, doc in pmcids_docs:
+    for pid, prompt in list(doc['prompts'].items()):
+      if not prompt['anns']:
+        del doc['prompts'][pid]
+    if not doc['prompts']:
+      del docs[pmcid]
+  
+  n_prompts = sum([len(d['prompts']) for d in docs.values()])
+  print('Retained {}/{} valid annotations ({} w/ bad offsets)'.format(\
+      n_anns, len(annotations), len(bad_offsets)))
+  print('Retained {}/{} prompts with nonzero annotations'.format(n_prompts, len(prompts)))
+  print('Retained {}/{} docs with nonzero prompts'.format(len(docs), len(pmcids_docs)))
+  
+  return docs
+
+def view_abst_anns(docs):
+  with open('out_ben.csv', 'w') as fp:
+    fields = ['PMCID', 'Intervention', 'Comparator', 'Outcome']
+    writer = csv.DictWriter(fp, fieldnames=fields)
+    writer.writeheader()
+    for pmid, doc in docs.items():
+      for p in doc['prompts'].values():
+        for a in p['anns']:
+          assert doc['txt'][a['i']:a['f']] == a['ev']
+      writer.writerow({f:p[f] for f in fields})
+
 
 def process_docs(docs = None):
 
   docs = docs or read_and_preprocess_docs(abst_only = False)
 
   group_pmcids = { \
-          'train': preprocessor.train_document_ids(),
-          'test':  preprocessor.test_document_ids(),
-          'dev':   preprocessor.validation_document_ids(), }
+      'train': preprocessor.train_document_ids(),
+      'test':  preprocessor.test_document_ids(),
+      'dev':   preprocessor.validation_document_ids(), }
 
   for group, pmcids in group_pmcids.items():
-      valid_pmcids = [p for p in pmcids if p in docs]
-      print('{:03} pmcids, {:03} with data for {}'.format(len(pmcids), len(valid_pmcids), group))
-      group_pmcids[group] = valid_pmcids
+    valid_pmcids = [p for p in pmcids if p in docs]
+    print('{:03} pmcids, {:03} with data for {}'.format(len(pmcids), len(valid_pmcids), group))
+    group_pmcids[group] = valid_pmcids
 
   data = {}
   for group, pmcids in group_pmcids.items():
@@ -187,9 +259,9 @@ def write_data(data):
 
 def write_pmcid_splits(data):
   group_pmids = { \
-          'test':  preprocessor.test_document_ids(),
-          'train': preprocessor.train_document_ids(),
-          'dev':   preprocessor.validation_document_ids(), }
+      'test':  preprocessor.test_document_ids(),
+      'train': preprocessor.train_document_ids(),
+      'dev':   preprocessor.validation_document_ids(), }
   
   print('Cleaning PMCID splits')
   for group, pmids in group_pmids.items():

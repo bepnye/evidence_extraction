@@ -105,7 +105,7 @@ def pipeline(text_str, umls_mode=True):
     # hyphens to spaces
     text_str = text_str.replace('-', ' ')
     # 3. conversion to lowercase
-    # text_str = text_str.lower()
+    text_str = text_str.lower()
     # 2. syntactic uninverstion
     if umls_mode:
         text_str = syn_uninv(text_str)

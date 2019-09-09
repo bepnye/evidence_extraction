@@ -68,6 +68,7 @@ def frame_overlap(s1, s2):
   return overlap(x1, x2, y1, y2)
 
 def condense_labels(labels, neg_class = '0'):
+  labels = [str(l) for l in labels]
   groups = [(k, sum(1 for _ in g)) for k,g in groupby(labels)]
   spans = []
   i = 0
