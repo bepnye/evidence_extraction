@@ -1,0 +1,395 @@
+serverport: 8066
+options: []
+terms: dextran-70 infusion was administered at a dose of 7.5 ml/kg before the initiation of cardiopulmonary bypass and at a dose of 12.5 ml/kg after the cessation of cardiopulmonary bypass 
+input text: 
+ dextran-70 infusion was administered at a dose of 7.5 ml/kg before the initiation of cardiopulmonary bypass and at a dose of 12.5 ml/kg after the cessation of cardiopulmonary bypass 
+Utterance:
+ Id: 00000000.tx.1
+ Utterance text: dextran-70 infusion was administered at a dose of 7.5 ml/kg before the initiation of cardiopulmonary bypass and at a dose of 12.5 ml/kg after the cessation of cardiopulmonary bypass
+ Position: (0, 181)
+Phrase:
+ text: dextran-70 infusion
+ Minimal Commitment Parse: [mod([lexmatch([dextran]),inputmatch([dextran]),tag(noun),tokens([dextran])]),punc([inputmatch([-]),tokens([])]),shapes([inputmatch([70]),features([integer]),tokens([70])]),head([lexmatch([infusion]),inputmatch([infusion]),tag(noun),tokens([infusion])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0590145
+   Concept Name: Dextran 70 infusion
+   Preferred Name: Dextran 70 infusion solution bottle
+   Matched Words: [dextran, 70, infusion]
+   Semantic Types: [clnd]
+   MatchMap: [[[1, 1], [1, 1], 0], [[2, 2], [2, 2], 0], [[3, 3], [3, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0], [[phrase start: 2, phrase end: 2], [concept start: 2, concept end: 2], lexical variation: 0], [[phrase start: 3, phrase end: 3], [concept start: 3, concept end: 3], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [SNOMEDCT_US]
+   Positional Info: [(0, 19)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: was
+ Minimal Commitment Parse: [aux([lexmatch([was]),inputmatch([was]),tag(aux),tokens([was])])]
+Candidates:
+Mappings:
+Phrase:
+ text: administered
+ Minimal Commitment Parse: [verb([lexmatch([administered]),inputmatch([administered]),tag(verb),tokens([administered])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1521801
+   Concept Name: Administered
+   Preferred Name: Having administered
+   Matched Words: [administered]
+   Semantic Types: [ftcn]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [MTH, NCI]
+   Positional Info: [(24, 12)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: at a dose
+ Minimal Commitment Parse: [prep([lexmatch([at]),inputmatch([at]),tag(prep),tokens([at])]),det([lexmatch([a]),inputmatch([a]),tag(det),tokens([a])]),head([lexmatch([dose]),inputmatch([dose]),tag(noun),tokens([dose])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0178602
+   Concept Name: DOSE
+   Preferred Name: Dosage
+   Matched Words: [dose]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, CSP, LNC, MTH, NCI, NCI_BRIDG, NCI_CDISC, NCI_CDISC-GLOSS, NCI_FDA, NCI_NCI-GLOSS, NCI_UCUM, SNOMEDCT_US]
+   Positional Info: [(42, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0869039
+   Concept Name: Dose
+   Preferred Name: Unit dose
+   Matched Words: [dose]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, LCH, MTH, NCI, SNOMEDCT_US]
+   Positional Info: [(42, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1114758
+   Concept Name: Dose #
+   Preferred Name: Dose number:Number:Point in time:^Patient:Quantitative
+   Matched Words: [dose]
+   Semantic Types: [clna]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [LNC, MTH]
+   Positional Info: [(42, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: of 7.5 ml/kg
+ Minimal Commitment Parse: [prep([lexmatch([of]),inputmatch([of]),tag(prep),tokens([of])]),shapes([inputmatch([7,.,5]),features([real_number]),tokens([7,5])]),mod([lexmatch([ml]),inputmatch([ml]),tag(noun),tokens([ml])]),punc([inputmatch([/]),tokens([])]),head([lexmatch([kg]),inputmatch([kg]),tag(noun),tokens([kg])])]
+Candidates:
+Mappings:
+ Map Score: -916
+   Score: -756
+   Concept Id: C0470397
+   Concept Name: /7.5 mL
+   Preferred Name: per 7.5 Milliliters
+   Matched Words: [7, 5, ml]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0], [[2, 2], [2, 2], 0], [[3, 3], [3, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0], [[phrase start: 2, phrase end: 2], [concept start: 2, concept end: 2], lexical variation: 0], [[phrase start: 3, phrase end: 3], [concept start: 3, concept end: 3], lexical variation: 0]]
+   is Head?: false
+   is Overmatch?: false
+   Sources: [NCI, NCI_CDISC]
+   Positional Info: [(50, 6)]
+   Pruning Status: 0
+   Negation Status: 0
+   Score: -812
+   Concept Id: C0022718
+   Concept Name: KG
+   Preferred Name: Kyrgyzstan
+   Matched Words: [kg]
+   Semantic Types: [geoa]
+   MatchMap: [[[4, 4], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 4, phrase end: 4], [concept start: 4, concept end: 4], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [AOD, LCH, MSH, MTH, NCI, NCI_CDISC, NCI_GENC, SNOMEDCT_US]
+   Positional Info: [(57, 2)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -916
+   Score: -756
+   Concept Id: C0470397
+   Concept Name: /7.5 mL
+   Preferred Name: per 7.5 Milliliters
+   Matched Words: [7, 5, ml]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0], [[2, 2], [2, 2], 0], [[3, 3], [3, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0], [[phrase start: 2, phrase end: 2], [concept start: 2, concept end: 2], lexical variation: 0], [[phrase start: 3, phrase end: 3], [concept start: 3, concept end: 3], lexical variation: 0]]
+   is Head?: false
+   is Overmatch?: false
+   Sources: [NCI, NCI_CDISC]
+   Positional Info: [(50, 6)]
+   Pruning Status: 0
+   Negation Status: 0
+   Score: -812
+   Concept Id: C0439209
+   Concept Name: kg
+   Preferred Name: Kilogram
+   Matched Words: [kg]
+   Semantic Types: [qnco]
+   MatchMap: [[[4, 4], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 4, phrase end: 4], [concept start: 4, concept end: 4], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, MTH, NCI, NCI_CDISC, NCI_FDA, NCI_ICH, NCI_NCI-GLOSS, NCI_NCPDP, NCI_UCUM, SNOMEDCT_US]
+   Positional Info: [(57, 2)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -916
+   Score: -756
+   Concept Id: C0470397
+   Concept Name: /7.5 mL
+   Preferred Name: per 7.5 Milliliters
+   Matched Words: [7, 5, ml]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0], [[2, 2], [2, 2], 0], [[3, 3], [3, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0], [[phrase start: 2, phrase end: 2], [concept start: 2, concept end: 2], lexical variation: 0], [[phrase start: 3, phrase end: 3], [concept start: 3, concept end: 3], lexical variation: 0]]
+   is Head?: false
+   is Overmatch?: false
+   Sources: [NCI, NCI_CDISC]
+   Positional Info: [(50, 6)]
+   Pruning Status: 0
+   Negation Status: 0
+   Score: -812
+   Concept Id: C4054209
+   Concept Name: /kg
+   Preferred Name: Per Kilogram
+   Matched Words: [kg]
+   Semantic Types: [qnco]
+   MatchMap: [[[4, 4], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 4, phrase end: 4], [concept start: 4, concept end: 4], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [NCI, NCI_CDISC, NCI_UCUM]
+   Positional Info: [(57, 2)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: before the initiation
+ Minimal Commitment Parse: [prep([lexmatch([before]),inputmatch([before]),tag(prep),tokens([before])]),det([lexmatch([the]),inputmatch([the]),tag(det),tokens([the])]),head([lexmatch([initiation]),inputmatch([initiation]),tag(noun),tokens([initiation])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0589507
+   Concept Name: Initiation
+   Preferred Name: Cognitive function: initiation
+   Matched Words: [initiation]
+   Semantic Types: [menp]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, MTH, SNOMEDCT_US]
+   Positional Info: [(71, 10)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1158830
+   Concept Name: Initiation
+   Preferred Name: Transcription Initiation
+   Matched Words: [initiation]
+   Semantic Types: [genf]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [MTH, NCI, NLMSubSyn]
+   Positional Info: [(71, 10)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1704686
+   Concept Name: Initiation
+   Preferred Name: Initiation
+   Matched Words: [initiation]
+   Semantic Types: [ftcn]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [LNC, MTH, NCI]
+   Positional Info: [(71, 10)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: of cardiopulmonary bypass
+ Minimal Commitment Parse: [prep([lexmatch([of]),inputmatch([of]),tag(prep),tokens([of])]),head([lexmatch([cardiopulmonary bypass]),inputmatch([cardiopulmonary,bypass]),tag(noun),tokens([cardiopulmonary,bypass])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0007202
+   Concept Name: cardio pulmonary bypass
+   Preferred Name: Cardiopulmonary Bypass
+   Matched Words: [cardio, pulmonary, bypass]
+   Semantic Types: [topp]
+   MatchMap: [[[1, 2], [1, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 2], [concept start: 1, concept end: 2], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [AOD, CHV, CSP, LCH, LCH_NW, MSH, MTH, MTHICD9, NLMSubSyn, SNMI, SNOMEDCT_US]
+   Positional Info: [(85, 22)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: and
+ Minimal Commitment Parse: [conj([lexmatch([and]),inputmatch([and]),tag(conj),tokens([and])])]
+Candidates:
+Mappings:
+Phrase:
+ text: at a dose
+ Minimal Commitment Parse: [prep([lexmatch([at]),inputmatch([at]),tag(prep),tokens([at])]),det([lexmatch([a]),inputmatch([a]),tag(det),tokens([a])]),head([lexmatch([dose]),inputmatch([dose]),tag(noun),tokens([dose])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0178602
+   Concept Name: DOSE
+   Preferred Name: Dosage
+   Matched Words: [dose]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, CSP, LNC, MTH, NCI, NCI_BRIDG, NCI_CDISC, NCI_CDISC-GLOSS, NCI_FDA, NCI_NCI-GLOSS, NCI_UCUM, SNOMEDCT_US]
+   Positional Info: [(117, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0869039
+   Concept Name: Dose
+   Preferred Name: Unit dose
+   Matched Words: [dose]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [CHV, LCH, MTH, NCI, SNOMEDCT_US]
+   Positional Info: [(117, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1114758
+   Concept Name: Dose #
+   Preferred Name: Dose number:Number:Point in time:^Patient:Quantitative
+   Matched Words: [dose]
+   Semantic Types: [clna]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [LNC, MTH]
+   Positional Info: [(117, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: of 12.5 ml/kg
+ Minimal Commitment Parse: [prep([lexmatch([of]),inputmatch([of]),tag(prep),tokens([of])]),shapes([inputmatch([12,.,5]),features([real_number]),tokens([12,5])]),mod([lexmatch([ml]),inputmatch([ml]),tag(noun),tokens([ml])]),punc([inputmatch([/]),tokens([])]),head([lexmatch([kg]),inputmatch([kg]),tag(noun),tokens([kg])])]
+Candidates:
+Mappings:
+ Map Score: -888
+   Score: -694
+   Concept Id: C4517544
+   Concept Name: 12.5
+   Preferred Name: 12.5
+   Matched Words: [12, 5]
+   Semantic Types: [qnco]
+   MatchMap: [[[1, 1], [1, 1], 0], [[2, 2], [2, 2], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0], [[phrase start: 2, phrase end: 2], [concept start: 2, concept end: 2], lexical variation: 0]]
+   is Head?: false
+   is Overmatch?: false
+   Sources: [SNOMEDCT_US]
+   Positional Info: [(125, 4)]
+   Pruning Status: 0
+   Negation Status: 0
+   Score: -861
+   Concept Id: C1300574
+   Concept Name: mL/kg
+   Preferred Name: mL/kg
+   Matched Words: [ml, kg]
+   Semantic Types: [qnco]
+   MatchMap: [[[3, 3], [1, 1], 0], [[4, 4], [2, 2], 0]]
+   MatchMap alt. repr.: [[[phrase start: 3, phrase end: 3], [concept start: 3, concept end: 3], lexical variation: 0], [[phrase start: 4, phrase end: 4], [concept start: 4, concept end: 4], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [NCI, NCI_CDISC, NCI_UCUM, SNOMEDCT_US]
+   Positional Info: [(130, 5)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: after the cessation
+ Minimal Commitment Parse: [prep([lexmatch([after]),inputmatch([after]),tag(prep),tokens([after])]),det([lexmatch([the]),inputmatch([the]),tag(det),tokens([the])]),head([lexmatch([cessation]),inputmatch([cessation]),tag(noun),tokens([cessation])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C1880019
+   Concept Name: Cessation
+   Preferred Name: Cessation
+   Matched Words: [cessation]
+   Semantic Types: [acty]
+   MatchMap: [[[1, 1], [1, 1], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 1], [concept start: 1, concept end: 1], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [NCI]
+   Positional Info: [(146, 9)]
+   Pruning Status: 0
+   Negation Status: 0
+Phrase:
+ text: of cardiopulmonary bypass
+ Minimal Commitment Parse: [prep([lexmatch([of]),inputmatch([of]),tag(prep),tokens([of])]),head([lexmatch([cardiopulmonary bypass]),inputmatch([cardiopulmonary,bypass]),tag(noun),tokens([cardiopulmonary,bypass])])]
+Candidates:
+Mappings:
+ Map Score: -1000
+   Score: -1000
+   Concept Id: C0007202
+   Concept Name: cardio pulmonary bypass
+   Preferred Name: Cardiopulmonary Bypass
+   Matched Words: [cardio, pulmonary, bypass]
+   Semantic Types: [topp]
+   MatchMap: [[[1, 2], [1, 3], 0]]
+   MatchMap alt. repr.: [[[phrase start: 1, phrase end: 2], [concept start: 1, concept end: 2], lexical variation: 0]]
+   is Head?: true
+   is Overmatch?: false
+   Sources: [AOD, CHV, CSP, LCH, LCH_NW, MSH, MTH, MTHICD9, NLMSubSyn, SNMI, SNOMEDCT_US]
+   Positional Info: [(159, 22)]
+   Pruning Status: 0
+   Negation Status: 0

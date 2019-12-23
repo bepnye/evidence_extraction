@@ -24,6 +24,9 @@ with open(os.path.join(DATA_ROOT, 'str_to_cui.pck'), 'rb') as f:
 with open(os.path.join(DATA_ROOT, 'cui_to_mh.pck'), 'rb') as f:
     cui_to_mh = pickle.load(f)
 
+with open(os.path.join(DATA_ROOT, 'dui_to_tn.pck'), 'rb') as f:
+    dui_to_tn = pickle.load(f)
+
 # some extra filtering rules to improve precision
 
 drop_terms = set()
@@ -150,9 +153,10 @@ def matcher(text, chunks=False):
 
                 for entry in str_to_cui[window_lemma]:
                     mh = cui_to_mh[entry].copy()
-                    mh['start_idx'] = i
-                    mh['end_idx'] = i+window
-                    mh['source_text'] = doc[mh['start_idx']:mh['end_idx']].text
+                    mh['start_idx'] = doc[i].idx
+                    mh['end_idx'] = doc[i+window-1].idx + len(doc[i+window-1].text)
+                    mh['source_text'] = doc.text[mh['start_idx']:mh['end_idx']]
+                    mh['tree_nums'] = dui_to_tn.get(mh['mesh_ui'], [])
                     matches.append(mh)
 
         window -= 1

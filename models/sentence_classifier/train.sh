@@ -1,4 +1,4 @@
-DATA_DIR=../../data/sent_classifier/ev_trinary
+DATA_DIR=../../data/sent_classifier/abst_binary
 OUTPUT_DIR=${DATA_DIR}/results
 MODEL_DIR=${DATA_DIR}/model
 

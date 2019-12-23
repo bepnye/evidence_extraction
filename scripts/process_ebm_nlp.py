@@ -1,38 +1,43 @@
 import sys
 import os
+import json
 from glob import glob
 from shutil import copyfile
 
+import pandas as pd
 
-from utils import readlines
 sys.path.append('..')
 import config
+import utils
+import classes
 
-def process_group(group, e, phase = 'starting_spans', label_suffix = ''):
-  docs = {}
-  pmids = readlines(os.path.join(config.EBM_NLP_DIR, 'pmids_{}.txt'.format(group)))
+GROUPS = ['test', 'train', 'dev']
+def read_docs(phase = 'starting_spans'):
+	pmid_groups = {}
+	for g in GROUPS:
+		pmids = utils.readlines(os.path.join(config.EBM_NLP_DIR, 'pmids_{}.txt'.format(g)))
+		for pmid in pmids:
+			pmid_groups[pmid] = g
 
-  group_fname = '../data/id_splits/ebm_nlp/{}.txt'.format(group)
-  if not os.path.isfile(group_fname):
-    with open(group_fname, 'w') as fout: 
-      fout.write('\n'.join(pmids))
+	def get_e_fname(pmid, e):
+		if pmid_groups[pmid] == 'test':
+			subdir = os.path.join('test', 'gold')
+		else:
+			subdir = 'train'
+		f = '{}.AGGREGATED.ann'.format(pmid)
+		return os.path.join(config.EBM_NLP_DIR, 'annotations', 'aggregated', phase, e, subdir, f)
 
-  for pmid in pmids:
-    f_src = os.path.join(config.EBM_NLP_DIR, 'documents', '{}.tokens'.format(pmid))
-    f_dest = os.path.join('../data/documents/tokens/', '{}.tokens'.format(pmid))
-    copyfile(f_src, f_dest)
-    
-    f_src = os.path.join(config.EBM_NLP_DIR, 'documents', '{}.txt'.format(pmid))
-    f_dest = os.path.join('../data/documents/txts/', '{}.txt'.format(pmid))
-    copyfile(f_src, f_dest)
-
-    f_src = os.path.join(config.EBM_NLP_DIR, 'annotations', 'aggregated', phase, e, group, '{}.AGGREGATED.ann'.format(pmid))
-    if os.path.isfile(f_src):
-      f_dest = '../data/documents/tokens/{}.{}{}'.format(pmid, e, label_suffix)
-      copyfile(f_src, f_dest)
-
-if __name__ == '__main__':
-  for group in ['test', 'train', 'dev']:
-    for e in ['participants', 'interventions', 'outcomes']:
-      process_group(group, e, 'starting_spans')
-      process_group(group, e, 'hierarchical_labels', '_detailed')
+	docs = []
+	for pmid, group in pmid_groups.items():
+		tokens = utils.readlines(os.path.join(config.EBM_NLP_DIR, 'documents', '{}.tokens'.format(pmid)))
+		text, token_offsets = utils.join_tokens(tokens)
+		doc = classes.Doc(pmid, text)
+		doc.group = group
+		for e in ['participants', 'interventions', 'outcomes']:
+			labels = [int(l) for l in utils.readlines(get_e_fname(pmid, e))]
+			for token_i, token_f, l in utils.condense_labels(labels):
+				char_i = token_offsets[token_i][0]
+				char_f = token_offsets[token_f-1][1]
+				doc.labels[e].append(classes.Span(char_i, char_f, text[char_i:char_f]))
+		docs.append(doc)
+	return docs

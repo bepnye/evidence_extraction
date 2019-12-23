@@ -90,7 +90,7 @@ def get_ev_inf():
 agg_names = ['hmm', 'mv', 'union', 'intersection']
 
 def get_docs(default_span = 'mv'):
-  ebm_nlp = '/Users/elizabethwagoner/Desktop/ben/EBM-NLP/ebm_nlp_2_00'
+  ebm_nlp = '/home/ben/Desktop/EBM-NLP/ebm_nlp_2_00'
   ann_dir = '{}/annotations'.format(ebm_nlp)
 
   pmids = utils.readlines('../data/id_splits/ebm_nlp/test.txt')
@@ -104,7 +104,7 @@ def get_docs(default_span = 'mv'):
 
     for el in ['interventions', 'outcomes']:
 
-      agg_fname = '{}/aggregated/starting_spans/{}/test/{}.AGGREGATED.ann'.format(ann_dir, el, p)
+      agg_fname = '{}/aggregated/starting_spans/{}/test/gold/{}.AGGREGATED.ann'.format(ann_dir, el, p)
       indv_fnames = glob.glob('{}/individual/phase_1/{}/test/gold/{}.*.ann'.format(ann_dir, el, p))
       e = el[0]
       

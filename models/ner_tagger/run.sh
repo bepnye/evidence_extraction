@@ -2,39 +2,19 @@
 # current dir of this script
 CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 
-data_prefix="p1_all"
-data_dir="data/${data_prefix}/"
-model_dir="data/${data_prefix}/model/"
-output_dir="data/${data_prefix}/results/"
+data_prefix="ebm_nlp_ab3p"
+data_dir="${CDIR}/data/${data_prefix}"
+output_dir="${data_dir}/results/"
 
-train=1
+model_dir="${data_dir}/model/"
 
-if [ $train == 1 ]; then
-    do_train=True
-    do_predict=False
-    read -p "Clearing output_dir $output_dir, [y] to proceed: " ok
-    case ${ok:0:1} in
-        y|Y )
-            echo "    proceeding"
-            rm -rf $output_dir/*
-            mkdir -p $output_dir
-        ;;
-        * )
-            echo "    aborting"
-            exit 1
-        ;;
-    esac
-else
-    do_train=False
-    do_predict=True
-fi
+bert_base_dir="/home/ben/Desktop/scibert_scivocab_uncased"
 
-bert_base_dir=/home/ben/Desktop/biobert_pubmed/
 python bert_lstm_ner.py   \
 	--visible_devices="0" \
-        --task_name="NER"  \
-        --do_train=$do_train \
-        --do_predict=$do_predict \
+        --task_name="ner"  \
+        --do_train=True \
+        --do_predict=True \
         --collapse_wp=True \
         --use_feature_based=False \
         --use_crf=True \
@@ -43,7 +23,7 @@ python bert_lstm_ner.py   \
         --output_dir=$output_dir \
         --label_idx=1 \
         --vocab_file=${bert_base_dir}/vocab.txt  \
-        --do_lower_case=False \
+        --do_lower_case=True \
         --bert_config_file=${bert_base_dir}/bert_config.json \
         --init_checkpoint=${bert_base_dir} \
         --max_seq_length=150   \
