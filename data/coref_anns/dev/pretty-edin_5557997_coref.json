@@ -1,0 +1,171 @@
+{
+  "i": {
+    "10": {
+      "name": "1 control group",
+      "spans": [
+        {
+          "i": "4195",
+          "f": "4208",
+          "txt": "control group"
+        },
+        {
+          "i": "4825",
+          "f": "4838",
+          "txt": "control group"
+        },
+        {
+          "i": "4844",
+          "f": "4857",
+          "txt": "control group"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    },
+    "14": {
+      "name": "2 Endsolv R",
+      "spans": [
+        {
+          "i": "4219",
+          "f": "4228",
+          "txt": "Endsolv R"
+        },
+        {
+          "i": "4960",
+          "f": "4969",
+          "txt": "Endsolv R"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Endsolv R"
+        }
+      ]
+    },
+    "17": {
+      "name": "3 ultrasonic cleaning",
+      "spans": [
+        {
+          "i": "4239",
+          "f": "4258",
+          "txt": "ultrasonic cleaning"
+        },
+        {
+          "i": "4891",
+          "f": "4901",
+          "txt": "ultrasonic"
+        },
+        {
+          "i": "5096",
+          "f": "5115",
+          "txt": "ultrasonic cleaning"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Ultrasonic cleaning"
+        }
+      ]
+    },
+    "20": {
+      "name": "4 Clearfil Repair",
+      "spans": [
+        {
+          "i": "4269",
+          "f": "4284",
+          "txt": "Clearfil Repair"
+        },
+        {
+          "i": "5120",
+          "f": "5135",
+          "txt": "Clearfil Repair"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Clearfil Repair"
+        }
+      ]
+    },
+    "24": {
+      "name": "5 Panavia F 2.0 bonding cement",
+      "spans": [
+        {
+          "i": "4325",
+          "f": "4353",
+          "txt": "Panavia F 2.0 bonding cement"
+        }
+      ]
+    }
+  },
+  "o": {
+    "26": {
+      "name": "1 The bond strength",
+      "spans": [
+        {
+          "i": "4355",
+          "f": "4372",
+          "txt": "The bond strength"
+        },
+        {
+          "i": "4728",
+          "f": "4755",
+          "txt": "mean push-out bond strength"
+        },
+        {
+          "i": "4794",
+          "f": "4807",
+          "txt": "bond strength"
+        },
+        {
+          "i": "4939",
+          "f": "4956",
+          "txt": "The bond strength"
+        },
+        {
+          "i": "5198",
+          "f": "5211",
+          "txt": "bond strength"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean push-out bond strength"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean push-out bond strength"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean push-out bond strength"
+        }
+      ]
+    },
+    "29": {
+      "name": "2 push-out test",
+      "spans": [
+        {
+          "i": "4479",
+          "f": "4492",
+          "txt": "push-out test"
+        }
+      ]
+    }
+  }
+}

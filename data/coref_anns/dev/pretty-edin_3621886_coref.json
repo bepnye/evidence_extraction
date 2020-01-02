@@ -1,0 +1,206 @@
+{
+  "i": {
+    "6": {
+      "name": "1 pentoxifylline",
+      "spans": [
+        {
+          "i": "8720",
+          "f": "8734",
+          "txt": "pentoxifylline"
+        },
+        {
+          "i": "8736",
+          "f": "8739",
+          "txt": "PTX"
+        },
+        {
+          "i": "8961",
+          "f": "8964",
+          "txt": "PTX"
+        },
+        {
+          "i": "9427",
+          "f": "9430",
+          "txt": "PTX"
+        },
+        {
+          "i": "9738",
+          "f": "9741",
+          "txt": "PTX"
+        },
+        {
+          "i": "9760",
+          "f": "9763",
+          "txt": "PTX"
+        },
+        {
+          "i": "9837",
+          "f": "9840",
+          "txt": "PTX"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Pentoxifylline "
+        }
+      ]
+    },
+    "14": {
+      "name": "2 placebo",
+      "spans": [
+        {
+          "i": "8933",
+          "f": "8940",
+          "txt": "placebo"
+        },
+        {
+          "i": "9399",
+          "f": "9406",
+          "txt": "placebo"
+        },
+        {
+          "i": "9701",
+          "f": "9708",
+          "txt": "placebo"
+        }
+      ]
+    },
+    "43": {
+      "name": "3 Control",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "6",
+          "txt": "Control"
+        }
+      ]
+    }
+  },
+  "o": {
+    "18": {
+      "name": "1 flow-mediated dilation",
+      "spans": [
+        {
+          "i": "9059",
+          "f": "9081",
+          "txt": "flow-mediated dilation"
+        },
+        {
+          "i": "9083",
+          "f": "9086",
+          "txt": "FMD"
+        }
+      ]
+    },
+    "22": {
+      "name": "2 Nitroglycerin-mediated dilation",
+      "spans": [
+        {
+          "i": "9126",
+          "f": "9157",
+          "txt": "Nitroglycerin-mediated dilation"
+        },
+        {
+          "i": "9159",
+          "f": "9164",
+          "txt": "NTGMD"
+        },
+        {
+          "i": "9504",
+          "f": "9509",
+          "txt": "NTGMD"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Nitroglycerin-mediated dilation (week 4)"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Nitroglycerin-mediated dilation (week 8)"
+        }
+      ]
+    },
+    "26": {
+      "name": "3 markers of inflammation",
+      "spans": [
+        {
+          "i": "9182",
+          "f": "9205",
+          "txt": "markers of inflammation"
+        }
+      ]
+    },
+    "28": {
+      "name": "4 cellular immune activation",
+      "spans": [
+        {
+          "i": "9207",
+          "f": "9233",
+          "txt": "cellular immune activation"
+        }
+      ]
+    },
+    "30": {
+      "name": "5 coagulation",
+      "spans": [
+        {
+          "i": "9235",
+          "f": "9246",
+          "txt": "coagulation"
+        }
+      ]
+    },
+    "32": {
+      "name": "6 metabolism",
+      "spans": [
+        {
+          "i": "9252",
+          "f": "9262",
+          "txt": "metabolism"
+        }
+      ]
+    },
+    "35": {
+      "name": "7 FMD after 8 weeks",
+      "spans": [
+        {
+          "i": "9369",
+          "f": "9386",
+          "txt": "FMD after 8 weeks"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Flow-mediated dilation (week 8)"
+        }
+      ]
+    },
+    "37": {
+      "name": "8 biomarkers",
+      "spans": [
+        {
+          "i": "9589",
+          "f": "9599",
+          "txt": "biomarkers"
+        }
+      ]
+    },
+    "40": {
+      "name": "9 tumor necrosis factor receptor-1 (sTNFRI)",
+      "spans": [
+        {
+          "i": "9639",
+          "f": "9680",
+          "txt": "tumor necrosis factor receptor-1 (sTNFRI)"
+        },
+        {
+          "i": "9932",
+          "f": "9938",
+          "txt": "sTNFRI"
+        }
+      ]
+    }
+  }
+}

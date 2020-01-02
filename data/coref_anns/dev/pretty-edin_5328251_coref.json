@@ -1,0 +1,176 @@
+{
+  "i": {
+    "8": {
+      "name": "1 2 L PEG-ELP",
+      "spans": [
+        {
+          "i": "10328",
+          "f": "10339",
+          "txt": "2 L PEG-ELP"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "2 L PEG-ELP (in Bristol 1-2)"
+        }
+      ]
+    },
+    "13": {
+      "name": "2 bisacodyl plus 2 L PEG-ELP",
+      "spans": [
+        {
+          "i": "10359",
+          "f": "10385",
+          "txt": "bisacodyl plus 2 L PEG-ELP"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Bisacodyl + 2 L PEG-ELP "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Bisacodyl + 2 L PEG-ELP "
+        }
+      ]
+    },
+    "39": {
+      "name": "3 Bristol stool form 3 to 7 received 2 L PEG-ELP",
+      "spans": [
+        {
+          "i": "10411",
+          "f": "10457",
+          "txt": "Bristol stool form 3 to 7 received 2 L PEG-ELP"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "2 L PEG-ELP (in Bristol 3-7)"
+        }
+      ]
+    }
+  },
+  "o": {
+    "17": {
+      "name": "1 adequate bowel preparation",
+      "spans": [
+        {
+          "i": "10578",
+          "f": "10604",
+          "txt": "adequate bowel preparation"
+        },
+        {
+          "i": "10527",
+          "f": "10552",
+          "txt": "adequate bowel reparation"
+        }
+      ]
+    },
+    "21": {
+      "name": "2 polyp detection rate",
+      "spans": [
+        {
+          "i": "10643",
+          "f": "10663",
+          "txt": "polyp detection rate"
+        },
+        {
+          "i": "10665",
+          "f": "10668",
+          "txt": "PDR"
+        },
+        {
+          "i": "11055",
+          "f": "11058",
+          "txt": "PDR"
+        },
+        {
+          "i": "11339",
+          "f": "11342",
+          "txt": "PDR"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Polyp detection rate"
+        }
+      ]
+    },
+    "26": {
+      "name": "3 tolerability",
+      "spans": [
+        {
+          "i": "10671",
+          "f": "10683",
+          "txt": "tolerability"
+        }
+      ]
+    },
+    "28": {
+      "name": "4 acceptability",
+      "spans": [
+        {
+          "i": "10685",
+          "f": "10698",
+          "txt": "acceptability"
+        },
+        {
+          "i": "11136",
+          "f": "11149",
+          "txt": "Acceptability"
+        }
+      ]
+    },
+    "30": {
+      "name": "5 sleeping quality",
+      "spans": [
+        {
+          "i": "10700",
+          "f": "10716",
+          "txt": "sleeping quality"
+        }
+      ]
+    },
+    "32": {
+      "name": "6 compliance",
+      "spans": [
+        {
+          "i": "10721",
+          "f": "10731",
+          "txt": "compliance"
+        }
+      ]
+    },
+    "34": {
+      "name": "7 successful preparation rate",
+      "spans": [
+        {
+          "i": "10928",
+          "f": "10955",
+          "txt": "successful preparation rate"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Successful preparation rate (overall)"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Successful preparation rate (overall)"
+        }
+      ]
+    },
+    "37": {
+      "name": "8 bowel preparation quality",
+      "spans": [
+        {
+          "i": "11309",
+          "f": "11334",
+          "txt": "bowel preparation quality"
+        }
+      ]
+    }
+  }
+}

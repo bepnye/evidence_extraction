@@ -1,0 +1,81 @@
+{
+  "i": {
+    "4": {
+      "name": "1 standard decision aid",
+      "spans": [
+        {
+          "i": "5155",
+          "f": "5176",
+          "txt": "standard decision aid"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Standard decision aid"
+        }
+      ]
+    },
+    "6": {
+      "name": "2 information on post-surgical regret",
+      "spans": [
+        {
+          "i": "5199",
+          "f": "5234",
+          "txt": "information on post-surgical regret"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Information on post-surgical regret"
+        }
+      ]
+    }
+  },
+  "o": {
+    "8": {
+      "name": "1 proportion of subjects choosing lumpectomy vs. mastectomy",
+      "spans": [
+        {
+          "i": "5286",
+          "f": "5343",
+          "txt": "proportion of subjects choosing lumpectomy vs. mastectomy"
+        }
+      ]
+    },
+    "10": {
+      "name": "2 proportion reporting that regret played a role in the decision made",
+      "spans": [
+        {
+          "i": "5352",
+          "f": "5419",
+          "txt": "proportion reporting that regret played a role in the decision made"
+        }
+      ]
+    },
+    "13": {
+      "name": "3 regret played a role in their decision-making process",
+      "spans": [
+        {
+          "i": "5851",
+          "f": "5904",
+          "txt": "regret played a role in their decision-making process"
+        }
+      ]
+    },
+    "15": {
+      "name": "4 odds of choosing the less regret-inducing surgery",
+      "spans": [
+        {
+          "i": "6075",
+          "f": "6124",
+          "txt": "odds of choosing the less regret-inducing surgery"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Odds of choosing less regret-inducing surgery"
+        }
+      ]
+    }
+  }
+}

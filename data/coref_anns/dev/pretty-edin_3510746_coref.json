@@ -1,0 +1,231 @@
+{
+  "i": {
+    "28": {
+      "name": "1 routine practice assessment and feedback",
+      "spans": [
+        {
+          "i": "6634",
+          "f": "6674",
+          "txt": "routine practice assessment and feedback"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Assessment and feedback"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Assessment and feedback"
+        }
+      ]
+    },
+    "30": {
+      "name": "2 assessment-only without feedback",
+      "spans": [
+        {
+          "i": "6680",
+          "f": "6712",
+          "txt": "assessment-only without feedback"
+        }
+      ]
+    },
+    "32": {
+      "name": "3 neither assessment nor feedback",
+      "spans": [
+        {
+          "i": "6722",
+          "f": "6753",
+          "txt": "neither assessment nor feedback"
+        }
+      ]
+    },
+    "40": {
+      "name": "4 Feedback only",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "12",
+          "txt": "Feedback only"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Feedback only"
+        }
+      ]
+    },
+    "42": {
+      "name": "5 Control",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "6",
+          "txt": "Control"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    }
+  },
+  "o": {
+    "34": {
+      "name": "1 Attrition",
+      "spans": [
+        {
+          "i": "7388",
+          "f": "7397",
+          "txt": "Attrition"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Attrition"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Attrition"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Attrition"
+        }
+      ]
+    },
+    "38": {
+      "name": "2 alcohol parameters",
+      "spans": [
+        {
+          "i": "7667",
+          "f": "7685",
+          "txt": "alcohol parameters"
+        }
+      ]
+    },
+    "44": {
+      "name": "3 Total AUDIT score",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "16",
+          "txt": "Total AUDIT score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Total AUDIT score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Total AUDIT score"
+        }
+      ]
+    },
+    "46": {
+      "name": "4 AUDIT score \u22658 (men)/6 (women",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "0",
+          "txt": " "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": " AUDIT score \u22658 (men)/6 (women)"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": " AUDIT score \u22658 (men)/6 (women)"
+        }
+      ]
+    },
+    "48": {
+      "name": "5 Problem score",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "12",
+          "txt": "Problem score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Problem score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Problem score"
+        }
+      ]
+    },
+    "50": {
+      "name": "6 Dependence score",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "15",
+          "txt": "Dependence score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Dependence score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Dependence score"
+        }
+      ]
+    },
+    "52": {
+      "name": "7 Weekly consumption",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "17",
+          "txt": "Weekly consumption"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Weekly consumption"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Weekly consumption"
+        }
+      ]
+    },
+    "54": {
+      "name": "8 Absence of monthly heavy episodic drinking",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "41",
+          "txt": "Absence of monthly heavy episodic drinking"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Absence of monthly heavy episodic drinking"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Absence of monthly heavy episodic drinking"
+        }
+      ]
+    }
+  }
+}

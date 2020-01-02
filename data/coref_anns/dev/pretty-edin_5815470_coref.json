@@ -1,0 +1,196 @@
+{
+  "i": {
+    "10": {
+      "name": "1 morphine",
+      "spans": [
+        {
+          "i": "5413",
+          "f": "5421",
+          "txt": "morphine"
+        },
+        {
+          "i": "5372",
+          "f": "5380",
+          "txt": "morphine"
+        },
+        {
+          "i": "6109",
+          "f": "6117",
+          "txt": "morphine"
+        },
+        {
+          "i": "6353",
+          "f": "6361",
+          "txt": "morphine"
+        },
+        {
+          "i": "6492",
+          "f": "6500",
+          "txt": "morphine"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Morphine"
+        }
+      ]
+    },
+    "17": {
+      "name": "2 acupuncture",
+      "spans": [
+        {
+          "i": "5518",
+          "f": "5529",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "5555",
+          "f": "5566",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "6037",
+          "f": "6048",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "6208",
+          "f": "6219",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "6298",
+          "f": "6309",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "6426",
+          "f": "6437",
+          "txt": "acupuncture"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Acupuncture "
+        }
+      ]
+    }
+  },
+  "o": {
+    "25": {
+      "name": "1 deeper analgesic effect",
+      "spans": [
+        {
+          "i": "6071",
+          "f": "6094",
+          "txt": "deeper analgesic effect"
+        },
+        {
+          "i": "6717",
+          "f": "6740",
+          "txt": "deeper analgesic effect"
+        }
+      ]
+    },
+    "28": {
+      "name": "2 50% reduction of baseline VAS",
+      "spans": [
+        {
+          "i": "6247",
+          "f": "6276",
+          "txt": "50% reduction of baseline VAS"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Time to obtain 50% pain reduction"
+        }
+      ]
+    },
+    "30": {
+      "name": "3 minor side effects",
+      "spans": [
+        {
+          "i": "6456",
+          "f": "6474",
+          "txt": "minor side effects"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Minor side effects "
+        }
+      ]
+    },
+    "32": {
+      "name": "4 major side effects",
+      "spans": [
+        {
+          "i": "6541",
+          "f": "6559",
+          "txt": "major side effects"
+        }
+      ]
+    },
+    "34": {
+      "name": "5 tolerance profile",
+      "spans": [
+        {
+          "i": "6754",
+          "f": "6771",
+          "txt": "tolerance profile"
+        }
+      ]
+    },
+    "37": {
+      "name": "6 Analgesic effect (10m)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "21",
+          "txt": "Analgesic effect (10m)"
+        }
+      ]
+    },
+    "39": {
+      "name": "7 Analgesic effect (20m)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "21",
+          "txt": "Analgesic effect (20m)"
+        }
+      ]
+    },
+    "41": {
+      "name": "8 Analgesic effect (30m)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "21",
+          "txt": "Analgesic effect (30m)"
+        }
+      ]
+    },
+    "43": {
+      "name": "9 Analgesic effect (45m)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "21",
+          "txt": "Analgesic effect (45m)"
+        }
+      ]
+    },
+    "45": {
+      "name": "Analgesic effect (60m)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "21",
+          "txt": "Analgesic effect (60m)"
+        }
+      ]
+    }
+  }
+}

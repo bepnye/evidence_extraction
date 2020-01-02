@@ -1,0 +1,86 @@
+{
+  "i": {
+    "4": {
+      "name": "1 omeprazole",
+      "spans": [
+        {
+          "i": "9950",
+          "f": "9960",
+          "txt": "omeprazole"
+        },
+        {
+          "i": "10602",
+          "f": "10612",
+          "txt": "omeprazole"
+        },
+        {
+          "i": "11268",
+          "f": "11278",
+          "txt": "omeprazole"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Omeprazole"
+        }
+      ]
+    },
+    "9": {
+      "name": "2 empty gelatin capsule placebo",
+      "spans": [
+        {
+          "i": "9985",
+          "f": "10014",
+          "txt": "empty gelatin capsule placebo"
+        },
+        {
+          "i": "10763",
+          "f": "10770",
+          "txt": "placebo"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Placebo"
+        }
+      ]
+    }
+  },
+  "o": {
+    "11": {
+      "name": "1 Mean gastric pH",
+      "spans": [
+        {
+          "i": "10508",
+          "f": "10558",
+          "txt": "Mean gastric pH"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean gastric pH"
+        }
+      ]
+    },
+    "16": {
+      "name": "2 serum gastrin concentration",
+      "spans": [
+        {
+          "i": "10902",
+          "f": "10929",
+          "txt": "serum gastrin concentration"
+        }
+      ]
+    },
+    "20": {
+      "name": "3 GER",
+      "spans": [
+        {
+          "i": "11039",
+          "f": "11042",
+          "txt": "GER"
+        }
+      ]
+    }
+  }
+}

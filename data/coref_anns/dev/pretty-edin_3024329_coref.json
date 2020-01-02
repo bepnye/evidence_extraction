@@ -1,0 +1,221 @@
+{
+  "i": {
+    "9": {
+      "name": "1 twice-daily insulin lispro mix 75/25",
+      "spans": [
+        {
+          "i": "4739",
+          "f": "4775",
+          "txt": "twice-daily insulin lispro mix 75/25"
+        },
+        {
+          "i": "4777",
+          "f": "4784",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "5062",
+          "f": "5069",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "5342",
+          "f": "5349",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "5609",
+          "f": "5616",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "5744",
+          "f": "5751",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "5923",
+          "f": "5930",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "6100",
+          "f": "6107",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "6390",
+          "f": "6397",
+          "txt": "LM75/25"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Insulin lispro mix"
+        }
+      ]
+    },
+    "18": {
+      "name": "2 once-daily insulin glargine",
+      "spans": [
+        {
+          "i": "4842",
+          "f": "4869",
+          "txt": "once-daily insulin glargine"
+        },
+        {
+          "i": "5073",
+          "f": "5081",
+          "txt": "glargine"
+        },
+        {
+          "i": "5377",
+          "f": "5385",
+          "txt": "glargine"
+        },
+        {
+          "i": "5656",
+          "f": "5664",
+          "txt": "glargine"
+        },
+        {
+          "i": "5786",
+          "f": "5794",
+          "txt": "glargine"
+        },
+        {
+          "i": "6112",
+          "f": "6120",
+          "txt": "glargine"
+        },
+        {
+          "i": "6412",
+          "f": "6420",
+          "txt": "glargine"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Insulin glargine"
+        }
+      ]
+    }
+  },
+  "o": {
+    "33": {
+      "name": "1 duration of maintaining the A1C goa",
+      "spans": [
+        {
+          "i": "5231",
+          "f": "5266",
+          "txt": "duration of maintaining the A1C goa"
+        }
+      ]
+    },
+    "35": {
+      "name": "2 Median time of maintaining the A1C goal",
+      "spans": [
+        {
+          "i": "5549",
+          "f": "5588",
+          "txt": "Median time of maintaining the A1C goal"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Time of maintaining the A1C goal"
+        }
+      ]
+    },
+    "37": {
+      "name": "3 A1C goal",
+      "spans": [
+        {
+          "i": "5713",
+          "f": "5721",
+          "txt": "A1C goal"
+        },
+        {
+          "i": "6185",
+          "f": "6193",
+          "txt": "A1C goal"
+        }
+      ]
+    },
+    "48": {
+      "name": "4 weight gain",
+      "spans": [
+        {
+          "i": "6028",
+          "f": "6039",
+          "txt": "weight gain"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Weight gain"
+        }
+      ]
+    },
+    "51": {
+      "name": "5 overall",
+      "spans": [
+        {
+          "i": "5879",
+          "f": "5886",
+          "txt": "overall"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Overall hypoglycemia"
+        }
+      ]
+    },
+    "53": {
+      "name": "6 nocturnal",
+      "spans": [
+        {
+          "i": "5888",
+          "f": "5897",
+          "txt": "nocturnal"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Nocturnal hypoglycemia"
+        }
+      ]
+    },
+    "55": {
+      "name": "7 severe hypoglycemia",
+      "spans": [
+        {
+          "i": "5902",
+          "f": "5921",
+          "txt": "severe hypoglycemia"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Severe  hypoglycemia"
+        }
+      ]
+    },
+    "58": {
+      "name": "8 total daily insulin dose",
+      "spans": [
+        {
+          "i": "5951",
+          "f": "5975",
+          "txt": "total daily insulin dose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Total daily insulin dose"
+        }
+      ]
+    }
+  }
+}

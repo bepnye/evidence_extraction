@@ -1,0 +1,321 @@
+{
+  "i": {
+    "21": {
+      "name": "1 aspart",
+      "spans": [
+        {
+          "i": "4406",
+          "f": "4412",
+          "txt": "aspart"
+        },
+        {
+          "i": "4905",
+          "f": "4911",
+          "txt": "aspart"
+        },
+        {
+          "i": "5016",
+          "f": "5022",
+          "txt": "aspart"
+        },
+        {
+          "i": "5221",
+          "f": "5227",
+          "txt": "aspart"
+        },
+        {
+          "i": "5371",
+          "f": "5377",
+          "txt": "aspart"
+        },
+        {
+          "i": "5691",
+          "f": "5697",
+          "txt": "aspart"
+        },
+        {
+          "i": "5837",
+          "f": "5843",
+          "txt": "aspart"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Aspart"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Aspart"
+        }
+      ]
+    },
+    "30": {
+      "name": "2 lispro",
+      "spans": [
+        {
+          "i": "4440",
+          "f": "4446",
+          "txt": "lispro"
+        },
+        {
+          "i": "5056",
+          "f": "5062",
+          "txt": "lispro"
+        },
+        {
+          "i": "5328",
+          "f": "5334",
+          "txt": "lispro"
+        },
+        {
+          "i": "5702",
+          "f": "5708",
+          "txt": "lispro"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Lispro"
+        }
+      ]
+    },
+    "70": {
+      "name": "3 Regular insulin",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "15",
+          "txt": "Regular insulin "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Regular insulin "
+        }
+      ]
+    }
+  },
+  "o": {
+    "36": {
+      "name": "1 change in blood pressure",
+      "spans": [
+        {
+          "i": "4520",
+          "f": "4544",
+          "txt": "change in blood pressure"
+        }
+      ]
+    },
+    "38": {
+      "name": "2 glycemic control",
+      "spans": [
+        {
+          "i": "4546",
+          "f": "4562",
+          "txt": "glycemic control"
+        }
+      ]
+    },
+    "40": {
+      "name": "3 lipid profile",
+      "spans": [
+        {
+          "i": "4564",
+          "f": "4577",
+          "txt": "lipid profile"
+        }
+      ]
+    },
+    "42": {
+      "name": "4 serum potassium",
+      "spans": [
+        {
+          "i": "4579",
+          "f": "4594",
+          "txt": "serum potassium"
+        },
+        {
+          "i": "5483",
+          "f": "5492",
+          "txt": "potassium"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Potassium loss"
+        }
+      ]
+    },
+    "44": {
+      "name": "5 high-sensitivity CRP",
+      "spans": [
+        {
+          "i": "4596",
+          "f": "4616",
+          "txt": "high-sensitivity CRP"
+        },
+        {
+          "i": "4618",
+          "f": "4623",
+          "txt": "hsCRP"
+        },
+        {
+          "i": "5575",
+          "f": "5578",
+          "txt": "CRP"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "High sensitivity CRP"
+        }
+      ]
+    },
+    "47": {
+      "name": "6 UKPDS",
+      "spans": [
+        {
+          "i": "4629",
+          "f": "4634",
+          "txt": "UKPDS"
+        },
+        {
+          "i": "5640",
+          "f": "5645",
+          "txt": "UKPDS"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "UKPDS "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "UKPDS "
+        }
+      ]
+    },
+    "50": {
+      "name": "7 Systolic blood pressure",
+      "spans": [
+        {
+          "i": "4854",
+          "f": "4877",
+          "txt": "Systolic blood pressure"
+        }
+      ]
+    },
+    "53": {
+      "name": "8 diastolic blood pressure",
+      "spans": [
+        {
+          "i": "4955",
+          "f": "4979",
+          "txt": "diastolic blood pressure"
+        }
+      ]
+    },
+    "55": {
+      "name": "9 Fasting",
+      "spans": [
+        {
+          "i": "5101",
+          "f": "5108",
+          "txt": "Fasting"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fasting blood glucose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fasting blood glucose"
+        }
+      ]
+    },
+    "57": {
+      "name": "postprandial blood glucose",
+      "spans": [
+        {
+          "i": "5110",
+          "f": "5136",
+          "txt": "postprandial blood glucose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Postprandial blood glucose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Postprandial blood glucose"
+        }
+      ]
+    },
+    "59": {
+      "name": "HbA1c",
+      "spans": [
+        {
+          "i": "5141",
+          "f": "5151",
+          "txt": "HbA1c"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Glycosylated hemoglobin"
+        }
+      ]
+    },
+    "61": {
+      "name": "Triglyceride",
+      "spans": [
+        {
+          "i": "5276",
+          "f": "5288",
+          "txt": "Triglyceride"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Triglycerides "
+        }
+      ]
+    },
+    "63": {
+      "name": "total cholesterol",
+      "spans": [
+        {
+          "i": "5411",
+          "f": "5428",
+          "txt": "total cholesterol"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Total cholesterol"
+        }
+      ]
+    },
+    "65": {
+      "name": "LDL",
+      "spans": [
+        {
+          "i": "5433",
+          "f": "5436",
+          "txt": "LDL"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "LDL cholesterol"
+        }
+      ]
+    }
+  }
+}

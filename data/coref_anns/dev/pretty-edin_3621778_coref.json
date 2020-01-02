@@ -1,0 +1,206 @@
+{
+  "i": {
+    "12": {
+      "name": "1 home visits each month",
+      "spans": [
+        {
+          "i": "4592",
+          "f": "4614",
+          "txt": "home visits each month"
+        }
+      ]
+    },
+    "14": {
+      "name": "2 group activity held biweekly",
+      "spans": [
+        {
+          "i": "4637",
+          "f": "4665",
+          "txt": "group activity held biweekly"
+        }
+      ]
+    },
+    "39": {
+      "name": "3 control group",
+      "spans": [
+        {
+          "i": "4937",
+          "f": "4950",
+          "txt": "control group"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    },
+    "41": {
+      "name": "4 intervention group",
+      "spans": [
+        {
+          "i": "4903",
+          "f": "4921",
+          "txt": "intervention group"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Nutritional program"
+        }
+      ]
+    }
+  },
+  "o": {
+    "6": {
+      "name": "1 length",
+      "spans": [
+        {
+          "i": "4734",
+          "f": "4740",
+          "txt": "length"
+        },
+        {
+          "i": "5034",
+          "f": "5040",
+          "txt": "length"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Child length"
+        }
+      ]
+    },
+    "10": {
+      "name": "2 body mass index for age",
+      "spans": [
+        {
+          "i": "4745",
+          "f": "4768",
+          "txt": "body mass index for age"
+        }
+      ]
+    },
+    "16": {
+      "name": "3 length-for-age Z-score",
+      "spans": [
+        {
+          "i": "5144",
+          "f": "5166",
+          "txt": "length-for-age Z-score"
+        }
+      ]
+    },
+    "18": {
+      "name": "4 stunting",
+      "spans": [
+        {
+          "i": "5202",
+          "f": "5210",
+          "txt": "stunting"
+        }
+      ]
+    },
+    "20": {
+      "name": "5 BMI-for-age Z-score",
+      "spans": [
+        {
+          "i": "5238",
+          "f": "5257",
+          "txt": "BMI-for-age Z-score"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": " BMI for age Z-score "
+        }
+      ]
+    },
+    "22": {
+      "name": "6 BMI-for-age > 85th percentile",
+      "spans": [
+        {
+          "i": "5293",
+          "f": "5336",
+          "txt": "BMI-for-age > 85th percentile"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "BMI-for-age &gt; 85th percentile "
+        }
+      ]
+    },
+    "25": {
+      "name": "7 growth monitoring",
+      "spans": [
+        {
+          "i": "5469",
+          "f": "5486",
+          "txt": "growth monitoring"
+        }
+      ]
+    },
+    "27": {
+      "name": "8 health promotion activities",
+      "spans": [
+        {
+          "i": "5488",
+          "f": "5515",
+          "txt": "health promotion activities"
+        }
+      ]
+    },
+    "29": {
+      "name": "9 micronutrient supplementation",
+      "spans": [
+        {
+          "i": "5517",
+          "f": "5546",
+          "txt": "micronutrient supplementation"
+        }
+      ]
+    },
+    "31": {
+      "name": "exclusive breastfeeding",
+      "spans": [
+        {
+          "i": "5548",
+          "f": "5571",
+          "txt": "exclusive breastfeeding"
+        }
+      ]
+    },
+    "33": {
+      "name": "complementary feeding",
+      "spans": [
+        {
+          "i": "5576",
+          "f": "5597",
+          "txt": "complementary feeding"
+        }
+      ]
+    },
+    "35": {
+      "name": "reduction in the risk of overweight",
+      "spans": [
+        {
+          "i": "5767",
+          "f": "5802",
+          "txt": "reduction in the risk of overweight"
+        }
+      ]
+    },
+    "37": {
+      "name": "obesity prevention",
+      "spans": [
+        {
+          "i": "5861",
+          "f": "5879",
+          "txt": "obesity prevention"
+        }
+      ]
+    }
+  }
+}

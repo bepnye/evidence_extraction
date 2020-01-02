@@ -1,0 +1,111 @@
+{
+  "i": {
+    "5": {
+      "name": "1 video-recorded standard lecture",
+      "spans": [
+        {
+          "i": "5335",
+          "f": "5366",
+          "txt": "video-recorded standard lecture"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Video-recorded standard lecture"
+        }
+      ]
+    },
+    "7": {
+      "name": "2 Virtual Patient-based training session",
+      "spans": [
+        {
+          "i": "5372",
+          "f": "5410",
+          "txt": "Virtual Patient-based training session"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Virtual Patient-based training session"
+        }
+      ]
+    }
+  },
+  "o": {
+    "9": {
+      "name": "1 short-term",
+      "spans": [
+        {
+          "i": "6065",
+          "f": "6075",
+          "txt": "short-term"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Short-term knowledge retention"
+        }
+      ]
+    },
+    "11": {
+      "name": "2 long-term knowledge retention",
+      "spans": [
+        {
+          "i": "6080",
+          "f": "6109",
+          "txt": "long-term knowledge retention"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Long-term knowledge retention"
+        }
+      ]
+    },
+    "13": {
+      "name": "3 engagement",
+      "spans": [
+        {
+          "i": "6230",
+          "f": "6240",
+          "txt": "engagement"
+        },
+        {
+          "i": "6358",
+          "f": "6368",
+          "txt": "engagement"
+        }
+      ]
+    },
+    "16": {
+      "name": "4 stimulation",
+      "spans": [
+        {
+          "i": "6242",
+          "f": "6253",
+          "txt": "stimulation"
+        }
+      ]
+    },
+    "18": {
+      "name": "5 general perception",
+      "spans": [
+        {
+          "i": "6255",
+          "f": "6273",
+          "txt": "general perception"
+        }
+      ]
+    },
+    "21": {
+      "name": "6 expectations",
+      "spans": [
+        {
+          "i": "6279",
+          "f": "6291",
+          "txt": "expectations"
+        }
+      ]
+    }
+  }
+}

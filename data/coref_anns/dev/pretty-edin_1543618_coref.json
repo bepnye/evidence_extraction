@@ -1,0 +1,86 @@
+{
+  "i": {
+    "5": {
+      "name": "1 cognitive behavioral treatment",
+      "spans": [
+        {
+          "i": "3593",
+          "f": "3623",
+          "txt": "cognitive behavioral treatment"
+        },
+        {
+          "i": "3625",
+          "f": "3628",
+          "txt": "CBT"
+        },
+        {
+          "i": "4099",
+          "f": "4102",
+          "txt": "CBT"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Cognitive behavioral treatment"
+        }
+      ]
+    },
+    "11": {
+      "name": "2 wait-list control condition",
+      "spans": [
+        {
+          "i": "4121",
+          "f": "4148",
+          "txt": "wait-list control condition"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    }
+  },
+  "o": {
+    "13": {
+      "name": "1 clinical recovery",
+      "spans": [
+        {
+          "i": "4727",
+          "f": "4744",
+          "txt": "clinical recovery"
+        }
+      ]
+    },
+    "15": {
+      "name": "2 reductions in co-morbid major depression",
+      "spans": [
+        {
+          "i": "4888",
+          "f": "4928",
+          "txt": "reductions in co-morbid major depression"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Reduction in co-morbid major depression"
+        }
+      ]
+    },
+    "17": {
+      "name": "3 CAPS-scores",
+      "spans": [
+        {
+          "i": "4468",
+          "f": "4479",
+          "txt": "CAPS-scores"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "CAPS-scores improvement"
+        }
+      ]
+    }
+  }
+}

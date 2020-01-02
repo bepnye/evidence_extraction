@@ -1,0 +1,426 @@
+{
+  "i": {
+    "30": {
+      "name": "1 water",
+      "spans": [
+        {
+          "i": "3894",
+          "f": "3899",
+          "txt": "water"
+        },
+        {
+          "i": "5265",
+          "f": "5266",
+          "txt": "W"
+        },
+        {
+          "i": "4580",
+          "f": "4581",
+          "txt": "W"
+        },
+        {
+          "i": "5421",
+          "f": "5422",
+          "txt": "W"
+        },
+        {
+          "i": "5512",
+          "f": "5513",
+          "txt": "W"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Water"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Water"
+        }
+      ]
+    },
+    "42": {
+      "name": "2 flavored carbohydrate-electrolyte",
+      "spans": [
+        {
+          "i": "3907",
+          "f": "3940",
+          "txt": "flavored carbohydrate-electrolyte"
+        },
+        {
+          "i": "3942",
+          "f": "3944",
+          "txt": "CE"
+        },
+        {
+          "i": "5231",
+          "f": "5233",
+          "txt": "CE"
+        },
+        {
+          "i": "4583",
+          "f": "4585",
+          "txt": "CE"
+        },
+        {
+          "i": "4590",
+          "f": "4593",
+          "txt": "NCE"
+        },
+        {
+          "i": "5433",
+          "f": "5435",
+          "txt": "CE"
+        },
+        {
+          "i": "5524",
+          "f": "5526",
+          "txt": "CE"
+        },
+        {
+          "i": "5515",
+          "f": "5518",
+          "txt": "NCE"
+        },
+        {
+          "i": "5902",
+          "f": "5924",
+          "txt": "Carbohydrate ingestion"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Flavored carbohydrate-electrolyte drink"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Flavored carbohydrate-electrolyte drink"
+        }
+      ]
+    },
+    "54": {
+      "name": "3 flavored non-caloric electrolyte",
+      "spans": [
+        {
+          "i": "3951",
+          "f": "3983",
+          "txt": "flavored non-caloric electrolyte"
+        },
+        {
+          "i": "3985",
+          "f": "3988",
+          "txt": "NCE"
+        },
+        {
+          "i": "5290",
+          "f": "5293",
+          "txt": "NCE"
+        },
+        {
+          "i": "5424",
+          "f": "5427",
+          "txt": "NCE"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Non-caloric electrolyte drink"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Non-caloric electrolyte drink"
+        }
+      ]
+    }
+  },
+  "o": {
+    "57": {
+      "name": "1 mood",
+      "spans": [
+        {
+          "i": "4002",
+          "f": "4006",
+          "txt": "mood"
+        },
+        {
+          "i": "6024",
+          "f": "6028",
+          "txt": "mood"
+        }
+      ]
+    },
+    "60": {
+      "name": "2 ratings of perceived exertion",
+      "spans": [
+        {
+          "i": "4008",
+          "f": "4037",
+          "txt": "ratings of perceived exertion"
+        },
+        {
+          "i": "4039",
+          "f": "4042",
+          "txt": "RPE"
+        },
+        {
+          "i": "5719",
+          "f": "5722",
+          "txt": "RPE"
+        },
+        {
+          "i": "5759",
+          "f": "5762",
+          "txt": "RPE"
+        },
+        {
+          "i": "6042",
+          "f": "6050",
+          "txt": "exertion"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Session rating of perceived exertion "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Rating of perceived exertion during submaximal exercise"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Session rating of perceived exertion "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Session rating of perceived exertion "
+        }
+      ]
+    },
+    "65": {
+      "name": "3 sprint power during cycling",
+      "spans": [
+        {
+          "i": "4049",
+          "f": "4076",
+          "txt": "sprint power during cycling"
+        }
+      ]
+    },
+    "78": {
+      "name": "4 Profiles of Mood States questionnaires",
+      "spans": [
+        {
+          "i": "4779",
+          "f": "4817",
+          "txt": "Profiles of Mood States questionnaires"
+        },
+        {
+          "i": "4819",
+          "f": "4823",
+          "txt": "POMS"
+        },
+        {
+          "i": "5798",
+          "f": "5802",
+          "txt": "POMS"
+        }
+      ]
+    },
+    "82": {
+      "name": "5 blood glucose levels",
+      "spans": [
+        {
+          "i": "4847",
+          "f": "4867",
+          "txt": "blood glucose levels"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Blood glucose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Blood glucose"
+        }
+      ]
+    },
+    "84": {
+      "name": "6 Wingate anaerobic tests",
+      "spans": [
+        {
+          "i": "4982",
+          "f": "5005",
+          "txt": "Wingate anaerobic tests"
+        },
+        {
+          "i": "5007",
+          "f": "5016",
+          "txt": "WAnT"
+        },
+        {
+          "i": "5208",
+          "f": "5220",
+          "txt": "WAnT"
+        },
+        {
+          "i": "5692",
+          "f": "5701",
+          "txt": "WAnT"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Average power on all Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Average power on all Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Average power on all Wingate anaerobic tests"
+        }
+      ]
+    },
+    "89": {
+      "name": "7 peak",
+      "spans": [
+        {
+          "i": "5373",
+          "f": "5377",
+          "txt": "peak"
+        }
+      ]
+    },
+    "92": {
+      "name": "8 mean",
+      "spans": [
+        {
+          "i": "5466",
+          "f": "5470",
+          "txt": "mean"
+        }
+      ]
+    },
+    "97": {
+      "name": "9 power for the first WAnT",
+      "spans": [
+        {
+          "i": "5552",
+          "f": "5581",
+          "txt": "power for the first WAnT"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Peak power on first Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean power on first Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean power on first Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Peak power on first Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Mean power on first Wingate anaerobic tests"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Peak power on first Wingate anaerobic tests"
+        }
+      ]
+    },
+    "99": {
+      "name": "power output",
+      "spans": [
+        {
+          "i": "5657",
+          "f": "5669",
+          "txt": "power output"
+        }
+      ]
+    },
+    "102": {
+      "name": "fatigue",
+      "spans": [
+        {
+          "i": "5768",
+          "f": "5775",
+          "txt": "fatigue"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fatigue"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fatigue"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fatigue"
+        }
+      ]
+    },
+    "104": {
+      "name": "vigor",
+      "spans": [
+        {
+          "i": "5780",
+          "f": "5785",
+          "txt": "vigor"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Vigor "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Vigor "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Vigor "
+        }
+      ]
+    },
+    "109": {
+      "name": "anaerobic performance",
+      "spans": [
+        {
+          "i": "6081",
+          "f": "6102",
+          "txt": "anaerobic performance"
+        }
+      ]
+    }
+  }
+}

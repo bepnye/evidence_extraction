@@ -1,0 +1,205 @@
+{
+  "i": {
+    "9": {
+      "name": "1 6 days Buprenorphine and 10 days Valproate (BPN/VPA)",
+      "spans": [
+        {
+          "i": "3838",
+          "f": "3890",
+          "txt": "6 days Buprenorphine and 10 days Valproate (BPN/VPA)"
+        },
+        {
+          "i": "4218",
+          "f": "4225",
+          "txt": "BPN/VPA"
+        },
+        {
+          "i": "4469",
+          "f": "4476",
+          "txt": "BPN/VPA"
+        },
+        {
+          "i": "4614",
+          "f": "4621",
+          "txt": "BPN/VPA"
+        },
+        {
+          "i": "4730",
+          "f": "4737",
+          "txt": "BPN/VPA"
+        },
+        {
+          "i": "5349",
+          "f": "5356",
+          "txt": "BPN/VPA"
+        },
+        {
+          "i": "5190",
+          "f": "5217",
+          "txt": "Buprenorphine and Valproate"
+        },
+        {
+          "i": "4968",
+          "f": "4995",
+          "txt": "Buprenorphine and Valproate"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Buprenorphine + Valproate"
+        }
+      ]
+    },
+    "11": {
+      "name": "2 control",
+      "spans": [
+        {
+          "i": "3905",
+          "f": "3912",
+          "txt": "control"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    },
+    "13": {
+      "name": "3 Clonidine/Carbamazepine",
+      "spans": [
+        {
+          "i": "3958",
+          "f": "3981",
+          "txt": "Clonidine/Carbamazepine"
+        },
+        {
+          "i": "3983",
+          "f": "3990",
+          "txt": "CLN/CBZ"
+        },
+        {
+          "i": "4325",
+          "f": "4332",
+          "txt": "CLN/CBZ"
+        }
+      ]
+    }
+  },
+  "o": {
+    "25": {
+      "name": "1 Withdrawal symptoms",
+      "spans": [
+        {
+          "i": "4407",
+          "f": "4426",
+          "txt": "Withdrawal symptoms"
+        }
+      ]
+    },
+    "27": {
+      "name": "2 blood pressure",
+      "spans": [
+        {
+          "i": "4765",
+          "f": "4779",
+          "txt": "blood pressure"
+        }
+      ]
+    },
+    "29": {
+      "name": "3 pulse",
+      "spans": [
+        {
+          "i": "4781",
+          "f": "4786",
+          "txt": "pulse"
+        }
+      ]
+    },
+    "31": {
+      "name": "4 liver function",
+      "spans": [
+        {
+          "i": "4790",
+          "f": "4804",
+          "txt": "liver function"
+        }
+      ]
+    },
+    "33": {
+      "name": "5 side-effects",
+      "spans": [
+        {
+          "i": "4830",
+          "f": "4842",
+          "txt": "side-effects"
+        }
+      ]
+    },
+    "37": {
+      "name": "6 Withdrawal symptoms reduction (day 2)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 2)"
+        }
+      ]
+    },
+    "39": {
+      "name": "7 Withdrawal symptoms reduction (day 3)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 3)"
+        }
+      ]
+    },
+    "41": {
+      "name": "8 Withdrawal symptoms reduction (day 4)",
+      "spans": []
+    },
+    "43": {
+      "name": "9 Withdrawal symptoms reduction (day 5)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 4)"
+        }
+      ]
+    },
+    "45": {
+      "name": "Withdrawal symptoms reduction (day 5)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 5)"
+        }
+      ]
+    },
+    "47": {
+      "name": "Withdrawal symptoms reduction (day 7)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 7)"
+        }
+      ]
+    },
+    "49": {
+      "name": "Withdrawal symptoms reduction (day 8)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "36",
+          "txt": "Withdrawal symptoms reduction (day 8)"
+        }
+      ]
+    }
+  }
+}

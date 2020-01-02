@@ -1,0 +1,181 @@
+{
+  "i": {
+    "11": {
+      "name": "1 Advice to consume low-mercury/high-DHA fish",
+      "spans": [
+        {
+          "i": "5988",
+          "f": "6031",
+          "txt": "Advice to consume low-mercury/high-DHA fish"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Advice to consume low-mercury/high-DHA fish"
+        }
+      ]
+    },
+    "13": {
+      "name": "2 Advice + grocery store gift cards (GC) to purchase fish",
+      "spans": [
+        {
+          "i": "6040",
+          "f": "6095",
+          "txt": "Advice + grocery store gift cards (GC) to purchase fish"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Advice + grocery store gift cards"
+        }
+      ]
+    },
+    "15": {
+      "name": "3 Control messages",
+      "spans": [
+        {
+          "i": "6107",
+          "f": "6123",
+          "txt": "Control messages"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    }
+  },
+  "o": {
+    "17": {
+      "name": "1 intake of fish",
+      "spans": [
+        {
+          "i": "6179",
+          "f": "6193",
+          "txt": "intake of fish"
+        },
+        {
+          "i": "6538",
+          "f": "6552",
+          "txt": "intake of fish"
+        },
+        {
+          "i": "7097",
+          "f": "7116",
+          "txt": "consumption of fish"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fish intake "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Fish intake "
+        }
+      ]
+    },
+    "20": {
+      "name": "2 DHA",
+      "spans": [
+        {
+          "i": "6195",
+          "f": "6198",
+          "txt": "DHA"
+        },
+        {
+          "i": "6289",
+          "f": "6292",
+          "txt": "DHA"
+        },
+        {
+          "i": "6450",
+          "f": "6453",
+          "txt": "DHA"
+        },
+        {
+          "i": "6622",
+          "f": "6625",
+          "txt": "DHA"
+        },
+        {
+          "i": "6801",
+          "f": "6804",
+          "txt": "DHA"
+        },
+        {
+          "i": "6993",
+          "f": "6996",
+          "txt": "DHA"
+        },
+        {
+          "i": "7121",
+          "f": "7124",
+          "txt": "DHA"
+        }
+      ]
+    },
+    "29": {
+      "name": "3 mercury",
+      "spans": [
+        {
+          "i": "6203",
+          "f": "6210",
+          "txt": "mercury"
+        },
+        {
+          "i": "6318",
+          "f": "6325",
+          "txt": "mercury"
+        },
+        {
+          "i": "6940",
+          "f": "6947",
+          "txt": "mercury"
+        },
+        {
+          "i": "6981",
+          "f": "6988",
+          "txt": "mercury"
+        },
+        {
+          "i": "7133",
+          "f": "7140",
+          "txt": "mercury"
+        }
+      ]
+    },
+    "37": {
+      "name": "4 biomarker levels",
+      "spans": [
+        {
+          "i": "6961",
+          "f": "6977",
+          "txt": "biomarker levels"
+        }
+      ]
+    },
+    "41": {
+      "name": "5 Consuming >= 200mg/d of DHA from fish",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "0",
+          "txt": " "
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": " Consuming &gt;= 200mg/d of DHA from fish"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "i": {
+    "15": {
+      "name": "1 Adhesive Dermally-Applied Microarray (ADAM) zolmitriptan",
+      "spans": [
+        {
+          "i": "5324",
+          "f": "5380",
+          "txt": "Adhesive Dermally-Applied Microarray (ADAM) zolmitriptan"
+        },
+        {
+          "i": "5468",
+          "f": "5472",
+          "txt": "ADAM"
+        },
+        {
+          "i": "5620",
+          "f": "5624",
+          "txt": "ADAM"
+        },
+        {
+          "i": "5874",
+          "f": "5878",
+          "txt": "ADAM"
+        },
+        {
+          "i": "6122",
+          "f": "6126",
+          "txt": "ADAM"
+        },
+        {
+          "i": "6616",
+          "f": "6620",
+          "txt": "ADAM"
+        },
+        {
+          "i": "7177",
+          "f": "7181",
+          "txt": "ADAM"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "3.8 mg ADAM zolmitriptan "
+        }
+      ]
+    },
+    "17": {
+      "name": "2 placebo",
+      "spans": [
+        {
+          "i": "5388",
+          "f": "5395",
+          "txt": "placebo"
+        },
+        {
+          "i": "5924",
+          "f": "5931",
+          "txt": "placebo"
+        },
+        {
+          "i": "6150",
+          "f": "6157",
+          "txt": "placebo"
+        },
+        {
+          "i": "6661",
+          "f": "6668",
+          "txt": "placebo"
+        },
+        {
+          "i": "7303",
+          "f": "7310",
+          "txt": "placebo"
+        }
+      ]
+    },
+    "52": {
+      "name": "3 Control",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "6",
+          "txt": "Control"
+        }
+      ]
+    }
+  },
+  "o": {
+    "30": {
+      "name": "1 pain-free 2 hours post-dose",
+      "spans": [
+        {
+          "i": "6194",
+          "f": "6221",
+          "txt": "pain-free 2 hours post-dose"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Pain-free patients after 2h (%)"
+        }
+      ]
+    },
+    "32": {
+      "name": "2 photophobia-free",
+      "spans": [
+        {
+          "i": "6525",
+          "f": "6541",
+          "txt": "photophobia-free"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Photophobia-free patients after 2h (%)"
+        }
+      ]
+    },
+    "34": {
+      "name": "3 phonophobia-free",
+      "spans": [
+        {
+          "i": "6543",
+          "f": "6559",
+          "txt": "phonophobia-free"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Phonophobia-free patients after 2h (%)"
+        }
+      ]
+    },
+    "36": {
+      "name": "4 nausea-free at 2 hours",
+      "spans": [
+        {
+          "i": "6565",
+          "f": "6587",
+          "txt": "nausea-free at 2 hours"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Nausea-free patients after 2h (%)"
+        }
+      ]
+    },
+    "38": {
+      "name": "5 pain relief up to 48 hours",
+      "spans": [
+        {
+          "i": "6746",
+          "f": "6772",
+          "txt": "pain relief up to 48 hours"
+        }
+      ]
+    },
+    "40": {
+      "name": "6 Systemic adverse events",
+      "spans": [
+        {
+          "i": "6784",
+          "f": "6807",
+          "txt": "Systemic adverse events"
+        }
+      ]
+    },
+    "42": {
+      "name": "7 dizziness",
+      "spans": [
+        {
+          "i": "6867",
+          "f": "6876",
+          "txt": "dizziness"
+        }
+      ]
+    },
+    "44": {
+      "name": "8 paresthesia",
+      "spans": [
+        {
+          "i": "6878",
+          "f": "6889",
+          "txt": "paresthesia"
+        }
+      ]
+    },
+    "46": {
+      "name": "9 muscle tightness",
+      "spans": [
+        {
+          "i": "6891",
+          "f": "6907",
+          "txt": "muscle tightness"
+        }
+      ]
+    },
+    "48": {
+      "name": "nausea",
+      "spans": [
+        {
+          "i": "6913",
+          "f": "6919",
+          "txt": "nausea"
+        }
+      ]
+    },
+    "50": {
+      "name": "Application site reactions",
+      "spans": [
+        {
+          "i": "6977",
+          "f": "7003",
+          "txt": "Application site reactions"
+        }
+      ]
+    },
+    "54": {
+      "name": "Disappearance of other symptoms after 2h (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "43",
+          "txt": "Disappearance of other symptoms after 2h (%)"
+        }
+      ]
+    },
+    "56": {
+      "name": "Patients with pain relief after 15m (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "38",
+          "txt": "Patients with pain relief after 15m (%)"
+        }
+      ]
+    },
+    "58": {
+      "name": "Patients with pain relief after 30m (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "38",
+          "txt": "Patients with pain relief after 30m (%)"
+        }
+      ]
+    },
+    "60": {
+      "name": "Patients with pain relief after 3h (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "37",
+          "txt": "Patients with pain relief after 3h (%)"
+        }
+      ]
+    },
+    "62": {
+      "name": "Patients with pain relief after 4h (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "37",
+          "txt": "Patients with pain relief after 4h (%)"
+        }
+      ]
+    },
+    "64": {
+      "name": "Pain-free patients after 30m (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "31",
+          "txt": "Pain-free patients after 30m (%)"
+        }
+      ]
+    },
+    "66": {
+      "name": "Pain-free patients after 24h (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "31",
+          "txt": "Pain-free patients after 24h (%)"
+        }
+      ]
+    },
+    "68": {
+      "name": "Pain-free patients after 48h (%)",
+      "spans": [
+        {
+          "i": "-1",
+          "f": "31",
+          "txt": "Pain-free patients after 48h (%)"
+        }
+      ]
+    }
+  }
+}

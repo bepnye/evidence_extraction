@@ -1,0 +1,251 @@
+{
+  "i": {
+    "1": {
+      "name": "1 hormone replacement therapy",
+      "spans": [
+        {
+          "i": "4145",
+          "f": "4183",
+          "txt": "effects of hormone replacement therapy"
+        },
+        {
+          "i": "4185",
+          "f": "4188",
+          "txt": "HRT"
+        },
+        {
+          "i": "4524",
+          "f": "4527",
+          "txt": "HRT"
+        },
+        {
+          "i": "5040",
+          "f": "5043",
+          "txt": "HRT"
+        },
+        {
+          "i": "5481",
+          "f": "5484",
+          "txt": "HRT"
+        }
+      ]
+    },
+    "13": {
+      "name": "2 calcium",
+      "spans": [
+        {
+          "i": "4529",
+          "f": "4536",
+          "txt": "calcium"
+        },
+        {
+          "i": "4568",
+          "f": "4575",
+          "txt": "calcium"
+        }
+      ]
+    },
+    "16": {
+      "name": "3 vitamin D3",
+      "spans": [
+        {
+          "i": "4542",
+          "f": "4557",
+          "txt": "vitamin D3"
+        },
+        {
+          "i": "4580",
+          "f": "4595",
+          "txt": "vitamin D3"
+        }
+      ]
+    }
+  },
+  "o": {
+    "7": {
+      "name": "1 prevent osteoporosis and fractures",
+      "spans": [
+        {
+          "i": "4200",
+          "f": "4234",
+          "txt": "prevent osteoporosis and fractures"
+        }
+      ]
+    },
+    "9": {
+      "name": "2 alterations in bone mineral density",
+      "spans": [
+        {
+          "i": "4355",
+          "f": "4390",
+          "txt": "alterations in bone mineral density"
+        },
+        {
+          "i": "5327",
+          "f": "5357",
+          "txt": "improved bone mineral density."
+        }
+      ]
+    },
+    "11": {
+      "name": "3 radiographic joint destructions",
+      "spans": [
+        {
+          "i": "4395",
+          "f": "4426",
+          "txt": "radiographic joint destructions"
+        }
+      ]
+    },
+    "19": {
+      "name": "4 C-terminal telopeptide fragments of type I collagen",
+      "spans": [
+        {
+          "i": "4677",
+          "f": "4728",
+          "txt": "C-terminal telopeptide fragments of type I collagen"
+        },
+        {
+          "i": "4730",
+          "f": "4735",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "4960",
+          "f": "4965",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "5068",
+          "f": "5073",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "5220",
+          "f": "5225",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "5284",
+          "f": "5289",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "5381",
+          "f": "5386",
+          "txt": "CTX-I"
+        },
+        {
+          "i": "4906",
+          "f": "4958",
+          "txt": "collagen type II C-telopeptide degradation fragments"
+        }
+      ]
+    },
+    "27": {
+      "name": "5 C-terminal telopeptide of type I collage",
+      "spans": [
+        {
+          "i": "4738",
+          "f": "4778",
+          "txt": "C-terminal telopeptide of type I collage"
+        },
+        {
+          "i": "4781",
+          "f": "4785",
+          "txt": "ICTP"
+        },
+        {
+          "i": "5104",
+          "f": "5108",
+          "txt": "ICTP"
+        },
+        {
+          "i": "5291",
+          "f": "5295",
+          "txt": "ICTP"
+        },
+        {
+          "i": "5495",
+          "f": "5499",
+          "txt": "ICTP"
+        }
+      ]
+    },
+    "33": {
+      "name": "6 bone sialoprotein",
+      "spans": [
+        {
+          "i": "4788",
+          "f": "4805",
+          "txt": "bone sialoprotein"
+        }
+      ]
+    },
+    "35": {
+      "name": "7 C-terminal propeptide of type I procollagen",
+      "spans": [
+        {
+          "i": "4811",
+          "f": "4854",
+          "txt": "C-terminal propeptide of type I procollagen"
+        },
+        {
+          "i": "4856",
+          "f": "4860",
+          "txt": "PICP"
+        },
+        {
+          "i": "5142",
+          "f": "5146",
+          "txt": "PICP"
+        },
+        {
+          "i": "5301",
+          "f": "5305",
+          "txt": "PICP"
+        }
+      ]
+    },
+    "40": {
+      "name": "8 cartilage turnove",
+      "spans": [
+        {
+          "i": "4866",
+          "f": "4884",
+          "txt": "cartilage turnover"
+        },
+        {
+          "i": "5694",
+          "f": "5712",
+          "txt": "cartilage turnover"
+        }
+      ]
+    },
+    "46": {
+      "name": "9 cartilage oligomeric matrix protein",
+      "spans": [
+        {
+          "i": "4972",
+          "f": "5007",
+          "txt": "cartilage oligomeric matrix protein"
+        },
+        {
+          "i": "5009",
+          "f": "5013",
+          "txt": "COMP"
+        },
+        {
+          "i": "5179",
+          "f": "5183",
+          "txt": "COMP"
+        },
+        {
+          "i": "5576",
+          "f": "5580",
+          "txt": "COMP"
+        }
+      ]
+    }
+  }
+}

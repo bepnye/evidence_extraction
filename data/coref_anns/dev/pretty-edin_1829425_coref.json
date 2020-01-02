@@ -1,0 +1,196 @@
+{
+  "i": {
+    "12": {
+      "name": "1 control conditions",
+      "spans": [
+        {
+          "i": "3867",
+          "f": "3885",
+          "txt": "control conditions"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Control"
+        }
+      ]
+    },
+    "14": {
+      "name": "2 intervention",
+      "spans": [
+        {
+          "i": "3851",
+          "f": "3863",
+          "txt": "intervention"
+        },
+        {
+          "i": "3936",
+          "f": "3948",
+          "txt": "intervention"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Computer intervention"
+        }
+      ]
+    },
+    "20": {
+      "name": "3 brief smoking cessation training",
+      "spans": [
+        {
+          "i": "3902",
+          "f": "3934",
+          "txt": "brief smoking cessation training"
+        }
+      ]
+    }
+  },
+  "o": {
+    "22": {
+      "name": "1 Assess",
+      "spans": [
+        {
+          "i": "4563",
+          "f": "4569",
+          "txt": "Assess"
+        }
+      ]
+    },
+    "24": {
+      "name": "2 Advise",
+      "spans": [
+        {
+          "i": "4602",
+          "f": "4608",
+          "txt": "Advise"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Advising patients"
+        }
+      ]
+    },
+    "26": {
+      "name": "3 Assist\u2013set goals",
+      "spans": [
+        {
+          "i": "4641",
+          "f": "4657",
+          "txt": "Assist\u2013set goals"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Setting goals"
+        }
+      ]
+    },
+    "28": {
+      "name": "4 Assist\u2013provide written materials",
+      "spans": [
+        {
+          "i": "4690",
+          "f": "4722",
+          "txt": "Assist\u2013provide written materials"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Providing written materials"
+        }
+      ]
+    },
+    "31": {
+      "name": "5 Assist\u2013discuss medication",
+      "spans": [
+        {
+          "i": "4813",
+          "f": "4838",
+          "txt": "Assist\u2013discuss medication"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Making a case assessment"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Discussing medications"
+        }
+      ]
+    },
+    "33": {
+      "name": "6 Arrange",
+      "spans": [
+        {
+          "i": "4874",
+          "f": "4881",
+          "txt": "Arrange"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Arranging follow-ups"
+        }
+      ]
+    },
+    "35": {
+      "name": "7 be abstinent",
+      "spans": [
+        {
+          "i": "5073",
+          "f": "5085",
+          "txt": "be abstinent"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Being abstinent "
+        }
+      ]
+    },
+    "37": {
+      "name": "8 number of days quit",
+      "spans": [
+        {
+          "i": "5202",
+          "f": "5221",
+          "txt": "number of days quit"
+        }
+      ]
+    },
+    "39": {
+      "name": "9 number of quit attempts",
+      "spans": [
+        {
+          "i": "5278",
+          "f": "5301",
+          "txt": "number of quit attempts"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Number of quit attempts"
+        }
+      ]
+    },
+    "41": {
+      "name": "Assist\u2013provide referral",
+      "spans": [
+        {
+          "i": "4756",
+          "f": "4779",
+          "txt": "Assist\u2013provide referral"
+        },
+        {
+          "i": "-1",
+          "f": "-1",
+          "txt": "Making referrals"
+        }
+      ]
+    }
+  }
+}
