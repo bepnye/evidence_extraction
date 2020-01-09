@@ -125,7 +125,7 @@ class Doc:
 		return token_labels
 
 	def substitute_string(self, start_str, substitutions):
-		char_offsets = [0]*len(start_str)
+		char_offsets = [0]*(len(start_str)+1)
 		new_str = ''
 		cur_idx = 0
 		for sf_start, sf_end, lf_text in substitutions:
@@ -164,11 +164,11 @@ class Doc:
 		for label_class in self.labels:
 			for span in self.labels[label_class]:
 				span.i += char_offsets[span.i]
-				span.f += char_offsets[span.f-1]
+				span.f += char_offsets[span.f]
 				span.text = self.text[span.i:span.f]
 		self.parse_text()
 
-	def replace_acronyms(self, save_map = True, load_map = True):
+	def replace_acronyms(self, save_map = False, load_map = False):
 		map_fname = '../data/sf_lf_maps/{}.ab3p'.format(self.id)
 		if not self.has_acronyms:
 			print('Skipping repeated acronym replacement call for {}'.format(self.id))
