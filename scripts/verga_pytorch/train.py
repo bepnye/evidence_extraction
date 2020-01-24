@@ -82,7 +82,7 @@ def train_model(model, df, batch_size = 1, epochs = 50):
     """ Take a model and train it with the given data. """
     train, dev, test = split_data(df)
     criterion = nn.CrossEntropyLoss() 
-    optimizer = optim.Adam(model.parameters())
+    optimizer = optim.Adam(model.parameters(), lr = 1e-10) 
     for epoch in range(epochs):
         # define losses to use later
         training_loss = 0
