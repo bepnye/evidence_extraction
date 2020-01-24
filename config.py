@@ -1,2 +1,2 @@
-EV_INF_DIR = '/Users/elizabethwagoner/Desktop/ben/evidence-inference/'
-BERT_DIR = '/Users/elizabethwagoner/Desktop/ben/biobert_pubmed/'
+EV_INF_DIR = '/home/eric/jayded/evidence-inference/'
+BERT_DIR = '/home/eric/biobert/'
