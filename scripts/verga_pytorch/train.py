@@ -26,7 +26,7 @@ def label_to_val(label):
 def split_data(df):
     """ Split the data into train, dev, and test. """
     random.shuffle(df)
-    train_split = int(len(df) * 0.7)
+    train_split = int(len(df) * 0.6)
     dev_split   = int(len(df) * 0.8)
     return df[:train_split], df[train_split:dev_split], df[dev_split:]
 
@@ -65,6 +65,9 @@ def extract_data(df):
         for key in relations.keys():
             # find what entity matches us
             entity1, entity2 = find_entity_match(mapping, key[0]), find_entity_match(mapping, key[1])
+            if len(entity1.mentions) == 0 or len(entity2.mentions) == 0:
+                continue
+
             doc_data.append((entity1, entity2))
             labels.append(label_to_val(relations[key]))
             assert(not(entity1 is None) and not(entity2 is None)) 
@@ -78,19 +81,19 @@ def create_model():
     """ Create a model and return it. """
     return BERTVergaPytorch()
 
-def train_model(model, df, batch_size = 1, epochs = 50):
+def train_model(model, df, batch_size = 1, epochs = 100):
     """ Take a model and train it with the given data. """
     train, dev, test = split_data(df)
     criterion = nn.CrossEntropyLoss() 
-    optimizer = optim.Adam(model.parameters(), lr = 1e-10) 
+    optimizer = optim.Adam(model.parameters(), lr = 1e-5) 
     for epoch in range(epochs):
         # define losses to use later
         training_loss = 0
         dev_loss      = 0 
         # single epoch train
         for batch_range in range(0, len(train), batch_size): 
-            data = df[batch_range: batch_range + batch_size]
-            inputs, labels = extract_data(data) 
+            data = train[batch_range: batch_range + batch_size]
+            inputs, labels = extract_data(data)
             if len(labels) == 0: continue
 
             # zero the parameter gradients
@@ -108,8 +111,8 @@ def train_model(model, df, batch_size = 1, epochs = 50):
         # evaluate on validation set
         dev_outputs = []
         for batch_range in range(0, len(dev), batch_size):
-            data = df[batch_range: batch_range + batch_size]
-            inputs, labels = extract_data(data) # TODO: currently using random var names
+            data = dev[batch_range: batch_range + batch_size]
+            inputs, labels = extract_data(data) 
             if len(labels) == 0: continue 
 
             # run model through validation data
