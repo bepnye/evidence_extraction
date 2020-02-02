@@ -169,10 +169,11 @@ def load_data(tokenizer = None):
     if os.path.exists('./doc_entities.p'):
         with open('./doc_entities.p', 'rb') as tmp:
             doc_entities = pickle.load(tmp)
-
+            
         with open('./docs_normal.p', 'rb') as tmp:
             docs = pickle.load(tmp)
-
+        
+        #import pdb; pdb.set_trace()
     else:
         docs = process_evidence_inference.read_docs(abst_only = True)
         for d in docs: d.replace_acronyms()
@@ -188,7 +189,6 @@ def load_data(tokenizer = None):
         tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer))
         counter += 1
        
-
     return tokenized_docs
 
 #data = load_data()

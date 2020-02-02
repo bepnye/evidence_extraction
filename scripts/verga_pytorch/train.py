@@ -1,9 +1,12 @@
 import random
 import torch.nn as nn
-from load_data import * 
+from load_data import *
+from load_CDR_data import load_CDR  
 from model import * 
 import torch.optim as optim 
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, classification_report
+import numpy as np
+CUT_OFF = 500 
 
 def find_entity_match(entity_list, str_):
     """ 
@@ -21,7 +24,7 @@ def find_entity_match(entity_list, str_):
 
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
-    return {'INCR': 0, 'DECR': 1, 'SAME': 2, 'NULL': 3}.get(label)
+    return {'INCR': 0, 'DECR': 1, 'SAME': 2, 'NULL': 3, 'Null': 0, 'CID': 1}.get(label)
 
 def split_data(df):
     """ Split the data into train, dev, and test. """
@@ -58,6 +61,7 @@ def extract_data(df):
     """
     all_data   = []
     labels = []
+    invalid_entry = 0
     for d in df:
         mapping   = d.entity_map[0]
         relations = d.entity_map[1] # this is a dictionary
@@ -65,7 +69,10 @@ def extract_data(df):
         for key in relations.keys():
             # find what entity matches us
             entity1, entity2 = find_entity_match(mapping, key[0]), find_entity_match(mapping, key[1])
+            entity1.mentions = list(filter(lambda m: m.i < CUT_OFF, entity1.mentions))
+            entity2.mentions = list(filter(lambda m: m.i < CUT_OFF, entity2.mentions))
             if len(entity1.mentions) == 0 or len(entity2.mentions) == 0:
+                invalid_entry += 1
                 continue
 
             doc_data.append((entity1, entity2))
@@ -75,6 +82,7 @@ def extract_data(df):
         text, segment_ids = to_segmentation_ids(d.tokenized_text)
         all_data.append({'text': text, 'segment_ids': segment_ids, 'relations': doc_data})
 
+    #print("Number of invalid ({}) / Total Samples ({}) = {}".format(invalid_entry, len(labels), round(invalid_entry/ len(labels), 2) if len(labels) != 0 else 0))
     return all_data, labels         
 
 def create_model():
@@ -83,6 +91,8 @@ def create_model():
 
 def train_model(model, df, batch_size = 1, epochs = 100):
     """ Take a model and train it with the given data. """
+    #extract_data(df)
+    #import pdb; pdb.set_trace()
     train, dev, test = split_data(df)
     criterion = nn.CrossEntropyLoss() 
     optimizer = optim.Adam(model.parameters(), lr = 1e-5) 
@@ -110,6 +120,7 @@ def train_model(model, df, batch_size = 1, epochs = 100):
         
         # evaluate on validation set
         dev_outputs = []
+        dev_labels  = []
         for batch_range in range(0, len(dev), batch_size):
             data = dev[batch_range: batch_range + batch_size]
             inputs, labels = extract_data(data) 
@@ -122,15 +133,57 @@ def train_model(model, df, batch_size = 1, epochs = 100):
             loss = criterion(outputs, torch.tensor(labels).cuda())
             dev_loss += loss.item()
             dev_outputs.extend(outputs.cpu().numpy()) # or something like this
-       
-        outputs = [torch.argmax(x).item() for x in outputs]
+            dev_labels.extend(labels)
+        
+        outputs = [np.argmax(x) for x in dev_outputs]
+        labels  = dev_labels
         f1 = f1_score(labels, outputs, average = 'macro')
-        print("Epoch {}\nDev F1 score: {}\nDev Loss: {}\nTraining Loss: {}\n\n".format(epoch, f1, dev_loss, training_loss))
+        if max(labels) > 1 or max(outputs) > 1:
+            print(classification_report(labels, outputs))
+            outputs = [1 if x != 3 else 0 for x in outputs]
+            labels  = [1 if x != 3 else 0 for x in labels]
+            bin_f1  = f1_score(labels, outputs, average = 'macro')
+        else:
+            bin_f1 = 0
 
-def main(): 
-    df    = load_data()
+        print(classification_report(labels, outputs))
+        print("Epoch {}\nDev F1 score: {}\nDev bin F1: {}\nDev Loss: {}\nTraining Loss: {}\n\n".format(epoch, f1, bin_f1, dev_loss, training_loss))
+        
+    test_outputs = []
+    test_labels  = []
+    for batch_range in range(0, len(test), batch_size):
+        data = test[batch_range: batch_range + batch_size]
+        inputs, labels = extract_data(data)
+        if len(labels) == 0: continue
+
+        with torch.no_grad():
+            outputs = model(inputs)
+
+        test_outputs.extend(outputs.cpu().numpy())
+        test_labels.extend(labels)
+
+    outputs = [np.argmax(x) for x in test_outputs]
+    labels  = test_labels
+    f1 = f1_score(labels, outputs, average = 'macro')
+    
+    if max(labels) > 1 or max(outputs) > 1:
+        print(classification_report(labels, outputs))
+        outputs = [1 if x != 3 else 0 for x in outputs]
+        labels  = [1 if x != 3 else 0 for x in labels]
+        bin_f1  = f1_score(labels, outputs, average = 'macro')
+    else:
+        bin_f1 = 0
+
+    print(classification_report(labels, outputs))
+    print("Test F1 score: {}\nBinary Test F1 score: {}".format(f1, bin_f1))
+
+def main(type_): 
+    if type_ == 'evidence_inference':
+        df    = load_data()
+    elif type_ == 'CDR':
+        df    = load_CDR()
     model = create_model()
     train_model(model, df)
 
 if __name__ == '__main__':
-    main()
+    main('CDR')
