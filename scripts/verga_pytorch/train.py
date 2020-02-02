@@ -49,7 +49,7 @@ def to_segmentation_ids(tokens):
 
     return TOKENIZER.convert_tokens_to_ids(tokens), segments
 
-def extract_data(df):
+def extract_data(df, balance_classes = False):
     """ 
     Extract the data from the classes and reformat it. 
     
@@ -83,16 +83,40 @@ def extract_data(df):
         all_data.append({'text': text, 'segment_ids': segment_ids, 'relations': doc_data})
 
     #print("Number of invalid ({}) / Total Samples ({}) = {}".format(invalid_entry, len(labels), round(invalid_entry/ len(labels), 2) if len(labels) != 0 else 0))
-    return all_data, labels         
+    if balance_classes:
+        label_types = set(labels)
+        smallest_class = min([labels.count(s) for s in label_types])
+        num_taken = [0 for _ in label_types]
+        
+        n_labels, n_docs = 0, 0
+        new_data, new_labels = [], []
+        while (sum(num_taken) < (smallest_class * len(label_types))):
+            
+            new_relation_list = []
+            for x in all_data[n_docs]['relations']: 
+                if num_taken[labels[n_labels]] < smallest_class:
+                    new_relation_list.append(x)
+                    new_labels.append(labels[n_labels])
+                    num_taken[labels[n_labels]] += 1
 
-def create_model():
+                n_labels += 1
+                all_data[n_docs]['relations'] = new_relation_list        
+            
+            if len(new_relation_list) != 0:
+                new_data.append(all_data[n_docs])
+
+            n_docs += 1
+
+        return new_data, new_labels
+    else:
+        return all_data, labels         
+
+def create_model(out):
     """ Create a model and return it. """
-    return BERTVergaPytorch()
+    return BERTVergaPytorch(out)
 
-def train_model(model, df, batch_size = 1, epochs = 100):
+def train_model(model, df, batch_size = 1, epochs = 100, balance_classes = False):
     """ Take a model and train it with the given data. """
-    #extract_data(df)
-    #import pdb; pdb.set_trace()
     train, dev, test = split_data(df)
     criterion = nn.CrossEntropyLoss() 
     optimizer = optim.Adam(model.parameters(), lr = 1e-5) 
@@ -103,7 +127,7 @@ def train_model(model, df, batch_size = 1, epochs = 100):
         # single epoch train
         for batch_range in range(0, len(train), batch_size): 
             data = train[batch_range: batch_range + batch_size]
-            inputs, labels = extract_data(data)
+            inputs, labels = extract_data(data, balance_classes)
             if len(labels) == 0: continue
 
             # zero the parameter gradients
@@ -180,10 +204,12 @@ def train_model(model, df, batch_size = 1, epochs = 100):
 def main(type_): 
     if type_ == 'evidence_inference':
         df    = load_data()
+        model = create_model(4)
     elif type_ == 'CDR':
         df    = load_CDR()
-    model = create_model()
-    train_model(model, df)
+        model = create_model(2)
+
+    train_model(model, df, balance_classes = True)
 
 if __name__ == '__main__':
-    main('CDR')
+    main('evidence_inference')

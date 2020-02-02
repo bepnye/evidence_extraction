@@ -6,15 +6,15 @@ from transformers import *
 class BERTVergaPytorch(nn.Module):
     """ TODO: """
 
-    def __init__(self):
+    def __init__(self, output_dim = 4):
         super(BERTVergaPytorch, self).__init__()
         # INIT ANY VARIABLES USED
-        self.out_dim    = 4
+        self.out_dim    = output_dim
         self.bert_dim   = 768
         self.len_cutoff = 500
 
         # INIT MODEL LAYERS
-        self.bert_encoder = BertModel.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/', output_hidden_states = True).cuda()#.eval()
+        self.bert_encoder = BertModel.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/', output_hidden_states = True).cuda().eval()
         
         # init the weight matrix used for final output 
         weight_matrix_dim  = torch.empty(self.bert_dim, self.out_dim, self.bert_dim)
@@ -28,8 +28,8 @@ class BERTVergaPytorch(nn.Module):
         inputs = inputs[0] # this is just a fake run... so its okay..
         text = torch.tensor(inputs['text'][:self.len_cutoff]).cuda().unsqueeze(0)
         segments = torch.tensor(inputs['segment_ids'][:self.len_cutoff]).cuda().unsqueeze(0)
-        #with torch.no_grad():
-        encoded_layers = self.bert_encoder(text, segments)
+        with torch.no_grad():
+            encoded_layers = self.bert_encoder(text, segments)
         
         word_embeddings = encoded_layers[-1][-2][0]
         num_head_mentions, num_tail_mentions = 0, 0
@@ -51,7 +51,7 @@ class BERTVergaPytorch(nn.Module):
             z_head = torch.matmul(self.W.cuda(), entity1_word_pieces.transpose(0, 1)).transpose(0, 1).transpose(1, 2)
             z = torch.matmul(z_head, entity2_word_pieces.transpose(0, 1))
             # LogSumExp((Weights * E1 (transpose)) * E2 (transpose)) over dim = 0
-            flattened_z = z.transpose(0, 2).reshape(-1, 4)
+            flattened_z = z.transpose(0, 2).reshape(-1, self.out_dim)
             entity_relation_scores.append(torch.logsumexp(flattened_z, dim = 0))
 
         return torch.stack(entity_relation_scores) 
