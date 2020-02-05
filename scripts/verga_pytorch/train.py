@@ -93,7 +93,7 @@ def train_model(model, df, parameters):
             optimizer.zero_grad()
 
             # forward + backwards + optimize
-            outputs = model(inputs)
+            outputs, mention_scores = model(inputs)
             labels  = train_labels[label_offset: label_offset + len(outputs)]
             loss = criterion(outputs, torch.tensor(labels).cuda())
             loss.backward()
