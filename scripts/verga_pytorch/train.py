@@ -1,5 +1,8 @@
+import copy
 import random
 import torch.nn as nn
+import argparse
+import sys
 from load_data import *
 from load_CDR_data import load_CDR  
 from model import * 
@@ -21,7 +24,6 @@ def find_entity_match(entity_list, str_):
 
     return None
 
-
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
     return {'INCR': 0, 'DECR': 1, 'SAME': 2, 'NULL': 3, 'Null': 0, 'CID': 1}.get(label)
@@ -32,7 +34,6 @@ def split_data(df):
     train_split = int(len(df) * 0.6)
     dev_split   = int(len(df) * 0.8)
     return df[:train_split], df[train_split:dev_split], df[dev_split:]
-
 
 def to_segmentation_ids(tokens):
     """ 
@@ -59,6 +60,7 @@ def extract_data(df, balance_classes = False):
     where string1 and string2 are string versions of the entities,
     and string 3 is the label. 
     """
+    random.shuffle(df)
     all_data   = []
     labels = []
     invalid_entry = 0
@@ -91,7 +93,7 @@ def extract_data(df, balance_classes = False):
         n_labels, n_docs = 0, 0
         new_data, new_labels = [], []
         while (sum(num_taken) < (smallest_class * len(label_types))):
-            
+            copied_data = copy.deepcopy(all_data[n_docs])
             new_relation_list = []
             for x in all_data[n_docs]['relations']: 
                 if num_taken[labels[n_labels]] < smallest_class:
@@ -100,10 +102,10 @@ def extract_data(df, balance_classes = False):
                     num_taken[labels[n_labels]] += 1
 
                 n_labels += 1
-                all_data[n_docs]['relations'] = new_relation_list        
-            
+                copied_data['relations'] = new_relation_list    
+
             if len(new_relation_list) != 0:
-                new_data.append(all_data[n_docs])
+                new_data.append(copied_data)
 
             n_docs += 1
 
@@ -111,30 +113,49 @@ def extract_data(df, balance_classes = False):
     else:
         return all_data, labels         
 
-def create_model(out):
-    """ Create a model and return it. """
-    return BERTVergaPytorch(out)
+def create_model(dataset, bert_backprop, ner_loss):
+    """ 
+    Create a model with the given specifications and return it.
 
-def train_model(model, df, batch_size = 1, epochs = 100, balance_classes = False):
+    @param dataset specifies what dataset to use so we know how big our output dim should be.
+    @param bert_backprop determines if we are to backprop through BERT.
+    @param ner_loss determines if we are to add NER loss to our outputs.
+    @return a model set up with the given specification.
+    """
+    output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
+    
+    return BERTVergaPytorch(output_dimensions, bert_backprop = bert_backprop, ner_loss = ner_loss)
+
+def train_model(model, df, parameters): 
     """ Take a model and train it with the given data. """
+    # get parameters of how to train model 
+    epochs     = parameters.epochs
+    batch_size = parameters.batch_size
+    balance_classes = parameters.balance_classes
+    learning_rate   = parameters.lr
+
+    # split data, set up our optimizers
     train, dev, test = split_data(df)
     criterion = nn.CrossEntropyLoss() 
-    optimizer = optim.Adam(model.parameters(), lr = 1e-5) 
+    optimizer = optim.Adam(model.parameters(), lr = learning_rate) 
     for epoch in range(epochs):
         # define losses to use later
         training_loss = 0
         dev_loss      = 0 
+       
+        train_data, train_labels = extract_data(train, balance_classes)
+        label_offset = 0
         # single epoch train
         for batch_range in range(0, len(train), batch_size): 
-            data = train[batch_range: batch_range + batch_size]
-            inputs, labels = extract_data(data, balance_classes)
-            if len(labels) == 0: continue
-
+            inputs = train_data[batch_range: batch_range + batch_size]
+           
+            if len(inputs) == 0: continue
             # zero the parameter gradients
             optimizer.zero_grad()
 
             # forward + backwards + optimize
             outputs = model(inputs)
+            labels  = train_labels[label_offset: label_offset + len(outputs)]
             loss = criterion(outputs, torch.tensor(labels).cuda())
             loss.backward()
             optimizer.step()
@@ -142,6 +163,9 @@ def train_model(model, df, batch_size = 1, epochs = 100, balance_classes = False
             # add loss 
             training_loss += loss.item()
         
+            # next labels
+            label_offset += len(outputs)
+         
         # evaluate on validation set
         dev_outputs = []
         dev_labels  = []
@@ -201,15 +225,26 @@ def train_model(model, df, batch_size = 1, epochs = 100, balance_classes = False
     print(classification_report(labels, outputs))
     print("Test F1 score: {}\nBinary Test F1 score: {}".format(f1, bin_f1))
 
-def main(type_): 
-    if type_ == 'evidence_inference':
-        df    = load_data()
-        model = create_model(4)
-    elif type_ == 'CDR':
-        df    = load_CDR()
-        model = create_model(2)
+def main(args=sys.argv[1:]): 
+    ### Use arg parser to read in data. ###
+    parser = argparse.ArgumentParser(description="Parses input specifications of how to run model.")
+    parser.add_argument("--dataset", dest='dataset', required=True, help="Which dataset to use.")
+    parser.add_argument("--epochs", dest='epochs', type=int, required=True, help="How many epochs to run model for.")
+    parser.add_argument("--learning_rate", dest='lr', type=float, required=True, help="What should the learning rate be?")
+    parser.add_argument("--batch_size", dest='batch_size', type=int, required=True, help="What should the batch_size be?")
+    parser.add_argument("--balance_classes", dest="balance_classes", type=bool, required=True, help="Should we balance the classes for you?")
+    parser.add_argument("--bert_backprop", dest="bert_backprop", type=bool, required=True, help="Should we backprop through BERT?")
+    parser.add_argument("--ner_loss", dest="ner_loss", type=str, default="NULL", help="Should we add NER loss to model (select 'joint' or 'alternate'") 
+    print("Running with the given arguments:\n\n{}".format(parser))
 
-    train_model(model, df, balance_classes = True)
+    ### GET THE DATA ### 
+    df = get_dataset(parser.dataset) 
+
+    ### LOAD THE MODEL ###
+    model = create_model(dataset=parser.dataset, bert_backprop=parser.bert_backprop, ner_loss=parser.ner_loss) 
+
+    ### TRAIN ###
+    train_model(model, df, parser)
 
 if __name__ == '__main__':
-    main('evidence_inference')
+    main()
