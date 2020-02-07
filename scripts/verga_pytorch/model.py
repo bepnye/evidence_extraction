@@ -2,7 +2,10 @@ import torch
 from torch import optim
 import torch.nn as nn
 from transformers import *
+from padded_sequence import PaddedSequence
+
 SCI_BERT_LOCATION = '/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/'
+NER_BERT_LOCATION = '/home/jay/scibert_ner/'
 
 class BERTVergaPytorch(nn.Module):
     """
@@ -19,10 +22,10 @@ class BERTVergaPytorch(nn.Module):
         @param bert_encoder  is the BERT model used.
     """
 
-    def __init__(self, output_dim, bert_backprop, ner_loss, hard_attention):
+    def __init__(self, output_dim, bert_backprop, ner_loss, hard_attention, initialize_bert=True):
         super(BERTVergaPytorch, self).__init__()
         # Make sure data used makes sense
-        assert(ner_loss.upper() in set('NULL', 'JOINT', 'ALTERNATE'))
+        assert(ner_loss.upper() in set(['NULL', 'JOINT', 'ALTERNATE']))
         assert(not(hard_attention) or ner_loss.upper() == 'ALTERNATE')
 
         # INIT ANY VARIABLES USED
@@ -32,20 +35,23 @@ class BERTVergaPytorch(nn.Module):
         self.ner_loss   = ner_loss.upper()
         self.bert_backprop = bert_backprop
         self.hard_attention = hard_attention
-        self.bert_encoder   = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+        if initialize_bert:
+            self.bert_encoder   = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+        else:
+            self.bert_encoder = None
 
         # INIT MODEL LAYERS
         if not(bert_backprop):
             self.bert_encoder.eval()
 
         # init the weight matrix used for final output
-        weight_matrix_dim  = torch.empty(self.bert_dim, self.out_dim, self.bert_dim)
+        weight_matrix_dim  = torch.empty(self.out_dim, self.bert_dim, self.bert_dim)
         biaffine_transform = nn.init.kaiming_normal_(weight_matrix_dim, nonlinearity = 'relu')
         self.W = torch.nn.Parameter(biaffine_transform)
         self.W.requires_grad = True
         assert(self.bert_encoder.config.output_hidden_states==True)
 
-    def bert_encode(self, text, segments):
+    def bert_encode(self, text):
         """
         Run BERT over abstract data.
         @param text is the word piece tokens
@@ -54,12 +60,16 @@ class BERTVergaPytorch(nn.Module):
         @return the encoded BERT representation, complete with ALL layer info.
         """
         if self.bert_backprop:
-            return self.bert_encoder(text, segments)
+            return self.bert_encoder(text, None)
 
+        ### NOT BACKPROPING ###
+        padded_text = PaddedSequence.autopad(text, batch_first = True, padding_value = 0)
         with torch.no_grad():
-            encoded_layers = self.bert_encoder(text, segments)
-
-        return encoded_layers
+            encoded_layers = self.bert_encoder(padded_text.data.cuda(), torch.zeros(padded_text.data.shape).cuda())
+    
+        word_embeddings = encoded_layers[-1][-2]
+        mask = padded_text.mask(on=1, off=0, device='cuda', dtype=torch.float)
+        return (word_embeddings * mask.unsqueeze(dim=-1)) #word_embeddings
 
     def get_entity_mentions(self, word_embeddings, relations):
         """
@@ -77,35 +87,41 @@ class BERTVergaPytorch(nn.Module):
         else: # we are alternating
             pass
 
-    def forward(self, inputs):
-        inputs = inputs[0] # this is just a fake run... so its okay..
-        text = torch.tensor(inputs['text'][:self.len_cutoff]).cuda().unsqueeze(0)
-        segments = torch.tensor(inputs['segment_ids'][:self.len_cutoff]).cuda().unsqueeze(0)
-
+    def forward(self, inputs, word_embeddings=None):
+        text = [torch.tensor(input_['text'][:self.len_cutoff]).cuda() for input_ in inputs]
+        
         # encode the data
-        encoded_layers  = self.bert_encoder(text, segments)
-        word_embeddings = encoded_layers[-1][-2][0]
-        mention_scores  = self.get_entity_mentions(word_embeddings, inputs['relations'])
+        if word_embeddings is None:
+            word_embeddings = self.bert_encode(text)
 
-        entity_relation_scores = []
-        for entity1, entity2 in inputs['relations']:
-            entity1_word_pieces = []
-            for mention in entity1.mentions:
-                if mention.i > self.len_cutoff: continue
-                entity1_word_pieces.append(word_embeddings[mention.i:mention.f])
+        mention_scores  = self.get_entity_mentions(word_embeddings, inputs)#['relations'])
+       
+        batch_e1_pieces = []
+        batch_e2_pieces = []
+        for idx, input_ in enumerate(inputs):
+            for entity1, entity2 in input_['relations']:
+                entity1_word_pieces = []
+                for mention in entity1.mentions:
+                    if mention.i > self.len_cutoff: continue
+                    entity1_word_pieces.append(word_embeddings[idx][mention.i:mention.f])
 
-            entity2_word_pieces = []
-            for mention in entity2.mentions:
-                if mention.i > self.len_cutoff: continue
-                entity2_word_pieces.append(word_embeddings[mention.i:mention.f])
+                entity2_word_pieces = []
+                for mention in entity2.mentions:
+                    if mention.i > self.len_cutoff: continue
+                    entity2_word_pieces.append(word_embeddings[idx][mention.i:mention.f])
 
-            entity1_word_pieces = torch.cat(entity1_word_pieces)
-            entity2_word_pieces = torch.cat(entity2_word_pieces)
+                # ADD TO BIG ARRAY TO DO ONE BIG MULTIPLICATION FOR SPEED (kerchoo)
+                batch_e1_pieces.append(torch.cat(entity1_word_pieces))
+                batch_e2_pieces.append(torch.cat(entity2_word_pieces))
+        
+        e1 = PaddedSequence.autopad(batch_e1_pieces, batch_first = True, padding_value = 0)
+        e2 = PaddedSequence.autopad(batch_e2_pieces, batch_first = True, padding_value = 0) 
+        e1_mask = e1.mask(on=0, off=float('-inf'), size=e1.data.size()[:2])
+        e2_mask = e2.mask(on=0, off=float('-inf'), size=e2.data.size()[:2])
+        mask = (e1_mask.unsqueeze(dim=1) + e2_mask.unsqueeze(dim=2)).unsqueeze(dim=-1)
 
-            z_head = torch.matmul(self.W.cuda(), entity1_word_pieces.transpose(0, 1)).transpose(0, 1).transpose(1, 2)
-            z = torch.matmul(z_head, entity2_word_pieces.transpose(0, 1))
-            # LogSumExp((Weights * E1 (transpose)) * E2 (transpose)) over dim = 0
-            flattened_z = z.transpose(0, 2).reshape(-1, self.out_dim)
-            entity_relation_scores.append(torch.logsumexp(flattened_z, dim = 0))
-
-        return torch.stack(entity_relation_scores), mention_scores
+        z_head   = torch.matmul(self.W.unsqueeze(dim=1).cuda(), e1.data.transpose(1, 2))
+        z        = torch.matmul(z_head.transpose(2, 3), e2.data.transpose(1, 2))
+        masked_z = (z.transpose(0, 1) + mask.transpose(1, 3).cuda())
+        entity_relation_scores = torch.logsumexp(masked_z.view(*masked_z.size()[:2], -1), dim=2) 
+        return entity_relation_scores, mention_scores

@@ -1,14 +1,20 @@
 import copy
+import torch
 import random
+from transformers import *
+
+TOKENIZER = BertTokenizer.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased')
+#from load_data import TOKENIZER
+CUT_OFF = 500
 
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
     return {'INCR': 0, 'DECR': 1, 'SAME': 2, 'NULL': 3, 'Null': 0, 'CID': 1}.get(label)
 
-def split_data(df):
-    """ Split the data into train, dev, and test. """
-    random.shuffle(df)
-    train_split = int(len(df) * 0.6)
+def split_data(df, percent_train = 1):
+    """ Split the data into train, dev, and test. @param percent_train tells us how much training data to use of the 70% already used."""
+    random.shuffle(df) 
+    train_split = int(len(df) * 0.7 * percent_train)
     dev_split   = int(len(df) * 0.8)
     return df[:train_split], df[train_split:dev_split], df[dev_split:]
 
@@ -41,6 +47,42 @@ def to_segmentation_ids(tokens):
 
     return TOKENIZER.convert_tokens_to_ids(tokens), segments
 
+def generate_ner_labels(text, mapping, relations):
+    """
+    For each document, create labels for each token such that 3 is NULL, 1 is an intervetion, 2 is an outcome.
+    @param text is tokenized text of 1 document.
+    @param mapping is the list of entity objects.
+    @param relations is the list of relations consisting of pairs of entities (AS STRINGS).
+    @return ner labels for this document
+
+    TODO: Make it configurable ?
+    POPULATIONS = 0
+    INTERVENTIONS = 1
+    OUTCOMES = 2
+    NULL = 3 
+    """
+    label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
+    intervention_idx = set()
+    outcome_idx = set()
+
+    for intv, out in relations.keys():
+        e1 = find_entity_match(mapping, intv)        
+        e2 = find_entity_match(mapping, out)
+        for m in e1.mentions: intervention_idx.update(range(m.i, m.f))
+        for m in e2.mentions: outcome_idx.update(range(m.i, m.f))
+
+    ner_labels = []
+    for i in range(len(text)): 
+        if i in intervention_idx: 
+            ner_labels.append(label_config['INTERVENTION'])
+        elif i in outcome_idx: 
+            ner_labels.append(label_config['OUTCOME'])
+        else:
+            ner_labels.append(label_config['NULL'])
+
+    return ner_labels
+
+
 def extract_data(df, balance_classes = False):
     """
     Extract the data from the classes and reformat it.
@@ -54,11 +96,16 @@ def extract_data(df, balance_classes = False):
     random.shuffle(df)
     all_data   = []
     labels = []
+    ner_labels = []
     invalid_entry = 0
     for d in df:
         mapping   = d.entity_map[0]
         relations = d.entity_map[1] # this is a dictionary
         doc_data  = []
+
+        ## TODO: Remove/rename in the future 
+        text, _ = to_segmentation_ids(d.tokenized_text)
+        document_ner_label = generate_ner_labels(text, mapping, relations)
         for key in relations.keys():
             # find what entity matches us
             entity1, entity2 = find_entity_match(mapping, key[0]), find_entity_match(mapping, key[1])
@@ -72,13 +119,15 @@ def extract_data(df, balance_classes = False):
             labels.append(label_to_val(relations[key]))
             assert(not(entity1 is None) and not(entity2 is None))
 
-        text, segment_ids = to_segmentation_ids(d.tokenized_text)
-        all_data.append({'text': text, 'segment_ids': segment_ids, 'relations': doc_data})
-
+        ner_labels.append(torch.tensor(document_ner_label))
+        if len(doc_data) == 0: continue
+        all_data.append({'text': text, 'relations': doc_data})
+    
     if balance_classes:
+        assert(True == False)
         return balance_label_classes(all_data, labels)
     else:
-        return all_data, labels
+        return all_data, labels, ner_labels
 
 def balance_label_classes(all_data, labels):
     """
