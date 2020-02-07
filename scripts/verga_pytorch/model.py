@@ -5,6 +5,7 @@ from transformers import *
 from padded_sequence import PaddedSequence
 
 SCI_BERT_LOCATION = '/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/'
+NER_BERT_LOCATION = '/home/jay/scibert_ner/'
 
 class BERTVergaPytorch(nn.Module):
     """
@@ -21,7 +22,7 @@ class BERTVergaPytorch(nn.Module):
         @param bert_encoder  is the BERT model used.
     """
 
-    def __init__(self, output_dim, bert_backprop, ner_loss, hard_attention):
+    def __init__(self, output_dim, bert_backprop, ner_loss, hard_attention, initialize_bert=True):
         super(BERTVergaPytorch, self).__init__()
         # Make sure data used makes sense
         assert(ner_loss.upper() in set(['NULL', 'JOINT', 'ALTERNATE']))
@@ -34,7 +35,10 @@ class BERTVergaPytorch(nn.Module):
         self.ner_loss   = ner_loss.upper()
         self.bert_backprop = bert_backprop
         self.hard_attention = hard_attention
-        self.bert_encoder   = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+        if initialize_bert:
+            self.bert_encoder   = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+        else:
+            self.bert_encoder = None
 
         # INIT MODEL LAYERS
         if not(bert_backprop):
@@ -83,11 +87,13 @@ class BERTVergaPytorch(nn.Module):
         else: # we are alternating
             pass
 
-    def forward(self, inputs):
+    def forward(self, inputs, word_embeddings=None):
         text = [torch.tensor(input_['text'][:self.len_cutoff]).cuda() for input_ in inputs]
         
         # encode the data
-        word_embeddings = self.bert_encode(text)
+        if word_embeddings is None:
+            word_embeddings = self.bert_encode(text)
+
         mention_scores  = self.get_entity_mentions(word_embeddings, inputs)#['relations'])
        
         batch_e1_pieces = []
