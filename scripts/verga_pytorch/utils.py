@@ -1,5 +1,10 @@
 import copy
 import random
+from transformers import *
+
+TOKENIZER = BertTokenizer.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased')
+#from load_data import TOKENIZER
+CUT_OFF = 500
 
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
@@ -59,6 +64,7 @@ def extract_data(df, balance_classes = False):
         mapping   = d.entity_map[0]
         relations = d.entity_map[1] # this is a dictionary
         doc_data  = []
+
         for key in relations.keys():
             # find what entity matches us
             entity1, entity2 = find_entity_match(mapping, key[0]), find_entity_match(mapping, key[1])
@@ -72,9 +78,11 @@ def extract_data(df, balance_classes = False):
             labels.append(label_to_val(relations[key]))
             assert(not(entity1 is None) and not(entity2 is None))
 
-        text, segment_ids = to_segmentation_ids(d.tokenized_text)
-        all_data.append({'text': text, 'segment_ids': segment_ids, 'relations': doc_data})
-
+        ### TO DO REMOVE THIS (we modify text here so keep it for now) ### 
+        text, _  = to_segmentation_ids(d.tokenized_text)
+        if len(doc_data) == 0: continue
+        all_data.append({'text': text, 'relations': doc_data})
+    
     if balance_classes:
         return balance_label_classes(all_data, labels)
     else:
