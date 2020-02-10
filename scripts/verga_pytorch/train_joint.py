@@ -55,7 +55,7 @@ def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size
         ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
-            import pdb; pdb.set_trace()
+            assert('NO TEACHER FORCING' == 'SAD')
             relation_outputs, _ = relation_model(inputs, hidden_states[-2])
             
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
@@ -106,6 +106,8 @@ def train_model(ner_model, relation_model, df, parameters):
     balance_classes = parameters.balance_classes
     learning_rate   = parameters.lr
     ner_loss_weighting = parameters.ner_loss_weight
+    teacher_force_ratio = parameters.teacher_forcing_ratio
+    teacher_force_decay = parameters.teacher_forcing_decay
     assert(ner_loss_weighting <= 1.0 and ner_loss_weighting >= 0.0)
 
     # split data, set up our optimizers
@@ -118,8 +120,8 @@ def train_model(ner_model, relation_model, df, parameters):
         # define losses to use later
         label_offset  = 0 
         training_loss = 0
- 
         train_data, train_labels, ner_labels = extract_data(train, balance_classes == 'True')        
+        teacher_force = True if random.uniform(0, 1) < teacher_force_ratio else False
 
         # single epoch train
         for batch_range in range(0, len(train_data), batch_size):
@@ -137,7 +139,7 @@ def train_model(ner_model, relation_model, df, parameters):
                                                             attention_mask=ner_mask,
                                                             labels = ner_batch_labels.data)
 
-        
+            assert('TEACHER FORCE = PLZ' == 'NOOOOOOO')
             relation_outputs, _ = relation_model(inputs, hidden_states[-2])
             labels = train_labels[label_offset: label_offset + len(relation_outputs)]
 
@@ -152,6 +154,9 @@ def train_model(ner_model, relation_model, df, parameters):
 
             # next labels
             label_offset += len(relation_outputs)
+
+        ### Update teacher forcing ### 
+        teacher_force_ratio = min(0, teacher_force_ratio - teacher_force_decay)
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
