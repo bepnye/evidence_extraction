@@ -1,0 +1,6 @@
+ID,Label,Selected Reasoning,Group Name,Selected Text,Start,End,Valid Prompt,Additional Comments
+164392,True,Super Easy: Strings in same sentence,1,"Six patients were enrolled, 4 of these treated with octreotide (500 micrograms two times a day subcutaneous for six months) and the other 2 were inserted a control group",582,751,True,
+164392,True,Super Easy: Strings in same sentence,1,"Also survival was better in treated patients: in particular, 2 patients out of 4 who completed the study underwent follow-up until they died 12 and 16 months after beginning of treatment, respectively",1270,1470,True,
+164392,True,Super Easy: Strings in same sentence,2,In conclusion octreotide therapy seems to confer a survival benefit and a better quality of life in advanced pancreatic tumour,1648,1774,True,
+98192.1,True,Hard: Intervention is implied ,1,"Two hundred forty-seven patients with non-Hodgkin's lymphoma were randomized to receive doxorubicin, cyclophosphamide, and prednisolone in combination with vincristine (ACVP) or teniposide (ACTP) or both vincristine and teniposide (ACTVP).",139,379,True,
+98192.1,True,Hard: Intervention is implied ,1,Survival and relapse-free survival were also comparable for the three arms.,539,614,True,
