@@ -13,6 +13,9 @@ import numpy as np
 import transformers
 CUT_OFF = 500
 
+# FLATTEN A LIST OF LISTS #
+flatten = lambda l: [item for sublist in l for item in sublist]
+
 def get_dataset(dataset):
     """ Generate the dataset based on what is requested. """
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
@@ -31,41 +34,68 @@ def create_model(dataset, bert_backprop, ner_loss, hard_attention, ner_path):
     assert(dataset in set(['evidence-inference', 'CDR']))
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
     relation_model = BERTVergaPytorch(output_dimensions, bert_backprop = bert_backprop, ner_loss = ner_loss, hard_attention = hard_attention).cuda()
-    ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path).cuda()
+    ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=4, output_hidden_states=True).cuda()
     return ner_model, relation_model
 
-def evaluate_model(model, criterion, test, epoch, batch_size):
+def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size):
     # evaluate on validation set
     test_outputs = []
     test_labels  = []
+    test_ner_labels = []
+    test_ner_scores = []
     test_loss = 0
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
-        inputs, labels = extract_data(data)
-        if len(labels) == 0: continue
+        inputs, labels, ner_labels = extract_data(data)
+        ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels], batch_first=True, padding_value=3, device='cuda')
+        text_inputs = [torch.tensor(input_['text'][:CUT_OFF]).cuda() for input_ in inputs]
+        padded_text = PaddedSequence.autopad(text_inputs, batch_first = True, padding_value=0, device='cuda')
 
         # run model through validation data
+        ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
-            outputs, _ = model(inputs)
-
-        loss = criterion(outputs, torch.tensor(labels).cuda())
+            ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
+            assert('NO TEACHER FORCING' == 'SAD')
+            relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+            
+        loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
-        test_outputs.extend(outputs.cpu().numpy()) # or something like this
+        test_outputs.extend(relation_outputs.cpu().numpy()) # or something like this
         test_labels.extend(labels)
 
+        # GET NER SCORES
+        test_ner_scores.extend(ner_scores.cpu().numpy())
+        test_ner_labels.extend(ner_labels)
+
+    ### REMOVE PADDED PREDICTIONS, GET NER F1 ###
+    for idx, n in enumerate(test_ner_labels):
+        new_size = min(CUT_OFF, len(n))
+        test_ner_labels[idx] = n[:new_size]
+        test_ner_scores[idx] = [np.argmax(x) for x in test_ner_scores[idx][:new_size]]
+
+    ### FLATTEN LIST OF LISTS TO LIST ###
+    test_ner_labels = flatten(test_ner_labels)
+    test_ner_scores = flatten(test_ner_scores)
+
+    ### GET AND PRINT SCORE ### 
+    ner_f1 = f1_score(test_ner_labels, test_ner_scores, average='macro')
+    print("NER CLASSIFICATION REPORT:\n")
+    print(classification_report(test_ner_labels, test_ner_scores))
+
+    ### DO CALCULATIONS FOR FINAL F1 ###
     outputs = [np.argmax(x) for x in test_outputs]
     labels  = test_labels
     f1 = f1_score(labels, outputs, average = 'macro')
     if max(labels) > 1 or max(outputs) > 1:
-        print(classification_report(labels, outputs))
+        print("BINARY CLASSIFICATION REPORT:\n{}".format(classification_report(labels, outputs)))
         outputs = [1 if x != 3 else 0 for x in outputs]
         labels  = [1 if x != 3 else 0 for x in labels]
         bin_f1  = f1_score(labels, outputs, average = 'macro')
     else:
         bin_f1 = 0
 
-    print(classification_report(labels, outputs))
-    print("Epoch {}\nF1 score: {}\nBinary F1: {}\nLoss: {}\n".format(epoch, f1, bin_f1, test_loss))
+    print("FULL TASK REPORT\n{}".format(classification_report(labels, outputs)))
+    print("Epoch {}\nF1 score: {}\nBinary F1: {}\nLoss: {}\nNER_F1: {}\n".format(epoch, f1, bin_f1, test_loss, ner_f1))
     return f1
 
 def train_model(ner_model, relation_model, df, parameters):
@@ -76,6 +106,8 @@ def train_model(ner_model, relation_model, df, parameters):
     balance_classes = parameters.balance_classes
     learning_rate   = parameters.lr
     ner_loss_weighting = parameters.ner_loss_weight
+    teacher_force_ratio = parameters.teacher_forcing_ratio
+    teacher_force_decay = parameters.teacher_forcing_decay
     assert(ner_loss_weighting <= 1.0 and ner_loss_weighting >= 0.0)
 
     # split data, set up our optimizers
@@ -88,11 +120,11 @@ def train_model(ner_model, relation_model, df, parameters):
         # define losses to use later
         label_offset  = 0 
         training_loss = 0
- 
         train_data, train_labels, ner_labels = extract_data(train, balance_classes == 'True')        
+        teacher_force = True if random.uniform(0, 1) < teacher_force_ratio else False
 
         # single epoch train
-        for batch_range in range(0, len(train), batch_size):
+        for batch_range in range(0, len(train_data), batch_size):
             inputs = train_data[batch_range: batch_range + batch_size] 
             ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels[batch_range: batch_range + batch_size]], batch_first=True, padding_value=3, device='cuda')
             text_inputs = [torch.tensor(input_['text'][:CUT_OFF]).cuda() for input_ in inputs]    
@@ -102,17 +134,17 @@ def train_model(ner_model, relation_model, df, parameters):
             optimizer.zero_grad()
 
             # forward + backwards + optimize
+            ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data,
-                                                            attention_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device),
-                                                            labels = ner_batch_labels.data)[:3]
-            ipdb.set_trace()
+                                                            attention_mask=ner_mask,
+                                                            labels = ner_batch_labels.data)
 
-            relation_outputs, _ = relation_model(inputs)
-            labels = train_labels[label_offset: label_offset + len(outputs)]
+            assert('TEACHER FORCE = PLZ' == 'NOOOOOOO')
+            relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+            labels = train_labels[label_offset: label_offset + len(relation_outputs)]
 
-            # TODO ner loss
-            ner_loss = float('nan')
-            relation_loss = criterion(outputs, torch.tensor(labels).cuda())
+            # loss
+            relation_loss = criterion(relation_outputs, torch.tensor(labels).cuda())
             loss = ner_loss_weighting * ner_loss + (1 - ner_loss_weighting) * relation_loss
             loss.backward()
             optimizer.step()
@@ -121,18 +153,22 @@ def train_model(ner_model, relation_model, df, parameters):
             training_loss += loss.item()
 
             # next labels
-            label_offset += len(outputs)
+            label_offset += len(relation_outputs)
+
+        ### Update teacher forcing ### 
+        teacher_force_ratio = min(0, teacher_force_ratio - teacher_force_decay)
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
-        f1_score = evaluate_model(model, criterion, dev, epoch, batch_size)
+        f1_score = evaluate_model(relation_model, ner_model, criterion, dev, epoch, batch_size)
 
         # update our scores to find the best possible model
-        best_model   = copy.deepcopy(model) if max_f1_score < f1_score else best_model
+        best_model   = (copy.deepcopy(ner_model), copy.deepcopy(relation_model))  if max_f1_score < f1_score else best_model
         max_f1_score = max(max_f1_score, f1_score)
 
     print("Final test run:\n")
-    evaluate_model(best_model, criterion, test, epoch, batch_size)
+    evaluate_model(best_model[1], best_model[0], criterion, test, epoch, batch_size)
+    import pdb; pdb.set_trace()
 
 def main(args=sys.argv[1:]):
     ### Use arg parser to read in data. ###
@@ -147,6 +183,8 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--hard_attention", dest="hard_attention", default=False, help="Should we use hard attention?")
     parser.add_argument("--percent_train", dest="percent_train", type=float, default=1, help="What percent if the training data should we use?")
     parser.add_argument("--ner_loss_weight", dest="ner_loss_weight", type=float, required=True, help="Relative loss weight for NER task (b/w 0 and 1)")
+    parser.add_argument("--teacher_forcing_ratio", dest="teaching_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
+    parser.add_argument("--teacher_forcing_decay", dest="teacher_forcing_decay", type=float, required=True, help="What decay after each epoch?")
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
 

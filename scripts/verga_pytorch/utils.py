@@ -119,8 +119,8 @@ def extract_data(df, balance_classes = False):
             labels.append(label_to_val(relations[key]))
             assert(not(entity1 is None) and not(entity2 is None))
 
-        ner_labels.append(torch.tensor(document_ner_label))
         if len(doc_data) == 0: continue
+        ner_labels.append(torch.tensor(document_ner_label))
         all_data.append({'text': text, 'relations': doc_data})
     
     if balance_classes:

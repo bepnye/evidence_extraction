@@ -49,7 +49,7 @@ class BERTVergaPytorch(nn.Module):
         biaffine_transform = nn.init.kaiming_normal_(weight_matrix_dim, nonlinearity = 'relu')
         self.W = torch.nn.Parameter(biaffine_transform)
         self.W.requires_grad = True
-        assert(self.bert_encoder.config.output_hidden_states==True)
+        #assert(self.bert_encoder.config.output_hidden_states==True)
 
     def bert_encode(self, text):
         """
@@ -94,8 +94,7 @@ class BERTVergaPytorch(nn.Module):
         if word_embeddings is None:
             word_embeddings = self.bert_encode(text)
 
-        mention_scores  = self.get_entity_mentions(word_embeddings, inputs)#['relations'])
-       
+        mention_scores  = self.get_entity_mentions(word_embeddings, inputs)#['relations']) 
         batch_e1_pieces = []
         batch_e2_pieces = []
         for idx, input_ in enumerate(inputs):
