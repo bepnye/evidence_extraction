@@ -5,7 +5,7 @@ from transformers import *
 from padded_sequence import PaddedSequence
 
 SCI_BERT_LOCATION = '/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/'
-NER_BERT_LOCATION = '/home/jay/scibert_ner/'
+NER_BERT_LOCATION = '/home/jay/scibert_ner_ebmnlp/' #'/home/jay/scibert_ner_ebmlnlp/' #'/home/jay/scibert_ner/'
 
 class BERTVergaPytorch(nn.Module):
     """
@@ -18,15 +18,13 @@ class BERTVergaPytorch(nn.Module):
         @param out_dim       range of labels we are predicting.
         @param bert_backprop is whether or not to backprop through BERT.
         @param ner_loss      is whether or not we are learning NER labels.
-        @param hard_attention is whether or not to use hard attention for alternate loss.
         @param bert_encoder  is the BERT model used.
     """
 
-    def __init__(self, output_dim, bert_backprop, ner_loss, hard_attention, initialize_bert=True):
+    def __init__(self, output_dim, bert_backprop, ner_loss, initialize_bert=True):
         super(BERTVergaPytorch, self).__init__()
         # Make sure data used makes sense
         assert(ner_loss.upper() in set(['NULL', 'JOINT', 'ALTERNATE']))
-        assert(not(hard_attention) or ner_loss.upper() == 'ALTERNATE')
 
         # INIT ANY VARIABLES USED
         self.bert_dim   = 768
@@ -34,15 +32,14 @@ class BERTVergaPytorch(nn.Module):
         self.out_dim    = output_dim
         self.ner_loss   = ner_loss.upper()
         self.bert_backprop = bert_backprop
-        self.hard_attention = hard_attention
         if initialize_bert:
-            self.bert_encoder   = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+            self.bert_encoder = BertModel.from_pretrained(SCI_BERT_LOCATION, output_hidden_states = True).cuda()
+            # INIT MODEL LAYERS
+            if not(bert_backprop):
+                self.bert_encoder.eval()
         else:
             self.bert_encoder = None
 
-        # INIT MODEL LAYERS
-        if not(bert_backprop):
-            self.bert_encoder.eval()
 
         # init the weight matrix used for final output
         weight_matrix_dim  = torch.empty(self.out_dim, self.bert_dim, self.bert_dim)
@@ -80,13 +77,10 @@ class BERTVergaPytorch(nn.Module):
         @param relations is a list of pairs of entities, which will all be
         modified to be new losses.
         """
-        if self.ner_loss == 'NULL':
-            pass
-        elif self.ner_loss == 'JOINT':
-            pass
-        else: # we are alternating
-            pass
+        if self.ner_loss == 'NULL': return None
+         
 
+    
     def forward(self, inputs, word_embeddings=None):
         text = [torch.tensor(input_['text'][:self.len_cutoff]).cuda() for input_ in inputs]
         
@@ -94,7 +88,7 @@ class BERTVergaPytorch(nn.Module):
         if word_embeddings is None:
             word_embeddings = self.bert_encode(text)
 
-        mention_scores  = self.get_entity_mentions(word_embeddings, inputs)#['relations']) 
+        mention_scores  = self.get_entity_mentions(word_embeddings, inputs) 
         batch_e1_pieces = []
         batch_e2_pieces = []
         for idx, input_ in enumerate(inputs):

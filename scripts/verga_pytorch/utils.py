@@ -102,6 +102,7 @@ def extract_data(df, balance_classes = False):
         mapping   = d.entity_map[0]
         relations = d.entity_map[1] # this is a dictionary
         doc_data  = []
+        document_relation_labels = []
 
         ## TODO: Remove/rename in the future 
         text, _ = to_segmentation_ids(d.tokenized_text)
@@ -117,11 +118,12 @@ def extract_data(df, balance_classes = False):
 
             doc_data.append((entity1, entity2))
             labels.append(label_to_val(relations[key]))
+            document_relation_labels.append(label_to_val(relations[key]))
             assert(not(entity1 is None) and not(entity2 is None))
 
         if len(doc_data) == 0: continue
         ner_labels.append(torch.tensor(document_ner_label))
-        all_data.append({'text': text, 'relations': doc_data})
+        all_data.append({'text': text, 'relations': doc_data, 'labels': document_relation_labels})
     
     if balance_classes:
         assert(True == False)

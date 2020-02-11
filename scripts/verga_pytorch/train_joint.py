@@ -11,7 +11,14 @@ import torch.optim as optim
 from sklearn.metrics import f1_score, classification_report
 import numpy as np
 import transformers
+from sklearn.cluster import AgglomerativeClustering as agg_cluster
+import itertools
+sys.path.append('../')
+from classes import Entity, Span
+
 CUT_OFF = 500
+
+label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
 
 # FLATTEN A LIST OF LISTS #
 flatten = lambda l: [item for sublist in l for item in sublist]
@@ -21,24 +28,141 @@ def get_dataset(dataset):
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
     return generate_data()
 
-def create_model(dataset, bert_backprop, ner_loss, hard_attention, ner_path):
+def create_model(dataset, bert_backprop, ner_loss, ner_path):
     """
     Create a model with the given specifications and return it.
 
     @param dataset specifies what dataset to use so we know how big our output dim should be.
     @param bert_backprop determines if we are to backprop through BERT.
     @param ner_loss determines if we are to add NER loss to our outputs.
-    @param hard_attention is whether or not to use hard attention for alternate loss.
     @return a model set up with the given specification.
     """
     assert(dataset in set(['evidence-inference', 'CDR']))
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
-    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop = bert_backprop, ner_loss = ner_loss, hard_attention = hard_attention).cuda()
+    print("Loading relation model")
+    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, ner_loss=ner_loss, initialize_bert=False).cuda()
+    print("Loading NER model")
     ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=4, output_hidden_states=True).cuda()
     return ner_model, relation_model
 
+def collapse_mentions(bert_mentions):
+    """ 
+    Take a list of bert tokens + Nones and collapse into mentions... 
+    Example:
+        [e1, e2, e3, None, None, e4, e5, None, None] -> [meanpool(e1, e2, e3), meanpool(e4, e5)]
+    """
+    to_collapse = []
+    collapsed_mentions = []
+    token_offsets = []
+    start_span = 0
+    for idx, mention in enumerate(bert_mentions):
+        if mention is None and len(to_collapse) != 0:  
+            collapsed_mentions.append(torch.mean(torch.stack(to_collapse), dim = 0))
+            to_collapse = []
+            token_offsets.append((start_span, idx))
+        elif not(mention is None) and len(to_collapse) == 0:
+            start_span = idx
+            to_collapse.append(mention)
+        elif not(mention is None): 
+            to_collapse.append(mention)
+
+    return collapsed_mentions, token_offsets
+
+def create_entities_from_offsets(text, groups, offsets):
+    """ 
+    Create N entities where N is the number of unique groups in @param groups. Each 
+    of these entities has spans described by offset.
+
+    @param text is a word piece array of max size CUT_OFF (i.e. the abstract).
+    @param groups  is an array corresponding to which offsets belong to what group.
+    @param offsets is an array of tuples corresponding to start/end spans.
+    @return a list of entities in length equal to len(set(groups))
+    """
+    entity_array = [None] * len(groups) # init to the max size possible
+    for grp, span in zip(groups, offsets):
+        selected_text = text[span[0]:span[1]] # this is tokenized... sorry :(
+        if entity_array[grp] is None: entity_array[grp] = Entity(Span(-1, -1, 'N/A'), 'N/A')
+        entity_array[grp].mentions.append(Span(span[0], span[1], selected_text))
+
+    return list(filter(lambda x: not(x is None), entity_array))
+
+def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, out_offsets, test_set = False):
+    """
+    Create intervention and outcome groups with corresponding relations
+    """ 
+    relation_map = [None] * len(inputs['text'])
+    ### Alright... we have a bunch of interventions + outcome pairs that we need to get labels for.
+    ### What we need to know is if this intervention/outcome group has any offsets that align with an
+    ### entity in the gold standard set. If we see something that has overlaping intervals for BOTH
+    ### the outcome and intervention, then awesome (we take that label to be ours), otherwise we 
+    ### have a NULL label.
+    # ENTITY: def __init__(self, span, entity_type, label = None)
+    # SPAN:   def __init__(self, i, f, text, label = None) 
+    outcome_entities = create_entities_from_offsets(text=inputs['text'], groups=out_groups, offsets=out_offsets)
+    intv_entities = create_entities_from_offsets(text=inputs['text'], groups=intv_groups, offsets=intv_offsets)
+    pairs = itertools.product(outcome_entities, intv_entities) # every combo of intervention + outcome 
+    get_mention_set = lambda e: set(flatten([list(range(m.i, m.f)) for m in e.mentions])) 
+
+    ### Start assembling new inputs (so as to not modify data) for this batch ### 
+    batch_labels, batch_input = [], {'text': inputs['text'], 'relations': [], 'labels': []}
+    shuffled = list(zip(inputs['relations'].copy(), inputs['labels'].copy()))
+    random.shuffle(shuffled)
+    shuffled_relations = [s[0] for s in shuffled]
+    shuffled_labels    = [s[1] for s in shuffled]
+    for intv, out in pairs:
+        idx, success = 0, False
+        for e1, e2 in shuffled_relations:
+            intv_overlap = bool(get_mention_set(e1) & get_mention_set(intv)) # do my sets overlap
+            out_overlap  = bool(get_mention_set(e1) & get_mention_set(out)) 
+            if intv_overlap and out_overlap:
+                batch_labels.append(shuffled_labels[idx])
+                batch_input['relations'].append((intv, out))
+                batch_input['labels'].append(shuffled_labels[idx])
+                success = True
+                break
+            
+            idx += 1
+
+        ### couldn't find anything ###
+        if not(success) and (random.uniform(0, 1) < 0.01 or test_set):
+            batch_labels.append(3) # add null
+            batch_input['labels'].append(3)
+            batch_input['relations'].append((intv, out))
+
+    return batch_input, batch_labels
+
+def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, test_set = False): 
+    """ 
+    Perform COREF grouping and modify the labels to correspond to the ones given by the argmax ner scores.
+    @param inputs       is what we will eventually pass to the relation model
+    @param ner_scores   is the scoring of each token as population/intervention/outcome/NULL.
+    @param bert_embedds is the token embeddings for each word piece in the abstract.
+    @param true_labels  is what the ner_scores SHOULD be once argmaxed.
+    @param test_set     are we running on the test set data? 
+    """
+    arg_scores = torch.stack([torch.argmax(x, dim = 1) for x in ner_scores])
+    new_inputs = []
+    batch_labels = []
+    for i in range(len(arg_scores)):
+        intervention_embeds, intv_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['INTERVENTION'] else None for idx, sc in enumerate(arg_scores[i])])
+        outcome_embeds, outcome_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['OUTCOME'] else None for idx, sc in enumerate(arg_scores[i])])      
+        if len(intervention_embeds) == 0 or len(outcome_embeds) == 0: continue
+        intv_model = agg_cluster(n_clusters=None, affinity='euclidean', linkage='ward', distance_threshold=5)
+        out_model  = agg_cluster(n_clusters=None, affinity='euclidean', linkage='ward', distance_threshold=5)  
+        intv_groups = intv_model.fit_predict(torch.stack(intervention_embeds).cpu().detach().numpy()) if len(intervention_embeds) != 1 else [0]
+        out_groups  = out_model.fit_predict(torch.stack(outcome_embeds).cpu().detach().numpy()) if len(outcome_embeds) != 1 else [0]
+        new_input, new_labels = create_simulated_relations(inputs[i], intv_groups, intv_offsets, out_groups, outcome_offsets, test_set)
+        
+        ### Add to our list of new inputs + labels ### 
+        new_inputs.append(new_input)
+        batch_labels.extend(new_labels)
+
+    return new_inputs, batch_labels
+
 def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size):
     # evaluate on validation set
+    relation_model.eval()
+    ner_model.eval()
     test_outputs = []
     test_labels  = []
     test_ner_labels = []
@@ -55,9 +179,10 @@ def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size
         ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
-            assert('NO TEACHER FORCING' == 'SAD')
+            inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], test_set = True)
+            if len(labels) == 0: continue
             relation_outputs, _ = relation_model(inputs, hidden_states[-2])
-            
+       
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
         test_outputs.extend(relation_outputs.cpu().numpy()) # or something like this
@@ -66,7 +191,12 @@ def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size
         # GET NER SCORES
         test_ner_scores.extend(ner_scores.cpu().numpy())
         test_ner_labels.extend(ner_labels)
-
+    
+    if len(test_ner_labels) == 0:
+        #assert(not(0 in test_ner_scores or 1 in test_ner_scores or 2 in test_ner_scores))
+        print("Error: No metrics available")
+        return 0
+    
     ### REMOVE PADDED PREDICTIONS, GET NER F1 ###
     for idx, n in enumerate(test_ner_labels):
         new_size = min(CUT_OFF, len(n))
@@ -117,6 +247,8 @@ def train_model(ner_model, relation_model, df, parameters):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(list(ner_model.parameters()) + list(relation_model.parameters()), lr = learning_rate)
     for epoch in range(epochs):
+        ner_model.train()
+        relation_model.train()
         # define losses to use later
         label_offset  = 0 
         training_loss = 0
@@ -138,10 +270,14 @@ def train_model(ner_model, relation_model, df, parameters):
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data,
                                                             attention_mask=ner_mask,
                                                             labels = ner_batch_labels.data)
-
-            assert('TEACHER FORCE = PLZ' == 'NOOOOOOO')
-            relation_outputs, _ = relation_model(inputs, hidden_states[-2])
-            labels = train_labels[label_offset: label_offset + len(relation_outputs)]
+            
+            if not(teacher_force): 
+                inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size])
+                if len(labels) == 0: continue
+                relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+            else:
+                relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+                labels = train_labels[label_offset: label_offset + len(relation_outputs)]
 
             # loss
             relation_loss = criterion(relation_outputs, torch.tensor(labels).cuda())
@@ -180,10 +316,9 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--balance_classes", dest="balance_classes", default=False, help="Should we balance the classes for you?")
     parser.add_argument("--bert_backprop", dest="bert_backprop", default=False, help="Should we backprop through BERT?")
     parser.add_argument("--ner_loss", dest="ner_loss", type=str, default="NULL", help="Should we add NER loss to model (select 'joint' or 'alternate'")
-    parser.add_argument("--hard_attention", dest="hard_attention", default=False, help="Should we use hard attention?")
     parser.add_argument("--percent_train", dest="percent_train", type=float, default=1, help="What percent if the training data should we use?")
     parser.add_argument("--ner_loss_weight", dest="ner_loss_weight", type=float, required=True, help="Relative loss weight for NER task (b/w 0 and 1)")
-    parser.add_argument("--teacher_forcing_ratio", dest="teaching_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
+    parser.add_argument("--teacher_forcing_ratio", dest="teacher_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
     parser.add_argument("--teacher_forcing_decay", dest="teacher_forcing_decay", type=float, required=True, help="What decay after each epoch?")
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
@@ -195,7 +330,6 @@ def main(args=sys.argv[1:]):
     ner_model, relation_model = create_model(dataset=args.dataset,
                                              bert_backprop=args.bert_backprop == 'True',
                                              ner_loss=args.ner_loss,
-                                             hard_attention = args.hard_attention == 'True',
                                              ner_path=NER_BERT_LOCATION)
 
     ### TRAIN ###
