@@ -5,7 +5,8 @@ from transformers import *
 
 TOKENIZER = BertTokenizer.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased')
 #from load_data import TOKENIZER
-CUT_OFF = 500
+CUT_OFF = 512
+#label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
 
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
@@ -47,12 +48,13 @@ def to_segmentation_ids(tokens):
 
     return TOKENIZER.convert_tokens_to_ids(tokens), segments
 
-def generate_ner_labels(text, mapping, relations):
+def generate_ner_labels(text, mapping, relations, label_config):
     """
     For each document, create labels for each token such that 3 is NULL, 1 is an intervetion, 2 is an outcome.
     @param text is tokenized text of 1 document.
     @param mapping is the list of entity objects.
     @param relations is the list of relations consisting of pairs of entities (AS STRINGS).
+    @param label_config is a dictionary of label names to indices (must contain E1, E2, NULL). 
     @return ner labels for this document
 
     TODO: Make it configurable ?
@@ -61,7 +63,6 @@ def generate_ner_labels(text, mapping, relations):
     OUTCOMES = 2
     NULL = 3 
     """
-    label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
     intervention_idx = set()
     outcome_idx = set()
 
@@ -74,16 +75,16 @@ def generate_ner_labels(text, mapping, relations):
     ner_labels = []
     for i in range(len(text)): 
         if i in intervention_idx: 
-            ner_labels.append(label_config['INTERVENTION'])
+            ner_labels.append(label_config['E1'])
         elif i in outcome_idx: 
-            ner_labels.append(label_config['OUTCOME'])
+            ner_labels.append(label_config['E2'])
         else:
             ner_labels.append(label_config['NULL'])
 
     return ner_labels
 
 
-def extract_data(df, balance_classes = False):
+def extract_data(df, label_config, balance_classes = False):
     """
     Extract the data from the classes and reformat it.
 
@@ -106,7 +107,7 @@ def extract_data(df, balance_classes = False):
 
         ## TODO: Remove/rename in the future 
         text, _ = to_segmentation_ids(d.tokenized_text)
-        document_ner_label = generate_ner_labels(text, mapping, relations)
+        document_ner_label = generate_ner_labels(text, mapping, relations, label_config)
         for key in relations.keys():
             # find what entity matches us
             entity1, entity2 = find_entity_match(mapping, key[0]), find_entity_match(mapping, key[1])

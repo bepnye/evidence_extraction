@@ -16,9 +16,12 @@ import itertools
 sys.path.append('../')
 from classes import Entity, Span
 
-CUT_OFF = 500
+CUT_OFF = 512
+ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3}
+cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 7}
 
-label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
+### Get set of indicies for a mention ### 
+get_mention_set = lambda e: set(flatten([list(range(m.i, m.f)) for m in e.mentions]))
 
 # FLATTEN A LIST OF LISTS #
 flatten = lambda l: [item for sublist in l for item in sublist]
@@ -28,21 +31,21 @@ def get_dataset(dataset):
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
     return generate_data()
 
-def create_model(dataset, bert_backprop, ner_loss, ner_path):
+def create_model(dataset, bert_backprop, ner_path):
     """
     Create a model with the given specifications and return it.
 
     @param dataset specifies what dataset to use so we know how big our output dim should be.
     @param bert_backprop determines if we are to backprop through BERT.
-    @param ner_loss determines if we are to add NER loss to our outputs.
     @return a model set up with the given specification.
     """
     assert(dataset in set(['evidence-inference', 'CDR']))
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
+    ner_dimensions = {'evidence-inference': 4, 'CDR': 8}.get(dataset)
     print("Loading relation model")
-    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, ner_loss=ner_loss, initialize_bert=False).cuda()
+    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
     print("Loading NER model")
-    ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=4, output_hidden_states=True).cuda()
+    ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
     return ner_model, relation_model
 
 def collapse_mentions(bert_mentions):
@@ -83,10 +86,10 @@ def create_entities_from_offsets(text, groups, offsets):
         selected_text = text[span[0]:span[1]] # this is tokenized... sorry :(
         if entity_array[grp] is None: entity_array[grp] = Entity(Span(-1, -1, 'N/A'), 'N/A')
         entity_array[grp].mentions.append(Span(span[0], span[1], selected_text))
-
+       
     return list(filter(lambda x: not(x is None), entity_array))
 
-def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, out_offsets, test_set = False):
+def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, out_offsets, label_config, test_set = False):
     """
     Create intervention and outcome groups with corresponding relations
     """ 
@@ -100,8 +103,7 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
     # SPAN:   def __init__(self, i, f, text, label = None) 
     outcome_entities = create_entities_from_offsets(text=inputs['text'], groups=out_groups, offsets=out_offsets)
     intv_entities = create_entities_from_offsets(text=inputs['text'], groups=intv_groups, offsets=intv_offsets)
-    pairs = itertools.product(outcome_entities, intv_entities) # every combo of intervention + outcome 
-    get_mention_set = lambda e: set(flatten([list(range(m.i, m.f)) for m in e.mentions])) 
+    pairs = itertools.product(intv_entities, outcome_entities) # every combo of intervention + outcome 
 
     ### Start assembling new inputs (so as to not modify data) for this batch ### 
     batch_labels, batch_input = [], {'text': inputs['text'], 'relations': [], 'labels': []}
@@ -113,7 +115,7 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
         idx, success = 0, False
         for e1, e2 in shuffled_relations:
             intv_overlap = bool(get_mention_set(e1) & get_mention_set(intv)) # do my sets overlap
-            out_overlap  = bool(get_mention_set(e1) & get_mention_set(out)) 
+            out_overlap  = bool(get_mention_set(e2) & get_mention_set(out)) 
             if intv_overlap and out_overlap:
                 batch_labels.append(shuffled_labels[idx])
                 batch_input['relations'].append((intv, out))
@@ -125,41 +127,44 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
 
         ### couldn't find anything ###
         if not(success) and (random.uniform(0, 1) < 0.01 or test_set):
-            batch_labels.append(3) # add null
-            batch_input['labels'].append(3)
+            batch_labels.append(label_config.get('NULL')) # add null
+            batch_input['labels'].append(label_config.get('NULL'))
             batch_input['relations'].append((intv, out))
 
     return batch_input, batch_labels
 
-def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, test_set = False): 
+def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_config, test_set = False): 
     """ 
     Perform COREF grouping and modify the labels to correspond to the ones given by the argmax ner scores.
     @param inputs       is what we will eventually pass to the relation model
     @param ner_scores   is the scoring of each token as population/intervention/outcome/NULL.
     @param bert_embedds is the token embeddings for each word piece in the abstract.
     @param true_labels  is what the ner_scores SHOULD be once argmaxed.
+    @param label_config what is the mapping of E1 and E2 to values (given as a dictionary -> {'E1': 0, 'E2': 1,...})? 
     @param test_set     are we running on the test set data? 
     """
+    import pdb; pdb.set_trace()
     arg_scores = torch.stack([torch.argmax(x, dim = 1) for x in ner_scores])
     new_inputs = []
     batch_labels = []
     for i in range(len(arg_scores)):
-        intervention_embeds, intv_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['INTERVENTION'] else None for idx, sc in enumerate(arg_scores[i])])
-        outcome_embeds, outcome_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['OUTCOME'] else None for idx, sc in enumerate(arg_scores[i])])      
+        intervention_embeds, intv_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['E1'] else None for idx, sc in enumerate(arg_scores[i])])
+        outcome_embeds, outcome_offsets = collapse_mentions([bert_embedds[i][idx] if sc == label_config['E2'] else None for idx, sc in enumerate(arg_scores[i])])      
         if len(intervention_embeds) == 0 or len(outcome_embeds) == 0: continue
         intv_model = agg_cluster(n_clusters=None, affinity='euclidean', linkage='ward', distance_threshold=5)
         out_model  = agg_cluster(n_clusters=None, affinity='euclidean', linkage='ward', distance_threshold=5)  
         intv_groups = intv_model.fit_predict(torch.stack(intervention_embeds).cpu().detach().numpy()) if len(intervention_embeds) != 1 else [0]
         out_groups  = out_model.fit_predict(torch.stack(outcome_embeds).cpu().detach().numpy()) if len(outcome_embeds) != 1 else [0]
-        new_input, new_labels = create_simulated_relations(inputs[i], intv_groups, intv_offsets, out_groups, outcome_offsets, test_set)
+        new_input, new_labels = create_simulated_relations(inputs[i], intv_groups, intv_offsets, out_groups, outcome_offsets, label_config, test_set)
         
+        import pdb; pdb.set_trace()
         ### Add to our list of new inputs + labels ### 
         new_inputs.append(new_input)
         batch_labels.extend(new_labels)
 
     return new_inputs, batch_labels
 
-def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size):
+def evaluate_model(relation_model, ner_model, label_config, criterion, test, epoch, batch_size):
     # evaluate on validation set
     relation_model.eval()
     ner_model.eval()
@@ -170,8 +175,8 @@ def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size
     test_loss = 0
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
-        inputs, labels, ner_labels = extract_data(data)
-        ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels], batch_first=True, padding_value=3, device='cuda')
+        inputs, labels, ner_labels = extract_data(data, label_config)
+        ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels], batch_first=True, padding_value=label_config.get('NULL'), device='cuda')
         text_inputs = [torch.tensor(input_['text'][:CUT_OFF]).cuda() for input_ in inputs]
         padded_text = PaddedSequence.autopad(text_inputs, batch_first = True, padding_value=0, device='cuda')
 
@@ -179,9 +184,9 @@ def evaluate_model(relation_model, ner_model, criterion, test, epoch, batch_size
         ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
-            inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], test_set = True)
+            inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
             if len(labels) == 0: continue
-            relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+            relation_outputs = relation_model(inputs, hidden_states[-2])
        
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
@@ -238,6 +243,7 @@ def train_model(ner_model, relation_model, df, parameters):
     ner_loss_weighting = parameters.ner_loss_weight
     teacher_force_ratio = parameters.teacher_forcing_ratio
     teacher_force_decay = parameters.teacher_forcing_decay
+    label_config = {'evidence-inference': ev_inf_label_config, 'CDR': cdr_label_config}.get(parameters.dataset)
     assert(ner_loss_weighting <= 1.0 and ner_loss_weighting >= 0.0)
 
     # split data, set up our optimizers
@@ -252,7 +258,7 @@ def train_model(ner_model, relation_model, df, parameters):
         # define losses to use later
         label_offset  = 0 
         training_loss = 0
-        train_data, train_labels, ner_labels = extract_data(train, balance_classes == 'True')        
+        train_data, train_labels, ner_labels = extract_data(train, label_config, balance_classes == 'True')        
         teacher_force = True if random.uniform(0, 1) < teacher_force_ratio else False
 
         # single epoch train
@@ -272,11 +278,12 @@ def train_model(ner_model, relation_model, df, parameters):
                                                             labels = ner_batch_labels.data)
             
             if not(teacher_force): 
-                inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size])
+                inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config)
+                import pdb; pdb.set_trace()
                 if len(labels) == 0: continue
-                relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+                relation_outputs = relation_model(inputs, hidden_states[-2])
             else:
-                relation_outputs, _ = relation_model(inputs, hidden_states[-2])
+                relation_outputs = relation_model(inputs, hidden_states[-2])
                 labels = train_labels[label_offset: label_offset + len(relation_outputs)]
 
             # loss
@@ -296,14 +303,14 @@ def train_model(ner_model, relation_model, df, parameters):
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
-        f1_score = evaluate_model(relation_model, ner_model, criterion, dev, epoch, batch_size)
+        f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size)
 
         # update our scores to find the best possible model
         best_model   = (copy.deepcopy(ner_model), copy.deepcopy(relation_model))  if max_f1_score < f1_score else best_model
         max_f1_score = max(max_f1_score, f1_score)
 
     print("Final test run:\n")
-    evaluate_model(best_model[1], best_model[0], criterion, test, epoch, batch_size)
+    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size)
     import pdb; pdb.set_trace()
 
 def main(args=sys.argv[1:]):
@@ -315,7 +322,6 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--batch_size", dest='batch_size', type=int, required=True, help="What should the batch_size be?")
     parser.add_argument("--balance_classes", dest="balance_classes", default=False, help="Should we balance the classes for you?")
     parser.add_argument("--bert_backprop", dest="bert_backprop", default=False, help="Should we backprop through BERT?")
-    parser.add_argument("--ner_loss", dest="ner_loss", type=str, default="NULL", help="Should we add NER loss to model (select 'joint' or 'alternate'")
     parser.add_argument("--percent_train", dest="percent_train", type=float, default=1, help="What percent if the training data should we use?")
     parser.add_argument("--ner_loss_weight", dest="ner_loss_weight", type=float, required=True, help="Relative loss weight for NER task (b/w 0 and 1)")
     parser.add_argument("--teacher_forcing_ratio", dest="teacher_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
@@ -323,14 +329,14 @@ def main(args=sys.argv[1:]):
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
 
-    ### GET THE DATA ###
+    get_ner_path = lambda x: {'evidence-inference': NER_BERT_LOCATION, 'CDR': CDR_NER_BERT_LOCATION}.get(x)
+    ## GET THE DATA ###
     df = get_dataset(args.dataset)
 
     ### LOAD THE MODEL ###
     ner_model, relation_model = create_model(dataset=args.dataset,
                                              bert_backprop=args.bert_backprop == 'True',
-                                             ner_loss=args.ner_loss,
-                                             ner_path=NER_BERT_LOCATION)
+                                             ner_path=get_ner_path(args.dataset))
 
     ### TRAIN ###
     train_model(ner_model, relation_model, df, args)

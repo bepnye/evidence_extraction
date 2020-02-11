@@ -44,21 +44,21 @@ def parse_CDR_document(doc_array):
     norm_text = text.replace('@@ ', '')
 
     # create entity 1
-    entity1 = Entity(Span(-1, -1, doc_array[1]), doc_array[2])
+    entity1 = Entity(Span(-1, -1, doc_array[2]), doc_array[2])
     e1_idx_spans = zip(doc_array[3].split(':'), doc_array[4].split(':'))
     for s, e in e1_idx_spans:
         ch_start, ch_end = word_piece_to_char_offset(text, int(s), int(e))
         entity1.mentions.append(Span(ch_start, ch_end, doc_array[2]))
 
     # create entity 2
-    entity2 = Entity(Span(-1, -1, doc_array[6]), doc_array[7])
+    entity2 = Entity(Span(-1, -1, doc_array[7]), doc_array[7])
     e2_idx_spans = zip(doc_array[8].split(':'), doc_array[9].split(':'))
     for s, e in e2_idx_spans:
         ch_start, ch_end = word_piece_to_char_offset(text, int(s), int(e))
         entity2.mentions.append(Span(ch_start, ch_end, doc_array[7]))
 
-    document   = Doc(doc_array[0] + doc_array[5], text)
-    entity_map = [([entity1, entity2], {(entity1.text, entity2.text): label})]
+    document   = Doc(doc_array[10], text)
+    entity_map = ([entity1, entity2], {(entity1.text, entity2.text): label})
     return document, entity_map
 
 def load_CDR_file(f):
@@ -75,7 +75,23 @@ def load_CDR_file(f):
         docs.append(doc_obj)
         relation_maps.append(rm_obj)
 
-    return docs, relation_maps
+    id_to_entity_map = {} # id_ to entity_map
+    id_to_document = {} # id_ to documents
+    for d in docs: id_to_document[d.id] = d
+    for entity_map, doc in zip(relation_maps, docs):
+        if not(doc.id in id_to_entity_map):
+            id_to_entity_map[doc.id] = entity_map
+        else:
+            id_to_entity_map[doc.id][0].extend(entity_map[0])
+            id_to_entity_map[doc.id][1].update(entity_map[1])
+
+    filtered_docs = []
+    filtered_relations = []
+    for id_ in id_to_document.keys():
+        filtered_docs.append(id_to_document[id_])
+        filtered_relations.append(id_to_entity_map[id_])
+
+    return filtered_docs, filtered_relations
 
 def main(files, tokenizer):
     """ Main function that takes in a list of CDR files to parse. """
@@ -87,11 +103,10 @@ def main(files, tokenizer):
    
     tokenized_docs = []
     for d, entity_map in zip(documents, relation_maps):
-        tokenized_docs.append(Tokenized_Doc(d.text, entity_map[0], tokenizer))
+        tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer))
    
     import pdb; pdb.set_trace()
-    ## TODO: Use functions from other load_data file.
-    return None
+    return tokenized_docs
 
 def load_CDR():
     """ TODO """

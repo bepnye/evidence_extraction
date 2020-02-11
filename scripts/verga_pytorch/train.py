@@ -10,39 +10,40 @@ from utils import *
 import torch.optim as optim
 from sklearn.metrics import f1_score, classification_report
 import numpy as np
+ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3}
+cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 7}
 
 def get_dataset(dataset):
     """ Generate the dataset based on what is requested. """
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
     return generate_data()
 
-def create_model(dataset, bert_backprop, ner_loss, hard_attention):
+def create_model(dataset, bert_backprop):
     """
     Create a model with the given specifications and return it.
 
     @param dataset specifies what dataset to use so we know how big our output dim should be.
     @param bert_backprop determines if we are to backprop through BERT.
-    @param ner_loss determines if we are to add NER loss to our outputs.
-    @param hard_attention is whether or not to use hard attention for alternate loss.
     @return a model set up with the given specification.
     """
     assert(dataset in set(['evidence-inference', 'CDR']))
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
-    return BERTVergaPytorch(output_dimensions, bert_backprop = bert_backprop, ner_loss = ner_loss, hard_attention = hard_attention)
+    return BERTVergaPytorch(output_dimensions, bert_backprop = bert_backprop)
 
-def evaluate_model(model, criterion, test, epoch, batch_size):
+def evaluate_model(model, criterion, label_config, test, epoch, batch_size):
     # evaluate on validation set
+    model.eval()
     test_outputs = []
     test_labels  = []
     test_loss = 0
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
-        inputs, labels = extract_data(data)
+        inputs, labels, _ = extract_data(data, label_config)
         if len(labels) == 0: continue
 
         # run model through validation data
         with torch.no_grad():
-            outputs, _ = model(inputs)
+            outputs = model(inputs)
 
         loss = criterion(outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
@@ -71,6 +72,7 @@ def train_model(model, df, parameters):
     batch_size = parameters.batch_size
     balance_classes = parameters.balance_classes
     learning_rate   = parameters.lr
+    label_config = 
 
     # split data, set up our optimizers
     best_model = None
@@ -79,11 +81,12 @@ def train_model(model, df, parameters):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr = learning_rate)
     for epoch in range(epochs):
+        model.train()
         # define losses to use later
         training_loss = 0
         dev_loss      = 0
-
-        train_data, train_labels = extract_data(train, balance_classes == 'True')
+        
+        train_data, train_labels, _ = extract_data(train, balance_classes == 'True')
         label_offset = 0
         # single epoch train
         for batch_range in range(0, len(train), batch_size):
@@ -94,7 +97,7 @@ def train_model(model, df, parameters):
             optimizer.zero_grad()
             
             # forward + backwards + optimize
-            outputs, mention_scores = model(inputs)
+            outputs = model(inputs)
             labels  = train_labels[label_offset: label_offset + len(outputs)]
             loss = criterion(outputs, torch.tensor(labels).cuda())
             loss.backward()
@@ -108,14 +111,14 @@ def train_model(model, df, parameters):
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
-        f1_score = evaluate_model(model, criterion, dev, epoch, batch_size)
+        f1_score = evaluate_model(model, criterion, label_config, dev, epoch, batch_size)
 
         # update our scores to find the best possible model
         best_model   = copy.deepcopy(model) if max_f1_score < f1_score else best_model
         max_f1_score = max(max_f1_score, f1_score)
 
     print("Final test run:\n")
-    evaluate_model(best_model, criterion, test, epoch, batch_size)
+    evaluate_model(best_model, criterion, label_config, test, epoch, batch_size)
 
 def main(args=sys.argv[1:]):
     ### Use arg parser to read in data. ###
@@ -126,8 +129,6 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--batch_size", dest='batch_size', type=int, required=True, help="What should the batch_size be?")
     parser.add_argument("--balance_classes", dest="balance_classes", default=False, help="Should we balance the classes for you?")
     parser.add_argument("--bert_backprop", dest="bert_backprop", default=False, help="Should we backprop through BERT?")
-    parser.add_argument("--ner_loss", dest="ner_loss", type=str, default="NULL", help="Should we add NER loss to model (select 'joint' or 'alternate'")
-    parser.add_argument("--hard_attention", dest="hard_attention", default=False, help="Should we use hard attention?")
     parser.add_argument("--percent_train", dest="percent_train", type=float, default=1, help="What percent if the training data should we use?")
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
@@ -136,7 +137,7 @@ def main(args=sys.argv[1:]):
     df = get_dataset(args.dataset)
 
     ### LOAD THE MODEL ###
-    model = create_model(dataset=args.dataset, bert_backprop=args.bert_backprop == 'True', ner_loss=args.ner_loss, hard_attention = args.hard_attention == 'True')
+    model = create_model(dataset=args.dataset, bert_backprop=args.bert_backprop == 'True')
 
     ### TRAIN ###
     train_model(model, df, args)
