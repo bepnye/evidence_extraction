@@ -94,8 +94,8 @@ def process_bran_data():
 	ev_inf_docs = process_evidence_inference.read_docs(True)
 	coref_docs = process_coref_annes.read_docs(True)
 	# TODO: save the sf_lf_map info somewhere so I don't have to recompute
-	for d in ev_inf_docs: d.replace_acronyms()
-	for d in coref_docs: d.replace_acronyms()
+	for d in ev_inf_docs: d.replace_acronyms(load_map = True)
+	for d in coref_docs: d.replace_acronyms(load_map = True)
 	ner_top = '/home/ben/Desktop/evidence_extraction/data/ner/'
 	processing.add_ner_output(ev_inf_docs, '{}/ev_inf.json'.format(ner_top))
 	processing.add_ner_output(coref_docs, '{}/coref_dev.json'.format(ner_top))

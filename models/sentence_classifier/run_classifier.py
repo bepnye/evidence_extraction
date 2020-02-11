@@ -27,8 +27,6 @@ import optimization
 import tokenization
 import tensorflow as tf
 
-from evaluate import token_f1
-
 sys.path.append('../..')
 import config
 
@@ -77,8 +75,8 @@ flags.DEFINE_integer(
     "than this will be padded.")
 
 flags.DEFINE_bool("do_train", False, "Whether to run training.")
-
 flags.DEFINE_bool("do_eval", False, "Whether to run eval on the dev set.")
+flags.DEFINE_bool("do_train_eval", False, "Whether to run eval on the train set.")
 
 flags.DEFINE_bool(
     "do_predict", False,
@@ -216,45 +214,6 @@ class DataProcessor(object):
         lines.append(line)
       return lines
 
-class IcoPredProcessor(DataProcessor):
-  """Processor for the ICO tuples."""
-
-  def get_train_examples(self, data_dir):
-    """See base class."""
-    return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
-
-  def get_dev_examples(self, data_dir):
-    """See base class."""
-    return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
-
-  def get_test_examples(self, data_dir):
-    """See base class."""
-    return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
-
-  def get_labels(self):
-    """See base class."""
-    return ["0", "1", "2"]
-
-  def _create_examples(self, lines, set_type):
-    """Creates examples for the training and dev sets."""
-    examples = []
-    i_lines = list(enumerate(lines))
-    for (i, line) in i_lines:
-      guid = "%s-%s" % (set_type, i)
-      try:
-          label = '0'
-          text_a = tokenization.convert_to_unicode(line[-1])
-          examples.append(
-              InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
-      except IndexError:
-        print(i_lines[i-1])
-        print(i_lines[i])
-        input()
-    return examples
-
 class IcoProcessor(DataProcessor):
   """Processor for the ICO tuples."""
 
@@ -275,7 +234,7 @@ class IcoProcessor(DataProcessor):
 
   def get_labels(self):
     """See base class."""
-    return ["0", "1", "2"]
+    return ["0", "1"]
 
   def _create_examples(self, lines, set_type):
     """Creates examples for the training and dev sets."""
@@ -321,9 +280,11 @@ class IcoABProcessor(DataProcessor):
     examples = []
     for (i, line) in enumerate(lines):
       guid = "%s-%s" % (set_type, i)
-      label, i, c, o, ev = line
-      text_a = tokenization.convert_to_unicode(ev)
-      text_b = '{} | {} | {}'.format(*map(tokenization.convert_to_unicode, [i, c, o]))
+      label = tokenization.convert_to_unicode(line[0])
+      text_a_raw = line[-2]
+      text_b_raw = line[-1]
+      text_a = tokenization.convert_to_unicode(text_a_raw)
+      text_b = tokenization.convert_to_unicode(text_b_raw)
       examples.append(
           InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
     return examples
@@ -380,23 +341,9 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
     label_map[label] = i
 
   tokens_a = tokenizer.tokenize(example.text_a)
-  if example.extra and 'text_a' in example.extra:
-    tokens_a = []
-    for s in example.extra['text_a']:
-      tokens_a += tokenizer.tokenize(s)
-      tokens_a.append('[SEP]')
-    tokens_a.pop()
-
   tokens_b = None
   if example.text_b:
     tokens_b = tokenizer.tokenize(example.text_b)
-  if example.extra and 'text_b' in example.extra:
-    tokens_b = []
-    for s in example.extra['text_b']:
-      tokens_b += tokenizer.tokenize(s)
-      tokens_b.append('[SEP]')
-    tokens_b.pop()
-
   if tokens_b:
     # Modifies `tokens_a` and `tokens_b` in place so that the total
     # length is less than the specified length.
@@ -602,7 +549,7 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
   with tf.variable_scope("loss"):
     if is_training:
       # I.e., 0.1 dropout
-      output_layer = tf.nn.dropout(output_layer, keep_prob=0.8)
+      output_layer = tf.nn.dropout(output_layer, keep_prob=0.5)
 
     logits = tf.matmul(output_layer, output_weights, transpose_b=True)
     logits = tf.nn.bias_add(logits, output_bias)
@@ -791,8 +738,6 @@ def main(_):
   processors = {
       "ico": IcoProcessor,
       "ico_ab": IcoABProcessor,
-      "ico_pred": IcoPredProcessor,
-      "extractor": ExtractorProcessor,
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
@@ -885,6 +830,55 @@ def main(_):
         is_training=True,
         drop_remainder=True)
     estimator.train(input_fn=train_input_fn, max_steps=num_train_steps)
+  
+  if FLAGS.do_train_eval:
+    eval_examples = processor.get_train_examples(FLAGS.data_dir)
+    num_actual_eval_examples = len(eval_examples)
+    if FLAGS.use_tpu:
+      while len(eval_examples) % FLAGS.eval_batch_size != 0:
+        eval_examples.append(PaddingInputExample())
+
+    eval_file = os.path.join(FLAGS.output_dir, "train_eval.tf_record")
+    file_based_convert_examples_to_features(
+        eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
+
+    tf.logging.info("***** Running evaluation *****")
+    tf.logging.info("  Num examples = %d (%d actual, %d padding)",
+                    len(eval_examples), num_actual_eval_examples,
+                    len(eval_examples) - num_actual_eval_examples)
+    tf.logging.info("  Batch size = %d", FLAGS.eval_batch_size)
+
+    # This tells the estimator to run through the entire set.
+    eval_steps = None
+    # However, if running eval on the TPU, you will need to specify the
+    # number of steps.
+    if FLAGS.use_tpu:
+      assert len(eval_examples) % FLAGS.eval_batch_size == 0
+      eval_steps = int(len(eval_examples) // FLAGS.eval_batch_size)
+
+    eval_drop_remainder = True if FLAGS.use_tpu else False
+    eval_input_fn = file_based_input_fn_builder(
+        input_file=eval_file,
+        seq_length=FLAGS.max_seq_length,
+        is_training=False,
+        drop_remainder=eval_drop_remainder)
+
+    result = estimator.predict(input_fn=eval_input_fn)
+
+    output_eval_file = os.path.join(FLAGS.output_dir, "train_results.tsv")
+    with tf.gfile.GFile(output_eval_file, "w") as writer:
+      num_written_lines = 0
+      tf.logging.info("***** Eval results *****")
+      for (i, prediction) in enumerate(result):
+        probabilities = prediction["probabilities"]
+        if i >= num_actual_eval_examples:
+          break
+        output_line = "\t".join(
+            str(class_probability)
+            for class_probability in probabilities) + "\n"
+        writer.write(output_line)
+        num_written_lines += 1
+    assert num_written_lines == num_actual_eval_examples
 
   if FLAGS.do_eval:
     eval_examples = processor.get_dev_examples(FLAGS.data_dir)
@@ -920,7 +914,7 @@ def main(_):
 
     result = estimator.predict(input_fn=eval_input_fn)
 
-    output_eval_file = os.path.join(FLAGS.output_dir, "eval_results.tsv")
+    output_eval_file = os.path.join(FLAGS.output_dir, "dev_results.tsv")
     with tf.gfile.GFile(output_eval_file, "w") as writer:
       num_written_lines = 0
       tf.logging.info("***** Eval results *****")

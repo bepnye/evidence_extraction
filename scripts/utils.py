@@ -28,12 +28,21 @@ def init_data_dir():
 						'id_splits']:
 		os.system('mkdir -p {}/{}'.format(DATA_DIR, d))
 
+def drop_none(l):
+	return list(filter(None, l))
+
+def safe_div(x, y):
+	return x/y if y != 0 else 0
+
 def jaccard(a, b):
 	sa = set(a)
 	return len(sa.intersection(b))/len(sa.union(b))
 
 def clean_str(s):
-	return str(s).replace('\t', ' <TAB> ').replace('\n', ' <NEWLINE>').replace('\r', '<NEWLINE>')
+	return str(s).replace('\t', ' ').replace('\n', ' ').replace('\r', ' ')
+
+def unioned(l):
+	return set.union(*l)
 
 def shuffled(l):
 	return sample(l, len(l))
@@ -66,6 +75,12 @@ def read_frames(fname):
 			raise
 	return frames
 
+def mode(l):
+	return max(l, key = l.count)
+
+def argmax(l):
+	return l.index(max(l))
+
 def group_ids(dataset, group):
 	return readlines('{}/id_splits/{}/{}.txt'.format(DATA_DIR, dataset, group))
 
@@ -78,6 +93,9 @@ def overlap(x1, x2, y1, y2):
 
 def s_overlap(s1, s2):
 	return overlap(s1.i, s1.f, s2.i, s2.f)
+
+def s_overlaps(target, spans):
+	return [s for s in spans if s_overlap(target, s)]
 
 def contained(x1, x2, y1, y2):
 	return x1 >= y1 and x2 <= y2

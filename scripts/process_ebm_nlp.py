@@ -34,10 +34,11 @@ def read_docs(phase = 'starting_spans'):
 		doc = classes.Doc(pmid, text)
 		doc.group = group
 		for e in ['participants', 'interventions', 'outcomes']:
+			label_name = 'GOLD_{}'.format(e[0])
 			labels = [int(l) for l in utils.readlines(get_e_fname(pmid, e))]
 			for token_i, token_f, l in utils.condense_labels(labels):
 				char_i = token_offsets[token_i][0]
 				char_f = token_offsets[token_f-1][1]
-				doc.labels[e].append(classes.Span(char_i, char_f, text[char_i:char_f]))
+				doc.labels[label_name].append(classes.Span(char_i, char_f, text[char_i:char_f]))
 		docs.append(doc)
 	return docs
