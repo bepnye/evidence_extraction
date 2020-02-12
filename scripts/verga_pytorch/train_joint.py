@@ -17,8 +17,8 @@ sys.path.append('../')
 from classes import Entity, Span
 
 CUT_OFF = 512
-ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3}
-cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 7}
+ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3, 'NO_RELATION': 3}
+cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 2, 'NO_RELATION': 0}
 
 ### Get set of indicies for a mention ### 
 get_mention_set = lambda e: set(flatten([list(range(m.i, m.f)) for m in e.mentions]))
@@ -41,12 +41,42 @@ def create_model(dataset, bert_backprop, ner_path):
     """
     assert(dataset in set(['evidence-inference', 'CDR']))
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
-    ner_dimensions = {'evidence-inference': 4, 'CDR': 8}.get(dataset)
+    ner_dimensions = {'evidence-inference': 4, 'CDR': 3}.get(dataset)
     print("Loading relation model")
     relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
     print("Loading NER model")
     ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
     return ner_model, relation_model
+
+def soft_scoring(inputs, orig_inputs, predictions):
+    """ Generate true positives, false negatives, and false positives. """
+    """
+    true_tuples = { (i, o, r) for (i, o), r in true_relations }
+    pred_tuples = set()
+    for (pred_i, pred_o) pred_r in model_outputs:
+        match_found = False
+        for (true_i, true_o), _ in true_relations:
+            if overlaps(pred_i, true_i) and overlaps(pred_o, true_o):
+                pred_tuples.add((true_i, true_o, pred_r))
+                match_found = True
+
+        if not match_found:
+           pred_tuples.add((pred_i, true_i, pred_r))
+           tp = len(true_tuples & pred_tuples)
+           fp = len(pred_tuples - true_tuples)
+           fn = len(true_tuples - pred_tuples)
+    """
+    #true_tuples = [(i, o, r) for (i, o), r in zip(orig_inputs['relations'], orig_inputs['labels']]
+    pred_tuples = set()
+    for (pred_i, pred_o), pred_r in zip(inputs['relations'], predictions):
+        match_found = False
+        for (true_i, true_o), _ in true_relations:
+            if overlaps(pred_i, true_i) and overlaps(pred_o, true_o):
+                pred_tuples.add((true_i, true_o, pred_r))
+                match_found = True
+
+    return true_tuples
+
 
 def collapse_mentions(bert_mentions):
     """ 
@@ -127,10 +157,10 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
 
         ### couldn't find anything ###
         if not(success) and (random.uniform(0, 1) < 0.01 or test_set):
-            batch_labels.append(label_config.get('NULL')) # add null
-            batch_input['labels'].append(label_config.get('NULL'))
+            batch_labels.append(label_config.get('NO_RELATION')) # add null
+            batch_input['labels'].append(label_config.get('NO_RELATION'))
             batch_input['relations'].append((intv, out))
-
+    
     return batch_input, batch_labels
 
 def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_config, test_set = False): 
@@ -143,7 +173,6 @@ def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_con
     @param label_config what is the mapping of E1 and E2 to values (given as a dictionary -> {'E1': 0, 'E2': 1,...})? 
     @param test_set     are we running on the test set data? 
     """
-    import pdb; pdb.set_trace()
     arg_scores = torch.stack([torch.argmax(x, dim = 1) for x in ner_scores])
     new_inputs = []
     batch_labels = []
@@ -157,7 +186,6 @@ def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_con
         out_groups  = out_model.fit_predict(torch.stack(outcome_embeds).cpu().detach().numpy()) if len(outcome_embeds) != 1 else [0]
         new_input, new_labels = create_simulated_relations(inputs[i], intv_groups, intv_offsets, out_groups, outcome_offsets, label_config, test_set)
         
-        import pdb; pdb.set_trace()
         ### Add to our list of new inputs + labels ### 
         new_inputs.append(new_input)
         batch_labels.extend(new_labels)
@@ -183,10 +211,12 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         # run model through validation data
         ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
+            orig_inputs = inputs
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
             inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
             if len(labels) == 0: continue
             relation_outputs = relation_model(inputs, hidden_states[-2])
+            #tp, tn, fp = soft_scoring(inputs, orig_inputs, relation_outputs)
        
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
@@ -264,7 +294,7 @@ def train_model(ner_model, relation_model, df, parameters):
         # single epoch train
         for batch_range in range(0, len(train_data), batch_size):
             inputs = train_data[batch_range: batch_range + batch_size] 
-            ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels[batch_range: batch_range + batch_size]], batch_first=True, padding_value=3, device='cuda')
+            ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels[batch_range: batch_range + batch_size]], batch_first=True, padding_value=label_config['NULL'], device='cuda')
             text_inputs = [torch.tensor(input_['text'][:CUT_OFF]).cuda() for input_ in inputs]    
             padded_text = PaddedSequence.autopad(text_inputs, batch_first = True, padding_value=0, device='cuda')
 
@@ -279,7 +309,6 @@ def train_model(ner_model, relation_model, df, parameters):
             
             if not(teacher_force): 
                 inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config)
-                import pdb; pdb.set_trace()
                 if len(labels) == 0: continue
                 relation_outputs = relation_model(inputs, hidden_states[-2])
             else:

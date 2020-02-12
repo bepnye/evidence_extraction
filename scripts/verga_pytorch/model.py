@@ -6,7 +6,7 @@ from padded_sequence import PaddedSequence
 
 SCI_BERT_LOCATION = '/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/'
 NER_BERT_LOCATION = '/home/jay/scibert_ner_ebmnlp/' #'/home/jay/scibert_ner_ebmlnlp/' #'/home/jay/scibert_ner/'
-CDR_NER_BERT_LOCATION = '/home/jay/cdr_trained_scibert'
+CDR_NER_BERT_LOCATION = '/home/jay/cdr_trained_scibert_small/'
 
 class BERTVergaPytorch(nn.Module):
     """

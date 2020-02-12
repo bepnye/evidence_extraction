@@ -11,7 +11,7 @@ import torch.optim as optim
 from sklearn.metrics import f1_score, classification_report
 import numpy as np
 ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3}
-cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 7}
+cdr_label_config = {'E1': 0, 'E2': 1, 'NULL': 2}
 
 def get_dataset(dataset):
     """ Generate the dataset based on what is requested. """
