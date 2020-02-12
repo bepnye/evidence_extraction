@@ -26,6 +26,10 @@ get_mention_set = lambda e: set(flatten([list(range(m.i, m.f)) for m in e.mentio
 # FLATTEN A LIST OF LISTS #
 flatten = lambda l: [item for sublist in l for item in sublist]
 
+def overlaps(e1, e2):  
+    """ Do these two entity objects overlap at all?"""
+    return bool(get_mention_set(e1) & get_mention_set(e2))         
+
 def get_dataset(dataset):
     """ Generate the dataset based on what is requested. """
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
@@ -48,7 +52,7 @@ def create_model(dataset, bert_backprop, ner_path):
     ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
     return ner_model, relation_model
 
-def soft_scoring(inputs, orig_inputs, predictions):
+def soft_scoring(batch_inputs, batch_orig_inputs, predictions):
     """ Generate true positives, false negatives, and false positives. """
     """
     true_tuples = { (i, o, r) for (i, o), r in true_relations }
@@ -61,22 +65,33 @@ def soft_scoring(inputs, orig_inputs, predictions):
                 match_found = True
 
         if not match_found:
-           pred_tuples.add((pred_i, true_i, pred_r))
-           tp = len(true_tuples & pred_tuples)
-           fp = len(pred_tuples - true_tuples)
-           fn = len(true_tuples - pred_tuples)
+            pred_tuples.add((pred_i, true_i, pred_r))
+     tp = len(true_tuples & pred_tuples)
+     fp = len(pred_tuples - true_tuples)
+     fn = len(true_tuples - pred_tuples)
     """
-    #true_tuples = [(i, o, r) for (i, o), r in zip(orig_inputs['relations'], orig_inputs['labels']]
-    pred_tuples = set()
-    for (pred_i, pred_o), pred_r in zip(inputs['relations'], predictions):
-        match_found = False
-        for (true_i, true_o), _ in true_relations:
-            if overlaps(pred_i, true_i) and overlaps(pred_o, true_o):
-                pred_tuples.add((true_i, true_o, pred_r))
-                match_found = True
+    pred_offset = 0
+    for inputs, orig_inputs in zip(batch_inputs, batch_orig_inputs):
+        true_tuples = [(i, o, r) for (i, o), r in zip(orig_inputs['relations'], orig_inputs['labels'])]
+        pred_tuples = set()
+        for (pred_i, pred_o), pred_r in zip(inputs['relations'], predictions[pred_offset:pred_offset+len(inputs['relations'])]):
+            match_found = False
+            for (true_i, true_o, _) in true_tuples:
+                if overlaps(pred_i, true_i) and overlaps(pred_o, true_o):
+                    pred_tuples.add((true_i, true_o, pred_r.cpu().item()))
+                    match_found = True
 
-    return true_tuples
+                if not(match_found):
+                    pred_tuples.add((pred_i, pred_o, pred_r.cpu().item()))
+                    # pseudo code is wrong 
 
+                pred_offset += 1
+
+    true_tuples = set(true_tuples)
+    tp = len(true_tuples & pred_tuples)
+    fp = len(pred_tuples - true_tuples)
+    fn = len(true_tuples - pred_tuples)
+    return tp, fp, fn
 
 def collapse_mentions(bert_mentions):
     """ 
@@ -216,8 +231,9 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
             inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
             if len(labels) == 0: continue
             relation_outputs = relation_model(inputs, hidden_states[-2])
-            #tp, tn, fp = soft_scoring(inputs, orig_inputs, relation_outputs)
-       
+            tp, fn, fp = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1))
+            #TODO
+            
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
         test_outputs.extend(relation_outputs.cpu().numpy()) # or something like this
