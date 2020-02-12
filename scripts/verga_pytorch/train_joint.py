@@ -216,9 +216,11 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
     test_ner_labels = []
     test_ner_scores = []
     test_loss = 0
+    total_stats = {'tp': 0, 'fp': 0, 'fn': 0}
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
         inputs, labels, ner_labels = extract_data(data, label_config)
+        if len(inputs) == 0: continue
         ner_batch_labels = PaddedSequence.autopad([lab[:CUT_OFF] for lab in ner_labels], batch_first=True, padding_value=label_config.get('NULL'), device='cuda')
         text_inputs = [torch.tensor(input_['text'][:CUT_OFF]).cuda() for input_ in inputs]
         padded_text = PaddedSequence.autopad(text_inputs, batch_first = True, padding_value=0, device='cuda')
@@ -232,8 +234,10 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
             if len(labels) == 0: continue
             relation_outputs = relation_model(inputs, hidden_states[-2])
             tp, fn, fp = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1))
-            #TODO
-            
+            total_stats['tp'] += tp
+            total_stats['fp'] += fp
+            total_stats['fn'] += fn
+
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
         test_outputs.extend(relation_outputs.cpu().numpy()) # or something like this
@@ -242,11 +246,14 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         # GET NER SCORES
         test_ner_scores.extend(ner_scores.cpu().numpy())
         test_ner_labels.extend(ner_labels)
-    
-    if len(test_ner_labels) == 0:
-        #assert(not(0 in test_ner_scores or 1 in test_ner_scores or 2 in test_ner_scores))
-        print("Error: No metrics available")
+   
+    if len(test_ner_labels) == 0: 
+        print("Error! Not enough labels. Please fix.")
         return 0
+
+    soft_prec = total_stats['tp'] / (total_stats['tp'] + total_stats['fp'])
+    soft_rec = total_stats['tp'] / (total_stats['tp'] + total_stats['fn'])
+    soft_f1 = 2 * (soft_prec * soft_rec) / (soft_rec + soft_prec) if (soft_rec + soft_prec) != 0 else 0 
     
     ### REMOVE PADDED PREDICTIONS, GET NER F1 ###
     for idx, n in enumerate(test_ner_labels):
@@ -276,7 +283,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         bin_f1 = 0
 
     print("FULL TASK REPORT\n{}".format(classification_report(labels, outputs)))
-    print("Epoch {}\nF1 score: {}\nBinary F1: {}\nLoss: {}\nNER_F1: {}\n".format(epoch, f1, bin_f1, test_loss, ner_f1))
+    print("Epoch {}\nSoft F1: {}\nSoft Precision: {}\nSoft Recall: {}\nF1 score: {}\nBinary F1: {}\nLoss: {}\nNER_F1: {}\n".format(epoch, soft_f1, soft_prec, soft_rec, f1, bin_f1, test_loss, ner_f1))
     return f1
 
 def train_model(ner_model, relation_model, df, parameters):
