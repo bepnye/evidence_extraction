@@ -36,7 +36,7 @@ def get_dataset(dataset):
     generate_data = {'evidence-inference': load_data, 'CDR': load_CDR}.get(dataset)
     return generate_data()
 
-def create_model(dataset, bert_backprop, ner_path):
+def create_model(dataset, bert_backprop, ner_path, share_berts=True):
     """
     Create a model with the given specifications and return it.
 
@@ -48,7 +48,7 @@ def create_model(dataset, bert_backprop, ner_path):
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
     ner_dimensions = {'evidence-inference': 4, 'CDR': 3}.get(dataset)
     print("Loading relation model")
-    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
+    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=not share_berts).cuda()
     print("Loading NER model")
     ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
     return ner_model, relation_model
@@ -400,15 +400,18 @@ def train_model(ner_model, relation_model, df, parameters):
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
-        f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size)
-        evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = True, dump='wrafsdbgsf.out')
+        print("Dev results with teacher forcing")
+        evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing=True, dump='dev_with_teacher_forcing')
+        print("Dev results without teacher forcing")
+        f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = False, dump='dev_without_teacher_forcing.out')
 
         # update our scores to find the best possible model
         best_model   = (copy.deepcopy(ner_model), copy.deepcopy(relation_model))  if max_f1_score < f1_score else best_model
         max_f1_score = max(max_f1_score, f1_score)
 
     print("Final test run:\n")
-    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size, dump='dump.out')
+    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size, teacher_forcing=True, dump='test_with_teacher_forcing')
+    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size, teacher_forcing=False, dump='test_without_teacher_forcing')
     torch.save(best_model[0], path_ner)
     torch.save(best_model[1], path_relation)
 
@@ -425,6 +428,7 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--ner_loss_weight", dest="ner_loss_weight", type=float, required=True, help="Relative loss weight for NER task (b/w 0 and 1)")
     parser.add_argument("--teacher_forcing_ratio", dest="teacher_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
     parser.add_argument("--teacher_forcing_decay", dest="teacher_forcing_decay", type=float, required=True, help="What decay after each epoch?")
+    parser.add_argument("--no_share_berts", dest="no_share_berts", action='store_true', help="Should we have our own BERT for relations and NER?")
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
 
@@ -435,7 +439,8 @@ def main(args=sys.argv[1:]):
     ### LOAD THE MODEL ###
     ner_model, relation_model = create_model(dataset=args.dataset,
                                              bert_backprop=args.bert_backprop == 'True',
-                                             ner_path=get_ner_path(args.dataset))
+                                             ner_path=get_ner_path(args.dataset),
+                                             share_berts=not args.no_share_berts)
 
     ### TRAIN ###
     train_model(ner_model, relation_model, df, args)
