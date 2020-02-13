@@ -15,6 +15,7 @@ from sklearn.cluster import AgglomerativeClustering as agg_cluster
 import itertools
 sys.path.append('../')
 from classes import Entity, Span
+import pickle
 
 CUT_OFF = 512
 ev_inf_label_config = {'E1': 1, 'E2': 2, 'NULL': 3, 'NO_RELATION': 3}
@@ -240,7 +241,7 @@ def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_con
 
     return new_inputs, batch_labels
 
-def evaluate_model(relation_model, ner_model, label_config, criterion, test, epoch, batch_size, teacher_forcing=False):
+def evaluate_model(relation_model, ner_model, label_config, criterion, test, epoch, batch_size, teacher_forcing=False, dump = None):
     # evaluate on validation set
     relation_model.eval()
     ner_model.eval()
@@ -250,6 +251,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
     test_ner_scores = []
     test_loss = 0
     all_scores = []
+    used_inputs = []
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
         inputs, labels, ner_labels = extract_data(data, label_config)
@@ -268,6 +270,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
                 if len(labels) == 0: continue
                 relation_outputs = relation_model(inputs, hidden_states[-2])
                 scores = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1), label_config['NO_RELATION'])
+                used_inputs.extend(inputs)
             else:
                 relation_outputs = relation_model(inputs, hidden_states[-2])
                 scores = [(0, 0, 0)]
@@ -310,6 +313,10 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
     outputs = [np.argmax(x) for x in test_outputs]
     labels  = test_labels
     f1 = f1_score(labels, outputs, average = 'macro')
+    if not(dump is None):
+        zipped_outputs = [used_inputs, outputs, labels]
+        pickle.dump(zipped_outputs, open(dump, 'wb'))    
+
     if max(labels) > 1 or max(outputs) > 1:
         print("BINARY CLASSIFICATION REPORT:\n{}".format(classification_report(labels, outputs)))
         outputs = [1 if x != 3 else 0 for x in outputs]
@@ -394,14 +401,14 @@ def train_model(ner_model, relation_model, df, parameters):
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
         f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size)
-        evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = True)
+        evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = True, dump='wrafsdbgsf.out')
 
         # update our scores to find the best possible model
         best_model   = (copy.deepcopy(ner_model), copy.deepcopy(relation_model))  if max_f1_score < f1_score else best_model
         max_f1_score = max(max_f1_score, f1_score)
 
     print("Final test run:\n")
-    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size)
+    evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size, dump='dump.out')
     torch.save(best_model[0], path_ner)
     torch.save(best_model[1], path_relation)
 
