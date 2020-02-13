@@ -52,7 +52,7 @@ def create_model(dataset, bert_backprop, ner_path):
     ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
     return ner_model, relation_model
 
-def soft_scoring(batch_inputs, batch_orig_inputs, predictions):
+def soft_scoring(batch_inputs, batch_orig_inputs, predictions, no_relation_label):
     """ Generate true positives, false negatives, and false positives. """
     """
     true_tuples = { (i, o, r) for (i, o), r in true_relations }
@@ -71,11 +71,17 @@ def soft_scoring(batch_inputs, batch_orig_inputs, predictions):
      fn = len(true_tuples - pred_tuples)
     """
     pred_offset = 0
+    scores = []
     for inputs, orig_inputs in zip(batch_inputs, batch_orig_inputs):
         true_tuples = [(i, o, r) for (i, o), r in zip(orig_inputs['relations'], orig_inputs['labels'])]
+        true_tuples = list(filter(lambda x: x[-1] != no_relation_label, true_tuples))
         pred_tuples = set()
         for (pred_i, pred_o), pred_r in zip(inputs['relations'], predictions[pred_offset:pred_offset+len(inputs['relations'])]):
             match_found = False
+            if pred_r.cpu().item() == no_relation_label: 
+                pred_offset += 1
+                continue
+
             for (true_i, true_o, _) in true_tuples:
                 if overlaps(pred_i, true_i) and overlaps(pred_o, true_o):
                     pred_tuples.add((true_i, true_o, pred_r.cpu().item()))
@@ -85,13 +91,18 @@ def soft_scoring(batch_inputs, batch_orig_inputs, predictions):
                     pred_tuples.add((pred_i, pred_o, pred_r.cpu().item()))
                     # pseudo code is wrong 
 
-                pred_offset += 1
+            pred_offset += 1
 
-    true_tuples = set(true_tuples)
-    tp = len(true_tuples & pred_tuples)
-    fp = len(pred_tuples - true_tuples)
-    fn = len(true_tuples - pred_tuples)
-    return tp, fp, fn
+        true_tuples = set(true_tuples)
+        tp = len(true_tuples & pred_tuples)
+        fp = len(pred_tuples - true_tuples)
+        fn = len(true_tuples - pred_tuples)
+        prec = tp / (tp + fp) if (tp + fn) != 0 else 0
+        rec = tp / (tp + fn) if (tp + fn) != 0 else 0
+        f1 = 2 * (prec * rec) / (prec + rec) if (prec + rec) != 0 else 0 
+        scores.append((prec, rec, f1))
+
+    return scores
 
 def collapse_mentions(bert_mentions):
     """ 
@@ -178,6 +189,28 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
     
     return batch_input, batch_labels
 
+def get_arg_scores(batch_inputs, batch_ner_scores):
+    batch_labels = []
+    for inputs, ner_scores in zip(batch_inputs, batch_ner_scores):
+        word_pieces = TOKENIZER.tokenize(TOKENIZER.decode(inputs['text']))
+        ner_scores = torch.argmax(ner_scores, dim = -1)
+        assert(min(512, len(word_pieces)) <= len(ner_scores))
+        last_valid = 0
+        labels = []
+        for idx, w in enumerate(word_pieces):
+            if idx >= CUT_OFF: 
+                break
+            elif "##" in w:
+                labels.append(ner_scores[last_valid])
+            else:
+                last_valid = idx
+                labels.append(ner_scores[idx])
+        
+        labels.extend(ner_scores[idx + 1:])
+        batch_labels.append(torch.stack(labels))
+
+    return batch_labels
+
 def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_config, test_set = False): 
     """ 
     Perform COREF grouping and modify the labels to correspond to the ones given by the argmax ner scores.
@@ -188,7 +221,7 @@ def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_con
     @param label_config what is the mapping of E1 and E2 to values (given as a dictionary -> {'E1': 0, 'E2': 1,...})? 
     @param test_set     are we running on the test set data? 
     """
-    arg_scores = torch.stack([torch.argmax(x, dim = 1) for x in ner_scores])
+    arg_scores = get_arg_scores(inputs, ner_scores)#torch.stack([torch.argmax(x, dim = 1) for x in ner_scores])
     new_inputs = []
     batch_labels = []
     for i in range(len(arg_scores)):
@@ -216,7 +249,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
     test_ner_labels = []
     test_ner_scores = []
     test_loss = 0
-    total_stats = {'tp': 0, 'fp': 0, 'fn': 0}
+    all_scores = []
     for batch_range in range(0, len(test), batch_size):
         data = test[batch_range: batch_range + batch_size]
         inputs, labels, ner_labels = extract_data(data, label_config)
@@ -233,11 +266,9 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
             inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
             if len(labels) == 0: continue
             relation_outputs = relation_model(inputs, hidden_states[-2])
-            tp, fn, fp = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1))
-            total_stats['tp'] += tp
-            total_stats['fp'] += fp
-            total_stats['fn'] += fn
-
+            scores = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1), label_config['NO_RELATION'])
+            all_scores.extend(scores)
+    
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
         test_loss += loss.item()
         test_outputs.extend(relation_outputs.cpu().numpy()) # or something like this
@@ -251,10 +282,10 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         print("Error! Not enough labels. Please fix.")
         return 0
 
-    soft_prec = total_stats['tp'] / (total_stats['tp'] + total_stats['fp'])
-    soft_rec = total_stats['tp'] / (total_stats['tp'] + total_stats['fn'])
-    soft_f1 = 2 * (soft_prec * soft_rec) / (soft_rec + soft_prec) if (soft_rec + soft_prec) != 0 else 0 
-    
+    soft_prec = np.mean([x[0] for x in all_scores])
+    soft_rec = np.mean([x[1] for x in all_scores])
+    soft_f1 = np.mean([x[2] for x in all_scores]) 
+
     ### REMOVE PADDED PREDICTIONS, GET NER F1 ###
     for idx, n in enumerate(test_ner_labels):
         new_size = min(CUT_OFF, len(n))

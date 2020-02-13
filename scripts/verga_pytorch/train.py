@@ -72,7 +72,7 @@ def train_model(model, df, parameters):
     batch_size = parameters.batch_size
     balance_classes = parameters.balance_classes
     learning_rate   = parameters.lr
-    label_config = 
+    label_config = {'evidence-inference': ev_inf_label_config, 'CDR': cdr_label_config}.get(parameters.dataset)
 
     # split data, set up our optimizers
     best_model = None
@@ -86,7 +86,7 @@ def train_model(model, df, parameters):
         training_loss = 0
         dev_loss      = 0
         
-        train_data, train_labels, _ = extract_data(train, balance_classes == 'True')
+        train_data, train_labels, _ = extract_data(train, label_config, balance_classes == 'True')
         label_offset = 0
         # single epoch train
         for batch_range in range(0, len(train), batch_size):

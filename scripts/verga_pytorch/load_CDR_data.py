@@ -57,7 +57,7 @@ def parse_CDR_document(doc_array):
         ch_start, ch_end = word_piece_to_char_offset(text, int(s), int(e))
         entity2.mentions.append(Span(ch_start, ch_end, doc_array[7]))
 
-    document   = Doc(doc_array[10], text)
+    document   = Doc(doc_array[10], norm_text)
     entity_map = ([entity1, entity2], {(entity1.text, entity2.text): label})
     return document, entity_map
 
@@ -103,9 +103,8 @@ def main(files, tokenizer):
    
     tokenized_docs = []
     for d, entity_map in zip(documents, relation_maps):
-        tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer))
-   
-    import pdb; pdb.set_trace()
+        tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer)) 
+
     return tokenized_docs
 
 def load_CDR():
