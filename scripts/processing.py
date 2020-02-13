@@ -146,33 +146,37 @@ Entity, Doc => Mention assignment
 """
 
 # Assign each NER span to the closest entity in embedding space
-
-
-def assign_bert_mentions(entities, doc, label_prefix='NER', max_dist=0.10):
-    for t in 'io':
-        valid_entities = [e for e in entities if e.type == t]
-        valid_mentions = get_doc_spans(doc, label_prefix, t)
-        if not valid_mentions:
-            continue
-        if '' in valid_mentions:
-            print('Warning: empty mention found for id = {}'.format(doc.id))
-            valid_mentions = [m for m in valid_mentions if m.text != '']
-        try:
-            entity_embs = encode([e.text for e in valid_entities])
-            mention_embs = encode([m.text for m in valid_mentions])
-        except ValueError:
-            print(doc.id)
-            print(t)
-            print(valid_mentions)
-            raise
-        for m, m_emb in zip(valid_mentions, mention_embs):
-            dists = [cos_dist(m_emb, e_emb) for e_emb in entity_embs]
-            # explicitly sort on first element - builtin comparator breaks when dists are tied!
-            sorted_dists = sorted(
-                zip(dists, valid_entities), key=itemgetter(0))
-            # require a minimum similarity between mention and entity
-            if sorted_dists[0][0] <= max_dist:
-                sorted_dists[0][1].mentions.append(m)
+def assign_bert_mentions(entities, doc, label_prefix = 'NER', \
+		max_dist = 0.10, add_unlinked_entities = False):
+	for t in 'io':
+		valid_entities = [e for e in entities if e.type == t]
+		valid_mentions = get_doc_spans(doc, label_prefix + '_'+ t)
+		valid_mentions = [m for m in valid_mentions if not m.text.isspace()]
+		if not valid_mentions:
+			print('Warning! No valid mentions for {} ({})'.format(doc.id, t))
+			continue
+		try:
+			entity_embs = list(encode([e.text for e in valid_entities]))
+			mention_embs = encode([m.text for m in valid_mentions])
+		except ValueError:
+			print(doc.id)
+			print(t)
+			print(valid_mentions)
+			raise
+		for m, m_emb in zip(valid_mentions, mention_embs):
+			dists = [cos_dist(m_emb, e_emb) for e_emb in entity_embs]
+			# explicitly sort on first element - builtin comparator breaks when dists are tied!
+			sorted_dists = sorted(zip(dists, valid_entities), key = itemgetter(0))
+			# require a minimum similarity between mention and entity
+			if sorted_dists[0][0] <= max_dist:
+				sorted_dists[0][1].mentions.append(m)
+			else:
+				if add_unlinked_entities:
+					# ooohhh sheeeeeit create a new entity
+					unlinked_e = classes.Entity(m, t)
+					unlinked_e.mentions.append(m)
+					entities.append(unlinked_e)
+					entity_embs.append(encode([unlinked_e.text])[0])
 
 
 """
@@ -266,8 +270,9 @@ def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn):
 
 
 def extract_distant_info(doc):
-    return extract_doc_info(doc, get_frame_entities,
-                            assign_bert_mentions, assign_text_names, get_frame_relations)
+	return extract_doc_info(doc, get_frame_entities, \
+			partial(assign_bert_mentions, add_unlinked_entities = True), \
+			assign_text_names, get_frame_relations)
 
 
 def extract_gold_info(doc):
