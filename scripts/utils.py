@@ -79,6 +79,9 @@ def overlap(x1, x2, y1, y2):
 def s_overlap(s1, s2):
 	return overlap(s1.i, s1.f, s2.i, s2.f)
 
+def s_overlaps(target, spans):
+    return [s for s in spans if s_overlap(target, s)]
+
 def contained(x1, x2, y1, y2):
 	return x1 >= y1 and x2 <= y2
 
