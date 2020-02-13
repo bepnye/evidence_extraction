@@ -97,7 +97,7 @@ def soft_scoring(batch_inputs, batch_orig_inputs, predictions, no_relation_label
         tp = len(true_tuples & pred_tuples)
         fp = len(pred_tuples - true_tuples)
         fn = len(true_tuples - pred_tuples)
-        prec = tp / (tp + fp) if (tp + fn) != 0 else 0
+        prec = tp / (tp + fp) if (tp + fp) != 0 else 0
         rec = tp / (tp + fn) if (tp + fn) != 0 else 0
         f1 = 2 * (prec * rec) / (prec + rec) if (prec + rec) != 0 else 0 
         scores.append((prec, rec, f1))
@@ -192,7 +192,7 @@ def create_simulated_relations(inputs, intv_groups, intv_offsets, out_groups, ou
 def get_arg_scores(batch_inputs, batch_ner_scores):
     batch_labels = []
     for inputs, ner_scores in zip(batch_inputs, batch_ner_scores):
-        word_pieces = TOKENIZER.tokenize(TOKENIZER.decode(inputs['text']))
+        word_pieces = TOKENIZER.tokenize(TOKENIZER.decode(inputs['text'], clean_up_tokenization_spaces=False))
         ner_scores = torch.argmax(ner_scores, dim = -1)
         assert(min(512, len(word_pieces)) <= len(ner_scores))
         last_valid = 0
@@ -240,7 +240,7 @@ def agglomerative_coref(inputs, ner_scores, bert_embedds, true_labels, label_con
 
     return new_inputs, batch_labels
 
-def evaluate_model(relation_model, ner_model, label_config, criterion, test, epoch, batch_size):
+def evaluate_model(relation_model, ner_model, label_config, criterion, test, epoch, batch_size, teacher_forcing=False):
     # evaluate on validation set
     relation_model.eval()
     ner_model.eval()
@@ -263,10 +263,15 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         with torch.no_grad():
             orig_inputs = inputs
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
-            inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
-            if len(labels) == 0: continue
-            relation_outputs = relation_model(inputs, hidden_states[-2])
-            scores = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1), label_config['NO_RELATION'])
+            if not(teacher_forcing):
+                inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
+                if len(labels) == 0: continue
+                relation_outputs = relation_model(inputs, hidden_states[-2])
+                scores = soft_scoring(inputs, orig_inputs, relation_outputs.argmax(dim=-1), label_config['NO_RELATION'])
+            else:
+                relation_outputs = relation_model(inputs, hidden_states[-2])
+                scores = [(0, 0, 0)]
+
             all_scores.extend(scores)
     
         loss = criterion(relation_outputs, torch.tensor(labels).cuda())
@@ -328,6 +333,8 @@ def train_model(ner_model, relation_model, df, parameters):
     teacher_force_ratio = parameters.teacher_forcing_ratio
     teacher_force_decay = parameters.teacher_forcing_decay
     label_config = {'evidence-inference': ev_inf_label_config, 'CDR': cdr_label_config}.get(parameters.dataset)
+    path_ner = "ner_model_lr_{}_epochs_{}_ner_loss_w_{}_start_tfr_{}_decay_{}.pth".format(learning_rate, epochs, ner_loss_weighting, teacher_force_ratio, teacher_force_decay)
+    path_relation = "relation_model_lr_{}_epochs_{}_ner_loss_w_{}_start_tfr_{}_decay_{}.pth".format(learning_rate, epochs, ner_loss_weighting, teacher_force_ratio, teacher_force_decay)           
     assert(ner_loss_weighting <= 1.0 and ner_loss_weighting >= 0.0)
 
     # split data, set up our optimizers
@@ -387,6 +394,7 @@ def train_model(ner_model, relation_model, df, parameters):
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
         f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size)
+        evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = True)
 
         # update our scores to find the best possible model
         best_model   = (copy.deepcopy(ner_model), copy.deepcopy(relation_model))  if max_f1_score < f1_score else best_model
@@ -394,7 +402,8 @@ def train_model(ner_model, relation_model, df, parameters):
 
     print("Final test run:\n")
     evaluate_model(best_model[1], best_model[0], label_config, criterion, test, epoch, batch_size)
-    import pdb; pdb.set_trace()
+    torch.save(best_model[0], path_ner)
+    torch.save(best_model[1], path_relation)
 
 def main(args=sys.argv[1:]):
     ### Use arg parser to read in data. ###

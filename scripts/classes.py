@@ -169,7 +169,7 @@ class Doc:
 		self.parse_text()
 
 	def replace_acronyms(self, save_map = False, load_map = False):
-		map_fname = '../data/sf_lf_maps/{}.ab3p'.format(self.id)
+		map_fname = '../../data/sf_lf_maps/{}.ab3p'.format(self.id)
 		if not self.has_acronyms:
 			print('Skipping repeated acronym replacement call for {}'.format(self.id))
 			return

@@ -72,6 +72,7 @@ def train_model(model, df, parameters):
     batch_size = parameters.batch_size
     balance_classes = parameters.balance_classes
     learning_rate   = parameters.lr
+    save_ = "relation_model_tf_only_dataset_{}_lr_{}_epochs{}.pth".format(parameters.dataset, learning_rate, epochs)
     label_config = {'evidence-inference': ev_inf_label_config, 'CDR': cdr_label_config}.get(parameters.dataset)
 
     # split data, set up our optimizers
@@ -119,6 +120,7 @@ def train_model(model, df, parameters):
 
     print("Final test run:\n")
     evaluate_model(best_model, criterion, label_config, test, epoch, batch_size)
+    torch.save(best_model, save_)
 
 def main(args=sys.argv[1:]):
     ### Use arg parser to read in data. ###
