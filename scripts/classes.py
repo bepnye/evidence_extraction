@@ -3,10 +3,15 @@ from collections import defaultdict
 from itertools import groupby
 
 import numpy as np
+import scispacy
 import spacy
-NLP = spacy.load("en_core_web_sm")
+#from scispacy.abbreviation import AbbreviationDetector
+NLP = spacy.load("en_core_sci_lg")
+#ABBR_PIPE = AbbreviationDetector(NLP)
+#NLP.add_pipe(ABBR_PIPE)
 
 import tools
+import utils
 
 def string_to_tokens(string):
 	if type(string) is not str:
@@ -28,7 +33,7 @@ class Span:
 
 	def __str__(self):
 		label_str = ' ({})'.format(self.label) if self.label != None else ''
-		s = '[{}:{} "{}"{}]'.format(self.i, self.f, self.text.replace('\n', '\\n'), label_str)
+		s = '["{}" {}:{}{}]'.format(self.text.replace('\n', '\\n'), self.i, self.f, label_str)
 		return s
 
 class Entity:
@@ -40,6 +45,7 @@ class Entity:
 		self.concepts = span.concepts
 		self.mentions = []
 		self.source_texts = [span.text]
+		self.relations = []
 
 	def __str__(self):
 		return '[ENTITIY: {}]'.format(self.string)
@@ -102,27 +108,53 @@ class Doc:
 		self.frames = []
 		self.coref_groups = []
 		self.parsed = False
-		self.has_acronyms = True
+
+	def has_sf_lf_map(self):
+		return hasattr(self, 'sf_lf_map')
 
 	def parse_text(self):
 		nlp = NLP(self.text)
-		self.tokens = [Span(t.idx, t.idx+len(t.text), t.text) for t in nlp]
+		self.spacy_extra = nlp._
+		self.tokens = [Span(t.idx, t.idx+len(t.text), t.text, label = t.tag_) for t in nlp]
+		self.tokens = [s for s in self.tokens if not s.text.isspace()]
 		self.sents = [Span(s.start_char, s.end_char, s.text) for s in nlp.sents]
 		self.parsed = True
 
-	def get_token_labels(self):
-		if not self.parsed:
-			self.parse_text()
-		per_char_labels = [set() for char in self.text]
+	def get_char_labels(self, prefix = None, multi_label = True):
+		per_char_labels = [[] for char in self.text]
 		for label, label_spans in self.labels.items():
+			if prefix and not label.startswith(prefix):
+				continue
 			for span in label_spans:
 				for char_labels in per_char_labels[span.i:span.f]:
-					char_labels.add(label)
-		token_labels = []
-		for span in self.tokens:
-			span_labels = set.union(*per_char_labels[span.i:span.f])
-			token_labels.append(list(span_labels))
-		return token_labels
+					char_labels.append(label)
+		if multi_label:
+			per_char_labels = [set(ls) for ls in per_char_labels]
+		else:
+			per_char_labels = [utils.mode(ls) if ls else None for ls in per_char_labels]
+		return per_char_labels
+
+	def get_span_labels(self, spans, prefix = None, multi_label = False):
+		per_char_labels = self.get_char_labels(prefix)
+		if not self.parsed:
+			self.parse_text()
+		all_span_labels = []
+		for span in spans:
+			span_labels = list(utils.unioned(per_char_labels[span.i:span.f]))
+			if not multi_label:
+				span_labels = 0 if not span_labels else span_labels[0]
+			all_span_labels.append(span_labels)
+		return all_span_labels
+
+	def get_sent_labels(self, prefix = None, multi_label = False):
+		if not self.parsed:
+			self.parse_text()
+		return self.get_span_labels(self.sents, prefix, multi_label)
+	
+	def get_token_labels(self, prefix = None, multi_label = False):
+		if not self.parsed:
+			self.parse_text()
+		return self.get_span_labels(self.tokens, prefix, multi_label)
 
 	def substitute_string(self, start_str, substitutions):
 		char_offsets = [0]*(len(start_str)+1)
@@ -166,6 +198,10 @@ class Doc:
 				span.i += char_offsets[span.i]
 				span.f += char_offsets[span.f]
 				span.text = self.text[span.i:span.f]
+		for frame in self.frames:
+			frame.ev.i += char_offsets[frame.ev.i]
+			frame.ev.f += char_offsets[frame.ev.f]
+			frame.ev.text = self.text[frame.ev.i:frame.ev.f]
 		self.parse_text()
 
 	def replace_acronyms(self, save_map = False, load_map = False):
@@ -177,16 +213,31 @@ class Doc:
 			print('Loading sf_lf_map from {}'.format(map_fname))
 			self.sf_lf_map = json.load(open(map_fname))
 		else:
-			self.sf_lf_map = tools.ab3p_text(self.text)
-			if save_map:
-				print('Saving sf_lf_map to {}'.format(map_fname))
-				json.dump(self.sf_lf_map, open(map_fname, 'w'))
+			print('Warning! Unknown method for finding acronyms: {}'.format(method))
+			sf_lf_map = {}
+	
+		if save_map:
+			map_fname = '../data/sf_lf_maps/{}.{}'.format(self.id, method)
+			print('Saving sf_lf_map to {}'.format(map_fname))
+			json.dump(self.sf_lf_map, open(map_fname, 'w'))
+
+		return sf_lf_map
+
+	def replace_acronyms(self, method = 'ab3p', save_map = False, load_map = False):
+		map_fname = '../data/sf_lf_maps/{}.{}'.format(self.id, method)
+		if not self.has_sf_lf_map():
+			if load_map and os.path.isfile(map_fname):
+				print('Loading sf_lf_map from {}'.format(map_fname))
+				self.sf_lf_map = json.load(open(map_fname))
+			else:
+				self.sf_lf_map = self.compute_sf_lf_map(method, save_map)
+
 		if not self.parsed:
 			self.parse_text()
+
 		text_substitutions = self.get_sf_token_substitutions(self.text, self.tokens)
 		self.update_text(text_substitutions)
 		self.replace_frame_acronyms()
-		self.has_acronyms = False
 
 	def replace_frame_acronyms(self):
 		for frame in self.frames:
@@ -194,7 +245,6 @@ class Doc:
 				frame.i.text = self.get_sf_substituted_string(frame.i.text)
 				frame.c.text = self.get_sf_substituted_string(frame.c.text)
 				frame.o.text = self.get_sf_substituted_string(frame.o.text)
-				frame.ev.text = self.get_sf_substituted_string(frame.ev.text)
 
 	def metamap_text(self):
 		self.metamap_spans = []
@@ -218,3 +268,28 @@ class Doc:
 		for ner_class in self.ner:
 			for span in self.ner[ner_class]:
 				span.concepts = tools.get_mm_concepts(span.text)
+
+	def get_overlap_labels(self, span, attr):
+		doc_spans = getattr(self, attr)
+		labels = [int(utils.s_overlap(span, s)) for s in doc_spans]
+		return labels
+
+def scispacy_abbr(doc):
+	if not doc.parsed:
+		doc.parse_text()
+	sf_lf_map = {}
+	for abbr in doc.spacy_extra.abbreviations:
+		sf_lf_map[abbr.text] = abbr._.long_form.text
+	return sf_lf_map
+
+def compare_abbr_methods(doc):
+	print(doc.id)
+	abbr_ab3p = doc.compute_sf_lf_map('ab3p')
+	abbr_spacy = doc.compute_sf_lf_map('scispacy')
+	for k in set(abbr_ab3p.keys()).union(abbr_spacy.keys()):
+		ab3p = abbr_ab3p.get(k,'')
+		sspacy = abbr_spacy.get(k, '')
+		if ab3p == sspacy:
+			print('\t{}'.format(k))
+		else:
+			print('\t{}\t[{}] [{}]'.format(k, ab3p, sspacy))

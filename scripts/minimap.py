@@ -2,13 +2,14 @@
 # minimap
 #
 
+import scispacy
 import spacy
 from spacy.tokens import Doc
 from itertools import chain
 import os
 import pickle
 
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_sci_lg")
 
 DATA_ROOT = 'minimap'
 
