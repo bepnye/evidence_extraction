@@ -47,9 +47,11 @@ def create_model(dataset, bert_backprop, ner_path):
     output_dimensions = {'evidence-inference': 4, 'CDR': 2}.get(dataset)
     ner_dimensions = {'evidence-inference': 4, 'CDR': 3}.get(dataset)
     print("Loading relation model")
-    relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
+    #relation_model = BERTVergaPytorch(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
+    relation_model = VergaClone(output_dimensions, bert_backprop=bert_backprop, initialize_bert=False).cuda()
     print("Loading NER model")
-    ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
+    #ner_model = transformers.BertForTokenClassification.from_pretrained(ner_path, num_labels=ner_dimensions, output_hidden_states=True).cuda()
+    ner_model = NotQuiteVergaNER(num_classes=ner_dimensions, bert_dim=relation_model.bert_dim).cuda()
     return ner_model, relation_model
 
 def soft_scoring(batch_inputs, batch_orig_inputs, predictions, no_relation_label):
@@ -72,6 +74,8 @@ def soft_scoring(batch_inputs, batch_orig_inputs, predictions, no_relation_label
     """
     pred_offset = 0
     scores = []
+    assert len(batch_inputs) != 0
+    assert len(batch_orig_inputs) != 0
     for inputs, orig_inputs in zip(batch_inputs, batch_orig_inputs):
         true_tuples = [(i, o, r) for (i, o), r in zip(orig_inputs['relations'], orig_inputs['labels'])]
         true_tuples = list(filter(lambda x: x[-1] != no_relation_label, true_tuples))
@@ -262,6 +266,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         ner_mask=padded_text.mask(on=1.0, off=0.0, dtype=torch.float, device=padded_text.data.device)
         with torch.no_grad():
             orig_inputs = inputs
+            assert padded_text.data.size()[:2] == ner_batch_labels.data.size()[:2]
             ner_loss, ner_scores, hidden_states = ner_model(padded_text.data, attention_mask=ner_mask, labels = ner_batch_labels.data)
             if not(teacher_forcing):
                 inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config, test_set = True)
@@ -393,6 +398,10 @@ def train_model(ner_model, relation_model, df, parameters):
 
         ### Print the losses and evaluate on the dev set ###
         print("Epoch {} Training Loss: {}\n".format(epoch, training_loss))
+        print("train scores with teacher forcing")
+        f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, train, epoch, batch_size)
+        evaluate_model(relation_model, ner_model, label_config, criterion, train, epoch, batch_size, teacher_forcing = True)
+        print("dev scores with teacher forcing")
         f1_score = evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size)
         evaluate_model(relation_model, ner_model, label_config, criterion, dev, epoch, batch_size, teacher_forcing = True)
 
@@ -418,6 +427,7 @@ def main(args=sys.argv[1:]):
     parser.add_argument("--ner_loss_weight", dest="ner_loss_weight", type=float, required=True, help="Relative loss weight for NER task (b/w 0 and 1)")
     parser.add_argument("--teacher_forcing_ratio", dest="teacher_forcing_ratio", type=float, required=True, help="What teacher forcing ratio do you want during training?")
     parser.add_argument("--teacher_forcing_decay", dest="teacher_forcing_decay", type=float, required=True, help="What decay after each epoch?")
+    parser.add_argument("--teacher_forcing_evaluation", dest="teacher_forcing_evaluation", action='store_true', help="Should we evaluate with real NER labels?")
     args = parser.parse_args()
     print("Running with the given arguments:\n\n{}".format(args))
 
