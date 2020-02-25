@@ -1,2 +1,5 @@
-data/*
-*/__pycache__/
+**/*.pyc
+**/*.swp
+**/.DS_Store
+**/__pycache__/
+data/
