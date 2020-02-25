@@ -307,7 +307,7 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
     ### GET AND PRINT SCORE ### 
     ner_f1 = f1_score(test_ner_labels, test_ner_scores, average='macro')
     print("NER CLASSIFICATION REPORT:\n")
-    print(classification_report(test_ner_labels, test_ner_scores))
+    print(classification_report(test_ner_labels, test_ner_scores, digits = 3))
 
     ### DO CALCULATIONS FOR FINAL F1 ###
     outputs = [np.argmax(x) for x in test_outputs]
@@ -318,14 +318,14 @@ def evaluate_model(relation_model, ner_model, label_config, criterion, test, epo
         pickle.dump(zipped_outputs, open(dump, 'wb'))    
 
     if max(labels) > 1 or max(outputs) > 1:
-        print("BINARY CLASSIFICATION REPORT:\n{}".format(classification_report(labels, outputs)))
+        print("BINARY CLASSIFICATION REPORT:\n{}".format(classification_report(labels, outputs, digits = 3)))
         outputs = [1 if x != 3 else 0 for x in outputs]
         labels  = [1 if x != 3 else 0 for x in labels]
         bin_f1  = f1_score(labels, outputs, average = 'macro')
     else:
         bin_f1 = 0
 
-    print("FULL TASK REPORT\n{}".format(classification_report(labels, outputs)))
+    print("FULL TASK REPORT\n{}".format(classification_report(labels, outputs, digits=3)))
     print("Epoch {}\nSoft F1: {}\nSoft Precision: {}\nSoft Recall: {}\nF1 score: {}\nBinary F1: {}\nLoss: {}\nNER_F1: {}\n".format(epoch, soft_f1, soft_prec, soft_rec, f1, bin_f1, test_loss, ner_f1))
     return f1
 
@@ -357,6 +357,7 @@ def train_model(ner_model, relation_model, df, parameters):
         label_offset  = 0 
         training_loss = 0
         train_data, train_labels, ner_labels = extract_data(train, label_config, balance_classes == 'True')        
+        import pdb; pdb.set_trace()
         teacher_force = True if random.uniform(0, 1) < teacher_force_ratio else False
 
         # single epoch train

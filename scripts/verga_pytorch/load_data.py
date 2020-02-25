@@ -176,10 +176,14 @@ def load_data(tokenizer = None):
         #import pdb; pdb.set_trace()
     else:
         docs = process_evidence_inference.read_docs(abst_only = True)
+        print("DOCS LOADED")
         for d in docs: d.replace_acronyms()
+        print("ACRONYM REPLACEMENT")
         processing.add_ner_output(docs, '../../data/ner/ev_inf.json')
+        print("NER OUTPUTS ADDED")
         doc_entities = [processing.extract_distant_info(d) for d in docs]
-    
+#        import pdb; pdb.set_trace()
+
     # for every doc, create a tokenized document which contains tokenized text,
     # and tokenized Frames.
     tokenized_docs = []
@@ -190,6 +194,9 @@ def load_data(tokenizer = None):
         counter += 1
        
     return tokenized_docs
-
-#data = load_data()
-#import pdb; pdb.set_trace()
+"""
+data = load_data()
+import pdb; pdb.set_trace()
+import pickle 
+pickle.dump(data, open('data.p', 'wb'))
+"""

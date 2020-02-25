@@ -2,11 +2,36 @@ import copy
 import torch
 import random
 from transformers import *
+import sys
+sys.path.append('../')
+from utils import *
 
 TOKENIZER = BertTokenizer.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased')
 #from load_data import TOKENIZER
 CUT_OFF = 512
 #label_config = {'INTERVENTION': 1, 'OUTCOME': 2, 'NULL': 3}
+
+"""
+def overlap(x1, x2, y1, y2):
+    return int(x1) <= int(y2-1) and int(y1) <= int(x2-1)
+
+def s_overlap(s1, s2):
+    return overlap(s1.i, s1.f, s2.i, s2.f)
+
+def s_overlaps(target, spans):
+    return [s for s in spans if s_overlap(target, s)]
+
+def condense_labels(labels, neg_class = '0'):
+    labels = [str(l) for l in labels]
+    groups = [(k, sum(1 for _ in g)) for k,g in groupby(labels)]
+    spans = []
+    i = 0
+    for label, length in groups:
+        if label != neg_class:
+            spans.append((i, i+length, label))
+        i += length
+    return spans
+"""
 
 def label_to_val(label):
     """ Convert the @param label (is type string) to a natural number. """
@@ -14,10 +39,13 @@ def label_to_val(label):
 
 def split_data(df, percent_train = 1):
     """ Split the data into train, dev, and test. @param percent_train tells us how much training data to use of the 70% already used."""
-    random.shuffle(df) 
-    train_split = int(len(df) * 0.7 * percent_train)
-    dev_split   = int(len(df) * 0.8)
-    return df[:train_split], df[train_split:dev_split], df[dev_split:]
+    if type(df) == list:
+        random.shuffle(df) 
+        train_split = int(len(df) * 0.7 * percent_train)
+        dev_split   = int(len(df) * 0.8)
+        return df[:train_split], df[train_split:dev_split], df[dev_split:]
+    else:
+        return df['train'], df['dev'], df['test']
 
 def find_entity_match(entity_list, str_):
     """

@@ -4,6 +4,7 @@ sys.path.append('..')
 from classes import *
 from load_data import Tokenized_Doc, TOKENIZER
 import pickle
+import random
 
 dir_ = './CDR_data/'
 files = glob.glob(dir_ + '*.txt')
@@ -95,17 +96,30 @@ def load_CDR_file(f):
 
 def main(files, tokenizer):
     """ Main function that takes in a list of CDR files to parse. """
-    documents, relation_maps = [], []
+    return_dict = {'train': [], 'dev': [], 'test': []}
     for f in files:
+        documents, relation_maps = [], []
         d, rm = load_CDR_file(f) # list of documents
         documents.extend(d) # we don't care about the previous train/dev/val split
         relation_maps.extend(rm)
-   
-    tokenized_docs = []
-    for d, entity_map in zip(documents, relation_maps):
-        tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer)) 
+        tokenized_docs = []
+        for d, entity_map in zip(documents, relation_maps):
+            tokenized_docs.append(Tokenized_Doc(d.text, entity_map, tokenizer)) 
+        
+        if 'train' in f:
+            random.shuffle(tokenized_docs)            
+            split_idx = int(len(tokenized_docs) * .8)
+            train_set = tokenized_docs[:split_idx]
+            dev_set   = tokenized_docs[split_idx:]
+            return_dict['train'].extend(train_set)
+            return_dict['dev'].extend(dev_set)
+        else:
+            return_dict['test'].extend(tokenized_docs)
 
-    return tokenized_docs
+    random.shuffle(return_dict['train'])
+    random.shuffle(return_dict['test'])
+    random.shuffle(return_dict['dev'])
+    return return_dict
 
 def load_CDR():
     """ TODO """
@@ -114,4 +128,4 @@ def load_CDR():
 
     return data
 
-#main(files, TOKENIZER)
+#data = main(files, TOKENIZER)
