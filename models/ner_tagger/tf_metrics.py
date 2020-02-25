@@ -179,6 +179,7 @@ def metrics_from_confusion_matrix(cm, pos_indices=None, average='micro',
     average : str, optional
         'micro', 'macro' or 'weighted'
     """
+    print('POS INDICES:', pos_indices)
     num_classes = cm.shape[0]
     if pos_indices is None:
         pos_indices = [i for i in range(num_classes)]

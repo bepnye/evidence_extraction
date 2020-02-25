@@ -35,6 +35,16 @@ def process_cwr_data():
 		docs[r.PMID] = doc
 	return list(docs.values())
 
+def read_cwr_docs(data_dir = '../data/cures_within_reach/'):
+	fnames = glob.glob('{}/*.text'.format(data_dir))
+	docs = [processing.classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
+	docs = [d for d in docs if d.text]
+	for d in docs:
+		d.parse_text()
+		d.group = 'test'
+		d.sf_lf_map = {} # already acronym'd
+	return docs
+
 def read_shard_docs(shard, data_dir = DATA_DIR):
 	print('\t\tcreating Docs for {}'.format(shard))
 	fnames = glob.glob('{}/{}/*.text'.format(data_dir, shard))
@@ -84,7 +94,7 @@ def write_phase2_inputs(s, docs, data_dir = DATA_DIR):
 		print('\t\twriting ic_ev inputs...')
 		os.makedirs('{}/ic_ev'.format(top), exist_ok = True)
 		os.makedirs('{}/ic_ev/results'.format(top), exist_ok = True)
-		writer.write_i_c_data_pipeline(docs, writer.intro_group_ev, '{}/ic_ev'.format(top))
+		writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_ev'.format(top))
 
 def load_phase2_outputs(s, docs, data_dir = DATA_DIR):
 	top = '{}/{}'.format(data_dir, s)

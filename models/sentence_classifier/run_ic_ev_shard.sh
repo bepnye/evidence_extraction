@@ -1,9 +1,10 @@
-SHARD=$1
+#SHARD=$1
 
-BERT_BASE_DIR=/home/ben/Desktop/biobert_pubmed
-DATA_DIR=${SHARD}/ic_ev/
+BERT_BASE_DIR=/home/ben/Desktop/scibert_scivocab_uncased
+#DATA_DIR=${SHARD}/ic_ev/
+DATA_DIR='data/i_c_abst/'
 OUTPUT_DIR=${DATA_DIR}/results
-MODEL_DIR=data/i_c_intro/model
+MODEL_DIR=data/i_c_abst/model
 
 if [ -f "${OUTPUT_DIR}/test_results.tsv" ]; then
 	echo "skipping ${SHARD}"
@@ -18,7 +19,7 @@ else
 		--vocab_file=$BERT_BASE_DIR/vocab.txt \
 		--bert_config_file=$BERT_BASE_DIR/bert_config.json \
 		--init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
-		--max_seq_length=500 \
+		--max_seq_length=512 \
 		--train_batch_size=16 \
 		--learning_rate=1e-5 \
 		--num_train_epochs=2.0 \

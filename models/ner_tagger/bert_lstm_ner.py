@@ -40,6 +40,10 @@ import pickle
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 NO_LABEL = "0"
+PAD_LABEL = '-'
+WP_LABEL = 'X'
+CLS = '[CLS]'
+SEP = '[SEP]'
 
 flags = tf.flags
 
@@ -214,7 +218,8 @@ class NerProcessor(object):
 
 	def get_labels(self):
 		"""Gets the list of labels for this data set."""
-		return [NO_LABEL, "i", "p", "o", "[CLS]", "[SEP]"]
+		labels = [PAD_LABEL, WP_LABEL, CLS, SEP, NO_LABEL, "i", "p", "o"]
+		return labels
 
 	def _create_example(self, data_fname, set_type):
 		rows = json.load(open(data_fname))
@@ -231,10 +236,10 @@ def convert_single_example_to_feature(ex_index, example, label_map, max_seq_leng
 	wp_idx = []
 	for i, (token, label) in enumerate(zip(example.tokens, example.labels)):
 		wp_tokens = tokenizer.tokenize(token)
-		for wp_token in wp_tokens:
-		  tokens.append(wp_token)
-		  labels.append(label)
-		  wp_idx.append(i)
+		for wp_token_idx, wp_token in enumerate(wp_tokens):
+			tokens.append(wp_token)
+			labels.append(label if wp_token_idx == 0 else WP_LABEL)
+			wp_idx.append(i)
 
 	if len(tokens) >= max_seq_length - 1:
 		tokens = tokens[0:(max_seq_length - 2)]
@@ -245,8 +250,8 @@ def convert_single_example_to_feature(ex_index, example, label_map, max_seq_leng
 	example.tokenized_labels = labels
 	example.tokenized_wp_idx = wp_idx
 
-	ntokens = ['[CLS]'] + tokens + ['[SEP]']
-	nlabels = ['[CLS]'] + labels + ['[SEP]']
+	ntokens = [CLS] + tokens + [SEP]
+	nlabels = [CLS] + labels + [SEP]
 
 	if FLAGS.allow_unk_label:
 		label_ids = [label_map.get(l, l) for l in nlabels]
@@ -261,7 +266,7 @@ def convert_single_example_to_feature(ex_index, example, label_map, max_seq_leng
 		input_ids.append(0)
 		input_mask.append(0)
 		# we don't concerned about it!
-		label_ids.append(0)
+		label_ids.append(label_map[PAD_LABEL])
 		ntokens.append("**NULL**")
 	assert len(input_ids) == max_seq_length
 	assert len(input_mask) == max_seq_length
@@ -300,7 +305,7 @@ def convert_feature_to_tf_example(feature):
 def filed_based_convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, output_file, mode=None):
 	# build labe2id.pkl
 	label_map = {}
-	for (i, label) in enumerate(label_list, 1): # 0 index for '0' padding
+	for (i, label) in enumerate(label_list): # 0 index for '0' padding
 		label_map[label] = i
 	print(label_map)
 	with codecs.open(os.path.join(FLAGS.model_dir, 'label2id.pkl'), 'wb') as w:
@@ -474,7 +479,8 @@ def create_model(bert_config, is_training, input_ids, input_mask,
 	return (loss, per_example_loss, logits, trans, pred_ids)
 
 
-def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
+def model_fn_builder(bert_config, num_labels, pos_labels_idx,
+					 init_checkpoint, learning_rate,
 					 num_train_steps, num_warmup_steps, use_tpu,
 					 use_one_hot_embeddings):
 
@@ -549,7 +555,7 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
 			else: # mode == tf.estimator.ModeKeys.EVAL:
 				def metric_fn(label_ids, pred_ids, per_example_loss, input_mask):
 					# ['<pad>'] + ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "B-MISC", "I-MISC", "X"]
-					indices = None
+					indices = pos_labels_idx
 					precision = tf_metrics.precision(label_ids, pred_ids, num_labels, indices, input_mask)
 					recall = tf_metrics.recall(label_ids, pred_ids, num_labels, indices, input_mask)
 					f = tf_metrics.f1(label_ids, pred_ids, num_labels, indices, input_mask)
@@ -637,9 +643,12 @@ def main(_):
 			num_train_steps = int(data_config['num_train_steps'])
 			num_warmup_steps = int(data_config['num_warmup_steps'])
 
+	neg_labels = [PAD_LABEL, NO_LABEL, WP_LABEL, CLS, SEP]
+	pos_labels_idx = [i for i,l in enumerate(label_list) if l not in neg_labels]
 	model_fn = model_fn_builder(
 		bert_config=bert_config,
-		num_labels=len(label_list) + 1, # 1 for '0' padding
+		num_labels=len(label_list),
+		pos_labels_idx=pos_labels_idx,
 		init_checkpoint=FLAGS.init_checkpoint,
 		learning_rate=FLAGS.learning_rate,
 		num_train_steps=num_train_steps,
@@ -782,7 +791,8 @@ def main(_):
 						# WP label aggregation strategy:
 						#   take the most common label across the token's pieces
 						#   alternatively, you can take the label from the first piece
-						pred_id = collections.Counter(preds).most_common(1)[0][0]
+						#pred_id = collections.Counter(preds).most_common(1)[0][0]
+						pred_id = preds[0]
 						pred_label = id2label[pred_id]
 						seq_data['tokens'].append(base_token)
 						seq_data['true_labels'].append(true_label)
