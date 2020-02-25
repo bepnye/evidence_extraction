@@ -204,11 +204,14 @@ class Doc:
 			frame.ev.text = self.text[frame.ev.i:frame.ev.f]
 		self.parse_text()
 
-	def compute_sf_lf_map(self, method, save_map = False):
-		if method == 'ab3p':
-			sf_lf_map = tools.ab3p_text(self.text)
-		elif method == 'scispacy':
-			sf_lf_map = scispacy_abbr(self)
+	def replace_acronyms(self, save_map = False, load_map = False):
+		map_fname = '../../data/sf_lf_maps/{}.ab3p'.format(self.id)
+		if not self.has_acronyms:
+			print('Skipping repeated acronym replacement call for {}'.format(self.id))
+			return
+		if load_map and os.path.isfile(map_fname):
+			print('Loading sf_lf_map from {}'.format(map_fname))
+			self.sf_lf_map = json.load(open(map_fname))
 		else:
 			print('Warning! Unknown method for finding acronyms: {}'.format(method))
 			sf_lf_map = {}

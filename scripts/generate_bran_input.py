@@ -6,9 +6,9 @@ import processing
 import process_coref_annes
 import process_evidence_inference
 
-sys.path.append('/home/ben/Desktop/bran/src/processing/utils/')
+sys.path.append('/home/eric/bran/src/processing/utils/')
 from word_piece_tokenizer import WordPieceTokenizer as WPT
-tokenizer = WPT('/home/ben/Desktop/bran/data/cdr/word_piece_vocabs/just_train_2500/word_pieces.txt', entity_str = 'ENTITY_')
+tokenizer = WPT('/home/eric/bran/data/cdr/word_piece_vocabs/just_train_2500/word_pieces.txt', entity_str = 'ENTITY_')
 
 def find_wp_indices(span, wp_spans):
 	s_i = -1; s_f = -1
@@ -78,7 +78,7 @@ def format_doc_bran_data(entities, entity_pair_rels, doc):
 	ner_rows = list(zip(ner_tokens, ner_labels, ner_enames, ner_docids))
 	return pos_rows, neg_rows, ner_rows
 
-def write_bran_data_group(docs, bran_data, group, top_dir = '/home/ben/Desktop/bran/data/cre/evinf'):
+def write_bran_data_group(docs, bran_data, group, top_dir = '../../bran/data/cre/evinf'):
 	pos_fp = open('{}/positive_CRE_{}.txt'.format(top_dir, group), 'w')
 	neg_fp = open('{}/negative_CRE_{}.txt'.format(top_dir, group), 'w')
 	ner_fp = open('{}/ner_CRE_{}.txt'.format(top_dir, group), 'w')
@@ -94,9 +94,9 @@ def process_bran_data():
 	ev_inf_docs = process_evidence_inference.read_docs(True)
 	coref_docs = process_coref_annes.read_docs(True)
 	# TODO: save the sf_lf_map info somewhere so I don't have to recompute
-	for d in ev_inf_docs: d.replace_acronyms(load_map = True)
-	for d in coref_docs: d.replace_acronyms(load_map = True)
-	ner_top = '/home/ben/Desktop/evidence_extraction/data/ner/'
+	for d in ev_inf_docs: d.replace_acronyms()
+	for d in coref_docs: d.replace_acronyms()
+	ner_top = '../data/ner/'
 	processing.add_ner_output(ev_inf_docs, '{}/ev_inf.json'.format(ner_top))
 	processing.add_ner_output(coref_docs, '{}/coref_dev.json'.format(ner_top))
 	train_data = [processing.extract_distant_info(d) for d in ev_inf_docs]
@@ -104,3 +104,5 @@ def process_bran_data():
 	write_bran_data_group(ev_inf_docs[0:300], train_data[0:300], 'dev')
 	write_bran_data_group(ev_inf_docs[300:], train_data[300:], 'train')
 	write_bran_data_group(coref_docs, test_data, 'test')
+
+process_bran_data()
