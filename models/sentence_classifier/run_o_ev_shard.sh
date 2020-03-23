@@ -1,8 +1,7 @@
-#SHARD=$1
+SHARD=$1
 
 BERT_BASE_DIR=/home/ben/Desktop/biobert_pubmed
-#DATA_DIR=${SHARD}/o_ev/
-DATA_DIR='data/o_ev_sent/'
+DATA_DIR=${SHARD}/o_ev/
 OUTPUT_DIR=${DATA_DIR}/results
 MODEL_DIR=data/o_ev_sent/model
 

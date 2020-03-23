@@ -363,10 +363,12 @@ Doc => Entities, Relations processing
 
 """
 
-def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn):
+def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn, drop_mentionless = True):
 	try:
 		entities = entity_fn(doc)
 		mention_fn(entities, doc)
+		if drop_mentionless:
+			entities = [e for e in entities if e.mentions]
 		naming_fn(entities, doc)
 		eps = relation_fn(entities, doc)
 
@@ -377,10 +379,11 @@ def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn):
 		traceback.print_exc()
 		input()
 
+	return entities, eps
+
 def extract_distant_info(doc):
 	return extract_doc_info(doc, get_frame_entities, \
-			partial(assign_bert_mentions, add_unlinked_entities = True), \
-			assign_text_names, get_frame_relations)
+			assign_bert_mentions, assign_text_names, get_frame_relations)
 
 def extract_gold_info(doc):
 	return extract_doc_info(doc, partial(get_gold_entities, assign_mentions = True), \

@@ -204,34 +204,11 @@ class Doc:
 			frame.ev.text = self.text[frame.ev.i:frame.ev.f]
 		self.parse_text()
 
-	def compute_sf_lf_map(self, method, save_map = False):
-		if method == 'ab3p':
-			sf_lf_map = tools.ab3p_text(self.text)
-		elif method == 'scispacy':
-			sf_lf_map = scispacy_abbr(self)
-		else:
-			print('Warning! Unknown method for finding acronyms: {}'.format(method))
-			sf_lf_map = {}
-	
-		if save_map:
-			map_fname = '../data/sf_lf_maps/{}.{}'.format(self.id, method)
-			print('Saving sf_lf_map to {}'.format(map_fname))
-			json.dump(self.sf_lf_map, open(map_fname, 'w'))
-
-		return sf_lf_map
-
-	def replace_acronyms(self, method = 'ab3p', save_map = False, load_map = False):
-		map_fname = '../data/sf_lf_maps/{}.{}'.format(self.id, method)
+	def replace_acronyms(self, save_map = False, load_map = False):
 		if not self.has_sf_lf_map():
-			if load_map and os.path.isfile(map_fname):
-				print('Loading sf_lf_map from {}'.format(map_fname))
-				self.sf_lf_map = json.load(open(map_fname))
-			else:
-				self.sf_lf_map = self.compute_sf_lf_map(method, save_map)
-
+			self.sf_lf_map = tools.ab3p_text(self.text)
 		if not self.parsed:
 			self.parse_text()
-
 		text_substitutions = self.get_sf_token_substitutions(self.text, self.tokens)
 		self.update_text(text_substitutions)
 		self.replace_frame_acronyms()
@@ -270,23 +247,3 @@ class Doc:
 		doc_spans = getattr(self, attr)
 		labels = [int(utils.s_overlap(span, s)) for s in doc_spans]
 		return labels
-
-def scispacy_abbr(doc):
-	if not doc.parsed:
-		doc.parse_text()
-	sf_lf_map = {}
-	for abbr in doc.spacy_extra.abbreviations:
-		sf_lf_map[abbr.text] = abbr._.long_form.text
-	return sf_lf_map
-
-def compare_abbr_methods(doc):
-	print(doc.id)
-	abbr_ab3p = doc.compute_sf_lf_map('ab3p')
-	abbr_spacy = doc.compute_sf_lf_map('scispacy')
-	for k in set(abbr_ab3p.keys()).union(abbr_spacy.keys()):
-		ab3p = abbr_ab3p.get(k,'')
-		sspacy = abbr_spacy.get(k, '')
-		if ab3p == sspacy:
-			print('\t{}'.format(k))
-		else:
-			print('\t{}\t[{}] [{}]'.format(k, ab3p, sspacy))

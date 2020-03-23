@@ -9,9 +9,28 @@ import minimap
 
 DATA_DIR='/home/ben/Desktop/evidence_extraction/data/trialstreamer/'
 
+def process_covid_data():
+	top = '../data/covid/'
+	fnames = glob.glob('{}/json/*.json'.format(top))
+	docs = []
+	for f in fnames:
+		j = json.load(open(f))
+		pmid = j['paper_id']
+		title = j['metadata']['title']
+		text = '\n\n'.join([p['text'] for p in j['abstract']])
+		doc = processing.classes.Doc(pmid, text)
+		doc.replace_acronyms()
+		doc.group = 'test'
+		with open('{}/{}.text'.format(top, pmid), 'w') as fp:
+			fp.write(doc.text)
+		with open('{}/{}.title'.format(top, pmid), 'w') as fp:
+			fp.write(title)
+		docs.append(doc)
+	return docs
+
 def process_cwr_data():
 	df = pd.read_csv('../data/cures_within_reach/cwr.csv')
-	#df = df[~df.Relevant.apply(np.isnan)]
+	df = df[~df.Relevant.apply(np.isnan)]
 	df = df[df['Matched.Outcome..Word.Embeddings.'].apply(lambda o: type(o) == str)]
 	docs = {}
 	for idx, r in df.iterrows():
@@ -29,9 +48,19 @@ def process_cwr_data():
 			fp.write(doc.text)
 		with open('../data/cures_within_reach/{}.title'.format(r.PMID), 'w') as fp:
 			fp.write(r.Title)
-		#i_target = minimap.minimap(r['Matched.Intervention..Word.Embeddings.'])
-		#o_target = minimap.minimap(r['Matched.Outcome..Word.Embeddings.'])
-		#doc.target = (i_target, o_target, r.Relevant)
+
+		p_match = r['Article.Population..Word.Embeddings.']
+		i_match = r['Article.Intervention..Word.Embeddings.']
+		o_match = r['Article.Outcome..Word.Embeddings.']
+
+		p_query = r['Matched.Population..Word.Embeddings.']
+		i_query = r['Matched.Intervention..Word.Embeddings.']
+		o_query = r['Matched.Outcome..Word.Embeddings.']
+
+		doc.query = (p_query, i_query, o_query)
+		doc.match = (p_match, i_match, o_match)
+		doc.relevant = r.Relevant
+
 		docs[r.PMID] = doc
 	return list(docs.values())
 
@@ -45,9 +74,9 @@ def read_cwr_docs(data_dir = '../data/cures_within_reach/'):
 		d.sf_lf_map = {} # already acronym'd
 	return docs
 
-def read_shard_docs(shard, data_dir = DATA_DIR):
+def read_shard_docs(data_dir):
 	print('\t\tcreating Docs for {}'.format(shard))
-	fnames = glob.glob('{}/{}/*.text'.format(data_dir, shard))
+	fnames = glob.glob('{}/*.text'.format(data_dir))
 	docs = [processing.classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
 	docs = [d for d in docs if d.text]
 	for d in docs:
@@ -56,35 +85,29 @@ def read_shard_docs(shard, data_dir = DATA_DIR):
 		d.sf_lf_map = {} # already acronym'd
 	return docs
 
-def write_phase1_inputs(s, docs, data_dir = DATA_DIR):
-	top = '{}/{}'.format(data_dir, s)
+def write_phase1_inputs(top, docs):
 	if not os.path.isfile('{}/ner/test.json'.format(top)):
 		print('\t\twriting ner inputs...')
-		docs = docs or read_shard_docs(s)
 		os.system('mkdir -p {}/ner'.format(top))
 		os.system('mkdir -p {}/ner/results'.format(top))
 		writer.write_ner_data(docs, writer.dummy_label, '{}/ner/'.format(top), allow_acronyms = True)
 	if not os.path.isfile('{}/ev/test.tsv'.format(top)):
 		print('\t\twriting ev inputs...')
-		docs = docs or read_shard_docs(s)
 		os.system('mkdir -p {}/ev'.format(top))
 		os.system('mkdir -p {}/ev/results'.format(top))
 		writer.write_sent_data_pipeline(docs, '{}/ev/'.format(top))
 
-def load_phase1_outputs(s, docs, data_dir = DATA_DIR):
-	docs = docs or read_shard_docs(s)
-	top = '{}/{}'.format(data_dir, s)
+def load_phase1_outputs(top, docs):
 	if os.path.isfile('{}/ner/results/pred.txt'.format(top)) and \
 		 os.path.isfile('{}/ev/results/test_results.tsv'.format(top)):
 		print('\t\tloading ner and ev outputs...')
-		processing.add_ner_output(docs, '{}/{}/ner/results/pred.txt'.format(data_dir, s), False)
-		processing.add_ev_sent_output(docs, 'test', '{}/{}/ev/'.format(data_dir, s))
+		processing.add_ner_output(docs, '{}/ner/results/pred.txt'.format(top), False)
+		processing.add_ev_sent_output(docs, 'test', '{}/ev/'.format(top))
 		return True
 	else:
 		return False
 
-def write_phase2_inputs(s, docs, data_dir = DATA_DIR):
-	top = '{}/{}'.format(data_dir, s)
+def write_phase2_inputs(top, docs):
 	if not os.path.isfile('{}/o_ev/test.tsv'.format(top)):
 		print('\t\twriting o_ev inputs...')
 		os.makedirs('{}/o_ev'.format(top), exist_ok = True)
@@ -96,8 +119,7 @@ def write_phase2_inputs(s, docs, data_dir = DATA_DIR):
 		os.makedirs('{}/ic_ev/results'.format(top), exist_ok = True)
 		writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_ev'.format(top))
 
-def load_phase2_outputs(s, docs, data_dir = DATA_DIR):
-	top = '{}/{}'.format(data_dir, s)
+def load_phase2_outputs(top, docs):
 	if os.path.isfile('{}/o_ev/results/test_results.tsv'.format(top)) and \
 		 os.path.isfile('{}/ic_ev/results/test_results.tsv'.format(top)):
 		print('\t\tloading o_ev and ic_ev outputs...')
@@ -118,19 +140,14 @@ def get_icos(d):
 					'c': ev.pred_c.text,
 					'o': pred_o.text,
 					'l': pred_o.label,
-					'i_mesh': [m['mesh_term'] for m in minimap.get_unique_terms([ev.pred_i.text])],
-					'c_mesh': [m['mesh_term'] for m in minimap.get_unique_terms([ev.pred_c.text])],
-					'o_mesh': [m['mesh_term'] for m in minimap.get_unique_terms([pred_o.text])],
+					'i_mesh': list(get_mesh(ev.pred_i.text)),
+					'c_mesh': list(get_mesh(ev.pred_c.text)),
+					'o_mesh': list(get_mesh(pred_o.text)),
 					'ev': ev.text })
 	return icos
 
-def FLATTEN_MESH(m):
-	if m in ['Progression-Free Survival', 'Survival Rate', 'Event-Free Survival']:
-		return 'Survival'
-	return m
-
-def write_trialstreamer_inputs(s, docs, data_dir = DATA_DIR):
-	fname = '{}/{}/{}_pipeline_data.json'.format(data_dir, s, s)
+def write_trialstreamer_inputs(docs, top):
+	fname = '{}/pipeline_data.json'.format(top)
 	if not os.path.isfile(fname):
 		print('\t\tconstructing JSON')
 		rows = []
@@ -138,7 +155,7 @@ def write_trialstreamer_inputs(s, docs, data_dir = DATA_DIR):
 			r = {}
 			r['text'] = d.text
 			r['pmid'] = d.id
-			r['title'] = open('{}/{}/{}.title'.format(data_dir, s, d.id)).read()
+			r['title'] = open('{}/{}.title'.format(top, d.id)).read()
 			r['p_spans'] = [(s.i, s.f) for s in d.labels['NER_p']]
 			r['i_spans'] = [(s.i, s.f) for s in d.labels['NER_i']]
 			r['o_spans'] = [(s.i, s.f) for s in d.labels['NER_o']]
@@ -154,36 +171,34 @@ def print_ico(ico):
 	for e in 'ico':
 		print('\t{}: [{}] {}'.format(e, ico[e], '|'.join(ico[e+'_mesh'])))
 
-def score_cwr_data(docs, verbose = False):
-	pred = []
-	true = []
-	for d in docs:
-		targ_i, targ_o, relevant = d.target
-		true.append(relevant)
-		if not targ_i or not targ_o:
-			print('Unable to find mesh terms for docid={}'.format(d.id))
-			pred.append(0)
-			continue
-		assert len(targ_i) == 1
-		assert len(targ_o) == 1
-		targ_i = targ_i[0]['mesh_term']
-		targ_o = targ_o[0]['mesh_term']
-		found = False
-		icos = get_icos(d)
-		for ico in icos:
-			t_mesh = ico['i_mesh']+ico['c_mesh']
-			o_mesh = [FLATTEN_MESH(m) for m in ico['o_mesh']]
-			if targ_i in t_mesh and targ_o in o_mesh:
-				found = True
-				break
-		pred.append(found)
-		if verbose and found != relevant:
-			print('True: {}, Pred: {}   {} | {}'.format(relevant, int(found), targ_i, targ_o))
-			for ico in icos: print_ico(ico)
-			input()
+def FLATTEN_MESH(m):
+	if m in ['Progression-Free Survival', 'Survival Rate', 'Event-Free Survival', 'Cumulative Survival Rate', 'Death', 'Mortality']:
+		return 'Survival'
+	return m
 
-	print(processing.precision_recall_fscore_support(true, pred, labels=[1]))
-	return true, pred
+def get_mesh(s):
+	return set([FLATTEN_MESH(m['mesh_term']) for m in minimap.get_unique_terms([s])])
+
+def get_cwr_metadata(docs, verbose = False):
+	pmid_to_query = {}
+	for d in docs:
+		if d.labels['NER_p']:
+			doc_p_mesh = set.union(*[get_mesh(s.text) for s in d.labels['NER_p']])
+			query_p_mesh = get_mesh(d.query[0])
+			p_match = query_p_mesh <= doc_p_mesh
+		else:
+			p_match = False
+		pmid_to_query[d.id] = {
+			'p': d.query[0],
+			'i': d.query[1],
+			'o': d.query[2],
+			'p_mesh': list(get_mesh(d.query[0])),
+			'i_mesh': list(get_mesh(d.query[1])),
+			'o_mesh': list(get_mesh(d.query[2])),
+			'l': d.relevant,
+			'p_match': p_match }
+		
+	return pmid_to_query
 
 def generate_shard_files():
 	print('Reading trial_annotations.csv')
