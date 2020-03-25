@@ -82,4 +82,4 @@ if __name__ == '__main__':
 			score_input_fname(sys.argv[1], fn)
 	else:
 		fn = argmax
-		score_input_fname(sys.argv[1], fn)
+		score_input_fname(sys.argv[1], fn, ignore_0 = True)

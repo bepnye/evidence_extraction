@@ -1,8 +1,7 @@
 SHARD=$1
 
 BERT_BASE_DIR=/home/ben/Desktop/scibert_scivocab_uncased
-DATA_DIR=${SHARD}/ic_ev/
-#DATA_DIR='data/i_c_abst/'
+DATA_DIR='data/i_c_abst/'
 OUTPUT_DIR=${DATA_DIR}/results
 MODEL_DIR=data/i_c_abst/model
 

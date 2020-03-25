@@ -3,29 +3,54 @@ import glob, os, json, re
 import pandas as pd
 import numpy as np
 
-import processing
+import classes
 import writer
 import minimap
 
-DATA_DIR='/home/ben/Desktop/evidence_extraction/data/trialstreamer/'
+"""
+input schema:
+
+data = [
+	{
+		"abstract": string,
+		"pmid": string,
+		"p": list of strings,
+		"i": list of strings,
+		"o": list of strings
+	}
+]
+"""
+def process_generic_data(data):
+	docs = []
+	for d in data:
+		doc = classes.Doc(d['pmid'], d['abstract'])
+		for e in 'pio':
+			for span in d[e]:
+				for m in re.finditer(re.escape(span), doc.text):
+					doc.labels['NER_'+e].append(classes.Span(m.start(), m.end(), span))
+		doc.group = 'test'
+		doc.parse_text()
+		docs.append(doc)
+	return docs
 
 def process_covid_data():
 	top = '../data/covid/'
-	fnames = glob.glob('{}/json/*.json'.format(top))
+	fnames = glob.glob('{}/json/*/*.json'.format(top))
+	print('Processing {} files...'.format(len(fnames)))
 	docs = []
 	for f in fnames:
 		j = json.load(open(f))
 		pmid = j['paper_id']
 		title = j['metadata']['title']
-		text = '\n\n'.join([p['text'] for p in j['abstract']])
-		doc = processing.classes.Doc(pmid, text)
-		doc.replace_acronyms()
+		abst = '\n\n'.join([p['text'] for p in j['abstract']])
+		body = '\n\n'.join([p['text'] for p in j['body_text']])
+		text = '\n\n\n'.join([abst, body])
+		doc = classes.Doc(pmid, text)
 		doc.group = 'test'
-		with open('{}/{}.text'.format(top, pmid), 'w') as fp:
-			fp.write(doc.text)
-		with open('{}/{}.title'.format(top, pmid), 'w') as fp:
-			fp.write(title)
 		docs.append(doc)
+		with open('{}/docs/{}.abst'.format(top, pmid),  'w') as fp: fp.write(abst)
+		with open('{}/docs/{}.body'.format(top, pmid),  'w') as fp: fp.write(body)
+		with open('{}/docs/{}.title'.format(top, pmid), 'w') as fp: fp.write(title)
 	return docs
 
 def process_cwr_data():
@@ -41,8 +66,7 @@ def process_cwr_data():
 			continue
 		text = r.Abstract.replace('\r', '')
 		text = re.sub('\n+', '\n', text)
-		doc = processing.classes.Doc(r.PMID, text)
-		doc.replace_acronyms()
+		doc = classes.Doc(r.PMID, text)
 		doc.group = 'test'
 		with open('../data/cures_within_reach/{}.text'.format(r.PMID), 'w') as fp:
 			fp.write(doc.text)
@@ -66,7 +90,7 @@ def process_cwr_data():
 
 def read_cwr_docs(data_dir = '../data/cures_within_reach/'):
 	fnames = glob.glob('{}/*.text'.format(data_dir))
-	docs = [processing.classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
+	docs = [classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
 	docs = [d for d in docs if d.text]
 	for d in docs:
 		d.parse_text()
@@ -77,57 +101,13 @@ def read_cwr_docs(data_dir = '../data/cures_within_reach/'):
 def read_shard_docs(data_dir):
 	print('\t\tcreating Docs for {}'.format(shard))
 	fnames = glob.glob('{}/*.text'.format(data_dir))
-	docs = [processing.classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
+	docs = [classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
 	docs = [d for d in docs if d.text]
 	for d in docs:
 		d.parse_text()
 		d.group = 'test'
 		d.sf_lf_map = {} # already acronym'd
 	return docs
-
-def write_phase1_inputs(top, docs):
-	if not os.path.isfile('{}/ner/test.json'.format(top)):
-		print('\t\twriting ner inputs...')
-		os.system('mkdir -p {}/ner'.format(top))
-		os.system('mkdir -p {}/ner/results'.format(top))
-		writer.write_ner_data(docs, writer.dummy_label, '{}/ner/'.format(top), allow_acronyms = True)
-	if not os.path.isfile('{}/ev/test.tsv'.format(top)):
-		print('\t\twriting ev inputs...')
-		os.system('mkdir -p {}/ev'.format(top))
-		os.system('mkdir -p {}/ev/results'.format(top))
-		writer.write_sent_data_pipeline(docs, '{}/ev/'.format(top))
-
-def load_phase1_outputs(top, docs):
-	if os.path.isfile('{}/ner/results/pred.txt'.format(top)) and \
-		 os.path.isfile('{}/ev/results/test_results.tsv'.format(top)):
-		print('\t\tloading ner and ev outputs...')
-		processing.add_ner_output(docs, '{}/ner/results/pred.txt'.format(top), False)
-		processing.add_ev_sent_output(docs, 'test', '{}/ev/'.format(top))
-		return True
-	else:
-		return False
-
-def write_phase2_inputs(top, docs):
-	if not os.path.isfile('{}/o_ev/test.tsv'.format(top)):
-		print('\t\twriting o_ev inputs...')
-		os.makedirs('{}/o_ev'.format(top), exist_ok = True)
-		os.makedirs('{}/o_ev/results'.format(top), exist_ok = True)
-		writer.write_o_ev_data_pipeline(docs, '{}/o_ev/'.format(top))
-	if not os.path.isfile('{}/ic_ev/test.tsv'.format(top)):
-		print('\t\twriting ic_ev inputs...')
-		os.makedirs('{}/ic_ev'.format(top), exist_ok = True)
-		os.makedirs('{}/ic_ev/results'.format(top), exist_ok = True)
-		writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_ev'.format(top))
-
-def load_phase2_outputs(top, docs):
-	if os.path.isfile('{}/o_ev/results/test_results.tsv'.format(top)) and \
-		 os.path.isfile('{}/ic_ev/results/test_results.tsv'.format(top)):
-		print('\t\tloading o_ev and ic_ev outputs...')
-		processing.add_o_ev_output(docs, 'test', '{}/o_ev/'.format(top))
-		processing.add_ic_ev_output(docs, 'test', '{}/ic_ev/'.format(top))
-		return True
-	else:
-		return False
 
 def get_icos(d):
 	icos = []
@@ -146,24 +126,27 @@ def get_icos(d):
 					'ev': ev.text })
 	return icos
 
+def generate_trialstreamer_inputs(docs):
+	rows = []
+	for d in docs:
+		r = {}
+		r['text'] = d.text
+		r['pmid'] = d.id
+		r['p_spans'] = [(s.i, s.f) for s in d.labels['NER_p']]
+		r['i_spans'] = [(s.i, s.f) for s in d.labels['NER_i']]
+		r['o_spans'] = [(s.i, s.f) for s in d.labels['NER_o']]
+		r['p_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_p']])]
+		r['i_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_i']])]
+		r['o_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_o']])]
+		r['frames'] = get_icos(d)
+		rows.append(r)
+	return rows
+
 def write_trialstreamer_inputs(docs, top):
 	fname = '{}/pipeline_data.json'.format(top)
 	if not os.path.isfile(fname):
 		print('\t\tconstructing JSON')
-		rows = []
-		for d in docs:
-			r = {}
-			r['text'] = d.text
-			r['pmid'] = d.id
-			r['title'] = open('{}/{}.title'.format(top, d.id)).read()
-			r['p_spans'] = [(s.i, s.f) for s in d.labels['NER_p']]
-			r['i_spans'] = [(s.i, s.f) for s in d.labels['NER_i']]
-			r['o_spans'] = [(s.i, s.f) for s in d.labels['NER_o']]
-			r['p_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_p']])]
-			r['i_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_i']])]
-			r['o_mesh'] = [m['mesh_term'] for m in minimap.get_unique_terms([s.text for s in d.labels['NER_o']])]
-			r['frames'] = get_icos(d)
-			rows.append(r)
+		rows = generate_trialstreamer_inputs(docs, top)
 		json.dump(rows, open(fname, 'w'))
 
 def print_ico(ico):
@@ -210,28 +193,7 @@ def generate_shard_files():
 		os.system('mkdir -p ../data/trialstreamer/{}_{}'.format(i,f))
 		for idx,r in df.ix[i:f,:].iterrows():
 			if type(r.ab) != str: continue
-			d = processing.classes.Doc(idx, r.ab)
+			d = classes.Doc(idx, r.ab)
 			d.replace_acronyms()
 			open('../data/trialstreamer/{}_{}/{}.text'.format(i,f,idx), 'w').write(d.text)
 			open('../data/trialstreamer/{}_{}/{}.title'.format(i,f,idx), 'w').write(r.ti)
-
-def process_all():
-	shards = sorted([d.split('/')[-1] for d in glob.glob('../data/trialstreamer/*')])
-	for s in shards:
-		process_shard(s)
-
-def process_shard(s):
-	print('Processing {}'.format(s))
-	docs = read_shard_docs(s)
-	print('\tp1 inputs...');         write_phase1_inputs(s, docs)
-	print('\tp1 outputs..'); ready = load_phase1_outputs(s, docs)
-	if not ready:
-		print('\twaiting for phase1 outputs...')
-		return
-	print('\tp2 inputs...');         write_phase2_inputs(s, docs)
-	print('\tp2 outputs..'); ready = load_phase2_outputs(s, docs)
-	if not ready:
-		print('\twaiting for phase2 outputs...')
-		return
-	print('\tfinal inputs...'); write_trialstreamer_inputs(s, docs)
-

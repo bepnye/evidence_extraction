@@ -65,7 +65,7 @@ flags.DEFINE_string(
 )
 
 flags.DEFINE_string(
-	"task_name", None, "The name of the task to train. ex) 'NER'"
+	"task_name", 'ner', "The name of the task to train. ex) 'NER'"
 )
 
 flags.DEFINE_string(
@@ -107,15 +107,15 @@ flags.DEFINE_bool("do_predict", True, "Whether to run the model in inference mod
 
 flags.DEFINE_bool("use_crf", True, "Whether to use CRF decoding.")
 
-flags.DEFINE_integer("train_batch_size", 64, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 16, "Total batch size for training.")
 
-flags.DEFINE_integer("eval_batch_size", 8, "Total batch size for eval.")
+flags.DEFINE_integer("eval_batch_size", 16, "Total batch size for eval.")
 
-flags.DEFINE_integer("predict_batch_size", 8, "Total batch size for predict.")
+flags.DEFINE_integer("predict_batch_size", 16, "Total batch size for predict.")
 
 flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for Adam.")
 
-flags.DEFINE_float("num_train_epochs", 3.0, "Total number of training epochs to perform.")
+flags.DEFINE_float("num_train_epochs", 5.0, "Total number of training epochs to perform.")
 
 flags.DEFINE_float(
 	"warmup_proportion", 0.1,
@@ -125,7 +125,7 @@ flags.DEFINE_float(
 flags.DEFINE_float("bert_dropout_rate", 0.2,
 				   "Proportion of dropout for bert embedding.")
 
-flags.DEFINE_float("bilstm_dropout_rate", 0.2,
+flags.DEFINE_float("bilstm_dropout_rate", 0.5,
 				   "Proportion of dropout for bilstm.")
 
 flags.DEFINE_integer("save_checkpoints_steps", 1000,
@@ -152,7 +152,7 @@ flags.DEFINE_integer(
 flags.DEFINE_string('data_config_path', 'data.conf',
 					'data config file, which save train and dev config')
 
-flags.DEFINE_integer('lstm_size', 128, 'size of lstm units')
+flags.DEFINE_integer('lstm_size', 256, 'size of lstm units')
 
 flags.DEFINE_bool("collapse_wp", True, "Whether aggregate WP tokens back in to a single label.")
 

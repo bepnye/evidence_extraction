@@ -101,7 +101,7 @@ class Frame:
 
 class Doc:
 	def __init__(self, d_id, text):
-		self.id = d_id
+		self.id = str(d_id)
 		# everything that references text offsets need to go here:
 		self.labels = defaultdict(list)
 		self.text = text

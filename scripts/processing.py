@@ -119,6 +119,7 @@ def add_ev_sent_output(docs, group, fdir = '../models/sentence_classifier/data/e
 		try:
 			assert len(sent_labels) == len(doc.sents)
 		except AssertionError:
+			print('Unable to match sents to outputs for pmid={}'.format(doc.id))
 			print(doc.id, len(sent_labels), len(doc.sents))
 			continue
 		doc.labels['BERT_ev'] = [s for s, l in zip(doc.sents, sent_labels) if l]
