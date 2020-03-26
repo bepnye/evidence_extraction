@@ -20,7 +20,7 @@ data = [
 	}
 ]
 """
-def process_generic_data(data):
+def process_json_data(data):
 	docs = []
 	for d in data:
 		doc = classes.Doc(d['pmid'], d['abstract'])
@@ -28,6 +28,9 @@ def process_generic_data(data):
 			for span in d[e]:
 				for m in re.finditer(re.escape(span), doc.text):
 					doc.labels['NER_'+e].append(classes.Span(m.start(), m.end(), span))
+		for span in d.get('ev', []):
+			for m in re.finditer(re.escape(span), doc.text):
+				doc.labels['BERT_ev'].append(classes.Span(m.start(), m.end(), span))
 		doc.group = 'test'
 		doc.parse_text()
 		docs.append(doc)

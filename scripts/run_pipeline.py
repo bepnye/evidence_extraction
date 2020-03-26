@@ -55,7 +55,6 @@ Phase 1
 """
 
 def write_phase1_ner(top, docs):
-<<<<<<< HEAD
 	print('\t\twriting ner inputs...')
 	os.system('mkdir -p {}/ner'.format(top))
 	os.system('mkdir -p {}/ner/results'.format(top))
@@ -66,20 +65,6 @@ def write_phase1_ev(top, docs):
 	os.system('mkdir -p {}/ev'.format(top))
 	os.system('mkdir -p {}/ev/results'.format(top))
 	writer.write_sent_data_pipeline(docs, '{}/ev/'.format(top))
-=======
-	if not os.path.isfile('{}/ner/test.json'.format(top)):
-		print('\t\twriting ner inputs...')
-		os.system('mkdir -p {}/ner'.format(top))
-		os.system('mkdir -p {}/ner/results'.format(top))
-		writer.write_ner_data(docs, writer.dummy_label, '{}/ner/'.format(top), allow_acronyms = True)
-
-def write_phase1_ev(top, docs):
-	if not os.path.isfile('{}/ev/test.tsv'.format(top)):
-		print('\t\twriting ev inputs...')
-		os.system('mkdir -p {}/ev'.format(top))
-		os.system('mkdir -p {}/ev/results'.format(top))
-		writer.write_sent_data_pipeline(docs, '{}/ev/'.format(top))
->>>>>>> 999dac558a813668da7ed7133f7dd0cb1b2cde0f
 
 def run_phase1_ner(top):
 	clear_flags(); reload(ner_model)
@@ -167,7 +152,7 @@ def run_phase2_ic_ev(top):
 	model.FLAGS.task_name  = 'ico_ab'
 	model.FLAGS.data_dir         = '{}/ic_ev/'.format(top)
 	model.FLAGS.output_dir       = '{}/ic_ev/results/'.format(top)
-	model.FLAGS.model_dir        = '{}/data/i_c_ev/model/'.format(bert_model_top)
+	model.FLAGS.model_dir        = '{}/data/i_c_abst/model/'.format(bert_model_top)
 	model.FLAGS.vocab_file       = '{}/vocab.txt'.format(SCI_BERT_DIR)
 	model.FLAGS.bert_config_file = '{}/bert_config.json'.format(SCI_BERT_DIR)
 	model.FLAGS.init_checkpoint  = '{}'.format(SCI_BERT_DIR)
