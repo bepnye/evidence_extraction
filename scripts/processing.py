@@ -77,40 +77,32 @@ def add_ic_ev_output(docs, group, fdir = '../models/sentence_classifier/data/i_c
 			assert sent.pred_c.text == utils.clean_str(doc.text[sent.pred_c.i:sent.pred_c.f])
 			sent.pred_os = utils.s_overlaps(sent, doc.labels['NER_o'])
 
-def eval_frames(docs):
-	errs = { 'true': 0, 'missing_o': 0, 'missing_i': 0, 'missing_c': 0, 'bad_ic': 0 }
+def eval_relations(docs):
+	tp = 0
+	fn = 0
+	fp = 0
 	for doc in docs:
 		if not doc.frames:
 			continue
 		pred_frames = set()
 		true_i = doc.get_char_labels('GOLD_i', False)
 		true_o = doc.get_char_labels('GOLD_o', False)
-		all_pred_i = set([t[7:] for t,p in zip(true_i, doc.get_char_labels('NER_i', False)) if p and t])
-		all_pred_o = set([t[7:] for t,p in zip(true_o, doc.get_char_labels('NER_o', False)) if p and t])
 		def get_entities(ls, s):
 			es = [e[len('GOLD_i_'):] for e in utils.drop_none(set(ls[s.i:s.f]))]
 			return es or [s.text]
 		for ev in doc.labels['BERT_ev']:
 			for pred_o in ev.pred_os:
-				pred_frames.add((ev.pred_i.text,ev.pred_c.text,pred_o.text))
-		true_frames = set([(f.i.label[2:], f.c.label[2:], f.o.label[2:]) for f in doc.frames])
-		print('pred')
-		for f in pred_frames: print('\t', f)
-		print('true')
-		for f in true_frames: print('\t', f)
-		input()
-		for tf in true_frames:
-			if any([tf == pf for pf in pred_frames]):
-				errs['true'] += 1
-			elif tf[0] not in all_pred_i:
-				errs['missing_i'] += 1
-			elif tf[1] not in all_pred_i:
-				errs['missing_c'] += 1
-			elif tf[2] not in all_pred_o:
-				errs['missing_o'] += 1
-			else:
-				errs['bad_ic'] += 1
-	print(errs)
+				for i_entities in get_entities(true_i, ev.pred_i):
+					for o_entities in get_entities(true_o, pred_o):
+						pred_frames.add((i_entities, o_entities, pred_o.label))
+		true_frames = set([(f.i.label[2:], f.o.label[2:], f.label) for f in doc.frames])
+		tp += len(true_frames & pred_frames)
+		fn += len(true_frames - pred_frames)
+		fp += len(pred_frames - true_frames)
+	p = tp / (tp + fp)
+	r = tp / (tp + fn)
+	f1 = 2*(p * r)/(p + r)
+	return p, r, f1
 
 def add_ev_sent_output(docs, group, fdir = '../models/sentence_classifier/data/ev_sent'):
 	model_input = '{}/{}.tsv'.format(fdir, group)
@@ -127,6 +119,7 @@ def add_ev_sent_output(docs, group, fdir = '../models/sentence_classifier/data/e
 		try:
 			assert len(sent_labels) == len(doc.sents)
 		except AssertionError:
+			print('Unable to match sents to outputs for pmid={}'.format(doc.id))
 			print(doc.id, len(sent_labels), len(doc.sents))
 			continue
 		doc.labels['BERT_ev'] = [s for s, l in zip(doc.sents, sent_labels) if l]
@@ -371,10 +364,12 @@ Doc => Entities, Relations processing
 
 """
 
-def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn):
+def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn, drop_mentionless = True):
 	try:
 		entities = entity_fn(doc)
 		mention_fn(entities, doc)
+		if drop_mentionless:
+			entities = [e for e in entities if e.mentions]
 		naming_fn(entities, doc)
 		eps = relation_fn(entities, doc)
 
@@ -385,10 +380,11 @@ def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn):
 		traceback.print_exc()
 		input()
 
+	return entities, eps
+
 def extract_distant_info(doc):
 	return extract_doc_info(doc, get_frame_entities, \
-			partial(assign_bert_mentions, add_unlinked_entities = True), \
-			assign_text_names, get_frame_relations)
+			assign_bert_mentions, assign_text_names, get_frame_relations)
 
 def extract_gold_info(doc):
 	return extract_doc_info(doc, partial(get_gold_entities, assign_mentions = True), \

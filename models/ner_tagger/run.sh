@@ -1,19 +1,16 @@
 #!/bin/bash
 # current dir of this script
-CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
-
-data_prefix="ebm_nlp_ab3p"
-data_dir="${CDIR}/data/${data_prefix}"
+data_dir="data/coref_test/"
 output_dir="${data_dir}/results/"
 
-model_dir="${data_dir}/model/"
+model_dir="/home/ben/Desktop/evidence_extraction/models/ner_tagger/data/ebm_nlp_ab3p/model/"
 
-bert_base_dir="/home/ben/Desktop/scibert_scivocab_uncased"
+bert_base_dir="/home/ben/Desktop/biobert_pubmed/"
 
 python bert_lstm_ner.py   \
 	--visible_devices="0" \
         --task_name="ner"  \
-        --do_train=True \
+        --do_train=False \
         --do_predict=True \
         --collapse_wp=True \
         --use_feature_based=False \
@@ -26,7 +23,7 @@ python bert_lstm_ner.py   \
         --do_lower_case=True \
         --bert_config_file=${bert_base_dir}/bert_config.json \
         --init_checkpoint=${bert_base_dir} \
-        --max_seq_length=150   \
+        --max_seq_length=200   \
         --lstm_size=256 \
         --train_batch_size=16   \
         --eval_batch_size=32   \

@@ -4,9 +4,13 @@ import torch.nn as nn
 from transformers import *
 from padded_sequence import PaddedSequence
 
-SCI_BERT_LOCATION = '/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased/'
-NER_BERT_LOCATION = '/home/jay/scibert_ner_ebmnlp/' #'/home/jay/scibert_ner_ebmlnlp/' #'/home/jay/scibert_ner/'
-CDR_NER_BERT_LOCATION = '/home/jay/cdr_trained_scibert_small/'
+import sys
+sys.path.append('../..')
+import config
+SCI_BERT_LOCATION = config.BERT_DIR
+NER_BERT_LOCATION = config.BERT_DIR
+#NER_BERT_LOCATION = config.NER_PRETRAINED_BERT_DIR
+CDR_NER_BERT_LOCATION = config.BERT_DIR
 
 class BERTVergaPytorch(nn.Module):
     """

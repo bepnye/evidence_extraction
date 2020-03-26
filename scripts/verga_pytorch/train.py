@@ -6,7 +6,7 @@ import sys
 from load_data import *
 from load_CDR_data import load_CDR
 from model import *
-from utils import *
+from model_utils import *
 import torch.optim as optim
 from sklearn.metrics import f1_score, classification_report
 import numpy as np

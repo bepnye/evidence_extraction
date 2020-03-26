@@ -116,6 +116,11 @@ def intro_group_ev(doc, i, ev):
 	context_sents = [s for idx, s in enumerate(doc.sents) if s.i <= group_idx <= s.f or 2 <= idx <= 4]
 	return ' '.join([s.text for s in ev_sents + context_sents])
 
+def ev_abst(doc, i, ev):
+	ev_s = [s.text for idx, s in enumerate(doc.sents) if utils.s_overlap(s, ev)]
+	other_s = [s.text for idx, s in enumerate(doc.sents) if not utils.s_overlap(s, ev)]
+	return ' '.join(ev_s + other_s)
+
 def first_and_ev(doc, i, ev):
 	i_idx = doc.text.lower().find(i.text.lower().strip('. ,)('))
 	g_idx = doc.text.lower().find('group')

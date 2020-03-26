@@ -1,8 +1,11 @@
 import sys, os
 import subprocess
 from collections import namedtuple
-	
-ab3p_dir = '../tools/Ab3P'
+
+sys.path.append('..')
+import config
+
+ab3p_dir = os.path.join(config.TOP, 'tools', 'Ab3P')
 
 concept_fields = ['Concept_Name', 'Concept_Id', 'Semantic_Types', 'Sources']
 Concept = namedtuple('Concept', concept_fields)
@@ -26,8 +29,11 @@ def parse_ab3p(ret):
 	matches = [m.strip() for m in ret.strip().split('\n')]
 	matches = [m for m in matches if m]
 	for m in matches:
-		sf, lf, acc = m.split('|')
-		sf_to_lf[sf] = lf
+		try:
+			sf, lf, acc = m.split('|')
+			sf_to_lf[sf] = lf
+		except ValueError:
+			print('AB3P choked on match\n\tExpected: SF|LF|acc\n\tReceived: {}'.format(m))
 	return sf_to_lf
 
 def mm_fname(fname):

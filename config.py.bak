@@ -1,0 +1,3 @@
+EV_INF_DIR = '../../inference-data'
+BERT_DIR = '../../biobert_pubmed/'
+EBM_NLP_DIR = '/home/ben/Desktop/EBM-NLP/ebm_nlp_2_00/'

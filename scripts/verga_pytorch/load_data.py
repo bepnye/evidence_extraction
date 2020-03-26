@@ -7,11 +7,9 @@ import pickle
 import processing
 import itertools
 import process_evidence_inference
-sys.path.append('/home/eric/bran/src/processing/utils/')
-#from word_piece_tokenizer import WordPieceTokenizer as WPT
 from transformers import *
 global TOKENIZER, SEP_TOKEN, CLS_TOKEN, SEP_SIZE, CLS_SIZE
-TOKENIZER = BertTokenizer.from_pretrained('/home/eric/evidence-inference/evidence_inference/models/structural_attn/scibert_scivocab_uncased') #WPT('/home/eric/bran/data/cdr/word_piece_vocabs/just_train_2500/word_pieces.txt', entity_str = 'ENTITY_')  
+TOKENIZER = BertTokenizer.from_pretrained(config.BERT_DIR)
 SEP_TOKEN = " [SEP] "
 CLS_TOKEN = " [CLS] "
 CLS_SIZE = len(CLS_TOKEN)
@@ -19,7 +17,7 @@ SEP_SIZE = len(SEP_TOKEN)
 
 import spacy
 import string
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_sci_lg")
 
 def text_to_sentence_offsets(text):
     """
@@ -177,7 +175,7 @@ def load_data(tokenizer = None):
     else:
         docs = process_evidence_inference.read_docs(abst_only = True)
         for d in docs: d.replace_acronyms()
-        processing.add_ner_output(docs, '../../data/ner/ev_inf.json')
+        processing.add_ner_output(docs, '../../data/ner/ev_inf_ab3p.json')
         doc_entities = [processing.extract_distant_info(d) for d in docs]
     
     # for every doc, create a tokenized document which contains tokenized text,
