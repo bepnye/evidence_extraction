@@ -376,6 +376,7 @@ def train_model(ner_model, relation_model, df, parameters):
                                                             attention_mask=ner_mask,
                                                             labels = ner_batch_labels.data)
             
+            ner_loss /= (padded_text.data.shape[0] * padded_text.data.shape[1])
             if not(teacher_force): 
                 inputs, labels = agglomerative_coref(inputs, ner_scores, hidden_states[-2], ner_labels[batch_range: batch_range + batch_size], label_config)
                 if len(labels) == 0: continue
@@ -385,7 +386,7 @@ def train_model(ner_model, relation_model, df, parameters):
                 labels = train_labels[label_offset: label_offset + len(relation_outputs)]
 
             # loss
-            relation_loss = criterion(relation_outputs, torch.tensor(labels).cuda())
+            relation_loss = criterion(relation_outputs, torch.tensor(labels).cuda()) / len(relation_outputs)
             loss = ner_loss_weighting * ner_loss + (1 - ner_loss_weighting) * relation_loss
             loss.backward()
             optimizer.step()
