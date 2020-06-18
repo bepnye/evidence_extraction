@@ -56,51 +56,6 @@ def process_covid_data():
 		with open('{}/docs/{}.title'.format(top, pmid), 'w') as fp: fp.write(title)
 	return docs
 
-def process_cwr_data():
-	df = pd.read_csv('../data/cures_within_reach/cwr.csv')
-	df = df[~df.Relevant.apply(np.isnan)]
-	df = df[df['Matched.Outcome..Word.Embeddings.'].apply(lambda o: type(o) == str)]
-	docs = {}
-	for idx, r in df.iterrows():
-		if r.PMID in docs:
-			print('Ignoring dupe id: {}'.format(r.PMID))
-			continue
-		if type(r.Abstract) is not str:
-			continue
-		text = r.Abstract.replace('\r', '')
-		text = re.sub('\n+', '\n', text)
-		doc = classes.Doc(r.PMID, text)
-		doc.group = 'test'
-		with open('../data/cures_within_reach/{}.text'.format(r.PMID), 'w') as fp:
-			fp.write(doc.text)
-		with open('../data/cures_within_reach/{}.title'.format(r.PMID), 'w') as fp:
-			fp.write(r.Title)
-
-		p_match = r['Article.Population..Word.Embeddings.']
-		i_match = r['Article.Intervention..Word.Embeddings.']
-		o_match = r['Article.Outcome..Word.Embeddings.']
-
-		p_query = r['Matched.Population..Word.Embeddings.']
-		i_query = r['Matched.Intervention..Word.Embeddings.']
-		o_query = r['Matched.Outcome..Word.Embeddings.']
-
-		doc.query = (p_query, i_query, o_query)
-		doc.match = (p_match, i_match, o_match)
-		doc.relevant = r.Relevant
-
-		docs[r.PMID] = doc
-	return list(docs.values())
-
-def read_cwr_docs(data_dir = '../data/cures_within_reach/'):
-	fnames = glob.glob('{}/*.text'.format(data_dir))
-	docs = [classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
-	docs = [d for d in docs if d.text]
-	for d in docs:
-		d.parse_text()
-		d.group = 'test'
-		d.sf_lf_map = {} # already acronym'd
-	return docs
-
 def read_shard_docs(data_dir):
 	print('\t\tcreating Docs for {}'.format(shard))
 	fnames = glob.glob('{}/*.text'.format(data_dir))

@@ -81,6 +81,11 @@ def mode(l):
 def argmax(l):
 	return l.index(max(l))
 
+# set a threshold for the positive class in binary classification
+def prob_thresh(l, thresh = 0.5):
+	assert len(l) == 2
+	return 1 if l[1] >= thresh else 0
+
 def group_ids(dataset, group):
 	return readlines('{}/id_splits/{}/{}.txt'.format(DATA_DIR, dataset, group))
 

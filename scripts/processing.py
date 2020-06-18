@@ -13,7 +13,7 @@ SF = None
 from scipy.spatial.distance import cosine as cos_dist
 from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.cluster import AgglomerativeClustering as agg_cluster
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, confusion_matrix
 import numpy as np
 
 from coref_scores import b_cubed, muc, ceaf_e
@@ -42,13 +42,6 @@ NER_LABEL_MAP = { \
 		'p': 'p',
 }
 
-def pretend_to_be_a_linear_layer(class_probs):
-	if class_probs[0] >= 0.15:
-		label = 0
-	else:
-		label = utils.argmax(class_probs)
-	return label
-
 def add_ic_ev_output(docs, group, fdir = '../models/sentence_classifier/data/i_c_intro'):
 	model_input = '{}/{}.tsv'.format(fdir, group)
 	model_output = '{}/results/{}_results.tsv'.format(fdir, group)
@@ -73,38 +66,110 @@ def add_ic_ev_output(docs, group, fdir = '../models/sentence_classifier/data/i_c
 			best_c = max(results, key = lambda r: r['class_probs'][1])
 			sent.pred_i = classes.Span(best_i['idx_i'], best_i['idx_f'], best_i['text'])
 			sent.pred_c = classes.Span(best_c['idx_i'], best_c['idx_f'], best_c['text'])
-			assert sent.pred_i.text == utils.clean_str(doc.text[sent.pred_i.i:sent.pred_i.f])
-			assert sent.pred_c.text == utils.clean_str(doc.text[sent.pred_c.i:sent.pred_c.f])
+			try:
+				assert sent.pred_i.text == utils.clean_str(doc.text[sent.pred_i.i:sent.pred_i.f])
+			except AssertionError:
+				print('Mismatch for I when loading IC results...')
+				print(sent.pred_i.text)
+				print(utils.clean_str(doc.text[sent.pred_i.i:sent.pred_i.f]))
+			try:
+				assert sent.pred_c.text == utils.clean_str(doc.text[sent.pred_c.i:sent.pred_c.f])
+			except AssertionError:
+				print('Mismatch for C when loading IC results...')
+				print(sent.pred_c.text)
+				print(utils.clean_str(doc.text[sent.pred_c.i:sent.pred_c.f]))
 			sent.pred_os = utils.s_overlaps(sent, doc.labels['NER_o'])
 
-def eval_relations(docs):
-	tp = 0
-	fn = 0
-	fp = 0
-	for doc in docs:
-		if not doc.frames:
-			continue
-		pred_frames = set()
-		true_i = doc.get_char_labels('GOLD_i', False)
-		true_o = doc.get_char_labels('GOLD_o', False)
-		def get_entities(ls, s):
-			es = [e[len('GOLD_i_'):] for e in utils.drop_none(set(ls[s.i:s.f]))]
-			return es or [s.text]
-		for ev in doc.labels['BERT_ev']:
-			for pred_o in ev.pred_os:
-				for i_entities in get_entities(true_i, ev.pred_i):
-					for o_entities in get_entities(true_o, pred_o):
-						pred_frames.add((i_entities, o_entities, pred_o.label))
-		true_frames = set([(f.i.label[2:], f.o.label[2:], f.label) for f in doc.frames])
-		tp += len(true_frames & pred_frames)
-		fn += len(true_frames - pred_frames)
-		fp += len(pred_frames - true_frames)
-	p = tp / (tp + fp)
-	r = tp / (tp + fn)
-	f1 = 2*(p * r)/(p + r)
-	return p, r, f1
+def get_overlapping_entities(doc, s):
+	return [e.name for e in doc.entities if any(utils.s_overlaps(s, e.mentions))]
 
-def add_ev_sent_output(docs, group, fdir = '../models/sentence_classifier/data/ev_sent'):
+def eval_frame_linking(docs):
+	o_links = []
+	i_links = []
+	c_links = []
+	for d in docs:
+		for f in d.frames:
+			evs = [s for s in d.labels['BERT_ev'] if s.i == f.ev.i and s.f == f.ev.f]
+			assert len(evs) == 1
+			ev = evs[0]
+			gold_i_spans = d.labels['GOLD_{}'.format(f.i.label)]
+			pred_i = ev.pred_i
+			i_links.append(any(utils.s_overlaps(pred_i, gold_i_spans)))
+
+			gold_c_spans = d.labels['GOLD_{}'.format(f.c.label)]
+			pred_c = ev.pred_c
+			c_links.append(any(utils.s_overlaps(pred_c, gold_c_spans)))
+
+			gold_o_spans = d.labels['GOLD_{}'.format(f.o.label)]
+			found_o = False
+			for pred_o in ev.pred_os:
+				if any(utils.s_overlaps(pred_o, gold_o_spans)):
+					found_o = True
+					break
+			o_links.append(found_o)
+	print('i: {:.2f}'.format(np.mean(i_links)))
+	print('c: {:.2f}'.format(np.mean(c_links)))
+	print('o: {:.2f}'.format(np.mean(o_links)))
+
+NEG_CLASS = 'NULL'
+def eval_doc_relations(doc, verbose = False):
+	pred_rels = defaultdict(list)
+	for ev in doc.labels['BERT_ev']:
+		i_entities = get_overlapping_entities(doc, ev.pred_i)
+		c_entities = get_overlapping_entities(doc, ev.pred_c)
+		for pred_o in ev.pred_os:
+			o_entities = get_overlapping_entities(doc, pred_o)
+			rel = get_frame_rel(pred_o.label)
+			for i, o in itertools.product(i_entities, o_entities):
+				pred_rels[i,o].append(rel)
+	if verbose:
+		print_frames(doc)
+	true = []
+	pred = []
+	# score the model on each of the true relations between entities
+	# this will cover all of the TPs and FNs
+	for (e1, e2), true_l in doc.relations.items():
+		if true_l == NEG_CLASS: continue
+		pred_ls = pred_rels.get((e1, e2), [NEG_CLASS])
+		for pred_l in list(pred_ls):
+			print('{} {} [{}] [{}]'.format(true_l, pred_l, e1, e2))
+			true.append(true_l)
+			pred.append(pred_l)
+	# finally, count all the FPs (predicted e1-e2 relations that don't exist)
+	for (e1, e2), rs in pred_rels.items():
+		# already counted these
+		if (e1, e2) in doc.relations: continue
+		for pred_l in list(rs):
+			true.append(NEG_CLASS)
+			pred.append(pred_l)
+			print('{} {} [{}] [{}]'.format(NEG_CLASS, pred_l, e1, e2))
+	labels = ['SAME', 'DECR', 'INCR']
+	if verbose:
+		print('{}\t{}\t{}\t{}'.format('', 'p', 'r', 'f1'))
+		for l in labels:
+			p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = [l], average = 'micro')
+			print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format(l, p, r, f1))
+		p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = labels, average = 'micro')
+		print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format('micro', p, r, f1))
+	return true, pred
+
+def eval_relations(docs):
+	true = []
+	pred = []
+	for d in docs:
+		t, p = eval_doc_relations(d)
+		true += t
+		pred += p
+	labels = ['SAME', 'DECR', 'INCR']
+	print('{}\t{}\t{}\t{}'.format('', 'p', 'r', 'f1'))
+	for l in labels:
+		p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = [l], average = 'micro')
+		print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format(l, p, r, f1))
+	p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = labels, average = 'micro')
+	print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format('micro', p, r, f1))
+	print(confusion_matrix(true, pred, labels = labels + [NEG_CLASS]))
+
+def add_ev_sent_output(docs, group, fdir, label_fn = utils.argmax):
 	model_input = '{}/{}.tsv'.format(fdir, group)
 	model_output = '{}/results/{}_results.tsv'.format(fdir, group)
 	inputs = [l.strip().split('\t') for l in open(model_input).readlines()]
@@ -112,7 +177,7 @@ def add_ev_sent_output(docs, group, fdir = '../models/sentence_classifier/data/e
 	assert len(inputs) == len(outputs)
 	pmid_sent_labels = defaultdict(list)
 	for (true_label, pmid, sent), class_probs in zip(inputs, outputs):
-		label = utils.argmax(list(map(float, class_probs)))
+		label = label_fn(list(map(float, class_probs)))
 		pmid_sent_labels[pmid].append(label)
 	for doc in docs:
 		sent_labels = pmid_sent_labels[doc.id]
@@ -250,13 +315,36 @@ Entity, Doc => Mention assignment
 
 """
 
+def assign_exact_mention(entities, doc):
+	for e in entities:
+		e.mentions = []
+		for m in re.finditer(e.text, doc.text):
+			e.mentions.append(classes.Span(m.start(), m.end(), e.text))
+
+def assign_best_mention(entities, doc):
+	mentions = { \
+			'i': [m for m in get_doc_spans(doc, 'NER_i') if m.text and not m.text.isspace()],
+			'o': [m for m in get_doc_spans(doc, 'NER_o') if m.text and not m.text.isspace()]
+	}
+	embs = { \
+			'i': encode([m.text for m in mentions['i']]),
+			'o': encode([m.text for m in mentions['o']])
+	}
+	for e in entities:
+		e_emb = encode([e.text])[0]
+		dists = [cos_dist(e_emb, m_emb) for m_emb in embs[e.type]]
+		sorted_dists = sorted(zip(dists, mentions[e.type]), key = itemgetter(0))
+		if sorted_dists[0][0] >= 0.15:
+			continue
+		e.mentions = [sorted_dists[0][1]]
+
 # Assign each NER span to the closest entity in embedding space
 def assign_bert_mentions(entities, doc, label_prefix = 'NER', \
-		max_dist = 0.10, add_unlinked_entities = False):
+		max_dist = 0.10, add_unlinked_entities = True):
 	for t in 'io':
 		valid_entities = [e for e in entities if e.type == t]
 		valid_mentions = get_doc_spans(doc, label_prefix + '_'+ t)
-		valid_mentions = [m for m in valid_mentions if not m.text.isspace()]
+		valid_mentions = [m for m in valid_mentions if m.text and not m.text.isspace()]
 		if not valid_mentions:
 			print('Warning! No valid mentions for {} ({})'.format(doc.id, t))
 			continue
@@ -281,6 +369,7 @@ def assign_bert_mentions(entities, doc, label_prefix = 'NER', \
 					unlinked_e = classes.Entity(m, t)
 					unlinked_e.mentions.append(m)
 					entities.append(unlinked_e)
+					valid_entities.append(unlinked_e)
 					entity_embs.append(encode([unlinked_e.text])[0])
 
 """
@@ -320,7 +409,7 @@ def span_text(span):
 def span_gold_label(span):
 	return span.label[2:] # trim off the "i_" prefix from the group name
 
-def get_frame_relations(entities, doc, span_name_fn = span_text):
+def get_frame_relations(entities, doc, span_name_fn = span_text, add_nulls = False):
 	eps = {}
 	es = { e.name: e for e in entities }
 
@@ -337,8 +426,9 @@ def get_frame_relations(entities, doc, span_name_fn = span_text):
 
 	i_names = [e.name for e in entities if e.type == 'i']
 	o_names = [e.name for e in entities if e.type == 'o']
-	for i, o in itertools.product(i_names, o_names):
-		add_rel(i, o, 'NULL', overwrite = False)
+	if add_nulls:
+		for i, o in itertools.product(i_names, o_names):
+			add_rel(i, o, 'NULL', overwrite = False)
 
 	for (i, o), r in eps.items():
 		es[i].relations.append((o, r))
@@ -366,21 +456,26 @@ Doc => Entities, Relations processing
 
 def extract_doc_info(doc, entity_fn, mention_fn, naming_fn, relation_fn, drop_mentionless = True):
 	try:
+		entities = []
+		eps = {}
 		entities = entity_fn(doc)
 		mention_fn(entities, doc)
 		if drop_mentionless:
 			entities = [e for e in entities if e.mentions]
 		naming_fn(entities, doc)
 		eps = relation_fn(entities, doc)
-
-		doc.entities = entities
-		doc.relations = eps
 	except Exception as e:
 		print('ERROR! Caught exception extracting info from {}. Returning empty data'.format(doc.id))
 		traceback.print_exc()
-		input()
-
+		eps = eps or {}
+		entities = entities or []
+	doc.entities = entities
+	doc.relations = eps
 	return entities, eps
+
+def extract_dygie_info(doc):
+	return extract_doc_info(doc, get_frame_entities, \
+			assign_best_mention, assign_text_names, get_frame_relations)
 
 def extract_distant_info(doc):
 	return extract_doc_info(doc, get_frame_entities, \
@@ -406,15 +501,14 @@ TODO: move to different file
 
 """
 
-def get_coref_scores(entities_1, entities_2):
+def get_coref_scores(entities_1, entities_2, avg_metrics = True):
 	mentions_1 = [{(s.i, s.f, s.text) for s in e.mentions} for e in entities_1 if e.mentions]
 	mentions_2 = [{(s.i, s.f, s.text) for s in e.mentions} for e in entities_2 if e.mentions]
 	scores = [f(mentions_1, mentions_2) for f in [b_cubed, muc, ceaf_e]]
-	return [np.mean(xs) for xs in zip(*scores)]
-
-def eval_coref(docs, true_processor, pred_processor, matching = 'exact'):
-	scores = [get_coref_scores(true_processor(d), pred_processor(d)) for d in docs]
-	return [np.mean(xs) for xs in zip(*scores)]
+	if avg_metrics:
+		return [np.mean(xs) for xs in zip(*scores)]
+	else:
+		return scores
 
 FUNCTION_POS = ['-LRB-', '-RRB-', '.', ',', 'CC', 'DT', 'IN']
 
@@ -653,7 +747,7 @@ def print_frames(doc):
 		print('\tO: {}'.format(f.o.text))
 		print('\tEV: {}'.format(f.ev.text))
 
-def export_json(docs):
+def export_json_docs(docs):
 	rows = []
 	def sencode(s):
 		return { 'text': s.text, 'i': s.i, 'f': s.f, \
@@ -673,5 +767,42 @@ def export_json(docs):
 			'i': [sencode(s) for s in d.ner['i']],
 			'o': [sencode(s) for s in d.ner['o']],
 		}
+		rows.append(r)
+	return rows
+
+def chars_to_tokens(chars, tokens):
+	t_i = -1
+	t_f = -1
+	for idx, t in enumerate(tokens):
+		if t.i <= chars.i <= t.f:
+			t_i = idx
+		if t.i <= chars.f <= t.f:
+			t_f = idx
+	return [t_i, t_f]
+
+def export_json(docs, super_fn = extract_distant_info):
+	rows = []
+	for d in docs:
+		if super_fn:
+			es, eps = super_fn(d)
+		else:
+			es, eps = d.entities, d.relations
+		r = {}
+		r['text'] = d.text
+		r['id'] = d.id
+		r['entities'] = []
+		for e in es:
+			r['entities'].append({
+				'text': e.text,
+				'mentions': list(set([(s.i, s.f, s.text) for s in e.mentions])),
+				'class': e.type
+			})
+		r['relations'] = []
+		for ep, rel in eps.items():
+			r['relations'].append({
+				'e1': ep[0],
+				'e2': ep[1],
+				'class': rel
+			})
 		rows.append(r)
 	return rows

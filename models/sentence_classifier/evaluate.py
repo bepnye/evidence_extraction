@@ -69,11 +69,12 @@ def score_input_fname(input_fname, label_fn, ignore_0 = False, verbose = True):
 def sweep_thresh(input_fname):
 	print('thsh | p     r     f1')
 	for x in np.arange(0, 1.0, 0.05):
-		s = score_input_fname(input_fname, partial(thresh, x=x), verbose = False)
+		s = score_input_fname(input_fname, partial(thresh, x=x), ignore_0 = True, verbose = False)
 		print('{:.2f} | {:.2f}  {:.2f}  {:.2f}'.format(x, s['precision'], s['recall'], s['f1']))
 
 if __name__ == '__main__':
 	if len(sys.argv) > 2:
+		print(sys.argv)
 		if sys.argv[2] == '_':
 			sweep_thresh(sys.argv[1])
 		else:
@@ -82,4 +83,4 @@ if __name__ == '__main__':
 			score_input_fname(sys.argv[1], fn)
 	else:
 		fn = argmax
-		score_input_fname(sys.argv[1], fn, ignore_0 = True)
+		score_input_fname(sys.argv[1], fn, ignore_0 = False)

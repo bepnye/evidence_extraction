@@ -8,7 +8,7 @@ python run_classifier.py \
   --do_train=True \
   --do_train_eval=False \
   --do_eval=True \
-  --do_predict=False \
+  --do_predict=True \
   --vocab_file=$BERT_BASE_DIR/vocab.txt \
   --bert_config_file=$BERT_BASE_DIR/bert_config.json \
   --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \

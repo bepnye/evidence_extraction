@@ -1,6 +1,8 @@
 import sys, os, json
 from imp import reload
+import tensorflow as tf
 
+import utils
 import classes
 import writer
 import processing
@@ -44,7 +46,6 @@ SCI_BERT_DIR = '/home/ben/Desktop/scibert_scivocab_uncased/'
 DO_LOWER_CASE = True
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 def clear_flags():
-	import tensorflow as tf
 	f = tf.flags.FLAGS
 	f.remove_flag_values(f.flag_values_dict())
 
@@ -54,42 +55,47 @@ Phase 1
 	* Evidence identification (sentence labeling)
 """
 
-def write_phase1_ner(top, docs):
-	print('\t\twriting ner inputs...')
+def dump_phase1_ner(top, docs):
+	ner_fname = '{}/ner/'.format(top)
+	print('\t\twriting ner inputs to {}...'.format(ner_fname))
 	os.system('mkdir -p {}/ner'.format(top))
 	os.system('mkdir -p {}/ner/results'.format(top))
-	writer.write_ner_data(docs, writer.dummy_label, '{}/ner/'.format(top), allow_acronyms = True)
+	writer.write_ner_data(docs, writer.dummy_label, ner_fname, allow_acronyms = True)
 
-def write_phase1_ev(top, docs):
+def dump_phase1_ev(top, docs):
 	print('\t\twriting ev inputs...')
 	os.system('mkdir -p {}/ev'.format(top))
 	os.system('mkdir -p {}/ev/results'.format(top))
 	writer.write_sent_data_pipeline(docs, '{}/ev/'.format(top))
 
-def run_phase1_ner(top):
+def exec_phase1_ner(top, cp = 'ebm_nlp_ab3p'):
+	clear_flags()
+	import bert_lstm_ner as ner_model
 	clear_flags(); reload(ner_model)
 	ner_model.FLAGS.do_train   = False
 	ner_model.FLAGS.do_predict = True
 	ner_model.FLAGS.data_dir         = '{}/ner/'.format(top)
 	ner_model.FLAGS.output_dir       = '{}/ner/results/'.format(top)
 	ner_model.FLAGS.data_config_path = '{}/ner/results/data.conf'.format(top)
-	ner_model.FLAGS.model_dir        = '{}/data/ebm_nlp_ab3p/model/'.format(ner_model_top)
+	ner_model.FLAGS.model_dir        = '{}/data/{}/model/'.format(ner_model_top, cp)
 	ner_model.FLAGS.do_lower_case    = DO_LOWER_CASE
 	ner_model.FLAGS.label_idx = 1 # target label column idx
 	ner_model.FLAGS.vocab_file       = '{}/vocab.txt'.format(BIO_BERT_DIR)
 	ner_model.FLAGS.bert_config_file = '{}/bert_config.json'.format(BIO_BERT_DIR)
 	ner_model.FLAGS.init_checkpoint  = '{}'.format(BIO_BERT_DIR)
 	ner_model.main('')
+	clear_flags()
 
-def run_phase1_ev(top):
-	import run_classifier as model
+def exec_phase1_ev(top, cp = 'ev_sent'):
+	clear_flags()
+	import run_classifier as model;
 	clear_flags(); reload(model)
 	model.FLAGS.task_name  = 'ico'
 	model.FLAGS.do_train   = False
 	model.FLAGS.do_predict = True
 	model.FLAGS.data_dir         = '{}/ev/'.format(top)
 	model.FLAGS.output_dir       = '{}/ev/results/'.format(top)
-	model.FLAGS.model_dir        = '{}/data/ev_sent/model/'.format(bert_model_top)
+	model.FLAGS.model_dir        = '{}/data/{}/model/'.format(bert_model_top, cp)
 	model.FLAGS.vocab_file       = '{}/vocab.txt'.format(BIO_BERT_DIR)
 	model.FLAGS.bert_config_file = '{}/bert_config.json'.format(BIO_BERT_DIR)
 	model.FLAGS.init_checkpoint  = '{}'.format(BIO_BERT_DIR)
@@ -100,10 +106,10 @@ def load_phase1_ner(top, docs):
 		print('\t\tloading ner outputs...')
 		processing.add_ner_output(docs, '{}/ner/results/pred.txt'.format(top), False)
 
-def load_phase1_ev(top, docs):
+def load_phase1_ev(top, docs, label_fn = utils.argmax):
 	if os.path.isfile('{}/ev/results/test_results.tsv'.format(top)):
 		print('\t\tloading ev outputs...')
-		processing.add_ev_sent_output(docs, 'test', '{}/ev/'.format(top))
+		processing.add_ev_sent_output(docs, 'test', '{}/ev/'.format(top), label_fn)
 
 """
 Phase 2
@@ -111,38 +117,40 @@ Phase 2
 	* I/C slot filling (for each ev_sent, rank all extracted I as I/C)
 """
 
-def write_phase2_o_ev(top, docs):
+def dump_phase2_o_ev(top, docs):
 	print('\t\twriting o_ev inputs...')
-	os.makedirs('{}/o_ev'.format(top), exist_ok = True)
-	os.makedirs('{}/o_ev/results'.format(top), exist_ok = True)
-	writer.write_o_ev_data_pipeline(docs, '{}/o_ev/'.format(top))
+	os.makedirs('{}/o_frame'.format(top), exist_ok = True)
+	os.makedirs('{}/o_frame/results'.format(top), exist_ok = True)
+	writer.write_o_ev_data_pipeline(docs, '{}/o_frame/'.format(top))
 
-def write_phase2_ic_ev(top, docs):
+def dump_phase2_ic_ev(top, docs):
 	print('\t\twriting ic_ev inputs...')
-	os.makedirs('{}/ic_ev'.format(top), exist_ok = True)
-	os.makedirs('{}/ic_ev/results'.format(top), exist_ok = True)
-	writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_ev'.format(top))
+	os.makedirs('{}/ic_frame'.format(top), exist_ok = True)
+	os.makedirs('{}/ic_frame/results'.format(top), exist_ok = True)
+	writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_frame'.format(top))
 
-def run_phase2(top):
-	run_phase2_o_ev(top)
-	run_phase2_ic_ev(top)
+def exec_phase2(top):
+	exec_phase2_o_ev(top)
+	exec_phase2_ic_ev(top)
 
-def run_phase2_o_ev(top):
+def exec_phase2_o_ev(top, cp = 'o_ev_sent'):
+	clear_flags()
 	import run_classifier as model
 	clear_flags(); reload(model)
 	model.FLAGS.do_train   = False
 	model.FLAGS.do_predict = True
 	model.FLAGS.task_name  = 'ico_ab'
-	model.FLAGS.data_dir         = '{}/o_ev/'.format(top)
-	model.FLAGS.output_dir       = '{}/o_ev/results/'.format(top)
-	model.FLAGS.model_dir        = '{}/data/o_ev_sent/model/'.format(bert_model_top)
+	model.FLAGS.data_dir         = '{}/o_frame/'.format(top)
+	model.FLAGS.output_dir       = '{}/o_frame/results/'.format(top)
+	model.FLAGS.model_dir        = '{}/data/{}/model/'.format(bert_model_top, cp)
 	model.FLAGS.vocab_file       = '{}/vocab.txt'.format(BIO_BERT_DIR)
 	model.FLAGS.bert_config_file = '{}/bert_config.json'.format(BIO_BERT_DIR)
 	model.FLAGS.init_checkpoint  = '{}'.format(BIO_BERT_DIR)
 	model.FLAGS.do_lower_case    = DO_LOWER_CASE
 	model.main('')
 
-def run_phase2_ic_ev(top):
+def exec_phase2_ic_ev(top, cp = 'i_c_abst'):
+	clear_flags()
 	import run_classifier as model
 	clear_flags(); reload(model)
 	# NOTE: important! We want to fit the whole abstact in memory
@@ -150,9 +158,9 @@ def run_phase2_ic_ev(top):
 	model.FLAGS.do_train   = False
 	model.FLAGS.do_predict = True
 	model.FLAGS.task_name  = 'ico_ab'
-	model.FLAGS.data_dir         = '{}/ic_ev/'.format(top)
-	model.FLAGS.output_dir       = '{}/ic_ev/results/'.format(top)
-	model.FLAGS.model_dir        = '{}/data/i_c_abst/model/'.format(bert_model_top)
+	model.FLAGS.data_dir         = '{}/ic_frame/'.format(top)
+	model.FLAGS.output_dir       = '{}/ic_frame/results/'.format(top)
+	model.FLAGS.model_dir        = '{}/data/{}/model/'.format(bert_model_top, cp)
 	model.FLAGS.vocab_file       = '{}/vocab.txt'.format(SCI_BERT_DIR)
 	model.FLAGS.bert_config_file = '{}/bert_config.json'.format(SCI_BERT_DIR)
 	model.FLAGS.init_checkpoint  = '{}'.format(SCI_BERT_DIR)
@@ -160,14 +168,14 @@ def run_phase2_ic_ev(top):
 	model.main('')
 
 def load_phase2_o_ev(top, docs):
-	if os.path.isfile('{}/o_ev/results/test_results.tsv'.format(top)):
-		print('\t\tloading o_ev outputs...')
-		processing.add_o_ev_output(docs, 'test', '{}/o_ev/'.format(top))
+	if os.path.isfile('{}/o_frame/results/test_results.tsv'.format(top)):
+		print('\t\tloading o_frame outputs...')
+		processing.add_o_ev_output(docs, 'test', '{}/o_frame/'.format(top))
 
 def load_phase2_ic_ev(top, docs):
-	if os.path.isfile('{}/ic_ev/results/test_results.tsv'.format(top)):
-		print('\t\tloading ic_ev outputs...')
-		processing.add_ic_ev_output(docs, 'test', '{}/ic_ev/'.format(top))
+	if os.path.isfile('{}/ic_frame/results/test_results.tsv'.format(top)):
+		print('\t\tloading ic_frame outputs...')
+		processing.add_ic_ev_output(docs, 'test', '{}/ic_frame/'.format(top))
 
 def run_example():
 	data_fname = 'sample_data.json'
@@ -177,22 +185,44 @@ def run_example():
 	top = os.path.join(os.getcwd(), '..', 'data', 'example')
 
 	# phase 1! only running the ev model and not ner since we assume we have those labels
-	write_phase1_ev(top, docs)
-	run_phase1_ev(top)
+	dump_phase1_ev(top, docs)
+	exec_phase1_ev(top)
 	load_phase1_ev(top, docs)
 
 	# phase 2!
-	write_phase2_o_ev(top, docs)
-	run_phase2_o_ev(top)
+	dump_phase2_o_ev(top, docs)
+	exec_phase2_o_ev(top)
 	load_phase2_o_ev(top, docs)
 
-	write_phase2_ic_ev(top, docs)
-	run_phase2_ic_ev(top)
+	dump_phase2_ic_ev(top, docs)
+	exec_phase2_ic_ev(top)
 	load_phase2_ic_ev(top, docs)
 
 	# easy peasy
 	results = process_trialstreamer.generate_trialstreamer_inputs(docs)
 	return results
+
+def run_eli(docs, top = '../data/tmp/'):
+	assert all([d.group == 'test' for d in docs])
+	dump_phase1_ner(top, docs)
+	exec_phase1_ner(top, 'ebm_p')
+	load_phase1_ner(top, docs)
+	exec_phase1_ner(top, 'ebm_i')
+	load_phase1_ner(top, docs)
+	exec_phase1_ner(top, 'ebm_o')
+	load_phase1_ner(top, docs)
+
+	dump_phase1_ev(top, docs)
+	exec_phase1_ev(top)
+	load_phase1_ev(top, docs)
+	
+	dump_phase2_o_ev(top, docs)
+	exec_phase2_o_ev(top)
+	load_phase2_o_ev(top, docs)
+
+	dump_phase2_ic_ev(top, docs)
+	exec_phase2_ic_ev(top)
+	load_phase2_ic_ev(top, docs)
 
 if __name__ == '__main__':
 	run_example()

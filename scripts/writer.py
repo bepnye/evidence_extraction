@@ -5,17 +5,14 @@ import classes
 import processing
 import utils
 
-def dummy_label(source_labels):
-	return ['0']*len(source_labels)
+def get_prefix_labels(d, lname):
+	return [str(l).split('_')[-1] for l in d.get_token_labels(lname)]
 
-def first_char(source_labels, label_pref = operator.itemgetter(0), neg_label = '0'):
-	ner_labels = []
-	for token_label_list in source_labels:
-		if len(token_label_list) == 0: label = neg_label
-		if len(token_label_list) == 1: label = token_label_list[0][0]
-		if len(token_label_list) >= 2: label = label_pref(token_label_list)[0]
-		ner_labels.append(label)
-	return ner_labels
+def get_ebm_labels(d):
+	return get_prefix_labels('GOLD_')
+
+def dummy_label(d):
+	return ["0"]*len(d.tokens)
 
 def write_ner_data(docs, label_fn, fdir, allow_acronyms = False):
 	group_docs = defaultdict(list)
@@ -28,15 +25,8 @@ def write_ner_data(docs, label_fn, fdir, allow_acronyms = False):
 	for group, doc_list in group_docs.items():
 		rows = []
 		for doc in doc_list:
-			if not (allow_acronyms or doc.has_sf_lf_map()):
-				print('Skipping doc without acronym subs: {}'.format(doc.id))
-				continue
-			if not doc.parsed:
-				doc.parse_text()
 			seq = init_seq(doc.id)
-			#source_labels = doc.get_token_labels()
-			#doc_labels = label_fn(source_labels)
-			doc_labels = ['0']*len(doc.tokens)
+			doc_labels = label_fn(doc)
 			for t, l in zip(doc.tokens, doc_labels):
 				seq['tokens'].append(t.text)
 				seq['labels'].append(l)
@@ -85,6 +75,21 @@ def write_sent_data_pipeline(docs, fdir):
 		for doc in doc_list:
 			for sent in doc.sents:
 				fout.write('0\t{}\t{}\n'.format(doc.id, utils.clean_str(sent.text)))
+
+def write_i_c_o_data(docs, fdir):
+	group_docs = defaultdict(list)
+	for doc in docs:
+		group_docs[doc.group].append(doc)
+	for group, doc_list in group_docs.items():
+		fout = open('{}/{}.tsv'.format(fdir, group), 'w')
+		for doc in doc_list:
+			for frame in doc.frames:
+				i_text = utils.clean_str(frame.i.text)
+				c_text = utils.clean_str(frame.c.text)
+				o_text = utils.clean_str(frame.o.text)
+				s1 = '{} vs. {}'.format(i_text, c_text)
+				s2 = '{}'.format(o_text)
+				fout.write('{}\t{}\t{}\t{}\n'.format(frame.label+1, doc.id, s1, s2))
 
 def write_o_ev_data(docs, fdir, add_i = False):
 	group_docs = defaultdict(list)

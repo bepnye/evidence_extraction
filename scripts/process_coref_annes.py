@@ -13,8 +13,8 @@ def clean_html_str(s):
 	s_clean = s.replace('&nbsp;', ' ').replace('&gt;', '>').replace('&lt;', '<').replace('&amp;', '&')
 	return s_clean
 
-def read_docs(abst_only = True, group = 'test'):
-	fnames = glob.glob('../data/coref_anns/{}/pretty-edin_*.json'.format(group))
+def read_docs(glob_str = None, abst_only = True, check_errors = True):
+	fnames = glob.glob(glob_str)
 	frames = defaultdict(list)
 	for idx, frame in pd.read_csv('../data/exhaustive_ico_fixed.csv').iterrows():
 		frames[str(frame.RowID)].append(frame)
@@ -30,7 +30,7 @@ def read_docs(abst_only = True, group = 'test'):
 		ann = json.load(open(fname))
 		doc = classes.Doc(pmid, text)
 		doc.max_xml = offsets[-1][1]
-		doc.group = group
+		doc.group = 'test'
 		docs.append(doc)
 
 		entity_group_ids = {}
@@ -47,11 +47,13 @@ def read_docs(abst_only = True, group = 'test'):
 						try:
 							assert entity_group_ids.get(s['txt'], group_id) == group_id
 						except AssertionError:
-							print(fname)
-							print(s['txt'])
-							print(group_id)
-							print(entity_group_ids.get(s['txt'], group_id))
-							raise
+							if check_errors:
+								print(fname)
+								print(s['txt'])
+								print(group_id)
+								print(entity_group_ids.get(s['txt'], group_id))
+								input()
+							continue
 						entity_group_ids[s['txt']] = group_id
 					else:
 						text_i, text_f = xml_to_text(offsets, s['i'], s['f'], s['txt'], text)
@@ -148,13 +150,12 @@ def xml_to_text(offsets, xml_start, xml_end, span_text, doc_text):
 		if xml_i <= xml_start:
 			text_start = text_i + (xml_start - xml_i)
 			text_end = text_start + len(span_text)
-			#span_text, span_i, span_f = fix_offsets(span_text, text_start, text_end, doc_text)
+			span_text, span_i, span_f = fix_offsets(span_text, text_start, text_end, doc_text)
 			try:
-				assert doc_text[text_start:text_end] == span_text
+				assert doc_text[span_i:span_f] == span_text
 			except AssertionError:
-				if False:
-					print('WARNING: XML -> text SLICE MISMATCH')
-					print(doc_text[text_start:text_end])
-					print(span_text)
-			return text_start, text_end
+				print('WARNING: XML -> text SLICE MISMATCH')
+				print(doc_text[text_start:text_end])
+				print(span_text)
+			return span_i, span_f
 	return -1, -1
