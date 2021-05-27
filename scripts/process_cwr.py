@@ -1,6 +1,6 @@
-import traceback, glob, json
+import traceback, glob, json, itertools
 import pandas as pd
-from collections import defaultdict
+from collections import defaultdict, Counter
 from functools import partial
 
 from Bio import Entrez
@@ -10,6 +10,46 @@ import utils
 import classes
 import minimap
 import run_pipeline as run
+from utils import safe_div
+
+def load_mesh_terms(fname = 'minimap/full_mesh.json'):
+	terms = json.load(open(fname))
+	uid_terms = { t['uid']: t for t in terms }
+	return uid_terms
+
+def get_uid_terms(uids, include_children = False, uid_terms = None):
+	uid_terms = uid_terms or load_mesh_terms()
+	matches = [uid_terms[uid] for uid in uids]
+	if include_children:
+		root_tns = sum([m['tree_numbers'] for m in matches], [])
+		for term in uid_terms.values():
+			for child_tn, root_tn in itertools.product(term['tree_numbers'], root_tns):
+				if child_tn.startswith(root_tn + '.'):
+					matches.append(term)
+					break
+	return matches
+
+def get_mesh_warnings(doc_df, query_terms, min_freq_thresh = 0.05, min_ratio_thresh = 10):
+	n = len(doc_df)
+	print('Counting true MeSH...')
+	true_mesh = doc_df.mesh.values
+	true_counts = Counter(sum(true_mesh, []))
+	true_freqs = defaultdict(float, [(k, v/n) for k, v in true_counts.items()])
+	
+	print('Mapping abstracts...')
+	pred_mesh = doc_df.pred_mesh.values
+	pred_counts = Counter(sum(pred_mesh, []))
+	pred_freqs = defaultdict(float, [(k, v/n) for k, v in pred_counts.items()])
+
+	print('Generating comparison...')
+	pred_mesh = sorted(pred_freqs.keys(), key = lambda m: pred_freqs[m], reverse = True)
+	print('NEU\tPubMed\tMeSH\t\tTerm')
+	for q in query_terms:
+		q_mesh = get_mesh_terms(q)
+		for m in q_mesh:
+			if pred_freqs[m] > min_freq_thresh:
+				if safe_div(pred_freqs[m], true_freqs[m]) > min_ratio_thresh or true_freqs[m] == 0:
+					print('{:.3f}\t{:.3f}\t[{}]\t"{}"'.format(pred_freqs[m], true_freqs[m], m, q))
 
 def process_eric_data():
 	df = pd.read_csv('../data/cures_within_reach/cwr.csv')
@@ -56,19 +96,6 @@ def read_eric_docs(data_dir = '../data/cures_within_reach/eric_data'):
 		d.sf_lf_map = {} # already acronym'd
 	return docs
 
-def read_55(data_dir = '../data/cures_within_reach/55_sample'):
-	df = pd.read_csv('{}/55_sample.csv'.format(data_dir))
-	df.rename(columns = {c: c.lstrip() for c in df.columns}, inplace = True)
-	docs = []
-	for idx, r in df.iterrows():
-		doc = classes.Doc(r.pmid, r.abstract)
-		doc.qp = r.disease
-		doc.qi = r.drugs
-		doc.parse_text()
-		doc.group = 'test'
-		docs.append(doc)
-	return docs
-
 def read_covid(data_dir = '../data/cures_within_reach/covid'):
 	df = pd.read_csv('{}/covid_docs.csv'.format(data_dir))
 	docs = []
@@ -80,48 +107,30 @@ def read_covid(data_dir = '../data/cures_within_reach/covid'):
 		docs.append(doc)
 	return docs
 
-def annotate_docs(docs, top = \
-		'/home/ben/Desktop/evidence_extraction/data/cures_within_reach/55_sample'):
-	run.dump_phase1_ner(top, docs)
-	run.exec_phase1_ner(top, 'ebm_p')
-	run.load_phase1_ner(top, docs)
-	run.exec_phase1_ner(top, 'ebm_i')
-	run.load_phase1_ner(top, docs)
-	run.exec_phase1_ner(top, 'ebm_o')
-	run.load_phase1_ner(top, docs)
-
-	run.dump_phase1_ev(top, docs)
-	run.exec_phase1_ev(top)
-	run.load_phase1_ev(top, docs, label_fn = partial(utils.prob_thresh, thresh = 0.5))
-	
-	run.dump_phase2_o_ev(top, docs)
-	run.exec_phase2_o_ev(top)
-	run.load_phase2_o_ev(top, docs)
-	
-	run.dump_phase2_ic_ev(top, docs)
-	run.exec_phase2_ic_ev(top)
-	run.load_phase2_ic_ev(top, docs)
-
-def get_mesh_terms(strs):
+def get_mesh_terms(strs, key = 'mesh_term'):
 	if not strs:
 		return []
 	if type(strs) != list:
 		strs = [strs]
 	if type(strs[0]) == classes.Span:
 		strs = [s.text for s in strs]
-	return list(set([m['mesh_term'] for m in minimap.get_unique_terms(strs)]))
+	return list(set([m[key] for m in minimap.get_unique_terms(strs)]))
 
-def get_master_list(e):
-	strs = [l.strip() for l in open('../data/cures_within_reach/master_{}.csv'.format(e)).readlines()]
-	mesh = get_mesh_terms(strs)
-	return mesh
+def get_mesh_uids(s):
+	return [m['mesh_ui'] for m in minimap.get_unique_terms([s])]
+
+def get_master_list(e, map_terms = False):
+	terms = [l.strip() for l in open('../data/cures_within_reach/master_{}.csv'.format(e)).readlines()]
+	if map_terms:
+		terms = get_mesh_terms(terms)
+	return terms
 
 def get_p_list():
 	return get_master_list('p')
 def get_i_list():
 	return get_master_list('i')
 def get_o_list():
-	return get_master_list('o')
+	return get_master_list('o_pruned')
 
 def load_master_lists():
 	global master_p
@@ -149,6 +158,9 @@ def markup_docs(docs, has_query = True):
 			i = s.pred_i
 			c = s.pred_c
 			for o in s.pred_os:
+				d.frames.append(classes.Frame(
+						i, c, o, s, o.label))
+				'''
 				d.frames.append({
 					'i': i.text,
 					'o': o.text,
@@ -157,6 +169,7 @@ def markup_docs(docs, has_query = True):
 					'ev': s.text,
 					'label': o.label
 				})
+				'''
 
 def intersects(l1, l2):
 	return len(set(l1).intersection(l2)) > 0
@@ -224,32 +237,10 @@ def enc_label(l):
 def format_frames(fs, label_key = 'label'):
 	frame_strs = []
 	for f in fs:
-		f_dict = { k: f[k] for k in ['i', 'c', 'o', 'ev'] }
+		f_dict = { k: f[k] for k in ['i', 'c', 'o', 'i_mesh', 'c_mesh', 'o_mesh', 'ev'] }
 		f_dict[label_key] = enc_label(f[label_key])
 		frame_strs.append(json.dumps(f_dict, indent = 2))
 	return '\n'.join(frame_strs)
-
-def get_55_df(docs):
-	rows = []
-	for d in docs:
-		r = {}
-		r['text'] = d.text
-		r['query_p'] = d.qp
-		r['query_i'] = d.qi
-		r['p_model'] = format_strs([s.text for s in d.p])
-		r['i_model'] = format_strs([s.text for s in d.i])
-		r['o_model'] = format_strs([s.text for s in d.o])
-		r['query_p_terms'] = d.qp_mesh
-		r['model_p_terms'] = format_strs(d.p_mesh)
-		r['p_terms_match'] = p_subset(d)
-		r['query_i_terms'] = d.qi_mesh
-		r['model_i_terms'] = format_strs(d.i_mesh)
-		r['i_terms_match'] = i_subset(d)
-		r['frames'] = format_frames(d.frames)
-		r['i_frame_match'] = i_frame(d)
-		r['model_o_terms'] = format_strs(d.o_mesh)
-		rows.append(r)
-	return pd.DataFrame(rows)
 
 def global_frame_match_io(frames):
 	for f in frames:
@@ -282,12 +273,6 @@ def get_covid_df(docs):
 		rows.append(r)
 	return pd.DataFrame(rows)
 
-def get_test_set_pmids():
-	return ['31717', '27308', '14423', '342629', '231363', '358342', '281252']
-
-def get_new_pmids():
-	return [26275735, 22124104, 18809614, 25765952, 29129443, 14736927, 31337877, 23161898, 14736927, 15972865]
-
 def get_entrez_docs(fname = '../data/cures_within_reach/entrez_downloads/docs.csv'):
 	df = pd.read_csv(open(fname))
 	docs = []
@@ -299,39 +284,50 @@ def get_entrez_docs(fname = '../data/cures_within_reach/entrez_downloads/docs.cs
 		docs.append(doc)
 	return docs
 
+def sanitize(s):
+	s_clean = s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+	return s_clean
+
 def download_abstracts(pmids, output_fname = 'entrez_docs.csv'):
 	handle = Entrez.efetch(db='pubmed', id=pmids, retmode = 'xml')
 	records = Entrez.read(handle)
+	return parse_abstracts(records)
 
+def parse_abstracts(xml_file):
 	docs = []
-	for doc in records['PubmedArticle']:
+	for doc in xml_file['PubmedArticle']:
 		row = {}
 
 		pmid = str(doc['MedlineCitation']['PMID'])
 		row['pmid'] = pmid
 
-		ab_strs = doc['MedlineCitation']['Article']['Abstract']['AbstractText']
-		ab_text = '\n\n'.join(ab_strs)
-		row['abst'] = ab_text
+		try:
+			ab_strs = [s for s in doc['MedlineCitation']['Article']['Abstract']['AbstractText']]
+			ab_text = '\n\n'.join(ab_strs)
+			row['abst'] = ab_text
 
-		ab_xml = '<article><front><article-meta><title-group><article-title></article-title></title-group><article-id>'+pmid+'</article-id>'
-		ab_xml += '<abstract>'
-		for s in ab_strs:
-			ab_xml += '<sec>'
-			if 'Label' in s.attributes:
-				ab_xml += '<title>'+s.attributes['Label']+'</title>'
-			ab_xml += '<p>'+str(s)+'</p>'
-			ab_xml += '</sec>'
-		ab_xml += '</abstract></article-meta></front><body></body></article>'
-		row['xml'] = ab_xml
+			ab_xml = '<article><front><article-meta><title-group><article-title></article-title></title-group><article-id>'+pmid+'</article-id>'
+			ab_xml += '<abstract>'
+			for s in ab_strs:
+				ab_xml += '<sec>'
+				if 'Label' in s.attributes:
+					ab_xml += '<title>'+s.attributes['Label']+'</title>'
+				ab_xml += '<p>'+sanitize(str(s))+'</p>'
+				ab_xml += '</sec>'
+			ab_xml += '</abstract></article-meta></front><body></body></article>'
+			row['xml'] = ab_xml
+		except KeyError:
+			print('Unable to parse abst for {}'.format(pmid))
+			row['abst'] = '<ERR>'
+			row['xml'] = '<ERR>'
 
 		try:
 			mesh = doc['MedlineCitation']['MeshHeadingList']
 			mesh_terms = [str(m['DescriptorName']) for m in mesh]
 			row['mesh'] = mesh_terms
 		except KeyError:
-			print('Unable to parse MeSH')
-			pass
+			print('Unable to parse MeSH for {}'.format(pmid))
+			row['mesh'] = []
 
 		title = doc['MedlineCitation']['Article']['ArticleTitle']
 		row['title'] = title
@@ -340,28 +336,28 @@ def download_abstracts(pmids, output_fname = 'entrez_docs.csv'):
 
 	df = pd.DataFrame(docs)
 	df.to_csv(open(output_fname, 'w'), index = False)
+	return df
 
+def load_druglist(list_name):
+	fname = '../data/cures_within_reach/druglist_{}.txt'.format(list_name)
+	return [l.strip() for l in open(fname).readlines()]
 
-def extract_ts_docs():
-	i_v1 = ['Colchicine', 'Chloroquine', 'Hydroxychloroquine', 'Azithromycin', 'Lopinavir', 'Ritonavir', 'Prazosin', 'Remdesivir', 'Tocilizumab']
-	i_v2 = ['propranolol', 'clarithromycin', 'diclofenac', 'estramustine', 'axitinib', 'methylprednisolone', 'oseltamivir', 'sildenafil citrate', 'n-acetylcysteine', 'acetylcysteine', 'metformin', 'simvastatin', 'pravastatin']
-	i_v3 = ['ketorolac', 'dexamethasone', 'flurbiprofen', 'artesunate', 'nitroglycerin']
-	i_strs = i_v1 + i_v2 + i_v3
-	i_terms = set(get_mesh_terms(i_strs))
-	o_terms = set(master_o)
-	p_terms = set(master_p)
-	shard_jsons = glob.glob('../data/trialstreamer/*/*.json')
+def doc_field_matches(docs, field, match_list):
+	matches = []
+	for d in docs:
+		if match_list.intersection(d[field]):
+			matches.append(d)
+	return matches
+
+def extract_ts_docs(docs_match_fn):
+	shard_jsons = sorted(glob.glob('/media/data/ben/trialstreamer/*/pipeline_data.json'))
 	all_matches = []
 	for f in shard_jsons:
 		docs = json.load(open(f))
-		shard_matches = []
-		for d in docs:
-			if i_terms.intersection(d['i_mesh']) and \
-				 p_terms.intersection(d['p_mesh']):
-				shard_matches.append(d)
+		shard_matches = docs_match_fn(docs)
 		print('{}/{} matches in {}'.format(len(shard_matches), len(docs), f))
 		all_matches += shard_matches
-	return get_ts_df(all_matches, i_terms)
+	return all_matches
 
 ti_to_pmid = None
 def get_pmid(ti):
@@ -371,50 +367,113 @@ def get_pmid(ti):
 		ti_to_pmid = dict(zip(ti_pmid_df.ti.values, ti_pmid_df.pmid.values))
 	return ti_to_pmid.get(ti, 'UNKNOWN')
 
-def get_ts_df(docs, i_terms):
+def get_ts_df(docs):
 	rows = []
-	for d in docs:	
+	for d in docs:
 		r = {}
 		r['gid'] = d['pmid']
 		r['pmid'] = get_pmid(d['title'])
 		r['text'] = d['text']
-		r['p_model'] = format_strs([d['text'][i:f] for i,f in d['p_spans']])
-		r['i_model'] = format_strs([d['text'][i:f] for i,f in d['i_spans']])
-		r['o_model'] = format_strs([d['text'][i:f] for i,f in d['o_spans']])
-		r['model_p_terms'] = format_strs(d['p_mesh'])
-		r['model_i_terms'] = format_strs(d['i_mesh'])
-		r['model_o_terms'] = format_strs(d['o_mesh'])
-		r['o_terms_match'] = intersects(master_o, d['o_mesh'])
+		r['p'] = format_strs([d['text'][i:f] for i,f in d['p_spans']])
+		r['i'] = format_strs([d['text'][i:f] for i,f in d['i_spans']])
+		r['o'] = format_strs([d['text'][i:f] for i,f in d['o_spans']])
+		r['p_terms'] = format_strs(d['p_mesh'])
+		r['i_terms'] = format_strs(d['i_mesh'])
+		r['o_terms'] = format_strs(d['o_mesh'])
 		r['frames'] = format_frames(d['frames'], 'l')
-		r['frames_match_i'] = global_frame_match_i(d['frames'], i_terms)
 		rows.append(r)
 	return pd.DataFrame(rows)
 
-def format_eli_frames(doc):
-	frames = []
-	for ev in doc.labels['BERT_ev']:
-		for pred_o in ev.pred_os:
-			frames.append({ \
-					'i': ev.pred_i.text,
-					'c': ev.pred_c.text,
-					'o': pred_o.text,
-					'ev': ev.text,
-					'label': pred_o.label })
-	return format_frames(frames)
+def run_ts_query():
+	def read_lines(fname):
+		return set(open(fname).read().strip().split('\n'))
+	
+	p_uid_roots = ['D009370', 'D009371', 'D009376', 'D009381', 'D016609']
+	p_terms = get_uid_terms(p_uid_roots, include_children = True)
+	p_terms.append({'name': 'Cancer', 'uid': 'D009369'})
+	p_uids = set([m['uid'] for m in p_terms])
 
-def get_eli_df(docs):
+	#i_strs = read_lines('../data/cwr/drug_list_oct_extended.txt')
+	i_strs = read_lines('../data/cwr/drug_list_nov_unmapped.txt')
+	i_terms = minimap.get_unique_terms(list(i_strs))
+	i_uids = set([m['mesh_ui'] for m in i_terms])
+
+	o_strs = read_lines('../data/cwr/master_o_pruned.csv')
+	o_terms = minimap.get_unique_terms(list(o_strs))
+	o_uids = set([m['mesh_ui'] for m in o_terms])
+	
+	print('Final query UID counts:')
+	print('\tP: {}'.format(len(p_uids)))
+	print('\tI: {}'.format(len(i_uids)))
+	print('\tO: {}'.format(len(o_uids)))
+
+	# Potential source of errors:
+	#   get_uid_terms(...) returns the official MeSH Heading string as the name
+	#   minimap.get_unique_terms(...) uses a mapping from UMLS, and not always the preffered MeSH term
+	# for example, minimap.get_unique_terms(['Breast Cancer']) returns
+	#   ('Breast Cancer', 'D001943'), but the MeSH heading is
+	#   ('Breast Neoplasms', 'D001943')
+	uid_to_name = {}
+	for m in p_terms: uid_to_name[m['uid']] = m['name']
+	for m in i_terms: uid_to_name[m['mesh_ui']] = m['mesh_term']
+	for m in o_terms: uid_to_name[m['mesh_ui']] = m['mesh_term']
+	
+	print('Matching P terms')
+	p_match_fn = partial(doc_field_matches, field= 'p_duis', match_list = p_uids)
+	p_matches = extract_ts_docs(p_match_fn)
+	print('\t matched {} P terms'.format(len(p_matches)))
+	print('Matching I terms')
+	ip_matches = [d for d in p_matches if i_uids.intersection(d['i_duis'])]
+	print('\t matched {} I terms'.format(len(ip_matches)))
+
+	# Skipping the string matching - no new articles found w/ the list of 50 unmapped strings
+	"""
+	def str_in_doc(s, doc, field = 'text'):
+		if field == 'text':
+			texts = [doc[field].lower()]
+		elif 'spans' in field:
+			texts = [doc['text'][i:f].lower() for i,f in doc[field]]
+		else:
+			raise NotImplementedError
+		return any([s.lower() in t for t in texts])
+	i_strs_extra = read_lines('../data/cwr/drug_list_oct_extended_missing_uids.txt')
+	ip_matches_pmids = set([d['pmid'] for d in ip_matches])
+	i_strs_extra_matches = [d for d in p_matches if any([str_in_doc(s, d, 'i_spans') for s in i_strs_extra])]
+	i_strs_extra_matches_new = [d for d in i_strs_extra_matches if d['pmid'] not in ip_matches_pmids]
+	print('Found {} docs matches {} terms ({} new)'.format( \
+			len(i_strs_extra_matches), len(i_strs_extra), len(i_strs_extra_matches_new)))
+	ip_matches += i_strs_extra_matches_new
+	"""
+
+	return ip_matches, p_uids, i_uids, o_uids, uid_to_name
+
+def generate_ts_query_df(docs, p_uids, i_uids, o_uids, uid_to_name):
 	rows = []
-	for d in docs:
+	for doc_idx, d in enumerate(docs):
+		print(doc_idx)
 		r = {}
-		r['pmid'] = d.id
-		r['title'] = d.title
-		r['text'] = d.text
-		r['p_model'] = '\n'.join([s.text for s in d.labels['NER_p']])
-		r['i_model'] = '\n'.join([s.text for s in d.labels['NER_i']])
-		r['o_model'] = '\n'.join([s.text for s in d.labels['NER_o']])
-		r['p_model_terms'] = '\n'.join(get_mesh_terms(r['p_model']))
-		r['i_model_terms'] = '\n'.join(get_mesh_terms(r['i_model']))
-		r['o_model_terms'] = '\n'.join(get_mesh_terms(r['o_model']))
-		r['frames'] = format_eli_frames(d)
+		r['text'] = d['text']
+		r['pmid'] = get_pmid(d['title'])
+		r['p'] = format_strs([d['text'][i:f] for i,f in d['p_spans']])
+		r['i'] = format_strs([d['text'][i:f] for i,f in d['i_spans']])
+		r['o'] = format_strs([d['text'][i:f] for i,f in d['o_spans']])
+		r['p_terms'] = format_strs(d['p_mesh'])
+		r['i_terms'] = format_strs(d['i_mesh'])
+		r['o_terms'] = format_strs(d['o_mesh'])
+		r['frames'] = format_frames(d['frames'], 'l')
+		r['p_terms_whichquerymatched'] = format_strs([uid_to_name[ui] for ui in p_uids.intersection(d['p_duis'])])
+		r['i_terms_whichquerymatched'] = format_strs([uid_to_name[ui] for ui in i_uids.intersection(d['i_duis'])])
+		r['o_terms_whichquerymatched'] = format_strs([uid_to_name[ui] for ui in o_uids.intersection(d['o_duis'])])
+		i_frame_idx = set()
+		c_frame_idx = set()
+		o_frame_idx = set()
+		for idx, f in enumerate(d['frames']):
+			if i_uids.intersection(get_mesh_terms(f['i'], 'mesh_ui')): i_frame_idx.add(idx)
+			if i_uids.intersection(get_mesh_terms(f['c'], 'mesh_ui')): c_frame_idx.add(idx)
+			if o_uids.intersection(get_mesh_terms(f['o'], 'mesh_ui')): o_frame_idx.add(idx)
+		r['i_frame_whichindexmatches'] = '\n'.join(map(str, sorted(list(i_frame_idx))))
+		r['c_frame_whichindexmatches'] = '\n'.join(map(str, sorted(list(c_frame_idx))))
+		r['o_frame_whichindexmatches'] = '\n'.join(map(str, sorted(list(o_frame_idx))))
+
 		rows.append(r)
 	return pd.DataFrame(rows)

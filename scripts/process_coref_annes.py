@@ -1,6 +1,6 @@
 import glob, json
 import xml.etree.ElementTree as ET
-from collections import defaultdict
+from collections import defaultdict, Counter
 import traceback
 from Levenshtein import distance as string_distance
 
@@ -8,12 +8,19 @@ import pandas as pd
 
 import classes
 
-
 def clean_html_str(s):
 	s_clean = s.replace('&nbsp;', ' ').replace('&gt;', '>').replace('&lt;', '<').replace('&amp;', '&')
 	return s_clean
 
-def read_docs(glob_str = None, abst_only = True, check_errors = True):
+def read_complete_docs(glob_str):
+	fnames = glob.glob(glob_str)
+	docs = []
+	for fname in fnames:
+		worker, pmid, task, timestamp = fname.split('/')[-1].split('_')
+		ann = json.load(open(fname))
+		frames = ann['frames']
+
+def read_phase2_docs(glob_str = None, abst_only = True, check_errors = True):
 	fnames = glob.glob(glob_str)
 	frames = defaultdict(list)
 	for idx, frame in pd.read_csv('../data/exhaustive_ico_fixed.csv').iterrows():
@@ -31,6 +38,7 @@ def read_docs(glob_str = None, abst_only = True, check_errors = True):
 		doc = classes.Doc(pmid, text)
 		doc.max_xml = offsets[-1][1]
 		doc.group = 'test'
+		doc.parse_text()
 		docs.append(doc)
 
 		entity_group_ids = {}
@@ -80,6 +88,8 @@ def read_docs(glob_str = None, abst_only = True, check_errors = True):
 				i_span = classes.Span(-1, -1, frame.Comparator, entity_group_ids[frame.Comparator])
 				c_span = classes.Span(-1, -1, frame.Intervention, entity_group_ids[frame.Intervention])
 				o_span = classes.Span(-1, -1, frame.Outcome, entity_group_ids[frame.Outcome])
+				if i_span.label == c_span.label:
+					print('Warning! PMID {}: I group matches C group [{}] & [{}] = [{}]'.format(doc.id, i_span.text, c_span.text, i_span.label))
 			except KeyError:
 				n_missing_ico += 1
 				continue
@@ -159,3 +169,36 @@ def xml_to_text(offsets, xml_start, xml_end, span_text, doc_text):
 				print(span_text)
 			return span_i, span_f
 	return -1, -1
+
+def generate_json(docs):
+	def decode_ner(l):
+		return {'i': 'intervention', 'o': 'outcome'}[l]
+	def decode_rel(l):
+		return {-1: 'decreased', 0: 'unaffected', 1: 'increased'}[l]
+
+	rows = []
+	for d in docs:
+		jd = {}
+		jd['PMCID'] = 'PMC{}'.format(d.id)
+		jd['text'] = d.text
+		jd['entities'] = []
+		jd['relations'] = []
+		for label, spans in d.labels.items():
+			assert label[:4] == 'GOLD'
+			assert label[4:7] == '_i_' or label[4:7] == '_o_'
+			etype = label[5]
+			ename = label[7:]
+			mentions = []
+			for m in spans:
+				mentions.append({'i': m.i, 'f': m.f, 'text': m.text})
+			jd['entities'].append({'name': ename, 'label': decode_ner(etype), 'mentions': mentions})
+		for f in d.frames:
+			r = {}
+			r['intervention'] = f.i.label[2:]
+			r['comparator'] = f.c.label[2:]
+			r['outcome'] = f.o.label[2:]
+			r['support'] = {'i': f.ev.i, 'f': f.ev.f, 'text': f.ev.text}
+			r['label'] = decode_rel(f.label)
+			jd['relations'].append(r)
+		rows.append(jd)
+	return {'docs': rows}

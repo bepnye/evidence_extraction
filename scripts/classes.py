@@ -58,10 +58,10 @@ class Entity:
 class Frame:
 	label_encoder = { \
 		'No significant difference': 0,
-		'Significantly increased': 1,
-		'Significantly decreased': -1,
 		'no significant difference': 0,
+		'Significantly increased': 1,
 		'significantly increased': 1,
+		'Significantly decreased': -1,
 		'significantly decreased': -1
 	}
 

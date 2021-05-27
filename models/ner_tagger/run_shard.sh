@@ -3,8 +3,8 @@
 shard=$1
 data_dir="${shard}/ner/"
 output_dir="${shard}/ner/results/"
-
 model_dir="/home/ben/Desktop/evidence_extraction/models/ner_tagger/data/ebm_nlp_ab3p/model/"
+
 bert_base_dir="/home/ben/Desktop/biobert_pubmed/"
 
 python bert_lstm_ner.py   \

@@ -36,28 +36,8 @@ def process_json_data(data):
 		docs.append(doc)
 	return docs
 
-def process_covid_data():
-	top = '../data/covid/'
-	fnames = glob.glob('{}/json/*/*.json'.format(top))
-	print('Processing {} files...'.format(len(fnames)))
-	docs = []
-	for f in fnames:
-		j = json.load(open(f))
-		pmid = j['paper_id']
-		title = j['metadata']['title']
-		abst = '\n\n'.join([p['text'] for p in j['abstract']])
-		body = '\n\n'.join([p['text'] for p in j['body_text']])
-		text = '\n\n\n'.join([abst, body])
-		doc = classes.Doc(pmid, text)
-		doc.group = 'test'
-		docs.append(doc)
-		with open('{}/docs/{}.abst'.format(top, pmid),  'w') as fp: fp.write(abst)
-		with open('{}/docs/{}.body'.format(top, pmid),  'w') as fp: fp.write(body)
-		with open('{}/docs/{}.title'.format(top, pmid), 'w') as fp: fp.write(title)
-	return docs
-
 def read_shard_docs(data_dir):
-	print('\t\tcreating Docs for {}'.format(shard))
+	print('\t\tcreating Docs for {}'.format(data_dir))
 	fnames = glob.glob('{}/*.text'.format(data_dir))
 	docs = [classes.Doc(os.path.basename(f).strip('.text'), open(f).read()) for f in fnames]
 	docs = [d for d in docs if d.text]
@@ -104,42 +84,30 @@ def write_trialstreamer_inputs(docs, top):
 	fname = '{}/pipeline_data.json'.format(top)
 	if not os.path.isfile(fname):
 		print('\t\tconstructing JSON')
-		rows = generate_trialstreamer_inputs(docs, top)
+		rows = generate_trialstreamer_inputs(docs)
 		json.dump(rows, open(fname, 'w'))
+
+def add_json_cuis(top):
+	print('Loading pipeline data from', top)
+	docs = json.load(open(os.path.join(top, 'pipeline_data.json'), 'r'))
+	for doc in docs:
+		for e in 'pio':
+			spans = [doc['text'][i:f] for i,f in doc[e+'_spans']]
+			mesh = minimap.get_unique_terms(spans)
+			doc[e+'_cuis'] = [m['cui'] for m in mesh]
+			doc[e+'_duis'] = [m['mesh_ui'] for m in mesh]
+	json.dump(docs, open('{}/pipeline_data.json'.format(top), 'w'))
+
+def add_json_titles(top):
+	docs = json.load(open(os.path.join(top, 'pipeline_data.json'), 'r'))
+	for doc in docs:
+		doc['title'] = open('{}/{}.title'.format(top, doc['pmid'])).read()
+	json.dump(docs, open('{}/pipeline_data.json'.format(top), 'w'))
 
 def print_ico(ico):
 	print(ico['ev'].replace('\n', '\\n'))
 	for e in 'ico':
 		print('\t{}: [{}] {}'.format(e, ico[e], '|'.join(ico[e+'_mesh'])))
-
-def FLATTEN_MESH(m):
-	if m in ['Progression-Free Survival', 'Survival Rate', 'Event-Free Survival', 'Cumulative Survival Rate', 'Death', 'Mortality']:
-		return 'Survival'
-	return m
-
-def get_mesh(s):
-	return set([FLATTEN_MESH(m['mesh_term']) for m in minimap.get_unique_terms([s])])
-
-def get_cwr_metadata(docs, verbose = False):
-	pmid_to_query = {}
-	for d in docs:
-		if d.labels['NER_p']:
-			doc_p_mesh = set.union(*[get_mesh(s.text) for s in d.labels['NER_p']])
-			query_p_mesh = get_mesh(d.query[0])
-			p_match = query_p_mesh <= doc_p_mesh
-		else:
-			p_match = False
-		pmid_to_query[d.id] = {
-			'p': d.query[0],
-			'i': d.query[1],
-			'o': d.query[2],
-			'p_mesh': list(get_mesh(d.query[0])),
-			'i_mesh': list(get_mesh(d.query[1])),
-			'o_mesh': list(get_mesh(d.query[2])),
-			'l': d.relevant,
-			'p_match': p_match }
-		
-	return pmid_to_query
 
 def generate_shard_files():
 	print('Reading trial_annotations.csv')

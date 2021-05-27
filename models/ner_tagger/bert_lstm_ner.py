@@ -50,11 +50,6 @@ flags = tf.flags
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
-	"visible_devices", "0",
-	"enviroment var CUDA_VISIBLE_DEVICES"
-)
-
-flags.DEFINE_string(
 	"data_dir", None,
 	"The input datadir. ex) 'NERdata'"
 )
@@ -751,7 +746,7 @@ def main(_):
 		if FLAGS.use_tpu:
 			predict_steps = int(len(predict_examples) / FLAGS.eval_batch_size)
 		predicted_result = estimator.evaluate(input_fn=predict_input_fn, steps=predict_steps)
-		output_eval_file = os.path.join(FLAGS.output_dir, "predicted_results.txt")
+		output_eval_file = os.path.join(FLAGS.output_dir, "test_results.txt")
 		with codecs.open(output_eval_file, "w", encoding='utf-8') as writer:
 			tf.logging.info("***** Predict results *****")
 			for key in sorted(predicted_result.keys()):
@@ -781,7 +776,7 @@ def main(_):
 					  tokenized_labels,
 					  tokenized_preds), key = itemgetter(0))
 
-					seq_data = {'tokens': [], 'pred_labels': [], 'true_labels': [] }
+					seq_data = {'tokens': [], 'pred_labels': [], 'true_labels': [], 'label_probs': [] }
 					seq_data.update(predict_example.metadata.items())
 					for wp_idx, wp_idx_group in wp_idx_groups:
 						base_token = predict_example.tokens[wp_idx]
@@ -818,6 +813,5 @@ if __name__ == "__main__":
 	flags.mark_flag_as_required("bert_config_file")
 	flags.mark_flag_as_required("output_dir")
 	flags.mark_flag_as_required("model_dir")
-	os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.visible_devices
 	tf.app.run()
 

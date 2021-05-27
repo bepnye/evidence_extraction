@@ -93,8 +93,8 @@ def norm_d(d):
 	N = sum(d.values())
 	return { k: v/N for k,v in d.items() }
 
-def overlap(x1, x2, y1, y2):
-	return int(x1) <= int(y2-1) and int(y1) <= int(x2-1)
+def overlap(a1, a2, b1, b2):
+	return int(a1) <= int(b2-1) and int(b1) <= int(a2-1)
 
 def s_overlap(s1, s2):
 	return overlap(s1.i, s1.f, s2.i, s2.f)

@@ -21,7 +21,7 @@ def get_child(node, tag, check_unique = True):
 	return cs[0]
 
 def parse():
-	fnames = glob.glob('{}/xml/*.xml.gz'.format(top))
+	fnames = glob.glob('{}/xml/*.xml'.format(top))
 	print('Found {} files to parse'.format(len(fnames)))
 	for f in fnames:
 		data = parse_fname(f)

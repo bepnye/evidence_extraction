@@ -8,8 +8,8 @@ import traceback
 
 from bert_serving.client import BertClient
 BC = None
-from stanfordnlp import Pipeline
-SF = None
+#from stanfordnlp import Pipeline
+#SF = None
 from scipy.spatial.distance import cosine as cos_dist
 from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.cluster import AgglomerativeClustering as agg_cluster
@@ -62,6 +62,8 @@ def add_ic_ev_output(docs, group, fdir = '../models/sentence_classifier/data/i_c
 			sents = [s for s in doc.labels['BERT_ev'] if s.i == ev_i and s.f == ev_f]
 			assert len(sents) == 1
 			sent = sents[0]
+			if len(results) == 0:
+				sent.pred_i = classes.Span(-1, -1, 'Invalid Span')
 			best_i = max(results, key = lambda r: r['class_probs'][2])
 			best_c = max(results, key = lambda r: r['class_probs'][1])
 			sent.pred_i = classes.Span(best_i['idx_i'], best_i['idx_f'], best_i['text'])
@@ -79,6 +81,14 @@ def add_ic_ev_output(docs, group, fdir = '../models/sentence_classifier/data/i_c
 				print(sent.pred_c.text)
 				print(utils.clean_str(doc.text[sent.pred_c.i:sent.pred_c.f]))
 			sent.pred_os = utils.s_overlaps(sent, doc.labels['NER_o'])
+		for ev in doc.labels['BERT_ev']:
+			# if there were no NER_i spans to chose from, the argmax won't even fire - fill in a default
+			if not hasattr(ev, 'pred_i'):
+				assert not hasattr(ev, 'pred_c')
+				ev.pred_i = classes.Span(-1, -1, 'Invalid Span')
+				ev.pred_c = classes.Span(-1, -1, 'Invalid Span')
+			if not hasattr(ev, 'pred_os'):
+				ev.pred_os = []
 
 def get_overlapping_entities(doc, s):
 	return [e.name for e in doc.entities if any(utils.s_overlaps(s, e.mentions))]
@@ -493,6 +503,12 @@ def extract_unsupervised_info(doc):
 def clear_doc_entities(doc):
 	del doc.entities
 	del doc.relations
+	
+def set_phase1_gold(docs):
+	for d in docs:
+		d.labels['BERT_ev'] = [s for s in d.sents if any([utils.s_overlap(s, f.ev) for f in d.frames])]
+		d.labels['NER_i'] = get_doc_spans(d, 'GOLD_i')
+		d.labels['NER_o'] = get_doc_spans(d, 'GOLD_o')
 
 """
 
@@ -500,6 +516,9 @@ Evaluation stuff
 TODO: move to different file
 
 """
+
+def get_span_entities(doc, span, e_type):
+	return { e for e in doc.entities if e.type == e_type and utils.s_overlaps(span, e.mentions) }
 
 def get_coref_scores(entities_1, entities_2, avg_metrics = True):
 	mentions_1 = [{(s.i, s.f, s.text) for s in e.mentions} for e in entities_1 if e.mentions]
@@ -511,6 +530,61 @@ def get_coref_scores(entities_1, entities_2, avg_metrics = True):
 		return scores
 
 FUNCTION_POS = ['-LRB-', '-RRB-', '.', ',', 'CC', 'DT', 'IN']
+
+def eval_gold_linking(docs):
+	correct = { e: 0 for e in 'ico' }
+	total = 0
+	for d in docs:
+		for ev in d.labels['BERT_ev']:
+			pred_i = { e.name for e in get_span_entities(d, ev.pred_i, 'i') }
+			pred_c = { e.name for e in get_span_entities(d, ev.pred_c, 'i') }
+			assert len(pred_i) == len(pred_c) == 1
+			pred_o = set()
+			for o in ev.pred_os:
+				pred_o.update({ e.name for e in get_span_entities(d, o, 'o') })
+
+			for f in d.frames:
+				if utils.s_overlap(ev, f.ev):
+					total += 1
+					if f.i.label.split('_')[1] in pred_i: correct['i'] += 1 
+					if f.c.label.split('_')[1] in pred_c: correct['c'] += 1 
+					if f.o.label.split('_')[1] in pred_o: correct['o'] += 1 
+	for e in 'ico':
+		print(e, correct[e]/total)
+
+
+def eval_linking_entities(docs):
+	tp = { e: 0 for e in 'ico' }
+	fp = { e: 0 for e in 'ico' }
+	fn = { e: 0 for e in 'ico' }
+	for d in docs:
+		for ev in d.labels['BERT_ev']:
+			print(ev, d.id)
+			pred = {}
+			pred['i'] = { e.name for e in get_span_entities(d, ev.pred_i, 'i') }
+			pred['c'] = { e.name for e in get_span_entities(d, ev.pred_c, 'i') }
+			pred['o'] = set()
+			for pred_o in ev.pred_os:
+				pred['o'].update({ e.name for e in get_span_entities(d, pred_o, 'o') })
+
+			true = { e: set() for e in 'ico' }
+			true_frames = [f for f in d.frames if utils.s_overlap(ev, f.ev)]
+			for f in true_frames:
+				true['i'].add(f.i.label.split('_')[1])
+				true['c'].add(f.c.label.split('_')[1])
+				true['o'].add(f.o.label.split('_')[1])
+
+			for e in 'ico':
+				tp[e] += len(pred[e] & true[e])
+				fp[e] += len(pred[e] - true[e])
+				fn[e] += len(true[e] - pred[e])
+
+	for e in 'ico':
+		p = tp[e] / (tp[e] + fp[e])
+		r = tp[e] / (tp[e] + fn[e])
+		f1 = 2*(p * r)/(p + r)
+		print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format(e, p, r, f1))
+
 
 def get_ner_labels(doc, prefix = 'NER', neg_label = '0', pos_filter = None):
 	final_labels = []
@@ -525,8 +599,17 @@ def get_ner_labels(doc, prefix = 'NER', neg_label = '0', pos_filter = None):
 		final_labels.append(label)
 	return final_labels
 
-def ner_token_score(true, pred, labels = None):
-	labels = labels or list(set(true))
+def ner_token_score(docs, true_prefix = 'GOLD', pred_prefix = 'NER'):
+	true = []
+	pred = []
+	for d in docs:
+		true += get_ner_labels(d, true_prefix)
+		pred += get_ner_labels(d, pred_prefix)
+	labels = ['i', 'o']
+	print('{}\t{}\t{}\t{}'.format('', 'p', 'r', 'f1'))
+	for l in labels:
+		p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = [l], average = 'micro')
+		print('{}\t{:.2f}\t{:.2f}\t{:.2f}'.format(l, p, r, f1))
 	p, r, f1, _ = precision_recall_fscore_support(true, pred, labels = labels, average = 'micro')
 	return { 'precision': p, 'recall': r, 'f1': f1 }
 
@@ -544,7 +627,7 @@ def ner_span_score(docs, true_prefix, pred_prefix):
 				fp += 1
 		for true in true_spans:
 			if utils.s_overlaps(true, pred_spans):
-				pass # already counter the TP
+				pass # already counted the TP
 			else:
 				fn += 1
 	p = tp / (tp + fp)
@@ -552,7 +635,7 @@ def ner_span_score(docs, true_prefix, pred_prefix):
 	f1 = 2*(p * r)/(p + r)
 	return p, r, f1
 
-def ner_entity_score(docs, true_prefix, pred_prefix, e_type):
+def ner_entity_score(docs, true_prefix = 'GOLD', pred_prefix = 'NER', e_types = ['i', 'o']):
 	tp = 0
 	fn = 0
 	fp = 0
@@ -560,7 +643,7 @@ def ner_entity_score(docs, true_prefix, pred_prefix, e_type):
 		pred_spans = get_doc_spans(doc, pred_prefix)
 		true_spans = get_doc_spans(doc, true_prefix)
 		for e in doc.entities:
-			if e.type == e_type:
+			if e.type in e_types:
 				found = False
 				for m in e.mentions:
 					if utils.s_overlaps(m, pred_spans):
@@ -634,10 +717,9 @@ def ner_frame_score(docs, span_fn, pred_prefix = 'NER', e_type = 'i'):
 	print('I: {} ({}, {})'.format(r, tp, fn))
 	return r
 
-def eval_ner(docs,
+def eval_ner(docs, scorer,
 			true_processor = partial(get_ner_labels, prefix = 'GOLD'),
-			pred_processor = partial(get_ner_labels, prefix = 'NER'),
-			scorer = ner_token_score):
+			pred_processor = partial(get_ner_labels, prefix = 'NER')):
 	true = []
 	pred = []
 	for d in docs:

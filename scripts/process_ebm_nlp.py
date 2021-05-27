@@ -42,3 +42,10 @@ def read_docs(phase = 'starting_spans'):
 				doc.labels[label_name].append(classes.Span(char_i, char_f, text[char_i:char_f]))
 		docs.append(doc)
 	return docs
+
+def read_to_json():
+	json_docs = {}
+	for group in ['train', 'test']:
+		for e in ['interventions', 'outcomes', 'participants']:
+			fnames = glob.glob(os.path.join(EBM_NLP_DIR, 'annotations', 'aggregated', 'starting_spans', e, subdir, f)
+

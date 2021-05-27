@@ -1,6 +1,7 @@
 import sys, os, json
 from imp import reload
 import tensorflow as tf
+from shutil import copyfile
 
 import utils
 import classes
@@ -35,6 +36,9 @@ For an example of what to do with this dict once you've finished generating it, 
 """
 BERT / Tensorflow stuff
 """
+
+NER_OUTPUT = 'pred.txt'
+
 bert_model_top = '../models/sentence_classifier/'
 ner_model_top = '../models/ner_tagger/'
 sys.path.append(bert_model_top)
@@ -84,6 +88,10 @@ def exec_phase1_ner(top, cp = 'ebm_nlp_ab3p'):
 	ner_model.FLAGS.bert_config_file = '{}/bert_config.json'.format(BIO_BERT_DIR)
 	ner_model.FLAGS.init_checkpoint  = '{}'.format(BIO_BERT_DIR)
 	ner_model.main('')
+	# TODO - push output fname to FLAGS so you don't have to know this
+	src_fname = os.path.join(ner_model.FLAGS.output_dir, NER_OUTPUT)
+	bak_fname = os.path.join(ner_model.FLAGS.output_dir, '{}.{}'.format(cp, NER_OUTPUT))
+	copyfile(src_fname, bak_fname)
 	clear_flags()
 
 def exec_phase1_ev(top, cp = 'ev_sent'):
@@ -99,12 +107,20 @@ def exec_phase1_ev(top, cp = 'ev_sent'):
 	model.FLAGS.vocab_file       = '{}/vocab.txt'.format(BIO_BERT_DIR)
 	model.FLAGS.bert_config_file = '{}/bert_config.json'.format(BIO_BERT_DIR)
 	model.FLAGS.init_checkpoint  = '{}'.format(BIO_BERT_DIR)
+	# TODO - push output fname to FLAGS so you don't have to know this
+	src_fname = os.path.join(model.FLAGS.output_dir, 'test_results.tsv')
+	bak_fname = os.path.join(model.FLAGS.output_dir, '{}.test_results.tsv'.format(cp))
 	model.main('')
+	copyfile(src_fname, bak_fname)
 
-def load_phase1_ner(top, docs):
-	if os.path.isfile('{}/ner/results/pred.txt'.format(top)):
+def load_phase1_ner(top, docs, cp = ''):
+	fname = NER_OUTPUT
+	if cp:
+		fname = '{}.{}'.format(cp, NER_OUTPUT)
+	fpath = '{}/ner/results/{}'.format(top, fname)
+	if os.path.isfile(fpath):
 		print('\t\tloading ner outputs...')
-		processing.add_ner_output(docs, '{}/ner/results/pred.txt'.format(top), False)
+		processing.add_ner_output(docs, fpath, False)
 
 def load_phase1_ev(top, docs, label_fn = utils.argmax):
 	if os.path.isfile('{}/ev/results/test_results.tsv'.format(top)):
@@ -117,6 +133,15 @@ Phase 2
 	* I/C slot filling (for each ev_sent, rank all extracted I as I/C)
 """
 
+def run_phase2(docs, top = '../data/tmp/'):
+	dump_phase2_o_ev(top, docs)
+	exec_phase2_o_ev(top)
+	load_phase2_o_ev(top, docs)
+	
+	dump_phase2_ic_ev(top, docs)
+	exec_phase2_ic_ev(top)
+	load_phase2_ic_ev(top, docs)
+
 def dump_phase2_o_ev(top, docs):
 	print('\t\twriting o_ev inputs...')
 	os.makedirs('{}/o_frame'.format(top), exist_ok = True)
@@ -128,10 +153,6 @@ def dump_phase2_ic_ev(top, docs):
 	os.makedirs('{}/ic_frame'.format(top), exist_ok = True)
 	os.makedirs('{}/ic_frame/results'.format(top), exist_ok = True)
 	writer.write_i_c_data_pipeline(docs, writer.ev_abst, '{}/ic_frame'.format(top))
-
-def exec_phase2(top):
-	exec_phase2_o_ev(top)
-	exec_phase2_ic_ev(top)
 
 def exec_phase2_o_ev(top, cp = 'o_ev_sent'):
 	clear_flags()
@@ -202,15 +223,25 @@ def run_example():
 	results = process_trialstreamer.generate_trialstreamer_inputs(docs)
 	return results
 
+def load_trialstreamer_shard(top, docs = None):
+	docs = docs or process_trialstreamer.read_shard_docs(top)
+	load_phase1_ner(top, docs, 'ebm_p')
+	load_phase1_ner(top, docs, 'ebm_i')
+	load_phase1_ner(top, docs, 'ebm_o')
+	load_phase1_ev(top, docs)
+	load_phase2_o_ev(top, docs)
+	load_phase2_ic_ev(top, docs)
+	return docs
+
 def run_eli(docs, top = '../data/tmp/'):
 	assert all([d.group == 'test' for d in docs])
 	dump_phase1_ner(top, docs)
 	exec_phase1_ner(top, 'ebm_p')
-	load_phase1_ner(top, docs)
+	load_phase1_ner(top, docs, 'ebm_p')
 	exec_phase1_ner(top, 'ebm_i')
-	load_phase1_ner(top, docs)
+	load_phase1_ner(top, docs, 'ebm_i')
 	exec_phase1_ner(top, 'ebm_o')
-	load_phase1_ner(top, docs)
+	load_phase1_ner(top, docs, 'ebm_o')
 
 	dump_phase1_ev(top, docs)
 	exec_phase1_ev(top)

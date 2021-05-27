@@ -1,4 +1,5 @@
 TOP = '/home/ben/Desktop/evidence_extraction/'
+EBM_NLP_DIR = '/home/ben/Desktop/EBM-NLP/ebm_nlp_2_00/'
 EV_INF_DIR = '/home/ben/Desktop/inference-data/'
 BERT_DIR = '/home/ben/Desktop/scibert_scivocab_uncased/'
 NER_PRETRAINED_BERT_DIR = '/home/ben/Desktop/scibert_ner_ebmnlp/'

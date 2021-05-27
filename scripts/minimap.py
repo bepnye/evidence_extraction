@@ -21,6 +21,12 @@ with open(os.path.join(DATA_ROOT, 'ignorelist.txt'), 'r') as f:
 with open(os.path.join(DATA_ROOT, 'str_to_cui.pck'), 'rb') as f:
     str_to_cui = pickle.load(f)
 
+cui_to_str = {}
+for s, cuis in str_to_cui.items():
+    for cui in cuis:
+        if cui not in cui_to_str:
+            cui_to_str[cui] = []
+        cui_to_str[cui].append(s)
 
 with open(os.path.join(DATA_ROOT, 'cui_to_mh.pck'), 'rb') as f:
     cui_to_mh = pickle.load(f)
@@ -158,6 +164,7 @@ def matcher(text, chunks=False):
                     mh['end_idx'] = doc[i+window-1].idx + len(doc[i+window-1].text)
                     mh['source_text'] = doc.text[mh['start_idx']:mh['end_idx']]
                     mh['tree_nums'] = dui_to_tn.get(mh['mesh_ui'], [])
+                    mh['cui'] = entry
                     matches.append(mh)
 
         window -= 1
